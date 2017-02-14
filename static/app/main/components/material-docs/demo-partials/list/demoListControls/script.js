@@ -1,10 +1,10 @@
 angular.module('listDemo2', ['ngMaterial'])
 .config(function($mdIconProvider) {
   $mdIconProvider
-    .iconSet('social', 'assets/angular-material-assets/img/icons/sets/social-icons.svg', 24)
-    .iconSet('device', 'assets/angular-material-assets/img/icons/sets/device-icons.svg', 24)
-    .iconSet('communication', 'assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24)
-    .defaultIconSet('assets/angular-material-assets/img/icons/sets/core-icons.svg', 24);
+    .iconSet('social', '/static/assets/angular-material-assets/img/icons/sets/social-icons.svg', 24)
+    .iconSet('device', '/static/assets/angular-material-assets/img/icons/sets/device-icons.svg', 24)
+    .iconSet('communication', '/static/assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24)
+    .defaultIconSet('/static/assets/angular-material-assets/img/icons/sets/core-icons.svg', 24);
 })
 .controller('ListCtrl', function($scope, $mdDialog) {
   $scope.toppings = [
@@ -26,9 +26,9 @@ angular.module('listDemo2', ['ngMaterial'])
   ];
 
   $scope.people = [
-    { name: 'Janet Perkins', img: 'assets/angular-material-assets/img/100-0.jpeg', newMessage: true },
-    { name: 'Mary Johnson', img: 'assets/angular-material-assets/img/100-1.jpeg', newMessage: false },
-    { name: 'Peter Carlsson', img: 'assets/angular-material-assets/img/100-2.jpeg', newMessage: false }
+    { name: 'Janet Perkins', img: '/static/assets/angular-material-assets/img/100-0.jpeg', newMessage: true },
+    { name: 'Mary Johnson', img: '/static/assets/angular-material-assets/img/100-1.jpeg', newMessage: false },
+    { name: 'Peter Carlsson', img: '/static/assets/angular-material-assets/img/100-2.jpeg', newMessage: false }
   ];
 
   $scope.goToPerson = function(person, event) {

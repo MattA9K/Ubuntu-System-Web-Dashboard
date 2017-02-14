@@ -2,7 +2,7 @@ angular
   .module('menuBarDemoBasic', ['ngMaterial'])
   .config(function($mdIconProvider) {
     $mdIconProvider
-      .defaultIconSet('assets/angular-material-assets/img/icons/sets/core-icons.svg', 24);
+      .defaultIconSet('/static/assets/angular-material-assets/img/icons/sets/core-icons.svg', 24);
   })
   .filter('keyboardShortcut', function($window) {
     return function(str) {

@@ -15,7 +15,7 @@
         $stateProvider
             .state('dashboard', {
                 url: '/dashboard',
-                templateUrl: 'assets/js/dashboard/dashboard.tpl.html',
+                templateUrl: '/static/assets/js/dashboard/dashboard.tpl.html',
                 controller: 'DashboardCtrl',
                 controllerAs: 'vm'
             });

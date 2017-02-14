@@ -66,16 +66,16 @@
                                  ng-style="{'color': vm.userStatus.color }" class="icon"></md-icon>
                         <md-menu id="user-status-menu">
                             <md-button ng-click="$mdOpenMenu()" class="status" ng-class="vm.userStatus.class">
-                                {{vm.userStatus.title}}
+                                {#vm.userStatus.title#}
                             </md-button>
                             <md-menu-content width="2">
                                 <md-menu-item class="status md-indent"
                                               ng-class="{'selected': status === vm.userStatus}"
                                               ng-repeat="status in vm.userStatusOptions">
-                                    <md-icon md-font-icon="{{status.icon}}" ng-style="{'color': status.color }"
+                                    <md-icon md-font-icon="{#status.icon#}" ng-style="{'color': status.color }"
                                              class="icon"></md-icon>
                                     <md-button ng-click="vm.setUserStatus(status)">
-                                        {{status.title}}
+                                        {#status.title#}
                                     </md-button>
                                 </md-menu-item>
                             </md-menu-content>
@@ -102,18 +102,18 @@
             <md-button class="language-button" ng-click="$mdOpenMenu()"
                        aria-label="Language" md-menu-origin md-menu-align-target>
                 <div layout="row" layout-align="center center">
-                    <img class="flag" ng-src="assets/images/flags/{{vm.selectedLanguage.flag}}.png">
-                    <span class="iso">{{vm.selectedLanguage.code}}</span>
+                    <img class="flag" ng-src="assets/images/flags/{#vm.selectedLanguage.flag#}.png">
+                    <span class="iso">{#vm.selectedLanguage.code#}</span>
                 </div>
             </md-button>
 
             <md-menu-content width="3" id="language-menu-content">
                 <md-menu-item ng-repeat="(iso, lang) in vm.languages">
-                    <md-button ng-click="vm.changeLanguage(lang)" aria-label="{{lang.title}}" translate
-                               translate-attr-aria-label="{{lang.title}}">
+                    <md-button ng-click="vm.changeLanguage(lang)" aria-label="{#lang.title#}" translate
+                               translate-attr-aria-label="{#lang.title#}">
                         <span layout="row" layout-align="start center">
-                            <img class="flag" ng-src="assets/images/flags/{{lang.flag}}.png">
-                            <span translate="{{lang.translation}}">{{lang.title}}</span>
+                            <img class="flag" ng-src="assets/images/flags/{#lang.flag#}.png">
+                            <span translate="{#lang.translation#}">{#lang.title#}</span>
                         </span>
                     </md-button>
                 </md-menu-item>

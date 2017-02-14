@@ -32,7 +32,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/apps/chat');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/chat');
 
         // Api
         // Contacts data must be alphabatically ordered.

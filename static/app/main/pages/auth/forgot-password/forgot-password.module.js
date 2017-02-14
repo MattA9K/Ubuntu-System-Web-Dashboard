@@ -26,7 +26,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/auth/forgot-password');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/auth/forgot-password');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.auth.forgot-password', {

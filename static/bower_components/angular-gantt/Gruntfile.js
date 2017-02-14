@@ -49,26 +49,26 @@
                 },
                 core: {
                     src: sources.js.core,
-                    dest: 'assets/<%= pkg.name %>.js'
+                    dest: '/static/assets/<%= pkg.name %>.js'
                 },
                 plugins: {
                     src: sources.js.plugins,
-                    dest: 'assets/<%= pkg.name %>-plugins.js'
+                    dest: '/static/assets/<%= pkg.name %>-plugins.js'
                 }
             },
             concatCss: {
                 core: {
                     src: sources.css.core,
-                    dest: 'assets/<%= pkg.name %>.css'
+                    dest: '/static/assets/<%= pkg.name %>.css'
                 },
                 plugins: {
                     src: sources.css.plugins,
-                    dest: 'assets/<%= pkg.name %>-plugins.css'
+                    dest: '/static/assets/<%= pkg.name %>-plugins.css'
                 }
             },
             cleanempty: {
                 options: {},
-                assets: 'assets/**/*'
+                assets: '/static/assets/**/*'
             },
             clean: {
                 site: ['site'],
@@ -110,19 +110,19 @@
                 assetsToDist: {
                     files: [
                         // includes files within path
-                        {expand: true, cwd: 'assets/', src: ['**'], dest: 'dist/'},
+                        {expand: true, cwd: '/static/assets/', src: ['**'], dest: 'dist/'},
                     ]
                 },
                 demoToSite: {
                     files: [
                         // includes files within path
-                        {expand: true, cwd: 'demo/dist/', src: ['**'], dest: 'site/demo'},
+                        {expand: true, cwd: '/static/demo/dist/', src: ['**'], dest: 'site/demo'},
                     ]
                 },
                 ghPagesToSite: {
                     files: [
                         // includes files within path
-                        {expand: true, cwd: 'gh-pages/', src: ['**'], dest: 'site/'},
+                        {expand: true, cwd: '/static/gh-pages/', src: ['**'], dest: 'site/'},
                     ]
                 }
             },
@@ -258,11 +258,11 @@
             };
             config.concat[plugin] = {
                 src: ['src/plugins/' + plugin + '.js', 'src/plugins/' + plugin + '/**/*.js', '.tmp/generated/plugins/' + plugin + '/*.js'],
-                dest: 'assets/<%= pkg.name %>-' + plugin + '-plugin.js'
+                dest: '/static/assets/<%= pkg.name %>-' + plugin + '-plugin.js'
             };
             config.concatCss[plugin] = {
                 src: ['src/plugins/' + plugin + '.css', 'src/plugins/' + plugin + '/**/*.css'],
-                dest: 'assets/<%= pkg.name %>-' + plugin + '-plugin.css'
+                dest: '/static/assets/<%= pkg.name %>-' + plugin + '-plugin.css'
             };
             config.cssmin[plugin] = {
                 src: ['src/plugins/' + plugin + '.css', 'src/plugins/' + plugin + '/**/*.css'],

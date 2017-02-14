@@ -15,7 +15,7 @@
         $stateProvider
             .state('dynamic', {
                 url: '/dynamic',
-                templateUrl: 'assets/js/dynamic/dynamic.tpl.html',
+                templateUrl: '/static/assets/js/dynamic/dynamic.tpl.html',
                 controller: 'DynamicCtrl',
                 controllerAs: 'vm'
             });

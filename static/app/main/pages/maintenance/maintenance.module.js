@@ -26,7 +26,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/maintenance');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/maintenance');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.maintenance', {

@@ -41,7 +41,7 @@
                     .concat(demo.html || []);
                 files.forEach(function (file)
                 {
-                    file.httpPromise = $http.get('app/main/components/material-docs/' + file.outputPath, {cache: $templateCache})
+                    file.httpPromise = $http.get('/static/app/main/components/material-docs/' + file.outputPath, {cache: $templateCache})
                         .then(function (response)
                         {
                             file.contents = response.data

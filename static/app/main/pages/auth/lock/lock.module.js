@@ -26,7 +26,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/auth/lock');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/auth/lock');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.auth.lock', {

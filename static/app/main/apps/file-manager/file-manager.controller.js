@@ -72,7 +72,7 @@
                 extention: '',
                 location : 'My Files > Documents',
                 offline  : false,
-                preview  : 'assets/images/etc/sample-file-preview.jpg'
+                preview  : '/static/assets/images/etc/sample-file-preview.jpg'
             };
 
             // Append it to the file list

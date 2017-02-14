@@ -3,7 +3,7 @@
         {
             "user": {
                 "name": "Alice Freeman",
-                "avatar": "assets/images/avatars/alice.jpg"
+                "avatar": "/static/assets/images/avatars/alice.jpg"
             },
             "message": "started following you.",
             "time": "13 mins. ago"
@@ -11,7 +11,7 @@
         {
             "user": {
                 "name": "Andrew Green",
-                "avatar": "assets/images/avatars/andrew.jpg"
+                "avatar": "/static/assets/images/avatars/andrew.jpg"
             },
             "message": "sent you a message.",
             "time": "June 10,2015"
@@ -19,7 +19,7 @@
         {
             "user": {
                 "name": "Garry Newman",
-                "avatar": "assets/images/avatars/garry.jpg"
+                "avatar": "/static/assets/images/avatars/garry.jpg"
             },
             "message": "shared a public post with your group.",
             "time": "June 9,2015"
@@ -27,7 +27,7 @@
         {
             "user": {
                 "name": "Carl Henderson",
-                "avatar": "assets/images/avatars/carl.jpg"
+                "avatar": "/static/assets/images/avatars/carl.jpg"
             },
             "message": "wants to play Fallout Shelter with you.",
             "time": "June 8,2015"
@@ -35,7 +35,7 @@
         {
             "user": {
                 "name": "Jane Dean",
-                "avatar": "assets/images/avatars/jane.jpg"
+                "avatar": "/static/assets/images/avatars/jane.jpg"
             },
             "message": "started following you.",
             "time": "June 7,2015"
@@ -43,7 +43,7 @@
         {
             "user": {
                 "name": "Juan Carpenter",
-                "avatar": "assets/images/avatars/james.jpg"
+                "avatar": "/static/assets/images/avatars/james.jpg"
             },
             "message": "sent you a message.",
             "time": "June 6,2015"
@@ -51,7 +51,7 @@
         {
             "user": {
                 "name": "Judith Burton",
-                "avatar": "assets/images/avatars/joyce.jpg"
+                "avatar": "/static/assets/images/avatars/joyce.jpg"
             },
             "message": "shared a photo with you.",
             "time": "June 5,2015"
@@ -59,7 +59,7 @@
         {
             "user": {
                 "name": "Vincent Munoz",
-                "avatar": "assets/images/avatars/vincent.jpg"
+                "avatar": "/static/assets/images/avatars/vincent.jpg"
             },
             "message": "shared a photo with you.",
             "time": "June 4,2015"
@@ -69,7 +69,7 @@
         {
             "user": {
                 "name": "Garry Newman",
-                "avatar": "assets/images/avatars/garry.jpg"
+                "avatar": "/static/assets/images/avatars/garry.jpg"
             },
             "message": "Remember the place we were talking about the other night? Found it!",
             "time": "32 minutes ago",
@@ -78,13 +78,13 @@
             "share": 21,
             "media": {
                 "type": "image",
-                "preview": "assets/images/etc/early-sunrise.jpg"
+                "preview": "/static/assets/images/etc/early-sunrise.jpg"
             },
             "comments": [
                 {
                     "user": {
                         "name": "Alice Freeman",
-                        "avatar": "assets/images/avatars/alice.jpg"
+                        "avatar": "/static/assets/images/avatars/alice.jpg"
                     },
                     "time": "June 10, 2015",
                     "message": "That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat."
@@ -94,7 +94,7 @@
         {
             "user": {
                 "name": "Andrew Green",
-                "avatar": "assets/images/avatars/andrew.jpg"
+                "avatar": "/static/assets/images/avatars/andrew.jpg"
             },
             "message": "Hey, man! Check this, it’s pretty awesome!",
             "time": "June 12, 2015",
@@ -114,7 +114,7 @@
                 {
                     "user": {
                         "name": "Alice Freeman",
-                        "avatar": "assets/images/avatars/alice.jpg"
+                        "avatar": "/static/assets/images/avatars/alice.jpg"
                     },
                     "time": "June 10, 2015",
                     "message": "That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat."
@@ -124,7 +124,7 @@
         {
             "user": {
                 "name": "Carl Henderson",
-                "avatar": "assets/images/avatars/carl.jpg"
+                "avatar": "/static/assets/images/avatars/carl.jpg"
             },
             "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat. Aenean lorem ex, ultrices sit amet ligula sed...",
             "time": "June 10, 2015",
@@ -135,7 +135,7 @@
         {
             "user": {
                 "name": "Jane Dean",
-                "avatar": "assets/images/avatars/jane.jpg"
+                "avatar": "/static/assets/images/avatars/jane.jpg"
             },
             "time": "June 1, 2015",
             "type": "video",

@@ -1,7 +1,7 @@
 angular.module('menuDemoWidth', ['ngMaterial']).config(function($mdIconProvider) {
   $mdIconProvider
-    .iconSet("call", 'assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24)
-    .iconSet("social", 'assets/angular-material-assets/img/icons/sets/social-icons.svg', 24);
+    .iconSet("call", '/static/assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24)
+    .iconSet("social", '/static/assets/angular-material-assets/img/icons/sets/social-icons.svg', 24);
 }).controller('WidthDemoCtrl', function($mdDialog) {
   var vm = this;
 

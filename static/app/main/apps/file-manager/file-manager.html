@@ -2,7 +2,7 @@
 
     <!-- MAIN SIDENAV (EXTRA SIDENAV) -->
     <md-sidenav class="main-sidenav" md-component-id="main-sidenav"
-                ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+                ng-include="'/static/app/main/apps/file-manager/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
     </md-sidenav>
     <!-- / MAIN SIDENAV (EXTRA SIDENAV) -->
 
@@ -79,9 +79,9 @@
         <!-- CONTENT -->
         <md-content class="content" flex ms-scroll>
             <div ng-if="vm.currentView === 'grid'"
-                 ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
+                 ng-include="'/static/app/main/apps/file-manager/views/grid/grid-view.html'"></div>
             <div ng-if="vm.currentView === 'list'"
-                 ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
+                 ng-include="'/static/app/main/apps/file-manager/views/list/list-view.html'"></div>
         </md-content>
         <!-- / CONTENT -->
 
@@ -91,7 +91,7 @@
     <!-- SIDENAV -->
     <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
                 md-component-id="details-sidenav"
-                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll
+                ng-include="'/static/app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll
                 ms-sidenav-helper>
     </md-sidenav>
     <!-- / SIDENAV -->

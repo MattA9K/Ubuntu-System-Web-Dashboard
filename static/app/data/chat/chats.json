@@ -2,7 +2,7 @@
     "data": [
         {
             "name": "Alice Freeman",
-            "avatar": "assets/images/avatars/alice.jpg",
+            "avatar": "/static/assets/images/avatars/alice.jpg",
             "lastMessage": "Are you going to commit latest...",
             "status": "online",
             "dialog": [
@@ -80,7 +80,7 @@
         },
         {
             "name": "Joyce Walters",
-            "avatar": "assets/images/avatars/joyce.jpg",
+            "avatar": "/static/assets/images/avatars/joyce.jpg",
             "lastMessage": "Something wrong with our servers...",
             "status": "away",
             "dialog": [
@@ -103,7 +103,7 @@
         },
         {
             "name": "Vincent Munoz",
-            "avatar": "assets/images/avatars/vincent.jpg",
+            "avatar": "/static/assets/images/avatars/vincent.jpg",
             "lastMessage": "Everybody, quickly gather in the...",
             "status": "online",
             "unread": 3,

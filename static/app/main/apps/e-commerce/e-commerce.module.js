@@ -128,7 +128,7 @@
             });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/apps/e-commerce');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/e-commerce');
 
         // Api
         msApiProvider.register('e-commerce.dashboard', ['/static/app/data/e-commerce/dashboard.json']);

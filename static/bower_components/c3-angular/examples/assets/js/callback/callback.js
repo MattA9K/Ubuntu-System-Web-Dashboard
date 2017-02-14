@@ -15,7 +15,7 @@
         $stateProvider
             .state('callback', {
                 url: '/callback',
-                templateUrl: 'assets/js/callback/callback.tpl.html',
+                templateUrl: '/static/assets/js/callback/callback.tpl.html',
                 controller: 'CallbackCtrl',
                 controllerAs: 'vm'
             });

@@ -15,7 +15,7 @@
         $stateProvider
             .state('config', {
                 url: '/config',
-                templateUrl: 'assets/js/config/config.tpl.html',
+                templateUrl: '/static/assets/js/config/config.tpl.html',
                 controller: 'ConfigCtrl',
                 controllerAs: 'vm'
             });

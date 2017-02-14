@@ -3,7 +3,7 @@
   angular
       .module('chipsDemo', ['ngMaterial', 'ngMessages'])
       .config(['$mdIconProvider', function($mdIconProvider) {
-        $mdIconProvider.icon('md-close', 'assets/angular-material-assets/img/icons/ic_close_24px.svg', 24);
+        $mdIconProvider.icon('md-close', '/static/assets/angular-material-assets/img/icons/ic_close_24px.svg', 24);
       }])
       .controller('BasicDemoCtrl', DemoCtrl);
 

@@ -83,7 +83,7 @@
             restrict    : 'E',
             controller  : 'msNewNoteController',
             controllerAs: 'MsNewNote',
-            templateUrl : 'app/main/apps/notes/directives/ms-new-note/ms-new-note.html',
+            templateUrl : '/static/app/main/apps/notes/directives/ms-new-note/ms-new-note.html',
             link        : function (scope, element, attributes, MsNewNote)
             {
                 MsNewNote.element = element;

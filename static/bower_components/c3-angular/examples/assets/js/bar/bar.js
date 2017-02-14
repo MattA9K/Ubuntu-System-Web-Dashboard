@@ -17,7 +17,7 @@
         $stateProvider
             .state('bar', {
                 url: '/bar',
-                templateUrl: 'assets/js/bar/bar.tpl.html',
+                templateUrl: '/static/assets/js/bar/bar.tpl.html',
                 controller: 'BarCtrl',
                 controllerAs: 'vm'
             });

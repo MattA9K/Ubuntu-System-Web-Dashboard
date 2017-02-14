@@ -21,7 +21,7 @@
         return {
             restrict        : 'E',
             scope           : true,
-            templateUrl     : 'app/main/components/material-docs/demo/docs-demo.tmpl.html',
+            templateUrl     : '/static/app/main/components/material-docs/demo/docs-demo.tmpl.html',
             transclude      : true,
             controller      :DocsDemoCtrl,
             controllerAs    : 'demoCtrl',

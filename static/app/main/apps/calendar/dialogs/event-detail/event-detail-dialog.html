@@ -1,7 +1,7 @@
 <md-dialog class="event-detail-dialog" aria-label="New Message">
     <md-toolbar class="md-accent md-hue-2">
         <div class="md-toolbar-tools">
-            <span class="title">{{vm.calendarEvent.title}}</span>
+            <span class="title">{#vm.calendarEvent.title#}</span>
             <span flex></span>
             <md-button class="edit-event-button md-fab md-warn"
                        ng-click="vm.editEvent(vm.calendarEvent)" aria-label="Edit event"
@@ -18,9 +18,9 @@
             <div class="event-detail-row" layout="row" layout-align="start start">
                 <md-icon md-font-icon="icon-clock"></md-icon>
                 <div layout="column" flex>
-                    <span class="h4">{{vm.calendarEvent.start.format('MMMM Do YYYY, h:mm:ss a')}} <span
-                            ng-if="vm.calendarEvent.end">-</span> {{vm.calendarEvent.end.format('MMMM Do YYYY, h:mm:ss a')}}</span>
-                    <span class="secondary-text">{{vm.calendarEvent.repeat || 'Does not repeat'}}</span>
+                    <span class="h4">{#vm.calendarEvent.start.format('MMMM Do YYYY, h:mm:ss a')#} <span
+                            ng-if="vm.calendarEvent.end">-</span> {#vm.calendarEvent.end.format('MMMM Do YYYY, h:mm:ss a')#}</span>
+                    <span class="secondary-text">{#vm.calendarEvent.repeat || 'Does not repeat'#}</span>
                 </div>
             </div>
 
@@ -43,9 +43,9 @@
             <div class="event-detail-row" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-account"></md-icon>
                 <div layout="row" flex>
-                    <img src="assets/images/avatars/alice.jpg" class="avatar" alt="alice"/>
-                    <img src="assets/images/avatars/joyce.jpg" class="avatar" alt="joyce"/>
-                    <img src="assets/images/avatars/vincent.jpg" class="avatar" alt="vincent"/>
+                    <img src="/static/assets/images/avatars/alice.jpg" class="avatar" alt="alice"/>
+                    <img src="/static/assets/images/avatars/joyce.jpg" class="avatar" alt="joyce"/>
+                    <img src="/static/assets/images/avatars/vincent.jpg" class="avatar" alt="vincent"/>
                 </div>
             </div>
 

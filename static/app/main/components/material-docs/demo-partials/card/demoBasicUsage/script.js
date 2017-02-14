@@ -2,7 +2,7 @@
 angular.module('cardDemo1', ['ngMaterial'])
 
 .controller('AppCtrl', function($scope) {
-  $scope.imagePath = 'assets/angular-material-assets/img/washedout.png';
+  $scope.imagePath = '/static/assets/angular-material-assets/img/washedout.png';
 })
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();

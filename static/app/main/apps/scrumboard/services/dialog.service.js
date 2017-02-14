@@ -24,7 +24,7 @@
         function openCardDialog(ev, cardId)
         {
             $mdDialog.show({
-                templateUrl        : 'app/main/apps/scrumboard/dialogs/card/card-dialog.html',
+                templateUrl        : '/static/app/main/apps/scrumboard/dialogs/card/card-dialog.html',
                 controller         : 'ScrumboardCardDialogController',
                 controllerAs       : 'vm',
                 parent             : $document.find('#scrumboard'),

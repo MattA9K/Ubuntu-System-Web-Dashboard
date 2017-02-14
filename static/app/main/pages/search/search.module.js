@@ -40,7 +40,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/search');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/search');
 
         // Api
         msApiProvider.register('search.classic', ['/static/app/data/search/classic.json']);

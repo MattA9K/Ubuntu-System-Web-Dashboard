@@ -35,7 +35,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/profile');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/profile');
 
         // Api
         msApiProvider.register('profile.timeline', ['/static/app/data/profile/timeline.json']);

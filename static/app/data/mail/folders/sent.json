@@ -92,7 +92,7 @@
             "id": "1541ca7af66da284177",
             "from": {
                 "name": "Judith Burton",
-                "avatar": "assets/images/avatars/joyce.jpg",
+                "avatar": "/static/assets/images/avatars/joyce.jpg",
                 "email": "judithburton@creapond.com"
             },
             "to": [
@@ -136,7 +136,7 @@
             "id": "15438351f87dcd68567",
             "from": {
                 "name": "Charles Kim",
-                "avatar": "assets/images/avatars/garry.jpg",
+                "avatar": "/static/assets/images/avatars/garry.jpg",
                 "email": "charleskim@creapond.com"
             },
             "to": [
@@ -180,7 +180,7 @@
             "id": "1543cc4515df3146112",
             "from": {
                 "name": "Juan Carpenter",
-                "avatar": "assets/images/avatars/james.jpg",
+                "avatar": "/static/assets/images/avatars/james.jpg",
                 "email": "juancarpenter@creapond.com"
             },
             "to": [
@@ -202,7 +202,7 @@
             "id": "1543ee3a5b43e0f9f45",
             "from": {
                 "name": "Danielle Obrien",
-                "avatar": "assets/images/avatars/danielle.jpg",
+                "avatar": "/static/assets/images/avatars/danielle.jpg",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
@@ -224,7 +224,7 @@
             "id": "154537435d5b32bf11a",
             "from": {
                 "name": "Maria Gilbert",
-                "avatar": "assets/images/avatars/danielle.jpg",
+                "avatar": "/static/assets/images/avatars/danielle.jpg",
                 "email": "mariagilbert@creapond.com"
             },
             "to": [

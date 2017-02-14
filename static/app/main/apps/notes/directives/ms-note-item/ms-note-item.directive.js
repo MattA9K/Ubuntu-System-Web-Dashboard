@@ -142,7 +142,7 @@
         return {
             restrict        : 'A',
             controller      : 'msNoteItemController as MsNoteItem',
-            templateUrl     : 'app/main/apps/notes/directives/ms-note-item/ms-note-item.html',
+            templateUrl     : '/static/app/main/apps/notes/directives/ms-note-item/ms-note-item.html',
             require         : ['msNoteItem', '^msMasonry'],
             bindToController: {
                 msNoteItem: '='

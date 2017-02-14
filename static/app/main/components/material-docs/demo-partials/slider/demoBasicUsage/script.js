@@ -2,7 +2,7 @@
 angular.module('sliderDemo1', ['ngMaterial'])
   .config(function($mdIconProvider) {
     $mdIconProvider
-      .iconSet('device', 'assets/angular-material-assets/img/icons/sets/device-icons.svg', 24);
+      .iconSet('device', '/static/assets/angular-material-assets/img/icons/sets/device-icons.svg', 24);
   })
 .controller('AppCtrl', function($scope) {
 

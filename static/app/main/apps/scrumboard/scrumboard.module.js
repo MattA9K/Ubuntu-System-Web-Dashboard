@@ -97,7 +97,7 @@
             });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/apps/scrumboard');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/scrumboard');
 
         // Api
         msApiProvider.register('scrumboard.boardList', ['/static/app/data/scrumboard/board-list.json']);

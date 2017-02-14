@@ -15,7 +15,7 @@
         $stateProvider
             .state('gauge', {
                 url: '/gauge',
-                templateUrl: 'assets/js/gauge/gauge.tpl.html',
+                templateUrl: '/static/assets/js/gauge/gauge.tpl.html',
                 controller: 'GaugeCtrl',
                 controllerAs: 'vm'
             });

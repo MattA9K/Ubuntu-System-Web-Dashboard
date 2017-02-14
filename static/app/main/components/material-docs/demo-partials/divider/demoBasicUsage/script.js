@@ -1,6 +1,6 @@
 angular.module('dividerDemo1', ['ngMaterial'])
   .controller('AppCtrl', function($scope) {
-    var imagePath = 'assets/angular-material-assets/img/list/60.jpeg';
+    var imagePath = '/static/assets/angular-material-assets/img/list/60.jpeg';
     $scope.messages = [{
       face : imagePath,
       what: 'Brunch this weekend?',

@@ -31,8 +31,8 @@
         vm.selectedThreads = [];
 
         vm.views = {
-            classic: 'app/main/apps/mail/views/classic/classic-view.html',
-            outlook: 'app/main/apps/mail/views/outlook/outlook-view.html'
+            classic: '/static/app/main/apps/mail/views/classic/classic-view.html',
+            outlook: '/static/app/main/apps/mail/views/outlook/outlook-view.html'
         };
         vm.defaultView = 'outlook';
         vm.currentView = 'outlook';
@@ -618,7 +618,7 @@
                 locals             : {
                     selectedMail: undefined
                 },
-                templateUrl        : 'app/main/apps/mail/dialogs/compose/compose-dialog.html',
+                templateUrl        : '/static/app/main/apps/mail/dialogs/compose/compose-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true
@@ -638,7 +638,7 @@
                 locals             : {
                     selectedMail: vm.selectedMail
                 },
-                templateUrl        : 'app/main/apps/mail/dialogs/compose/compose-dialog.html',
+                templateUrl        : '/static/app/main/apps/mail/dialogs/compose/compose-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true

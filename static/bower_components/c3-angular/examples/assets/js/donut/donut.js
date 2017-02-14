@@ -15,7 +15,7 @@
         $stateProvider
             .state('donut', {
                 url: '/donut',
-                templateUrl: 'assets/js/donut/donut.tpl.html',
+                templateUrl: '/static/assets/js/donut/donut.tpl.html',
                 controller: 'DonutCtrl',
                 controllerAs: 'vm'
             });

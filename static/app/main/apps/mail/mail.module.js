@@ -52,7 +52,7 @@
             });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/apps/mail');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/mail');
 
         // Api
         msApiProvider.register('mail.folders', ['/static/app/data/mail/folders.json']);

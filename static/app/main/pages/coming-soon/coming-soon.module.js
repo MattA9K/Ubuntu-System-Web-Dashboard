@@ -31,7 +31,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/coming-soon');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/coming-soon');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.coming-soon', {

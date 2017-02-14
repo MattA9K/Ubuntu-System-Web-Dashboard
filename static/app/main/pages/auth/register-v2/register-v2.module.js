@@ -26,7 +26,7 @@
         });
 
         // Translate
-        $translatePartialLoaderProvider.addPart('app/main/pages/auth/register-v2');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/auth/register-v2');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.auth.register-v2', {

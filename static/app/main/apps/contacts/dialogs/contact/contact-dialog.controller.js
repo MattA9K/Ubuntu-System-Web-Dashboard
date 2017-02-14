@@ -25,7 +25,7 @@
                 'id'      : msUtils.guidGenerator(),
                 'name'    : '',
                 'lastName': '',
-                'avatar'  : 'assets/images/avatars/profile.jpg',
+                'avatar'  : '/static/assets/images/avatars/profile.jpg',
                 'nickname': '',
                 'company' : '',
                 'jobTitle': '',

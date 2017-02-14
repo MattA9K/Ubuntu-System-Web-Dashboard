@@ -28,25 +28,25 @@
         <form name="horizontalStepper" ms-horizontal-stepper ng-submit="vm.submitHorizontalStepper()"
               ng-model="vm.horizontalStepper" novalidate>
             <ms-horizontal-stepper-step ng-form="horizontalStep1" step="1" step-title="'Personal Information'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-1.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/horizontal/step-1.html'"></div>
             </ms-horizontal-stepper-step>
 
             <ms-horizontal-stepper-step ng-form="horizontalStep2" step="2" step-title="'Birthplace'" optional-step
                                         hide-step="!vm.horizontalStepper.step1.lastname">
-                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-2.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/horizontal/step-2.html'"></div>
             </ms-horizontal-stepper-step>
 
             <ms-horizontal-stepper-step ng-form="horizontalStep3" step="3" step-title="'SSN'" optional-step
                                         hide-step="!vm.horizontalStepper.step2.birthplace">
-                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-3.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/horizontal/step-3.html'"></div>
             </ms-horizontal-stepper-step>
 
             <ms-horizontal-stepper-step ng-form="horizontalStep4" step="4" step-title="'Address'" optional-step>
-                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-4.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/horizontal/step-4.html'"></div>
             </ms-horizontal-stepper-step>
 
             <ms-horizontal-stepper-step ng-form="horizontalStep5" step="5" step-title="'Payment Method'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-5.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/horizontal/step-5.html'"></div>
             </ms-horizontal-stepper-step>
         </form>
         <!-- / HORIZONTAL STEPPER -->
@@ -57,25 +57,25 @@
         <form name="verticalStepper" ms-vertical-stepper ng-submit="vm.submitVerticalStepper()"
               ng-model="vm.verticalStepper" novalidate>
             <ms-vertical-stepper-step ng-form="verticalStep1" step="1" step-title="'Personal Information'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-1.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/vertical/step-1.html'"></div>
             </ms-vertical-stepper-step>
 
             <ms-vertical-stepper-step ng-form="verticalStep2" step="2" step-title="'Birthplace'" optional-step
                                       hide-step="!vm.verticalStepper.step1.lastname">
-                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-2.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/vertical/step-2.html'"></div>
             </ms-vertical-stepper-step>
 
             <ms-vertical-stepper-step ng-form="verticalStep3" step="3" step-title="'SSN'" optional-step
                                       hide-step="!vm.verticalStepper.step2.birthplace">
-                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-3.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/vertical/step-3.html'"></div>
             </ms-vertical-stepper-step>
 
             <ms-vertical-stepper-step ng-form="verticalStep4" step="4" step-title="'Address'" optional-step>
-                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-4.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/vertical/step-4.html'"></div>
             </ms-vertical-stepper-step>
 
             <ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="'Payment Method'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-5.html'"></div>
+                <div ng-include="'/static/app/main/ui/forms/stepper-steps/vertical/step-5.html'"></div>
             </ms-vertical-stepper-step>
         </form>
         <!-- / VERTICAL STEPPER -->

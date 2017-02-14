@@ -15,7 +15,7 @@
         $stateProvider
             .state('line', {
                 url: '/line',
-                templateUrl: 'assets/js/line/line.tpl.html',
+                templateUrl: '/static/assets/js/line/line.tpl.html',
                 controller: 'LineCtrl',
                 controllerAs: 'vm'
             });

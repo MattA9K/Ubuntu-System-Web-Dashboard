@@ -2,10 +2,10 @@
 angular.module('listDemo1', ['ngMaterial'])
 .config(function($mdIconProvider) {
   $mdIconProvider
-    .iconSet('communication', 'assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24);
+    .iconSet('communication', '/static/assets/angular-material-assets/img/icons/sets/communication-icons.svg', 24);
 })
 .controller('AppCtrl', function($scope) {
-    var imagePath = 'assets/angular-material-assets/img/list/60.jpeg';
+    var imagePath = '/static/assets/angular-material-assets/img/list/60.jpeg';
 
     $scope.phones = [
       {

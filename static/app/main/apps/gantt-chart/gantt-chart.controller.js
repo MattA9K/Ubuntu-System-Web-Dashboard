@@ -262,7 +262,7 @@
             $mdDialog.show({
                 controller         : 'GanttChartAddEditDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/gantt-chart/dialogs/add-edit/add-dialog.html',
+                templateUrl        : '/static/app/main/apps/gantt-chart/dialogs/add-edit/add-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true,
@@ -283,7 +283,7 @@
             $mdDialog.show({
                 controller         : 'GanttChartAddEditDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/gantt-chart/dialogs/add-edit/edit-dialog.html',
+                templateUrl        : '/static/app/main/apps/gantt-chart/dialogs/add-edit/edit-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

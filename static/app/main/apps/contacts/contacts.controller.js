@@ -81,7 +81,7 @@
             $mdDialog.show({
                 controller         : 'ContactDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/contacts/dialogs/contact/contact-dialog.html',
+                templateUrl        : '/static/app/main/apps/contacts/dialogs/contact/contact-dialog.html',
                 parent             : angular.element($document.find('#content-container')),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

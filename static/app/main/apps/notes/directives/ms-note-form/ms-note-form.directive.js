@@ -333,7 +333,7 @@
                 noteType: '=',
                 noteId  : '='
             },
-            templateUrl : 'app/main/apps/notes/directives/ms-note-form/ms-note-form.html',
+            templateUrl : '/static/app/main/apps/notes/directives/ms-note-form/ms-note-form.html',
             link        : function (scope, element, attributes, MsNoteForm)
             {
                 // Type

@@ -30,7 +30,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/apps/notes');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/notes');
 
         // Api
         msApiProvider.register('notes.notes', ['/static/app/data/notes/notes.json']);

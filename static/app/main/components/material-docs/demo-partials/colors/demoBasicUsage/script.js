@@ -5,7 +5,7 @@ angular.module('colorsDemo', ['ngMaterial'])
       .accentPalette('green');
 
     $mdIconProvider
-      .defaultIconSet('assets/angular-material-assets/img/icons/sets/social-icons.svg', 24);
+      .defaultIconSet('/static/assets/angular-material-assets/img/icons/sets/social-icons.svg', 24);
   })
   .directive('regularCard', function () {
     return {

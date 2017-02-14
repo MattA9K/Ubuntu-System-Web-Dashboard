@@ -123,7 +123,7 @@
                     {
                         default: true,
                         id     : 1,
-                        url    : 'assets/images/ecommerce/product-image-placeholder.png',
+                        url    : '/static/assets/images/ecommerce/product-image-placeholder.png',
                         type   : 'image'
                     }
                 ],

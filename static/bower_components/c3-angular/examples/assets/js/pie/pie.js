@@ -15,7 +15,7 @@
         $stateProvider
             .state('pie', {
                 url: '/pie',
-                templateUrl: 'assets/js/pie/pie.tpl.html',
+                templateUrl: '/static/assets/js/pie/pie.tpl.html',
                 controller: 'PieCtrl',
                 controllerAs: 'vm'
             });

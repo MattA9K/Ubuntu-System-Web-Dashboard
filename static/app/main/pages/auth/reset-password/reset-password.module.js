@@ -26,7 +26,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/auth/reset-password');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/auth/reset-password');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.auth.reset-password', {

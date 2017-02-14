@@ -26,7 +26,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');
+        $translatePartialLoaderProvider.addPart('/static/app/main/pages/errors/404');
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.errors', {
