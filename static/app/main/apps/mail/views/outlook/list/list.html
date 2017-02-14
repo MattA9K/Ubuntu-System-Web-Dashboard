@@ -1,0 +1,54 @@
+<div class="no-threads" ng-if="vm.threads.length === 0">There are no messages in '{{vm.currentFilter.filter}}'!</div>
+<div class="loading-threads" layout="column" layout-align="center center" ng-if="!vm.threads && vm.loadingThreads">
+    <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="64"></md-progress-circular>
+    <div>Loading your mails...</div>
+</div>
+
+<div class="thread {{thread.status}}" md-ink-ripple
+     ng-if="!vm.loadingThreads"
+     ng-repeat="thread in vm.threads | filter: vm.search | filter: global.search"
+     ng-click="vm.openThread(thread)"
+     ng-class="{'unread': !thread.read, 'current-thread': vm.currentThread === thread, 'selected': vm.isSelected(thread)}">
+
+    <div layout="row" layout-align="start center">
+        <md-checkbox class="no-label"
+                     ng-checked="vm.isSelected(thread)"
+                     ng-click="vm.toggleSelectThread(thread, $event)"
+                     aria-label="{{vm.isSelected(thread) ? 'Deselect' : 'Select'}}">
+        </md-checkbox>
+
+        <div class="info" flex layout="column">
+            <div class="name" layout="row" layout-align="start center">
+                <img class="avatar" ng-if="thread.from.avatar" alt="{{thread.from.name}}"
+                     ng-src="{{thread.from.avatar}}"/>
+
+                <div class="avatar" ng-if="!thread.from.avatar" ms-random-class="vm.colors">
+                    {{thread.from.name[0]}}
+                </div>
+
+                <span class="text-truncate">{{thread.from.name}}</span>
+
+                <md-icon md-font-icon="icon-paperclip" class="has-attachment s16"
+                         ng-if="thread.hasAttachments"></md-icon>
+            </div>
+
+            <div class="subject text-truncate">
+                {{thread.subject}}
+            </div>
+
+            <div class="message text-truncate">
+                {{thread.message | htmlToPlaintext | limitTo:90}}{{thread.message.length > 90 ? '...' : ''}}
+                <div class="labels">
+                    <div class="label" ng-repeat="labelId in thread.labels"
+                         ng-class="vm.getLabelColor(labelId)">{{vm.getLabelTitle(labelId)}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div layout="column" layout-align="space-between end">
+            <div class="time">{{thread.time}}</div>
+        </div>
+    </div>
+</div>

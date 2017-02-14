@@ -1,0 +1,95 @@
+#e-commerce-product {
+
+    .header {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+
+        .goto-products-button {
+            margin-right: 16px;
+        }
+
+        .product-image {
+            overflow: hidden;
+            width: 56px;
+            height: 56px;
+            margin-right: 16px;
+            border: 3px solid rgba(0, 0, 0, 0.12);
+
+            img {
+                height: 100%;
+                width: auto;
+                max-width: none;
+            }
+        }
+
+        .subtitle {
+            margin: 6px 0 0 0;
+        }
+    }
+
+    .product-detail-form-container {
+        padding: 24px;
+
+        #product-image-uploader {
+            position: relative;
+
+            &.dropping {
+
+                .drop-text {
+                    display: flex;
+                }
+            }
+
+            .drop-text {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 16px;
+                text-align: center;
+                border: 2px dashed rgba(0, 0, 0, 0.12);
+                background: #FFFFFF;
+                font-size: 20px;
+                z-index: 100;
+            }
+
+            .upload-button {
+                margin-bottom: 16px;
+            }
+
+            .image-zoom-area {
+                border: 2px solid rgba(0, 0, 0, 0.12);
+                width: 500px;
+            }
+
+            .product-image {
+                position: relative;
+                width: 100px;
+                min-height: 100px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                margin: 8px;
+
+                &.uploading {
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: rgba(0, 0, 0, 0.87);
+                    }
+                }
+
+                .media {
+                    cursor: pointer;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+
+}

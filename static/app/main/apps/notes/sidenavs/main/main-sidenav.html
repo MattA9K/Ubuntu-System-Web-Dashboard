@@ -1,0 +1,93 @@
+<!-- SIDENAV CONTENT -->
+<div ms-scroll class="content">
+
+    <!-- NAVIGATION LIST -->
+    <md-list>
+
+        <!-- NOTES -->
+        <md-list-item ng-click="vm.filterChange('notes')" ng-class="{'selected':vm.listType ==='notes'}">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-lightbulb" class="mr-16"></md-icon>
+                <span translate="NOTES.NOTES">
+                    Notes
+                </span>
+            </div>
+        </md-list-item>
+        <!-- / NOTES -->
+
+        <!-- REMINDERS -->
+        <md-list-item ng-click="vm.filterChange('reminders')" ng-class="{'selected':vm.listType ==='reminders'}">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-bell" class="mr-16"></md-icon>
+                <span translate="NOTES.REMINDERS">
+                    Reminders
+                </span>
+            </div>
+        </md-list-item>
+        <!-- / REMINDERS -->
+
+        <md-divider></md-divider>
+
+        <!-- LABELS -->
+        <md-subheader class="md-no-sticky"><span translate="NOTES.LABELS">Labels</span></md-subheader>
+        <!-- LABEL -->
+        <md-list-item ng-repeat="label in vm.labels"
+                      ng-class="{'selected':vm.noteListType.name === label.name}" class="label" layout="row"
+                      layout-align="start center" flex>
+            <ms-material-color-picker ng-model="label.color">
+                <md-icon class="mr-16" md-font-icon="icon-label"
+                         ng-style="{color:$selectedColor.bgColorValue}"></md-icon>
+            </ms-material-color-picker>
+            <span class="label-name text-transclude" flex ng-hide="editLabelForm.$visible"
+                  ng-click="vm.filterChange(label)">
+                {{label.name}}
+            </span>
+            <span flex editable-text="label.name" e-form="editLabelForm" ng-show="editLabelForm.$visible">
+                {{label.name}}
+            </span>
+            <md-button class="md-icon-button" ng-hide="editLabelForm.$visible" ng-click="editLabelForm.$show()"
+                       aria-label="edit label">
+                <md-icon md-font-icon="icon-pencil" class="s16">
+                </md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-hide="editLabelForm.$visible" ng-click="vm.deleteLabel($event, label)"
+                       aria-label="delete label">
+                <md-icon md-font-icon="icon-delete" class="s16">
+                </md-icon>
+            </md-button>
+        </md-list-item>
+        <!-- / LABEL -->
+
+        <!-- NEW LABEL FORM -->
+        <md-list-item class="new-label-form" ng-show="newLabelForm.$visible">
+            <p editable-text="vm.newLabel.name" e-form="newLabelForm"
+               onaftersave="vm.addNewLabel(vm.newLabel)"></p>
+        </md-list-item>
+        <!-- / NEW LABEL FORM -->
+
+        <!-- NEW LABEL FORM BUTTON -->
+        <md-list-item class="" ng-click="newLabelForm.$show()" ng-hide="newLabelForm.$visible">
+            <p class="md-accent-fg" translate="NOTES.NEW_LABEL">New Label</p>
+        </md-list-item>
+        <!-- / NEW LABEL FORM BUTTON -->
+
+        <!-- / LABELS-->
+
+        <md-divider></md-divider>
+
+        <!-- ARCHIVE -->
+        <md-list-item ng-click="vm.filterChange('archive')" ng-class="{'selected':vm.listType ==='archive'}">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-archive" class="mr-16"></md-icon>
+                <span translate="NOTES.ARCHIVE">
+                    Archive
+                </span>
+            </div>
+        </md-list-item>
+        <!-- / ARCHIVE -->
+
+    </md-list>
+    <!-- / NAVIGATION LIST -->
+
+</div>
+<!-- / SIDENAV CONTENT -->

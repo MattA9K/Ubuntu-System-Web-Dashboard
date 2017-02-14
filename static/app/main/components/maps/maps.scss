@@ -1,0 +1,16 @@
+#maps {
+
+    > .content {
+        max-width: none;
+
+        .card {
+            max-width: 1200px;
+            padding: 16px;
+            margin: 24px;
+
+            .angular-google-map-container {
+                height: 400px;
+            }
+        }
+    }
+}

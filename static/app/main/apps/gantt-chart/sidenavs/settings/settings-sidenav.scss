@@ -1,0 +1,12 @@
+#gantt-chart {
+
+    // Settings sidenav
+    .settings-sidenav {
+        z-index: 51;
+        box-shadow: $whiteframe-shadow-8dp;
+
+        .content {
+            padding: 16px 0;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+#e-commerce-products {
+
+    .center {
+
+        .header {
+            height: 136px !important;
+            min-height: 136px !important;
+            max-height: 136px !important;
+            padding: 24px 0;
+
+            .h1 {
+
+                md-icon {
+                    margin-right: 12px;
+                }
+            }
+
+            .product-count {
+                margin: 6px 0 0 36px;
+            }
+
+            .search {
+                position: relative;
+                padding-left: 24px;
+                max-width: 480px;
+
+                .search-icon {
+                    margin: 0 -24px 0 0;
+                }
+
+                .search-input {
+                    margin: 0 0 0 32px;
+                    background: none;
+                    font-size: 16px;
+                    line-height: 40px;
+                    height: 40px;
+                    color: #FFFFFF;
+                    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+                    transition: border-color 300ms ease;
+
+                    &:focus {
+                        border-color: rgba(255, 255, 255, 1);
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+
+        .content-card {
+
+            .toolbar {
+                padding: 8px;
+            }
+
+            .content {
+                padding: 0;
+
+                .dataTables_wrapper {
+
+                    .dataTables_scrollHead {
+                        min-height: 64px;
+
+                        table {
+
+                            th {
+                                padding-top: 20px;
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+
+                    .dataTables_scrollBody {
+
+                        .product-image {
+                            width: 52px;
+                            height: 52px;
+                            border: 1px solid rgba(0, 0, 0, 0.12);
+                        }
+
+                        .quantity-indicator {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 4px;
+                            margin-right: 8px;
+
+                            & + div {
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .edit-button {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

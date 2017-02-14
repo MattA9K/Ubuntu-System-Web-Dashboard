@@ -1,0 +1,60 @@
+<!-- SIDENAV HEADER -->
+<div class="header md-padding" layout="row" layout-align="start center">
+
+    <!-- USER -->
+    <img ng-src="{{vm.user.avatar}}" class="md-avatar avatar mr-16"
+         alt="{{vm.user.name}}"/>
+    <span class="font-weight-500 font-size-14">{{vm.user.name}}</span>
+    <!-- / USER -->
+
+</div>
+<!-- / SIDENAV HEADER -->
+
+<md-divider></md-divider>
+
+<!-- SIDENAV CONTENT -->
+<div ms-scroll class="content scrollable">
+
+    <md-list>
+
+        <md-list-item ng-click="vm.filterChange('all')" ng-class="{'selected':vm.listType ==='all'}">
+            <p translate="CONTACTS.ALL_CONTACTS">
+                All contacts
+            </p>
+        </md-list-item>
+
+        <md-list-item ng-click="vm.filterChange('frequent')" ng-class="{'selected':vm.listType ==='frequent'}">
+            <p translate="CONTACTS.FREQUENTLY_CONTACTED">
+                Frequently contacted
+            </p>
+        </md-list-item>
+
+        <md-list-item ng-click="vm.filterChange('starred')" ng-class="{'selected':vm.listType ==='starred'}">
+            <p translate="CONTACTS.STARRED_CONTACTS">
+                Starred contacts
+            </p>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky">Groups</md-subheader>
+
+        <md-list-item ng-if="vm.user.groups" ng-repeat="group in vm.user.groups" ng-click="vm.filterChange(group)"
+                      ng-class="{'selected':vm.listType.name === group.name}">
+            <p class="pl-8">
+                {{group.name}}
+            </p>
+        </md-list-item>
+
+        <md-list-item class="new-group-form" ng-show="newListForm.$visible">
+            <p class="pl-8" editable-text="vm.newGroupName" e-form="newListForm" onaftersave="vm.addNewGroup()"></p>
+        </md-list-item>
+
+        <md-list-item class="" ng-click="newListForm.$show()" ng-hide="newListForm.$visible">
+            <p class="pl-8 md-accent-fg" translate="CONTACTS.NEW_GROUP">New Group</p>
+        </md-list-item>
+
+    </md-list>
+
+</div>
+<!-- / SIDENAV CONTENT -->

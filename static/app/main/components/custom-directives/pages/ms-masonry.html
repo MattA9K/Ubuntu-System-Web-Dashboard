@@ -1,0 +1,102 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-masonry</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-masonry</b> is a directive that you can use to create Masonry layouts. You can use following
+                options to configure the directive:
+            </p>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                vm.masonryOptions = {
+                    columnCount     : 5,
+                    respectItemOrder: false,
+                    reLayoutDebounce: 400,
+                    responsive      : {
+                        md: 3,
+                        sm: 2,
+                        xs: 1
+                    }
+                }
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Options:</span>
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>columnCount</td>
+                            <td>
+                                (integer) Column count defines the maximum column count of your masonry layout.
+                                ms-masonry will adjust the column count automatically based on <b>responsive</b> options
+                                and some other calculations.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>respectItemOrder</td>
+                            <td>
+                                (boolean) Defaults to false to allow classical masonry behaviour, setting it to true
+                                enforces that masonry items are kept in order, allowing consistent positioning.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>reLayoutDebounce</td>
+                            <td>
+                                (integer) Debounce amount in milliseconds before reLayout can happen. This will prevent
+                                reLayout action from happening too much if you are resizing your screen or the device
+                                rotation is being changed.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>responsive</td>
+                            <td>
+                                (object) You can define column counts for individual Angular Material media step
+                                definitions.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+            <p>
+                <!-- htmlmin:ignore -->
+                <hljs language="js" class="source-code">
+                    <ms-masonry options="vm.masonryOptions">
+                        <ms-masonry-item></ms-masonry-item>
+                        <ms-masonry-item></ms-masonry-item>
+                        <ms-masonry-item></ms-masonry-item>
+                        ...
+                    </ms-masonry>
+                </hljs>
+                <!-- htmlmin:ignore -->
+            </p>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

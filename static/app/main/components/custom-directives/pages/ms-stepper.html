@@ -1,0 +1,132 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-stepper</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-stepper</b> is a form step directive that follows Google's Material Design specifications. It
+                allows you to create stepped forms. Unlike <b>ms-form-wizard</b>, this directive doesn't use any other
+                material elements, therefore it's a lot more flexible and easy to use:
+            </p>
+
+            <span class="h3 pt-16">Horizontal Stepper:</span>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <form name="stepper" ms-horizontal-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+                    <!-- Step 1 -->
+                    <ms-horizontal-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
+                    </ms-horizontal-stepper-step>
+                    <!-- / Step 1 -->
+
+                    <!-- Step 2 -->
+                    <ms-horizontal-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
+                    </ms-horizontal-stepper-step>
+                    <!-- / Step 2 -->
+
+                    <!-- Step 3 -->
+                    <ms-horizontal-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
+                    </ms-horizontal-stepper-step>
+                    <!-- / Step 3 -->
+                </form>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <hr>
+
+            <span class="h3 pt-16">Vertical Stepper:</span>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <form name="stepper" ms-vertical-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+                    <!-- Step 1 -->
+                    <ms-vertical-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 1 -->
+
+                    <!-- Step 2 -->
+                    <ms-vertical-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 2 -->
+
+                    <!-- Step 3 -->
+                    <ms-vertical-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 3 -->
+                </form>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">ms-*-stepper-step</span>
+            <p>
+                This directive requires <b>ms-*-stepper</b> directive and it's used for creating individual steps. You can
+                either directly wrap your forms with this directive, or you can use ng-include to include them.
+            </p>
+
+            <span class="h2 pt-16">ms-stepper-step Attributes</span>
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ng-form</td>
+                            <td>
+                                (string) This attribute/directive is required for steps to work correctly. It requires a
+                                unique, string value. You can think this as the unique name of the step.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>step [Optional]</td>
+                            <td>
+                                (integer) Optional value for the step number. If you want to manually order your steps,
+                                you can use this attribute.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>step-title</td>
+                            <td>
+                                (string) Step title that will show up in the step navigation.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>optional-step [Optional]</td>
+                            <td>
+                                If given, this attribute will make the step optional. Therefore, that step can be passed
+                                through without filling its input fields and it will not be included into the main form
+                                validity check.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

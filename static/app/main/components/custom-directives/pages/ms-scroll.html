@@ -1,0 +1,50 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-scroll</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <div ms-scroll>
+                    <!-- Some long content -->
+                </div>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-scroll</b> directive can be used for adding custom scrollbars to the scrollable content. Fuse
+                uses <a href="https://github.com/noraesae/perfect-scrollbar" target="_blank">Perfect Scrollbar</a> as a
+                custom scrollbar.
+
+                You can also use this directive with <em>scrollable</em> helper class. <em>scrollable</em> class will
+                make any content scrollable and then you can add custom scrollbars by adding <b>ms-scroll</b> directive
+                to the same element:
+            </p>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <div class="scrollable" ms-scroll>
+                    <!-- Some long content -->
+                </div>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

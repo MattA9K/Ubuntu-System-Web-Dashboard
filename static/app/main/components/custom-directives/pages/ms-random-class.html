@@ -1,0 +1,74 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-random-class</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <div ms-random-class="vm.colors"></div>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-random-class</b> directive can be used for adding randomly selected class from an array. It's used
+                mainly for generating random background colors in the template, but you can use it anywhere if you find
+                it useful.
+            </p>
+
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ms-random-class</td>
+                            <td>
+                                (Array) This attribute must be present in order to ms-random-class directive to work.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                vm.colors = [
+                    'yellow',
+                    'red',
+                    'blue',
+                    'orange',
+                    'green'
+                ]
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <div ms-random-class="vm.colors"></div>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

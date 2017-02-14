@@ -1,0 +1,66 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-widget</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-widget flippable="true">
+
+                    <ms-widget-front class="padding-16 md-white-bg">
+                        <!-- Front content -->
+                    </ms-widget-front>
+
+                    <ms-widget-back class="padding-16 md-white-bg">
+                        <!-- Back content -->
+                    </ms-widget-back>
+
+                </ms-widget>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-widget</b> directive is a helper directive for creating widgets. When it used with helper classes
+                such as padding, margin, height helpers, it's very easy to create custom widgets.
+            </p>
+
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>flippable</td>
+                            <td>
+                                If it's true, widget will be flippable. If you don't want to make the widget flippable,
+                                you can make this attribute false and use only <b>&lt;ms-widget-front&gt;&lt;/ms-widget-front&gt;</b>
+                                wrapper to show widget content.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

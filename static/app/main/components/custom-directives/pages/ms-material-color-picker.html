@@ -1,0 +1,92 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-material-color-picker</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-material-color-picker</b> directive allows you to pick any of the Material Design colors.
+            </p>
+
+            <span class="h2 pt-16">Options:</span>
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ms-model-type</td>
+                            <td>
+                                (string) Model type of the color picker. Can be either `class` or `obj`
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ng-model (required)</td>
+                            <td>
+                                Value that will be updated on color pick
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+            <p>
+                Depending on <b>ms-model-type</b> value, color picker will either update the model with the appropriate
+                class name or the object:
+            </p>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-material-color-picker ms-model-type="obj" ng-model="vm.color"></ms-material-color-picker>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p>
+                You can also use transclusion to trigger the picker. Like in the below example, you can add a button or
+                any other element to trigger the picker:
+            </p>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
+                    <md-button>Select a Color</md-button>
+                </ms-material-color-picker>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p>
+                <b>$selectedColor</b> variable can be used within the color picker element to access the properties of
+                the selected color:
+            </p>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
+                    <md-button class="{{$selectedColor}}">Select a Color</md-button>
+                </ms-material-color-picker>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

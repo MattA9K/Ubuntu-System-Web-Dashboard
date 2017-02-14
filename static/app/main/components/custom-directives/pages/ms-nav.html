@@ -1,0 +1,70 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-nav</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <p class="note">
+                <b>Note:</b> This directive is deprecated. Use <b>ms-navigation</b> instead.
+            </p>
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                Navigation directive has couple other dependent directives. They all together used for creating the main
+                navigation. <b>ms-nav</b> directive is compatible with Angular UI Router module.
+            </p>
+
+            <span class="h2 pt-16">Example:</span>
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-nav>
+
+                    <ms-nav-item ms-nav-title>
+                        <span>FUSE</span>
+                    </ms-nav-item>
+
+                    <ms-nav-item ms-nav-toggle>
+
+                        <a ms-nav-button md-ink-ripple>
+                            <i class="icon-tile-four s16"></i>
+                            <span class="ms-nav-label" translate="NAVIGATION.DASHBOARDS">Dashboards</span>
+                            <i class="icon-chevron-down s16 arrow"></i>
+                        </a>
+
+                        <ms-nav-toggle-items>
+                            <ms-nav-item>
+                                <a ms-nav-button ui-sref="app.dashboard-v1" ui-sref-active="active" md-ink-ripple>
+                                    <span class="ms-nav-label">Dashboard v1</span>
+                                </a>
+                            </ms-nav-item>
+
+                            <ms-nav-item>
+                                <a ms-nav-button ui-sref="app.dashboard-v2" ui-sref-active="active" md-ink-ripple>
+                                    <span class="ms-nav-label">Dashboard v2</span>
+                                </a>
+                            </ms-nav-item>
+                        </ms-nav-toggle-items>
+
+                    </ms-nav-item>
+
+                </ms-nav>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

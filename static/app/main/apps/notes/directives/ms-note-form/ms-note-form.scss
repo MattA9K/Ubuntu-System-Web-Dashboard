@@ -1,0 +1,186 @@
+#notes {
+
+    ms-note-form {
+        height: 100%;
+
+        form {
+            font-size: inherit;
+            height: 100%;
+            width: 100%;
+
+            > .image-wrapper {
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                .delete-image-button {
+                    position: absolute;
+                    bottom: 8px;
+                    right: 8px;
+                }
+            }
+
+            md-input-container {
+                display: block;
+                margin: 8px;
+
+                textarea {
+                    resize: none;
+                    min-height: 104px;
+                    border-bottom: none;
+                    color: inherit;
+                    background: transparent;
+                }
+
+                input {
+                    color: inherit;
+                    background: transparent;
+                }
+
+                md-errors-spacer {
+                    display: none;
+                }
+
+            }
+
+            > input, textarea {
+                width: 100%;
+                padding: 12px;
+                font-size: 15px;
+                font-weight: 300;
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.87);
+                }
+            }
+
+            > input {
+                font-weight: 500;
+            }
+
+            .checklist {
+                width: 100%;
+            }
+
+            .labels {
+                padding: 8px 16px;
+
+                .label {
+                    background: rgba(0, 0, 0, 0.1);
+                    margin: 0 0 2px 4px;
+                    padding: 2px 5px;
+                    font-size: 11px;
+                    white-space: nowrap;
+                    border-radius: 2px;
+                }
+            }
+
+            .date {
+
+            }
+
+            .checklist-form {
+                width: 100%;
+                padding: 8px 0 16px 16px;
+
+                md-input-container {
+                    margin: 0 0 4px 0;
+
+                    .md-errors-spacer {
+                        display: none;
+                    }
+
+                    #new-checklist-item-input {
+
+                        &::placeholder {
+                            color: rgba(0, 0, 0, 0.87);
+                        }
+                    }
+                }
+
+                md-icon {
+                    overflow: hidden;
+                }
+            }
+
+            > .footer {
+                width: 100%;
+                padding: 8px;
+                overflow: hidden;
+
+                .md-button {
+                    margin: 0;
+                }
+
+                .actions {
+
+                    .reminder {
+                        margin-right: 16px;
+                        background: transparent;
+
+                        .md-datepicker-input-container {
+                            border-bottom-color: rgb(224, 224, 224) !important;
+
+                            .md-datepicker-input {
+
+                                &::placeholder {
+                                    color: rgba(0, 0, 0, 0.87);
+                                }
+                            }
+                        }
+
+                        &.md-datepicker-open {
+
+                            .md-datepicker-input-container {
+                                background: white;
+                            }
+                        }
+
+                        md-icon {
+                            font-family: 'icomoon';
+                            speak: none;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-variant: normal;
+                            text-transform: none;
+                            line-height: 1;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            font-size: 20px;
+                            margin-top: 4px;
+
+                            &:before {
+                                content: "\e684";
+                            }
+
+                            svg {
+                                display: none;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    md-dialog {
+
+        ms-note-form {
+            max-width: 640px;
+        }
+    }
+}
+
+.notes-labels-menu-content {
+
+    .label {
+        padding: 4px 16px;
+
+        .md-button {
+            background: rgba(0, 0, 0, 0.1);
+            font-size: 13px;
+        }
+    }
+}

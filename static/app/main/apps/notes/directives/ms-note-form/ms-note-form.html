@@ -1,0 +1,186 @@
+<!-- NOTE FORM -->
+<form ng-submit="MsNoteForm.submit()" ng-class="MsNoteForm.note.color">
+
+    <!-- NOTE IMAGE -->
+    <div ng-if="MsNoteForm.note.image" class="image-wrapper">
+        <img class="md-card-image" ng-src="{{MsNoteForm.note.image}}">
+        <md-button class="md-fab md-mini delete-image-button" ng-click="MsNoteForm.deleteImage()"
+                   aria-label="delete image" translate translate-attr-aria-label="NOTES.DELETE_IMAGE">
+            <md-icon md-font-icon="icon-delete"></md-icon>
+        </md-button>
+    </div>
+    <!-- / NOTE IMAGE -->
+
+    <!-- NOTE TITLE -->
+    <input type="text" class="note-title-input" placeholder="Title" ng-model="MsNoteForm.note.title"
+           ng-class="MsNoteForm.note.color">
+    <!-- / NOTE TITLE -->
+
+    <!-- NOTE DESCRIPTION -->
+    <md-input-container md-no-float ng-class="MsNoteForm.note.color">
+    <textarea type="text" class="note-description-textarea" placeholder="Take a note.." translate
+              translate-attr-placeholder="NOTES.TAKE_A_NOTE"
+              ng-model="MsNoteForm.note.description">
+    </textarea>
+    </md-input-container>
+    <!-- / NOTE DESCRIPTION -->
+
+    <!-- NOTE CHECKLIST -->
+    <md-list class="checklist" ng-if="MsNoteForm.note.checklist.length > 0">
+        <md-divider></md-divider>
+        <md-list-item ng-repeat="item in MsNoteForm.note.checklist">
+            <md-checkbox ng-model="item.checked" aria-label="toggle check"></md-checkbox>
+            <p ng-class="{'text-strike md-secondary-text':item.checked}">{{item.text}}</p>
+            <md-icon ng-click="$event.preventDefault();$event.stopPropagation();MsNoteForm.deleteCheckItem(item)"
+                     class="md-secondary"
+                     md-font-icon="icon-close-circle" aria-label="remove">
+            </md-icon>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+    <!-- / NOTE CHECKLIST -->
+
+    <!-- NOTE CHECKLIST FORM -->
+    <div class="checklist-form" ng-if="MsNoteForm.note.checklist.length > 0 || MsNoteForm.checkListForm" layout="row"
+         layout-align="space-between end">
+        <md-input-container class="" md-no-float flex>
+            <input id="new-checklist-item-input" type="text" placeholder="List item"
+                   ng-model="MsNoteForm.newCheckListItem"
+                   ng-keydown="$event.keyCode === 13 ? $event.preventDefault() + MsNoteForm.addChecklistItem():'';">
+        </md-input-container>
+        <md-button class="md-icon-button" ng-click="MsNoteForm.addChecklistItem()" aria-label="add">
+            <md-icon md-font-icon="icon-plus"></md-icon>
+        </md-button>
+    </div>
+    <!-- / NOTE CHECKLIST FORM-->
+
+    <!-- NOTE LABELS -->
+    <div class="labels" ng-if="MsNoteForm.note.labels.length > 0" layout="row" layout-wrap layout-align="end start">
+        <div class="label" ng-repeat="labelId in MsNoteForm.note.labels"
+             ng-class="MsNoteForm.labels.getById(labelId).color">
+            {{MsNoteForm.labels.getById(labelId).name}}
+        </div>
+    </div>
+    <!-- NOTE LABELS -->
+
+    <!-- NOTE EDIT DATE -->
+    <div ng-if="MsNoteForm.type ==='edit'" class="date text-right p-16">{{MsNoteForm.note.time | altDate}}</div>
+    <!-- / NOTE EDIT DATE -->
+
+    <div class="footer" layout-gt-xs="row" layout-align-gt-xs="space-between center" layout="column" layout-align="center center">
+
+        <!-- FORM INPUT ACTIONS -->
+        <div class="actions" layout="row" layout-align="center center">
+
+            <!-- IMAGE UPLOADER -->
+            <div id="image-uploader"
+                 flow-init="MsNoteForm.ngFlowOptions"
+                 flow-name="MsNoteForm.ngFlow.flow"
+                 flow-files-submitted="MsNoteForm.upload()"
+                 flow-file-success="MsNoteForm.imageSuccess($file, $message)"
+                 flow-complete="MsNoteForm.uploadComplete()"
+                 flow-file-added="!!{svg:1,png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+                <md-button flow-btn class="add-img-button md-icon-button"
+                           aria-label="Add image" translate
+                           translate-attr-aria-label="NOTES.ADD_IMAGE">
+                    <md-icon md-font-icon="icon-file-image-box" class="s20"></md-icon>
+                </md-button>
+            </div>
+            <!-- / IMAGE UPLOADER -->
+
+            <!-- CHECKLIST TOGGLER -->
+            <md-button class="md-icon-button" aria-label="checklist" ng-click="MsNoteForm.checklistFormToggle()">
+                <md-icon md-font-icon="icon-checkbox-multiple-marked" class="s20"></md-icon>
+            </md-button>
+            <!-- / CHECKLIST TOGGLER -->
+
+            <!-- LABEL SELECTOR -->
+            <md-menu class="label-menu">
+
+                <md-button class="md-icon-button" aria-label="Label" translate translate-attr-aria-label="NOTES.LABEL"
+                           ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="icon-label" class="s20"></md-icon>
+                </md-button>
+
+                <md-menu-content class="notes-labels-menu-content" width="4" ms-scroll>
+
+                    <md-menu-item>
+                        <md-input-container class="no-errors-spacer" md-no-float>
+                            <input placeholder="Search labels..." type="text"
+                                   ng-model="MsNoteForm.labelSearchText" autocomplete="off"
+                                   translate-attr-palceholder="NOTES.SEARCH_LABELS">
+                        </md-input-container>
+                    </md-menu-item>
+
+                    <md-menu-item class="label"
+                                  ng-repeat="label in MsNoteForm.labels | filter: MsNoteForm.labelSearchText">
+
+                        <md-button class="label-toggle-button" md-prevent-menu-close
+                                   ng-class="label.color"
+                                   ng-click="MsNoteForm.toggleInArray(label.id, MsNoteForm.note.labels)"
+                                   aria-label="Toggle Label" translate
+                                   translate-attr-aria-label="NOTES.TOGGLE_LABEL">
+
+                            <div layout="row" layout-align="space-between center" flex>
+                                <span> {{label.name}}</span>
+                                <i ng-if="MsNoteForm.exists(label.id, MsNoteForm.note.labels)"
+                                   class="icon-check s16"></i>
+                            </div>
+
+                        </md-button>
+
+                    </md-menu-item>
+
+                </md-menu-content>
+            </md-menu>
+            <!-- / LABEL SELECTOR -->
+
+            <!-- SEND TO ARCHIVE BUTTON -->
+            <md-button class="md-icon-button" ng-click="MsNoteForm.toggleArchive()" aria-label="archive">
+                <md-icon md-font-icon="icon-archive" class="s20"></md-icon>
+            </md-button>
+            <!-- / SEND TO ARCHIVE BUTTON -->
+
+            <!-- COLOR PICKER -->
+            <ms-material-color-picker ng-model="MsNoteForm.note.color">
+                <md-button class="md-icon-button" aria-label="color">
+                    <md-icon md-font-icon="icon-palette" class="s20"></md-icon>
+                </md-button>
+            </ms-material-color-picker>
+            <!-- / COLOR PICKER -->
+
+            <!-- REMINDER -->
+            <md-datepicker class="reminder" ng-model="MsNoteForm.note.reminder" md-placeholder="Add reminder"
+                           ms-datepicker-fix>
+            </md-datepicker>
+            <!-- / REMINDER -->
+
+        </div>
+        <!-- / FORM INPUT ACTIONS -->
+
+        <div layout="row" layout-align="end center">
+
+            <!-- DELETE NOTE -->
+            <md-button ng-if="MsNoteForm.type ==='edit'" ng-click="MsNoteForm.deleteNote()" class="md-icon-button"
+                       aria-label="delete note">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+            </md-button>
+            <!-- / DELETE NOTE -->
+
+            <!-- SAVE NOTE -->
+            <md-button ng-if="MsNoteForm.type ==='edit'" type="submit" translate="NOTES.SAVE"
+                       ng-disabled="MsNoteForm.isNotValid()">Save
+            </md-button>
+            <!-- / SAVE NOTE -->
+
+            <!-- ADD NOTE -->
+            <md-button ng-if="MsNoteForm.type ==='new'" type="submit" translate="NOTES.ADD"
+                       ng-disabled="MsNoteForm.isNotValid()">Add
+            </md-button>
+            <!-- / ADD NOTE -->
+
+        </div>
+
+    </div>
+</form>
+<!-- / NOTE FORM -->

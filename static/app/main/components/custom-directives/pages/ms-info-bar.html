@@ -1,0 +1,47 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-info-bar</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-info-bar>
+                    <div layout="row" layout-align="start center">
+                        <div class="white-fg" flex hide-xs>
+                            We use cookies to ensure that we give you the best experience on our website. If you
+                            continue without changing your settings, we'll assume that you are happy to receive all
+                            cookies from this website.
+                        </div>
+                        <md-button class=" md-raised" layout="row" layout-align="center center" target="_blank"
+                                   href="#">
+                            <md-icon md-font-icon="icon-cart" class="mr-5 s18"></md-icon>
+                            <span>Accept</span></md-button>
+                    </div>
+                </ms-info-bar>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-info-bar</b> is a helper directive that you can use to show information about your app. On close,
+                its scope will be automatically destroyed.
+            </p>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

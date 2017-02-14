@@ -1,0 +1,290 @@
+<!-- TOOLBAR -->
+<div class="toolbar" layout="row" layout-align="space-between center">
+
+    <div layout="row" layout-align="start center">
+
+        <!-- THREAD LIST SPECIFIC ACTIONS -->
+        <md-checkbox class="no-label" aria-label="{{vm.selectedThreads.length > 0 ? 'Deselect All' : 'Select All'}}"
+                     ng-checked="vm.selectedThreads.length > 0" ng-click="vm.toggleSelectThreads()"
+                     ng-if="!vm.currentThread"></md-checkbox>
+        <md-menu class="select-menu" ng-if="!vm.currentThread">
+            <md-button class="md-icon-button"
+                       ng-click="$mdOpenMenu($event)"
+                       aria-label="Filters"
+                       translate translate-attr-aria-label="MAIL.FILTERS">
+                <md-icon md-font-icon="icon-menu-down"></md-icon>
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads()" aria-label="All"
+                               translate="MAIL.ALL" translate-attr-aria-label="MAIL.ALL">
+                        All
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.deselectThreads()" aria-label="None"
+                               translate="MAIL.NONE" translate-attr-aria-label="MAIL.NONE">
+                        None
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('read', true)" aria-label="Read"
+                               translate="MAIL.READ" translate-attr-aria-label="MAIL.READ">
+                        Read
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('read', false)" aria-label="Unread"
+                               translate="MAIL.UNREAD" translate-attr-aria-label="MAIL.UNREAD">
+                        Unread
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('important', true)" aria-label="Important"
+                               translate="MAIL.IMPORTANT" translate-attr-aria-label="MAIL.IMPORTANT">
+                        Important
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('important', false)" aria-label="Not Important"
+                               translate="MAIL.NOT_IMPORTANT" translate-attr-aria-label="MAIL.NOT_IMPORTANT">
+                        Not Important
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('starred', true)" aria-label="Starred"
+                               translate="MAIL.STARRED" translate-attr-aria-label="MAIL.STARRED">
+                        Starred
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.selectThreads('starred', false)" aria-label="Unstarred"
+                               translate="MAIL.UNSTARRED" translate-attr-aria-label="MAIL.UNSTARRED">
+                        Unstarred
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <!-- / THREAD LIST SPECIFIC ACTIONS -->
+
+        <!-- SINGLE THREAD SPECIFIC ACTIONS -->
+        <md-button class="md-icon-button close-thread" aria-label="Back"
+                   ng-click="vm.closeThread()" ng-if="vm.currentThread"
+                   translate translate-attr-aria-label="MAIL.BACK">
+            <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
+        </md-button>
+        <!-- / SINGLE THREAD SPECIFIC ACTIONS -->
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-buttons" layout="row" layout-align="start center"
+             ng-show="vm.selectedThreads.length > 0 || vm.currentThread"
+             hide show-gt-xs>
+            <div class="divider-vertical"></div>
+
+            <md-button class="md-icon-button" aria-label="Archive" translate
+                       translate-attr-aria-label="MAIL.ARCHIVE">
+                <md-icon md-font-icon="icon-archive"></md-icon>
+                <md-tooltip><span translate="MAIL.ARCHIVE">Archive</span></md-tooltip>
+            </md-button>
+
+            <md-button class="md-icon-button" aria-label="Spam"
+                       translate translate-attr-aria-label="MAIL.SPAM">
+                <md-icon md-font-icon="icon-alert-octagon"></md-icon>
+                <md-tooltip><span translate="MAIL.SPAM">Spam</span></md-tooltip>
+            </md-button>
+
+            <md-button class="md-icon-button" aria-label="Delete"
+                       translate translate-attr-aria-label="MAIL.DELETE">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+                <md-tooltip><span translate="MAIL.DELETE">Delete</span></md-tooltip>
+            </md-button>
+
+            <div class="divider-vertical"></div>
+
+            <md-button class="md-icon-button" aria-label="Move to"
+                       translate translate-attr-aria-label="MAIL.MOVE_TO">
+                <md-icon md-font-icon="icon-folder"></md-icon>
+                <md-tooltip><span translate="MAIL.MOVE_TO">Move to</span></md-tooltip>
+            </md-button>
+
+            <md-menu>
+                <md-button class="md-icon-button" aria-label="Labels"
+                           translate translate-attr-aria-label="MAIL.LABELS"
+                           ng-click="$mdOpenMenu($event)">
+                    <md-icon md-font-icon="icon-label"></md-icon>
+                    <md-tooltip><span translate="MAIL.LABELS">Labels</span></md-tooltip>
+                </md-button>
+                <md-menu-content class="thread-labels-toggle-list" width="3">
+                    <md-list>
+                        <md-subheader class="md-no-sticky">
+                            <span translate="MAIL.LABELS">Labels</span>
+                        </md-subheader>
+                        <md-list-item ng-repeat="label in vm.labels" ng-click="vm.toggleLabel(label)">
+                            <div layout="row" layout-align="start center">
+                                <div class="w-10 h-10 mr-16" ng-class="label.color"></div>
+                                <div>{{label.title}}</div>
+                            </div>
+                            <md-icon md-font-icon="icon-checkbox-blank-outline" class="md-secondary"
+                                     ng-if="vm.currentThread && !vm.isLabelExist(label)"></md-icon>
+                            <md-icon md-font-icon="icon-checkbox-marked" class="md-accent md-secondary"
+                                     ng-if="vm.currentThread && vm.isLabelExist(label)"></md-icon>
+                        </md-list-item>
+                    </md-list>
+                </md-menu-content>
+            </md-menu>
+
+            <div class="divider-vertical"></div>
+
+            <md-menu>
+                <md-button class="md-icon-button"
+                           ng-click="$mdOpenMenu($event)"
+                           aria-label="MAIL.MORE"
+                           translate translate-attr-aria-label="MAIL.MORE">
+                    <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('read', true)">
+                            <span translate="MAIL.MARK_AS_READ">Mark as read</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('read', false)">
+                            <span translate="MAIL.MARK_AS_UNREAD">Mark as unread</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('important', true)">
+                            <span translate="MAIL.MARK_AS_IMPORTANT">Mark as important</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('important', false)">
+                            <span translate="MAIL.MARK_AS_NOT_IMPORTANT">Mark as not important</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('starred', true)">
+                            <span translate="MAIL.ADD_STAR">Add star</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.setThreadStatus('starred', false)">
+                            <span translate="MAIL.REMOVE_STAR">Remove star</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+        <!-- / ACTION BUTTONS -->
+
+        <!-- ACTIONS MENU -->
+        <md-menu class="actions-menu"
+                 ng-show="vm.selectedThreads.length > 0 || vm.currentThread"
+                 hide-gt-xs>
+            <md-button class="md-icon-button"
+                       ng-click="$mdOpenMenu($event)"
+                       aria-label="Mail Actions"
+                       translate translate-attr-aria-label="MAIL.ACTIONS">
+                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button aria-label="Archive" translate-attr-aria-label="MAIL.ARCHIVE">
+                        <md-icon md-font-icon="icon-archive"></md-icon>
+                        <span translate="MAIL.ARCHIVE">Archive</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button aria-label="Spam" translate-attr-aria-label="MAIL.SPAM">
+                        <md-icon md-font-icon="icon-alert-octagon"></md-icon>
+                        <span translate="MAIL.SPAM">Spam</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button aria-label="Delete" translate-aria-label="MAIL.DELETE">
+                        <md-icon md-font-icon="icon-delete"></md-icon>
+                        <span translate="MAIL.DELETE">Delete</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button aria-label="Move To" translate-attr-aria-label="MAIL.MOVE_TO">
+                        <md-icon md-font-icon="icon-folder-move"></md-icon>
+                        <span translate="MAIL.MOVE_TO">Move To</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button aria-label="Labels" translate-attr-aria-label="MAIL.LABELS">
+                        <md-icon md-font-icon="icon-label"></md-icon>
+                        <span translate="MAIL.LABELS">Labels</span>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <!-- / ACTIONS MENU -->
+    </div>
+
+    <div layout="row" layout-align="start center">
+        <span class="page-info" hide-sm>1 - 100 of 980</span>
+
+        <md-button class="md-icon-button arrow" aria-label="Previous" translate
+                   translate-attr-aria-label="MAIL.PREVIOUS">
+            <md-icon md-font-icon="icon-chevron-left"></md-icon>
+            <md-tooltip><span translate="MAIL.PREVIOUS">Previous</span></md-tooltip>
+        </md-button>
+
+        <md-button class="md-icon-button arrow" aria-label="Next" translate
+                   translate-attr-aria-label="MAIL.NEXT">
+            <md-icon md-font-icon="icon-chevron-right"></md-icon>
+            <md-tooltip><span translate="MAIL.NEXT">Next</span></md-tooltip>
+        </md-button>
+
+        <!-- SETTINGS MENU -->
+        <md-menu class="settings-menu">
+            <md-button class="md-icon-button"
+                       ng-click="$mdOpenMenu($event)"
+                       aria-label="Settings"
+                       translate translate-attr-aria-label="MAIL.SETTINGS">
+                <md-icon md-font-icon="icon-cog"></md-icon>
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.changeView('classic')">
+                        <md-icon md-font-icon="icon-checkbox-blank-outline" ng-if="vm.currentView !== 'classic'"></md-icon>
+                        <md-icon md-font-icon="icon-checkbox-marked" class="md-accent" ng-if="vm.currentView === 'classic'"></md-icon>
+                        <span translate="MAIL.CLASSIC_VIEW">Classic View</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item hide-xs>
+                    <md-button ng-click="vm.changeView('outlook')">
+                        <md-icon md-font-icon="icon-checkbox-blank-outline" ng-if="vm.currentView !== 'outlook'"></md-icon>
+                        <md-icon md-font-icon="icon-checkbox-marked" class="md-accent" ng-if="vm.currentView === 'outlook'"></md-icon>
+                        <span translate="MAIL.OUTLOOK_VIEW">Outlook View</span>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <!-- / SETTINGS MENU -->
+    </div>
+</div>
+<!-- / TOOLBAR -->
+
+<!-- CONTENT WRAPPER -->
+<div class="content-wrapper" layout="column" flex>
+
+    <!-- THREAD DETAIL -->
+    <div class="content thread-detail"
+         ng-if="vm.currentThread"
+         ng-include="'app/main/apps/mail/views/classic/detail/detail.html'" ms-scroll flex>
+    </div>
+    <!-- / THREAD DETAIL -->
+
+    <!-- THREAD LIST -->
+    <div class="content thread-list"
+         ng-if="!vm.currentThread"
+         ng-include="'app/main/apps/mail/views/classic/list/list.html'" ms-scroll flex>
+    </div>
+    <!-- / THREAD LIST -->
+
+</div>
+<!-- / CONTENT WRAPPER -->

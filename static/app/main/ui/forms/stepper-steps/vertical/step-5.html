@@ -1,0 +1,54 @@
+<div class="md-inline-form">
+    <md-input-container class="md-block">
+        <input type="text" name="cardholder" ng-model="vm.verticalStepper.step5.cardholder"
+               placeholder="Card Holder"
+               required>
+        <div ng-messages="step5.cardholder.$error"
+             role="alert">
+            <div ng-message="required">
+                <span>Card holder field is required.</span>
+            </div>
+        </div>
+    </md-input-container>
+
+    <div layout="column" layout-gt-xs="row">
+        <md-input-container flex="100" flex-gt-xs="33">
+            <input type="text" name="cardnumber" ng-model="vm.verticalStepper.step5.cardnumber"
+                   placeholder="Card Number"
+                   required>
+            <div ng-messages="verticalStep5.cardnumber.$error"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Card number field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="100" flex-gt-xs="33">
+            <input type="text" name="CC2" ng-model="vm.verticalStepper.step5.cc2"
+                   placeholder="CC2" md-maxlength="3"
+                   required>
+            <div ng-messages="verticalStep5.cc2.$error"
+                 role="alert" multipl>
+                <div ng-message="required">
+                    <span>CC2 field is required.</span>
+                </div>
+                <div ng-message="md-maxlength">
+                    <span>CC2 can't be longer than 3 characters.</span>
+                </div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="100" flex-gt-xs="33">
+            <input type="text" name="expirationDate" ng-model="vm.verticalStepper.step5.expirationDate"
+                   placeholder="Expiration Date"
+                   required>
+            <div ng-messages="verticalStep5.expirationDate.$error"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Expiration date field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+#chat-app {
+
+    .left-sidenav {
+
+        .contacts-view {
+
+            md-toolbar {
+
+                .md-toolbar-tools {
+
+                }
+
+                .md-toolbar-tools-top {
+
+                }
+
+                .md-toolbar-tools-bottom {
+
+                }
+
+            }
+
+            md-content {
+
+                .contact-list {
+
+                    .contact {
+
+                        .md-button {
+                            padding-left: 40px;
+                        }
+
+                        .fist-letter {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            padding: 8px 12px;
+                            font-size: 18px;
+                            font-weight: 300;
+                            z-index: 9999;
+                        }
+
+                        .name {
+
+                        }
+
+                        .mood {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

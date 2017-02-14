@@ -1,0 +1,198 @@
+<!-- CHATS TOOLBAR -->
+<md-toolbar class="md-tall">
+
+    <!-- TOOLBAR TOP -->
+    <div class="md-toolbar-tools md-toolbar-tools-top">
+
+        <!-- USER AVATAR WRAPPER -->
+        <div class="avatar-wrapper">
+
+            <!-- USER AVATAR -->
+            <img ng-click="vm.toggleLeftSidenavView('user')" ng-src="{{vm.user.avatar}}" class="md-avatar avatar"
+                 alt="{{vm.user.name}}"/>
+            <!-- / USER AVATAR -->
+
+            <!-- USER STATUS -->
+            <md-menu id="user-status-menu">
+
+                <i ng-click="$mdOpenMenu()" class="icon icon- s16 status" ng-class="vm.user.status"></i>
+
+                <md-menu-content>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.setUserStatus('online')">
+                            <div layout="row" layout-align="start center">
+                                <i class="icon s16 status icon-checkbox-marked-circle mr-8 green-fg"></i>
+                                <span translate="CHAT.STATUS_ONLINE">Online</span>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.setUserStatus('away')">
+                            <div layout="row" layout-align="start center">
+                                <i class="icon s16 status icon-clock mr-8 yellow-fg"></i>
+                                <span translate="CHAT.STATUS_AWAY">Away</span>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.setUserStatus('do-not-disturb')">
+                            <div layout="row" layout-align="start center">
+                                <i class="icon s16 status icon-minus-circle mr-8 red-fg"></i>
+                                <span translate="CHAT.STATUS_DO_NOT_DISTURB">Do not disturb</span>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.setUserStatus('offline')">
+                            <div layout="row" layout-align="start center">
+                                <i class="icon s16 status icon-checkbox-blank-circle-outline mr-8 green-fg"></i>
+                                <span translate="CHAT.STATUS_OFFLINE">Offline</span>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+
+                </md-menu-content>
+
+            </md-menu>
+            <!-- / USER STATUS -->
+
+        </div>
+        <!-- / USER AVATAR -->
+
+        <md-menu md-position-mode="target-right target">
+
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
+                       aria-label="more">
+                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.toggleLeftSidenavView('user')" translate="CHAT.PROFILE">
+                        Profile
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="" translate="CHAT.LOGOUT">
+                        Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+
+        </md-menu>
+
+    </div>
+    <!-- / TOOLBAR TOP -->
+
+    <!-- TOOLBAR BOTTOM -->
+    <div class="md-toolbar-tools md-toolbar-tools-bottom">
+
+        <!-- SEARCH -->
+        <div class="search-wrapper md-whiteframe-1dp" layout="row" layout-align="start center" flex>
+
+            <div class="search" flex layout="row" layout-align="start center">
+
+                <md-icon md-font-icon="icon-magnify" class="icon s18">
+                </md-icon>
+
+                <input flex ng-model="vm.chatSearch" type="text" placeholder="Search or start new chat" translate=""
+                       translate-attr-placeholder="CHAT.CHAT_SEARCH_PLACEHOLDER">
+
+            </div>
+        </div>
+        <!-- / SEARCH -->
+
+    </div>
+    <!-- / TOOLBAR BOTTOM -->
+
+</md-toolbar>
+<!-- / CHATS TOOLBAR -->
+
+<!-- CHATS CONTENT -->
+<md-content flex ms-scroll>
+
+    <!-- CHATS LIST-->
+    <md-list class="chat-list">
+
+        <div ng-show="vm.chatSearch && filteredChat.length > 0" class="md-accent-fg subheader"
+             ng-style="{'transform':'translate3d(0px, 0px, 0px)', 'z-index': filteredChat.length + filteredContact.length }"
+             translate="CHAT.CHATS">
+            CHATS
+        </div>
+
+        <md-list-item class="contact md-3-line"
+                      ng-style="{'transform': ( vm.chatSearch && filteredChat.length > 0 ) ?'translate3d(0px, '+($index + 1)* 100+'%, 0px)': 'translate3d(0px, '+$index* 100+'%, 0px)', 'z-index': filteredChat.length + filteredContact.length - $index}"
+                      ng-repeat="contact in vm.contacts  | filter: { lastMessage:{}} | filter: {name: vm.chatSearch}  |  orderBy: 'lastMessage.time' :true | filter:query as filteredChat"
+                      ng-click="vm.getChat(contact.id)" ng-class="{'unread':contact.unread}">
+
+            <div class="avatar-wrapper">
+                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
+                <i class="icon icon- s16 status" ng-class="contact.status"></i>
+            </div>
+
+            <div class="md-list-item-text">
+                <h3 class="name">{{contact.name}}</h3>
+                <p class="last-message text-truncate">{{contact.lastMessage.message}}</p>
+            </div>
+
+            <div layout="column" layout-align="center end">
+                <div class="last-message-time">{{contact.lastMessage.time | altDate}}</div>
+                <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
+            </div>
+
+            <md-divider></md-divider>
+
+        </md-list-item>
+    </md-list>
+    <!-- / CHATS LIST-->
+
+    <!-- CONTACTS LIST-->
+    <md-list class="contact-list">
+
+        <div ng-show="vm.chatSearch && filteredContact.length > 0" class="md-accent-fg subheader"
+             ng-style="{'transform': (filteredContact.length > 0 && filteredChat.length > 0 ) ? 'translate3d(0px, '+(filteredChat.length +1) * 100+'%, 0px)':'translate3d(0px, 0px, 0px)', 'z-index': filteredContact.length}"
+             translate="CHAT.CONTACTS">
+            CONTACTS
+        </div>
+
+        <md-list-item class="contact md-3-line"
+                      ng-show="vm.chatSearch"
+                      ng-style="{'transform': (filteredContact.length > 0 && filteredChat.length > 0 ) ?'translate3d(0px, '+(filteredChat.length + $index +2)* 100+'%, 0px)': 'translate3d(0px, '+ ($index + 1)* 100+'%, 0px)', 'z-index': filteredContact.length - $index}"
+                      ng-repeat="contact in vm.contacts  | filter: { lastMessage:null} | filter: {name: vm.chatSearch} | orderBy: 'name' :false | filter:query as filteredContact"
+                      ng-click="vm.getChat(contact.id)">
+
+            <div class="avatar-wrapper">
+                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
+                <i class="icon icon- s16 status" ng-class="contact.status"></i>
+            </div>
+
+            <div class="md-list-item-text">
+                <h3>{{contact.name}}</h3>
+                <p class="mood">{{contact.mood}}</p>
+            </div>
+
+            <md-divider></md-divider>
+
+        </md-list-item>
+    </md-list>
+    <!-- / CONTACTS LIST-->
+
+    <!-- NO RESULTS MESSAGE -->
+    <div ng-hide="(filteredChat.length + filteredContact.length) > 0" class="no-results-message"
+         translate="CHAT.NO_RESULTS">
+        No results..
+    </div>
+    <!-- NO RESULTS MESSAGE-->
+
+</md-content>
+<!-- / CHATS CONTENT -->
+
+<!-- CONTACTS BUTTON -->
+<md-button class="md-fab contacts-button" ng-click="vm.toggleLeftSidenavView('contacts')" aria-label="contacts button">
+    <md-icon md-font-icon="icon-plus"></md-icon>
+</md-button>
+<!-- / CONTACTS BUTTON -->

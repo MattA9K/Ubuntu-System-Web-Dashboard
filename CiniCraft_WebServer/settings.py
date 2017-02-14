@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'cinicraft_home',
+    'forum',
+    'author',
 
     # NON-CINICRAFT RELATED:
     'snippets.apps.SnippetsConfig',

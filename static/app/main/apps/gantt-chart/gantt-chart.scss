@@ -1,0 +1,459 @@
+#gantt-chart {
+
+    .center {
+
+        .header {
+            padding: 24px 0 16px 0;
+
+            .logo {
+
+                .logo-icon {
+                    margin: 0 16px 0 0;
+
+                    md-icon {
+                        color: #FFFFFF;
+                    }
+                }
+
+                .logo-text {
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                }
+            }
+
+            .bottom {
+                margin-top: 8px;
+
+                .search {
+                    height: 48px;
+                    min-height: 48px;
+                    padding: 8px 8px 8px 16px;
+                    background: #FFFFFF;
+
+                    .icon {
+                        margin: 0;
+                    }
+
+                    input {
+                        padding-left: 16px;
+                        color: rgba(0, 0, 0, 0.54);
+                    }
+                }
+
+                .date-filter-box {
+                    background-color: white;
+                    height: 48px;
+                    padding-left: 16px;
+                    margin-left: 8px;
+
+                    .filter {
+
+                        md-datepicker {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-card {
+
+            .toolbar {
+                padding: 8px;
+
+                .add-task-button {
+                    margin: 0;
+                }
+
+                .zoom {
+                    margin-right: 8px;
+
+                    .label {
+                        margin-right: 8px;
+                    }
+
+                    .input-wrapper {
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        height: 28px;
+                        overflow: hidden;
+
+                        .md-button {
+                            margin: 0;
+                            padding: 0;
+                            width: 28px;
+                            height: 28px;
+                            min-height: 28px;
+                            line-height: 28px;
+                            border-radius: 0;
+
+                            md-icon {
+                                font-size: 12px;
+                                width: 28px;
+                                height: 28px;
+                                line-height: 28px;
+                            }
+
+                        }
+
+                        input {
+                            border: none;
+                            border-right: 1px solid rgba(0, 0, 0, 0.2);
+                            border-left: 1px solid rgba(0, 0, 0, 0.2);
+                            background-color: transparent;
+                            text-align: center;
+                            width: 48px;
+                            height: 28px;
+                            min-height: 28px;
+                            line-height: 28px;
+                        }
+
+                    }
+                }
+
+                .select-scale {
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    padding-left: 8px;
+                }
+
+            }
+
+            .content {
+                padding: 0;
+
+                .gantt {
+
+                    .gantt-row-background {
+                        background-color: transparent;
+                    }
+
+                    .gantt-row {
+                        border-bottom: 1px solid #E6E6E6;
+                    }
+
+                    .gantt-row-height {
+                        height: 48px !important;
+                    }
+
+                    .gantt-row-label {
+                        padding: 0;
+
+                        .gantt-valign-content {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%;
+
+                            .gantt-tree-handle-button {
+                                display: flex;
+                                height: 100%;
+                                align-items: center;
+                                padding: 0;
+                                cursor: pointer;
+
+                                &[disabled] {
+                                    cursor: inherit;
+                                }
+
+                            }
+
+                            span.gantt-label-text {
+                                display: flex;
+                                flex: 1;
+                                align-items: center;
+                                justify-content: flex-start;
+                                height: 100%;
+                                cursor: pointer;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                            }
+
+                        }
+                    }
+
+                    .gantt-foreground-col,
+                    .gantt-foreground-col-nonworkhour,
+                    .gantt-foreground-col-current-date {
+                        border-right: none;
+                    }
+
+                    .gantt-header {
+                        .gantt-header-row-first {
+                            border-top: none;
+                        }
+                    }
+
+                    .gantt-side {
+                        min-width: 200px;
+
+                        .gantt-side-header-row {
+                            height: 100%;
+                            border: none;
+                            border-bottom: 1px solid #E6E6E6;
+                        }
+                        .gantt-tree-header-row,
+                        .gantt-table-header-row {
+                            span.gantt-label-text {
+                                font-weight: normal;
+                                color: rgb(168, 168, 168);
+                                padding: 0 16px;
+                            }
+                        }
+                    }
+
+                    .gantt-scrollable-header,
+                    .gantt-side {
+                        background-color: rgb(250, 250, 250);
+                        border: none;
+                    }
+
+                    .gantt-task {
+                        padding: 0;
+                        overflow: hidden;
+                        background-color: #FFF176;
+                        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+
+                        .gantt-task-content {
+                            line-height: 38px;
+
+                            > span {
+                                margin-left: 0;
+                                margin-right: 0;
+
+                                .gantt-task-name {
+
+                                }
+
+                                .gantt-task-edit-button {
+                                    cursor: pointer;
+                                    padding: 4px;
+                                    display: inline-block;
+                                    width: 20px!important;
+                                    height: 20px!important;
+                                }
+                            }
+                        }
+
+                        .gantt-task-background {
+                            border-radius: 0;
+                            background-color: transparent !important;
+
+                            .gantt-task-progress {
+                                bottom: 0px;
+                                top: 85%;
+                                height: auto;
+                                border-radius: 0;
+                                background-color: rgba(0, 0, 0, 0.18) !important;
+                            }
+
+                        }
+                    }
+
+                    .gantt-tree-body {
+
+                        ol {
+                            .hidden {
+                                display: none;
+                            }
+                        }
+
+                        .gantt-row-label {
+
+                            padding-left: 16px;
+
+                            a.gantt-tree-handle-button {
+                                text-decoration: none;
+                                color: inherit;
+
+                                &[disabled] {
+                                    opacity: 0.3;
+                                }
+
+                                span.gantt-tree-handle {
+
+                                    &.glyphicon {
+                                        position: relative;
+                                        font-family: 'icomoon';
+                                        speak: none;
+                                        font-style: normal;
+                                        font-weight: normal;
+                                        font-variant: normal;
+                                        text-transform: none;
+                                        line-height: 1;
+                                        -webkit-font-smoothing: antialiased;
+                                        -moz-osx-font-smoothing: grayscale;
+
+                                        &.glyphicon-chevron-down {
+                                            &:before {
+                                                content: "\e715";
+                                            }
+                                        }
+
+                                        &.glyphicon-chevron-right {
+                                            &:before {
+                                                content: "\e717";
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gantt-chart-task-tooltip {
+
+    .md-content {
+        height: auto;
+        line-height: 1;
+        background: red;
+        padding: 6px;
+
+        .tooltip-name {
+            margin-bottom: 6px;
+        }
+
+        .tooltip-date {
+
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    #gantt-chart {
+
+        &.search-active {
+
+            &.date-filter-active {
+
+                .top-bg {
+                    height: 256px;
+                }
+
+                .center {
+
+                    .header {
+                        height: 192px;
+                        min-height: 192px;
+                        max-height: 192px;
+
+                        .bottom {
+
+                            .date-filter-box {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+
+            .header {
+
+                .bottom {
+
+                    .date-filter-box {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #gantt-chart {
+
+        &.search-active,
+        &.date-filter-active {
+
+            .top-bg {
+                height: 256px;
+            }
+
+            .center {
+
+                .header {
+                    height: 192px;
+                    min-height: 192px;
+                    max-height: 192px;
+
+                    .bottom {
+
+                        .date-filter-box {
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.search-active {
+
+            &.date-filter-active {
+
+                .top-bg {
+                    height: 360px;
+                }
+
+                .center {
+
+                    .header {
+                        height: 296px;
+                        min-height: 296px;
+                        max-height: 296px;
+
+                        .bottom {
+
+                            .date-filter-box {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+
+            .header {
+
+                .bottom {
+
+                    .search-boxes {
+                        min-height: 104px;
+
+                        .search {
+
+                            &:nth-child(2) {
+                                margin: 8px 0 0 0;
+                            }
+                        }
+                    }
+
+                    .date-filter-box {
+                        min-height: 96px;
+                        margin: 8px 0 0 0;
+
+                        .filter {
+                            min-height: 48px;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

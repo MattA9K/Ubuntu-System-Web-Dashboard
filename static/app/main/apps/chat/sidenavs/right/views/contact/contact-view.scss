@@ -1,0 +1,45 @@
+#chat-app {
+
+    .right-sidenav {
+
+        .contact-view {
+
+            md-toolbar {
+                min-height: 300px;
+
+                .md-toolbar-tools {
+
+                }
+
+                .md-toolbar-tools-top {
+
+                }
+
+                .md-toolbar-tools-bottom {
+                    height: inherit;
+                    max-height: none;
+
+                    .contact-avatar {
+
+                    }
+
+                    .contact-name {
+                        font-size: 24px;
+                        margin: 8px 0;
+                    }
+                }
+            }
+
+            md-content {
+
+                md-card {
+                    margin: 16px;
+
+                    .mood {
+
+                    }
+                }
+            }
+        }
+    }
+}

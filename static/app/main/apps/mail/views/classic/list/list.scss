@@ -1,0 +1,157 @@
+#mail {
+
+    .center {
+
+        .content-card {
+
+            &.classic {
+
+                .content-wrapper {
+                    background: #FAFAFA;
+
+                    .thread-list {
+                        position: relative;
+                        padding: 0;
+
+                        .no-threads {
+                            background: #FAFAFA;
+                            width: 100%;
+                            text-align: center;
+                            padding: 32px;
+                            font-size: 20px;
+                        }
+
+                        .loading-threads {
+                            background: #FAFAFA;
+                            width: 100%;
+                            text-align: center;
+                            padding: 32px;
+                            font-size: 20px;
+                        }
+
+                        .thread {
+                            background: #FAFAFA;
+                            position: relative;
+                            padding: 16px 24px;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                            cursor: pointer;
+
+                            &.unread {
+                                background: #FFFFFF;
+
+                                .info {
+
+                                    .name,
+                                    .subject {
+                                        font-weight: 700;
+                                    }
+
+                                    .message {
+
+                                        .labels {
+                                            background: #FFFFFF;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.selected {
+                                background: #FFF8E1;
+
+                                .info {
+
+                                    .message {
+
+                                        .labels {
+                                            background: #FFF8E1;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.current-thread {
+                                background: #E3F2FD;
+
+                                .info {
+
+                                    .message {
+
+                                        .labels {
+                                            background: #E3F2FD;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .info {
+                                overflow: hidden;
+                                width: 0;
+                                margin: 0 16px;
+
+                                .name {
+                                    font-size: 15px;
+                                    font-weight: 500;
+                                    padding-bottom: 8px;
+
+                                    .avatar {
+                                        min-width: 32px;
+                                        width: 32px;
+                                        height: 32px;
+                                        line-height: 32px;
+                                    }
+
+                                    .has-attachment {
+                                        margin-left: 8px;
+                                        transform: rotate(90deg);
+                                    }
+                                }
+
+                                .subject {
+
+                                }
+
+                                .message {
+                                    position: relative;
+                                    color: rgba(0, 0, 0, 0.54);
+
+                                    .labels {
+                                        position: absolute;
+                                        background: #FAFAFA;
+                                        top: 0;
+                                        right: 0;
+                                        padding-left: 6px;
+
+                                        .label {
+                                            display: inline-block;
+                                            font-size: 11px;
+                                            padding: 0 5px;
+                                            margin-right: 6px;
+
+                                            &:first-child {
+                                                margin-left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .time {
+                                margin: 0 8px 6px 8px;
+                            }
+
+                            .actions {
+
+                                .md-icon-button {
+                                    margin: 0;
+                                    padding: 0;
+                                    width: 32px;
+                                    height: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "CHAT": {
+        "CHAT_SEARCH_PLACEHOLDER": "Search or start new chat",
+        "CONTACTS_SEARCH_PLACEHOLDER": "Search contact",
+        "APP_TITLE": "Chat App",
+        "START_MESSAGE":"Select contact to start the chat!..",
+        "CONTACT_INFO":"Contact Info",
+        "CLEAR_MESSAGES":"Clear Messages",
+        "REPLY_PLACEHOLDER":"Type and hit enter to send message",
+        "SEND_MESSAGE":"Send message",
+        "STATUS_ONLINE":"Online",
+        "STATUS_AWAY":"Away",
+        "STATUS_DO_NOT_DISTURB":"Do not disturb",
+        "STATUS_OFFLINE":"Offline",
+        "PROFILE":"Profile",
+        "LOGOUT":"Logout",
+        "NO_RESULTS":"No results..",
+        "CHATS":"Chats",
+        "CONTACTS":"Contacts",
+        "ENTER_MOOD_MESSAGE":"Enter mood message",
+        "CONTACT_INFO":"Contact Info",
+        "MOOD":"Mood"
+    }
+}

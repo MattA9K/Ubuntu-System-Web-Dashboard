@@ -1,0 +1,91 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-search-bar</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-search-bar></ms-search-bar>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-search-bar</b> is an autocomplete supported search bar directive. It has various options and
+                events for you to use.
+            </p>
+
+            <span class="h2 pt-16">Options:</span>
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>debounce</td>
+                            <td>
+                                (integer) Model update debounce. Can be used to stop triggering the on-search event for
+                                every keystroke.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>on-search</td>
+                            <td>
+                                (function (query)) A callback function that will trigger on model update.
+                                Must return an Array or a Promise object that caries an Array. Has 'query' parameter to
+                                access the search query.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>on-result-click</td>
+                            <td>
+                                (function (item)) A callback function that will trigger on search result click. Has
+                                'item' parameter to access the clicked item.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>on-expand</td>
+                            <td>
+                                (function) A callback function that will trigger when search bar expanded.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>on-collapse</td>
+                            <td>
+                                (function) A callback function that will trigger when search bar collapsed.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-search-bar on-search="vm.search(query)" on-result-click="vm.searchResultClick(item)" debounce="300"></ms-search-bar>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

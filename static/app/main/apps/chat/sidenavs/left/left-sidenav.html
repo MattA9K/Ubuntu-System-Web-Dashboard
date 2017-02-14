@@ -1,0 +1,22 @@
+<!-- CONTACTS VIEW -->
+<div ng-show="vm.leftSidenavView === 'contacts'"
+     class="view contacts-view animate-slide-left"
+     ng-include="'app/main/apps/chat/sidenavs/left/views/contacts/contacts-view.html'"
+     layout="column" flex>
+</div>
+<!-- / CONTACTS VIEW -->
+
+<!-- USER VIEW -->
+<div ng-show="vm.leftSidenavView ==='user'"
+     class="view user-view animate-slide-left"
+     ng-include="'app/main/apps/chat/sidenavs/left/views/user/user-view.html'"
+     layout="column" flex>
+</div>
+<!-- USER VIEW -->
+
+<!-- MAIN - DEFAULT VIEW -->
+<div ng-hide="vm.leftSidenavView" class="view chats-view animate-slide-right"
+     ng-include="'app/main/apps/chat/sidenavs/left/views/chats/chats-view.html'"
+     layout="column" flex>
+</div>
+<!-- / MAIN - DEFAULT VIEW -->

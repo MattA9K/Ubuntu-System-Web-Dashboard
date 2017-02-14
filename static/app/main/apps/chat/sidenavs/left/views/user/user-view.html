@@ -1,0 +1,51 @@
+<!-- USER TOOLBAR -->
+<md-toolbar class="md-tall md-accent">
+
+    <!-- TOOLBAR TOP -->
+    <div class="md-toolbar-tools md-toolbar-tools-top">
+
+        <md-button class="md-icon-button" ng-click="vm.toggleLeftSidenavView(false)" aria-label="back">
+            <md-icon md-font-icon="icon-arrow-left"></md-icon>
+        </md-button>
+
+    </div>
+    <!-- / TOOLBAR TOP -->
+
+    <!-- TOOLBAR BOTTOM -->
+    <div class="md-toolbar-tools md-toolbar-tools-bottom" flex layout="column" layout-align="center center">
+
+        <div layout="column" layout-align="center center">
+
+            <img ng-src="{{vm.user.avatar}}" class="md-avatar avatar user-avatar huge" alt="{{vm.user.name}}"/>
+
+            <div class="user-name">{{vm.user.name}}</div>
+
+        </div>
+
+    </div>
+    <!-- / TOOLBAR BOTTOM -->
+
+</md-toolbar>
+<!-- / USER TOOLBAR -->
+
+<!-- USER CONTENT -->
+<md-content class="md-hue-2" flex ms-scroll ms-padding>
+
+    <!-- USER MOOD -->
+    <md-card>
+
+        <md-card-title>Mood</md-card-title>
+
+        <md-card-content>
+
+            <span class="mood" editable-textarea="vm.user.mood" e-rows="7" e-cols="40">
+                {{vm.user.mood || 'CHAT.ENTER_MOOD_MESSAGE' | translate}}
+            </span>
+
+        </md-card-content>
+
+    </md-card>
+    <!-- / USER MOOD -->
+
+</md-content>
+<!-- / USER CONTENT -->

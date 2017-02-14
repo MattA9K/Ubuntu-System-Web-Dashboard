@@ -1,0 +1,39 @@
+#notes {
+
+    > md-content {
+
+        ms-new-note {
+            display: block;
+            max-width: 600px;
+            margin: 32px auto;
+            overflow: hidden;
+            border-radius: 2px;
+            background: white;
+
+            &.form-visible {
+
+                > ms-note-form {
+                    display: block;
+                }
+
+                > .new-note-button {
+                    display: none;
+                }
+
+            }
+
+            > ms-note-form {
+                display: none;
+            }
+
+            .new-note-button {
+                display: block;
+                padding: 12px 16px;
+                font-size: 15px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.8);
+                cursor: text;
+            }
+        }
+    }
+}

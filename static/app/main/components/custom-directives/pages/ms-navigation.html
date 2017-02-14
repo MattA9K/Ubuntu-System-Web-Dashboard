@@ -1,0 +1,347 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-navigation</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <p>
+                <!-- htmlmin:ignore -->
+                <hljs language="js" class="source-code">
+                    msNavigationService.saveItem('NAVIGATION.ID', {NAVIGATION_OPTIONS});
+                </hljs>
+                <!-- htmlmin:ignore -->
+            </p>
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                Since version 1.2.0, Fuse no longer uses html based navigation. This way, you can add, update or remove
+                navigation items at anytime from anywhere. To create navigation items, you can use Angular's <b>run</b>
+                or <b>config</b> blocks as well as <b>services</b> and <b>controllers</b>.
+            </p>
+            <p>
+                <b>ms-navigation</b> directive works parallel with <b>msNavigationService</b> and there are two main
+                navigation styles: <b>Vertical</b> and <b>Horizontal</b>. The preferred style can be used by changing
+                the layout of the template.
+            </p>
+            <p>
+                To create a navigation item, you have to use either <b>msNavigationService</b> or <b>msNavigationServiceProvider</b>.
+            </p>
+            <p class="mt-24">
+                Calling <b>saveItem</b> on <em>msNavigationService</em> or <em>msNavigationServiceProvider</em> will
+                either create a menu item, or update an existing one. This way you can update any existing menu item at
+                any times by simply referring to it by using its id.
+            </p>
+
+            <span class="h2 pt-16">Navigation Id:</span>
+            <p>
+                Navigation id is a simple string that uses "dot notation" to create the hierarchy between the
+                navigation items. For example, if you want to have a "Post Blog" navigation item under "Blog" navigation
+                item, you should have "blog.post-blog" as the id of the navigation.
+            </p>
+            <p>
+                To create a navigation item, you don't have to create its parent(s). If you create a navigation item by
+                using "dashboard.project" id, the navigation item with the "dashboard" id will be automatically created
+                for you. Then you can simply update the "dashboard" navigation item to change its options.
+            </p>
+
+            <span class="h2 pt-16">Navigation Options:</span>
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>title</td>
+                            <td>
+                                (string) Title of the navigation item
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>group</td>
+                            <td>
+                                (bool) Determines if the navigation item is going to be used for grouping
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>icon</td>
+                            <td>
+                                (string) Icon class name of the navigation item
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>state</td>
+                            <td>
+                                (string) UI-Router state name for the navigation item to be linked
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>stateParams</td>
+                            <td>
+                                (object) UI-Router state parameters
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>translate</td>
+                            <td>
+                                (string) angular-translate translation object id (e.g. "NAVIGATION.MAIL")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>class</td>
+                            <td>
+                                (string) Custom class name(s) to be applied to the navigation item
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>badge</td>
+                            <td>
+                                (object) Badge to show in navigation item
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>weight</td>
+                            <td>
+                                (int) Determines the sort order of the navigation item
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>hidden</td>
+                            <td>
+                                (function) Determines the visibility of the menu item. The function must return a <b>boolean</b>
+                                value.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+            <p>
+                To create a navigation item from <b>Run</b> or <b>Config</b> blocks, you must use <b>msNavigationServiceProvider</b>:
+            </p>
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                /** @ngInject */
+                function config(msNavigationServiceProvider)
+                {
+                    // Navigation
+                    msNavigationServiceProvider.saveItem('apps', {
+                        title : 'APPS',
+                        group : true,
+                        weight: 1
+                    });
+
+                    // Apps.Dashboards
+                    msNavigationServiceProvider.saveItem('apps.dashboards', {
+                        title : 'Dashboards',
+                        icon  : 'icon-tile-four',
+                        class : 'navigation-dashboards',
+                        weight: 1
+                    });
+
+                    // Apps.Dashboards.Project
+                    msNavigationServiceProvider.saveItem('apps.dashboards.project', {
+                        title      : 'Project',
+                        state      : 'app.dashboards_project',
+                        stateParams: {'id': 1},
+                        badge      : {
+                            content: '21',
+                            color  : 'red'
+                        },
+                        translate  : 'NAVIGATION.DASHBOARDS.PROJECT',
+                        class      : 'navigation-dashboards project-dashboard',
+                        weight     : 1
+                    });
+
+                    // Apps.Dashboards.Server
+                    msNavigationServiceProvider.saveItem('apps.dashboards.server', {
+                        title      : 'Server',
+                        state      : 'app.dashboards_server',
+                        stateParams: {'id': 1},
+                        translate  : 'NAVIGATION.DASHBOARDS.SERVER',
+                        class      : 'navigation-dashboards server-dashboard',
+                        weight     : 2
+                    });
+
+                    // Apps.Dashboards.Analytics
+                    msNavigationServiceProvider.saveItem('apps.dashboards.analytics', {
+                        title      : 'Analytics',
+                        state      : 'app.dashboards_analytics',
+                        stateParams: {'id': 1},
+                        translate  : 'NAVIGATION.DASHBOARDS.ANALYTICS',
+                        class      : 'navigation-dashboards analytics-dashboard',
+                        weight     : 3
+                    });
+                }
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p class="mt-24">
+                To do the same thing in <b>services</b> and <b>controllers</b>, you must use
+                <b>msNavigationService</b>:
+            </p>
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                /** @ngInject */
+                function TestController(msNavigationService)
+                {
+                    // Navigation
+                    msNavigationService.saveItem('apps', {
+                        title : 'APPS',
+                        group : true,
+                        weight: 1
+                    });
+
+                    // Apps.Dashboards
+                    msNavigationService.saveItem('apps.dashboards', {
+                        title : 'Dashboards',
+                        icon  : 'icon-tile-four',
+                        class : 'navigation-dashboards',
+                        weight: 1
+                    });
+
+                    // Apps.Dashboards.Project
+                    msNavigationService.saveItem('apps.dashboards.project', {
+                        title      : 'Project',
+                        state      : 'app.dashboards_project',
+                        stateParams: {'id': 1},
+                        badge      : {
+                            content: '21',
+                            color  : 'red'
+                        },
+                        translate  : 'NAVIGATION.DASHBOARDS.PROJECT',
+                        class      : 'navigation-dashboards project-dashboard',
+                        weight     : 1
+                    });
+
+                    // Apps.Dashboards.Server
+                    msNavigationService.saveItem('apps.dashboards.server', {
+                        title      : 'Server',
+                        state      : 'app.dashboards_server',
+                        stateParams: {'id': 1},
+                        translate  : 'NAVIGATION.DASHBOARDS.SERVER',
+                        class      : 'navigation-dashboards server-dashboard',
+                        weight     : 2
+                    });
+
+                    // Apps.Dashboards.Analytics
+                    msNavigationService.saveItem('apps.dashboards.analytics', {
+                        title      : 'Analytics',
+                        state      : 'app.dashboards_analytics',
+                        stateParams: {'id': 1},
+                        translate  : 'NAVIGATION.DASHBOARDS.ANALYTICS',
+                        class      : 'navigation-dashboards analytics-dashboard',
+                        weight     : 3
+                    });
+                }
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p class="mt-24">
+                You can specify a hidden value within your navigation item configuration to have more control on its
+                visibility. It accepts a function and that function must return a boolean value.
+            </p>
+
+            <p>
+                ms-navigation will watch that function and whenever the AuthService.isAdmin value changes, the
+                visibility of the navigation item will be updated automatically.
+            </p>
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                /** @ngInject */
+                function TestController(msNavigationService)
+                {
+                    // Navigation
+                    msNavigationService.saveItem('apps', {
+                        title : 'APPS',
+                        group : true,
+                        weight: 1
+                    });
+
+                    // Apps.Dashboards
+                    msNavigationService.saveItem('apps.dashboards', {
+                        title : 'Dashboards',
+                        icon  : 'icon-tile-four',
+                        class : 'navigation-dashboards',
+                        hidden: function ()
+                        {
+                            return AuthService.isAdmin; // must be a boolean value
+                        },
+                        weight: 1
+                    });
+                }
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p class="mt-24">
+                If you wish to remove an item from the navigation at runtime, you can use deleteItem() method.
+                It's available in both <b>msNavigationService</b> and <b>msNavigationServiceProvider</b>:
+            </p>
+            <!-- htmlmin:ignore -->
+            <hljs language="js" class="source-code">
+                /** @ngInject */
+                function TestController(msNavigationService)
+                {
+                    // Delete the 'apps' item
+                    msNavigationService.deleteItem('apps');
+                }
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Directive:</span>
+            <p>
+                To show the navigation, you can use <b>ms-navigation</b> element:
+            </p>
+            <!-- htmlmin:ignore -->
+            <hljs lang="html" class="source-code">
+                <ms-navigation class="scrollable" folded="vm.folded" root="apps.dashboards"></ms-navigation>
+            </hljs>
+            <!-- htmlmin:ignore -->
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>folded</td>
+                            <td>
+                                (boolean) Sets the initial folded status of the navigation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>root</td>
+                            <td>
+                                (string) You can specify the root item key in here to make navigation to show only
+                                certain navigation group. This might be useful if you are showing different menu
+                                groups to different users or using Fuse as both front and backend apps.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

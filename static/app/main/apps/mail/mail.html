@@ -1,0 +1,42 @@
+<div id="mail" class="page-layout carded left-sidenav" layout="row">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- SIDENAV -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
+                ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SIDENAV -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row" layout-align="start center">
+
+            <div class="search-wrapper md-whiteframe-4dp" layout="row" layout-align="start center" flex>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
+                           aria-label="Toggle Sidenav" translate translate-attr-aria-label="MAIL.TOGGLE_SIDENAV">
+                    <md-icon class="icon" md-font-icon="icon-menu"></md-icon>
+                </md-button>
+
+                <div class="search" flex layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+                    <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact" translate
+                           translate-attr-placeholder="MAIL.SEARCH_PLACEHOLDER">
+                </div>
+            </div>
+
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" ng-class="vm.currentView" layout="column" flex ng-include="vm.views[vm.currentView]"></div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

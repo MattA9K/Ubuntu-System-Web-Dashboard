@@ -1,0 +1,500 @@
+<div id="helper-classes" class="page-layout simple tabbed doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+
+            <div class="title">Helper Classes</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <md-tabs md-dynamic-height>
+
+            <md-tab label="Padding & Margin Helpers">
+
+                <div class="md-title">Padding Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>no-padding</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="no-padding">No padding</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>padding-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="padding-5">5px padding</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>p-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="p-15">15px padding</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>padding-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="padding-8">8px padding</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>p-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="p-32">32px padding</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Direction Specific Padding Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>padding-top-(5x)</span>
+                            <span>padding-right-(5x)</span>
+                            <span>padding-bottom-(5x)</span>
+                            <span>padding-left-(5x)</span>
+                            <span>padding-horizontal-(5x)</span>
+                            <span>padding-vertical-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="padding-top-5">5px from top</span>
+                            <span class="padding-right-25">25px from right</span>
+                            <span class="padding-bottom-10">10px from bottom</span>
+                            <span class="padding-left-20">20px from left</span>
+                            <span class="padding-horizontal-5">5px from left and right</span>
+                            <span class="padding-vertical-5">5px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>pt-(5x)</span>
+                            <span>pr-(5x)</span>
+                            <span>pb-(5x)</span>
+                            <span>pl-(5x)</span>
+                            <span>ph-(5x)</span>
+                            <span>pv-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="pt-5">5px from top</span>
+                            <span class="pr-25">25px from right</span>
+                            <span class="pb-10">10px from bottom</span>
+                            <span class="pl-20">20px from left</span>
+                            <span class="ph-5">5px from left and right</span>
+                            <span class="pv-5">5px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>padding-top-(8x)</span>
+                            <span>padding-right-(8x)</span>
+                            <span>padding-bottom-(8x)</span>
+                            <span>padding-left-(8x)</span>
+                            <span>padding-horizontal-(8x)</span>
+                            <span>padding-vertical-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="padding-top-8">8px from top</span>
+                            <span class="padding-right-24">24px from right</span>
+                            <span class="padding-bottom-16">16px from bottom</span>
+                            <span class="padding-left-8">8px from left</span>
+                            <span class="padding-horizontal-8">8px from left and right</span>
+                            <span class="padding-vertical-8">8px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>pt-(8x)</span>
+                            <span>pr-(8x)</span>
+                            <span>pb-(8x)</span>
+                            <span>pl-(8x)</span>
+                            <span>ph-(8x)</span>
+                            <span>pv-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="pt-8">8px from top</span>
+                            <span class="pr-24">24px from right</span>
+                            <span class="pb-16">16px from bottom</span>
+                            <span class="pl-8">8px from left</span>
+                            <span class="ph-8">8px from left and right</span>
+                            <span class="pv-8">8px from top and bottom</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Margin Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>no-margin</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="no-margin">No margin</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>margin-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="margin-5">5px margin</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>m-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="m-15">15px margin</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>margin-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="margin-8">8px margin</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>m-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="m-32">32px margin</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Direction Specific Margin Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>margin-top-(5x)</span>
+                            <span>margin-right-(5x)</span>
+                            <span>margin-bottom-(5x)</span>
+                            <span>margin-left-(5x)</span>
+                            <span>margin-horizontal-(5x)</span>
+                            <span>margin-vertical-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="margin-top-5">5px from top</span>
+                            <span class="margin-right-25">25px from right</span>
+                            <span class="margin-bottom-10">10px from bottom</span>
+                            <span class="margin-left-20">20px from left</span>
+                            <span class="margin-horizontal-5">5px from left and right</span>
+                            <span class="margin-vertical-5">5px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:100</div>
+                            <span>mt-(5x)</span>
+                            <span>mr-(5x)</span>
+                            <span>mb-(5x)</span>
+                            <span>ml-(5x)</span>
+                            <span>mh-(5x)</span>
+                            <span>mv-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="mt-5">5px from top</span>
+                            <span class="mr-25">25px from right</span>
+                            <span class="mb-10">10px from bottom</span>
+                            <span class="ml-20">20px from left</span>
+                            <span class="mh-5">5px from left and right</span>
+                            <span class="mv-5">5px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>margin-top-(8x)</span>
+                            <span>margin-right-(8x)</span>
+                            <span>margin-bottom-(8x)</span>
+                            <span>margin-left-(8x)</span>
+                            <span>margin-horizontal-(8x)</span>
+                            <span>margin-vertical-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="margin-top-8">8px from top</span>
+                            <span class="margin-right-24">24px from right</span>
+                            <span class="margin-bottom-16">16px from bottom</span>
+                            <span class="margin-left-8">8px from left</span>
+                            <span class="margin-horizontal-8">8px from left and right</span>
+                            <span class="margin-vertical-8">8px from top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:96</div>
+                            <span>mt-(8x)</span>
+                            <span>mr-(8x)</span>
+                            <span>mb-(8x)</span>
+                            <span>ml-(8x)</span>
+                            <span>mh-(8x)</span>
+                            <span>mv-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="mt-8">8px from top</span>
+                            <span class="mr-24">24px from right</span>
+                            <span class="mb-16">16px from bottom</span>
+                            <span class="ml-8">8px from left</span>
+                            <span class="mh-8">8px from left and right</span>
+                            <span class="mv-8">8px from top and bottom</span>
+                        </hljs>
+                    </div>
+                </div>
+            </md-tab>
+
+            <md-tab label="Width & Height Helpers">
+
+                <div class="md-title">Width Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:500</div>
+                            <span>width-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="width-5">5px fixed width</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:500</div>
+                            <span>w-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="w-350">350px fixed width</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:800</div>
+                            <span>width-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="width-8">8px fixed width</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:800</div>
+                            <span>w-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="w-560">560px fixed width</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Height Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:500</div>
+                            <span>height-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="height-5">5px fixed height</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 5, Max:500</div>
+                            <span>h-(5x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="h-350">350px fixed height</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:800</div>
+                            <span>height-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="height-8">8px fixed height</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 8, Max:800</div>
+                            <span>h-(8x)</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="h-560">560px fixed height</span>
+                        </hljs>
+                    </div>
+                </div>
+            </md-tab>
+
+            <md-tab label="Border Helpers">
+
+                <div class="md-title">Border Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>border</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="border">Border on all sides</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>b</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="b">Border on all sides</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Direction Specific Border Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>border-top</span>
+                            <span>border-right</span>
+                            <span>border-bottom</span>
+                            <span>border-left</span>
+                            <span>border-horizontal</span>
+                            <span>border-vertical</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="border-top">Border top</span>
+                            <span class="border-right">Border right</span>
+                            <span class="border-bottom">Border bottom</span>
+                            <span class="border-left">Border left</span>
+                            <span class="border-horizontal">Border left and right</span>
+                            <span class="border-vertical">Border top and bottom</span>
+                        </hljs>
+                    </div>
+
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <span>bt</span>
+                            <span>br</span>
+                            <span>bb</span>
+                            <span>bl</span>
+                            <span>bh</span>
+                            <span>bv</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="bt">Border top</span>
+                            <span class="br">Border right</span>
+                            <span class="bb">Border bottom</span>
+                            <span class="bl">Border left</span>
+                            <span class="bh">Border left and right</span>
+                            <span class="bv">Border top and bottom</span>
+                        </hljs>
+                    </div>
+                </div>
+
+                <div class="md-title">Border Radius Helpers</div>
+                <div class="card md-whiteframe-4dp" layout="column">
+                    <div layout="column" layout-gt-md="row">
+                        <div class="preview" layout="column" layout-align="center" flex="50">
+                            <div class="md-caption mb-16">Multiples of 1, Max:12</div>
+                            <span>brad-*</span>
+                        </div>
+
+                        <hljs lang="html" class="source-code" layout="column" layout-align="center" flex="50">
+                            <span class="brad-2">2px border radius</span>
+                            <span class="brad-5">5px border radius</span>
+                        </hljs>
+                    </div>
+                </div>
+            </md-tab>
+
+        </md-tabs>
+
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,88 @@
+<div class="task" layout="column">
+
+    <form name="taskForm" ng-submit="vm.dialogType === 'add'?vm.addNewTask():vm.saveTask();">
+
+        <div class="form-content">
+
+            <div layout="row">
+
+                <div flex class="input-block">
+                    <md-input-container flex class="task-name">
+                        <label>Task Name</label>
+                        <input name="name" ng-model="vm.task.name" required md-autofocus>
+                    </md-input-container>
+                </div>
+
+            </div>
+
+            <div layout="column" layout-gt-sm="row" layout-align="start start">
+
+                <div class="input-block" flex layout="row" layout-align="space-between center">
+                    <label>From:</label>
+                    <md-datepicker name="fromDate" ms-datepicker-fix ng-model="vm.task.from"
+                                   md-placeholder="Select Date" ng-required>
+                    </md-datepicker>
+                </div>
+
+                <div class="input-block" flex layout="row" layout-align="space-between center">
+                    <label>To:</label>
+                    <md-datepicker name="toDate" ms-datepicker-fix ng-model="vm.task.to"
+                                   md-placeholder="Select Date" ng-required>
+                    </md-datepicker>
+                </div>
+
+            </div>
+
+            <div ng-if="vm.dialogType === 'add'" layout="row" layout-align="start start">
+                <div flex class="input-block">
+                    <md-input-container>
+                        <label>Row:</label>
+                        <md-select name="rowId" ng-model="vm.taskRowId" required>
+                            <md-option ng-repeat="row in vm.chartData" ng-value="row.id">
+                                {{row.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="start center" class="input-block">
+                <label flex="25">Progress:
+                    <small>{{vm.task.progress}}</small>
+                </label>
+                <md-slider flex ng-model="vm.task.progress" step="1" min="0"
+                           max="100" aria-label="Progress">
+                </md-slider>
+            </div>
+
+            <div layout="column" layout-gt-sm="row" layout-align="start center">
+                <div class="input-block" flex layout="row" layout-align="space-between center">
+                    <label>Task Color:</label>
+                    <ms-material-color-picker ng-model="vm.task.classes[1]">
+                    </ms-material-color-picker>
+                </div>
+                <div flex class="input-block">
+                    <md-input-container flex layout="row" layout-align="space-between center">
+                        <label>Extra Class</label>
+                        <input name="name" ng-model="vm.task.classes[0]">
+                    </md-input-container>
+                </div>
+            </div>
+
+        </div>
+
+        <md-dialog-actions>
+            <md-button ng-if="vm.dialogType === 'edit'" class="md-icon-button" ng-click="vm.removeTask()"
+                       aria-label="Remove">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+            </md-button>
+
+            <md-button class="md-accent md-raised" type="submit"
+                       ng-disabled="taskForm.$invalid || taskForm.$pristine" aria-label="Save">
+                <span ng-if="vm.dialogType === 'add'">Add</span>
+                <span ng-if="vm.dialogType === 'edit'">Save</span>
+            </md-button>
+        </md-dialog-actions>
+
+    </form>
+</div>

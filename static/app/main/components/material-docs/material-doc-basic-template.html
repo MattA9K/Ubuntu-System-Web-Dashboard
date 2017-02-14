@@ -1,0 +1,27 @@
+<div class="doc-page material-docs layout-docs doc-template page-layout simple fullwidth" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">{{vm.parentTitle}}</span>
+            </div>
+            <div class="title">{{vm.component.name}}</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div flex class="content">
+        <a class="reference-link md-yellow-200-bg"
+           href="https://material.angularjs.org/{{vm.materialVersion}}/{{vm.component.url}}"
+           target="_blank">
+            Go to official Angular Material <b>{{vm.component.name}}</b> documentation page
+        </a>
+        <div ng-include="'app/main/components/material-docs/'+vm.component.templateUrl"></div>
+    </div>
+    <!-- / CONTENT -->
+
+</div>

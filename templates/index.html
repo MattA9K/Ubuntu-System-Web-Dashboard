@@ -1,53 +1,476 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/components/angular-material.min.css">
-    <link rel="stylesheet" href="/static/app.css">
+<!doctype html>
+<html ng-app="fuse">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Fuse - Admin Theme</title>
 
-</head>
-<body>
-<ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-</ul>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel='stylesheet' href='/static/bower_components/chartist/dist/chartist.min.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-datatables/dist/css/angular-datatables.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-gantt/assets/angular-gantt.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-gantt/assets/angular-gantt-plugins.css' />
+        <link rel='stylesheet' href='/static/bower_components/nvd3/build/nv.d3.css' />
+        <link rel='stylesheet' href='/static/bower_components/fullcalendar/dist/fullcalendar.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-ui-tree/dist/angular-ui-tree.css' />
+        <link rel='stylesheet' href='/static/bower_components/angular-xeditable/dist/css/xeditable.css' />
+        <link rel='stylesheet' href='/static/bower_components/c3/c3.css' />
+        <link rel='stylesheet' href='/static/bower_components/datatables/media/css/jquery.dataTables.css' />
+        <link rel='stylesheet' href='/static/bower_components/highlightjs/styles/default.css' />
+        <link rel='stylesheet' href='/static/bower_components/moment-picker/dist/angular-moment-picker.min.css' />
+        <link rel='stylesheet' href='/static/bower_components/perfect-scrollbar/css/perfect-scrollbar.css' />
+        <link rel='stylesheet' href='/static/bower_components/textAngular/dist/textAngular.css' />
+        <link rel='stylesheet' href='/static/bower_components/wip-image-zoom/dist/wip-image-zoom.css' />
+        <!-- endbower -->
+        <!-- endbuild -->
 
-<div ng-view></div>
+        <!-- build:css({.tmp/serve,src}) styles/app.css -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/static/app/index.css">
+        <!-- endinject -->
+        <!-- endbuild -->
 
-<div>Angular seed app: v<span app-version></span></div>
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic'
+              rel='stylesheet' type='text/css'>
+    </head>
 
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
 
+    <body md-theme="{#vm.themes.active.name#}" md-theme-watch ng-controller="IndexController as vm"
+          class="{#state.current.bodyClass || ''#}">
 
-<!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
--->
-<script src="/static/components/angular.min.js"></script>
-<script src="/static/components/angular-animate.min.js"></script>
-<script src="/static/components/angular-aria.min.js"></script>
+        <!-- SPLASH SCREEN -->
+        <ms-splash-screen id="splash-screen">
+            <div class="center">
+                <div class="logo">
+                    <span>F</span>
+                </div>
+                <!-- Material Design Spinner -->
+                <div class="spinner-wrapper">
+                    <div class="spinner">
+                        <div class="inner">
+                            <div class="gap"></div>
+                            <div class="left">
+                                <div class="half-circle"></div>
+                            </div>
+                            <div class="right">
+                                <div class="half-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Material Design Spinner -->
+            </div>
+        </ms-splash-screen>
+        <!-- / SPLASH SCREEN -->
 
-<script src="/static/components/angular-material.min.js"></script>
+        <div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
 
-<script src="/static/components/angular-route.min.js"></script>
+        <ms-theme-options></ms-theme-options>
 
-<script src="/static/app.js"></script>
-<script src="/static/view1/view1.js"></script>
-<script src="/static/view2/view2.js"></script>
-<script src="/static/components/version/version.js"></script>
-<script src="/static/components/version/version-directive.js"></script>
-<script src="/static/components/version/interpolate-filter.js"></script>
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
 
+        <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/static/bower_components/angular/angular.js"></script>
+        <script src="/static/bower_components/angular-animate/angular-animate.js"></script>
+        <script src="/static/bower_components/angular-aria/angular-aria.js"></script>
+        <script src="/static/bower_components/chart.js/dist/Chart.js"></script>
+        <script src="/static/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+        <script src="/static/bower_components/chartist/dist/chartist.min.js"></script>
+        <script src="/static/bower_components/angular-chartist.js/dist/angular-chartist.js"></script>
+        <script src="/static/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="/static/bower_components/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/angular-datatables.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
+        <script src="/static/bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
+        <script src="/static/bower_components/angular-native-dragdrop/draganddrop.js"></script>
+        <script src="/static/bower_components/jsPlumb/dist/js/jsPlumb-2.0.5.js"></script>
+        <script src="/static/bower_components/moment/moment.js"></script>
+        <script src="/static/bower_components/angular-moment/angular-moment.js"></script>
+        <script src="/static/bower_components/angular-gantt/assets/angular-gantt.js"></script>
+        <script src="/static/bower_components/angular-gantt/assets/angular-gantt-plugins.js"></script>
+        <script src="/static/bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+        <script src="/static/bower_components/lodash/lodash.js"></script>
+        <script src="/static/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+        <script src="/static/bower_components/angular-messages/angular-messages.js"></script>
+        <script src="/static/bower_components/angular-material/angular-material.js"></script>
+        <script src="/static/bower_components/d3/d3.js"></script>
+        <script src="/static/bower_components/nvd3/build/nv.d3.js"></script>
+        <script src="/static/bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+        <script src="/static/bower_components/angular-resource/angular-resource.js"></script>
+        <script src="/static/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/static/bower_components/humanize-duration/humanize-duration.js"></script>
+        <script src="/static/bower_components/angular-timer/dist/angular-timer.js"></script>
+        <script src="/static/bower_components/angular-translate/angular-translate.js"></script>
+        <script src="/static/bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+        <script src="/static/bower_components/fullcalendar/dist/fullcalendar.js"></script>
+        <script src="/static/bower_components/angular-ui-calendar/src/calendar.js"></script>
+        <script src="/static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/static/bower_components/jquery-ui/jquery-ui.js"></script>
+        <script src="/static/bower_components/angular-ui-sortable/sortable.js"></script>
+        <script src="/static/bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+        <script src="/static/bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+        <script src="/static/bower_components/c3/c3.js"></script>
+        <script src="/static/bower_components/c3-angular/c3-angular.min.js"></script>
+        <script src="/static/bower_components/css-element-queries/src/ElementQueries.js"></script>
+        <script src="/static/bower_components/css-element-queries/src/ResizeSensor.js"></script>
+        <script src="/static/bower_components/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="/static/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+        <script src="/static/bower_components/highlightjs/highlight.pack.js"></script>
+        <script src="/static/bower_components/ev-emitter/ev-emitter.js"></script>
+        <script src="/static/bower_components/imagesloaded/imagesloaded.js"></script>
+        <script src="/static/bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+        <script src="/static/bower_components/mobile-detect/mobile-detect.js"></script>
+        <script src="/static/bower_components/moment-picker/dist/angular-moment-picker.min.js"></script>
+        <script src="/static/bower_components/moment-range/dist/moment-range.js"></script>
+        <script src="/static/bower_components/flow.js/dist/flow.js"></script>
+        <script src="/static/bower_components/ng-flow/dist/ng-flow.js"></script>
+        <script src="/static/bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+        <script src="/static/bower_components/Sortable/Sortable.js"></script>
+        <script src="/static/bower_components/Sortable/ng-sortable.js"></script>
+        <script src="/static/bower_components/rangy/rangy-core.js"></script>
+        <script src="/static/bower_components/rangy/rangy-classapplier.js"></script>
+        <script src="/static/bower_components/rangy/rangy-highlighter.js"></script>
+        <script src="/static/bower_components/rangy/rangy-selectionsaverestore.js"></script>
+        <script src="/static/bower_components/rangy/rangy-serializer.js"></script>
+        <script src="/static/bower_components/rangy/rangy-textrange.js"></script>
+        <script src="/static/bower_components/textAngular/dist/textAngular.js"></script>
+        <script src="/static/bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+        <script src="/static/bower_components/textAngular/dist/textAngularSetup.js"></script>
+        <script src="/static/bower_components/angular-touch/angular-touch.js"></script>
+        <script src="/static/bower_components/wip-image-zoom/dist/wip-image-zoom.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
+        <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+        <!-- inject:js -->
+        <script src="/static/app/main/apps/scrumboard/scrumboard.module.js"></script>
+        <script src="/static/app/main/apps/scrumboard/views/calendar/dialogs/event/event-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/sidenavs/settings/menus/labels/labels-menu.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/sidenavs/settings/menus/members/members-menu.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/sidenavs/settings/menus/color/color-menu.controller.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/virtualRepeat/demoVerticalUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/virtualRepeat/demoScrollTo/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/virtualRepeat/demoInfiniteScroll/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/virtualRepeat/demoHorizontalUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/virtualRepeat/demoDeferredLoading/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/whiteframe/demoDirectiveInterpolation/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/whiteframe/demoDirectiveAttributeUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/whiteframe/demoBasicClassUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/tooltip/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/toolbar/demoScrollShrink/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/toolbar/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/toast/demoCustomUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/toast/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/tabs/demoStaticTabs/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/tabs/demoDynamicTabs/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/tabs/demoDynamicHeight/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/switch/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/swipe/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/subheader/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/slider/demoVertical/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/slider/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/sidenav/demoCustomSidenav/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoSelectedText/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/sidenav/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoValidations/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoSelectHeader/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoOptionsWithAsyncSearch/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoOptionGroups/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/select/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/radioButton/demoMultiColumn/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/radioButton/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/progressLinear/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/progressCircular/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/panel/demoPanelAnimations/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/panel/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/navBar/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/menuBar/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/menu/demoMenuPositionModes/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/menu/demoMenuWidth/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/menu/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/list/demoListControls/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/list/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/input/demoIcons/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/input/demoErrorsAdvanced/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/input/demoErrors/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/input/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/icon/demoSvgIconSets/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/icon/demoUsingTemplateRequest/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/icon/demoLoadSvgIconsFromUrl/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/icon/demoFontIconsWithLigatures/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/gridList/demoDynamicTiles/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/icon/demoFontIconsWithClassnames/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/gridList/demoResponsiveUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/gridList/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/fabSpeedDial/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/fabSpeedDial/demoMoreOptions/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/divider/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/fabToolbar/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/dialog/demoOpenFromCloseTo/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/dialog/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/datepicker/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/content/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/colors/demoThemePicker/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/chips/demoStaticChips/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/colors/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/chips/demoCustomSeparatorKeys/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/chips/demoCustomInputs/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/chips/demoContactChips/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/chips/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/checkbox/demoSyncing/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/checkbox/demoSelectAll/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/checkbox/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/card/demoInCardActions/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/card/demoCardActionButtons/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/card/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/button/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/bottomSheet/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/autocomplete/demoFloatingLabel/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/autocomplete/demoInsideDialog/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/autocomplete/demoCustomTemplate/script.js"></script>
+        <script src="/static/app/main/components/material-docs/demo-partials/autocomplete/demoBasicUsage/script.js"></script>
+        <script src="/static/app/main/ui/theme-colors/theme-colors.module.js"></script>
+        <script src="/static/app/main/ui/theme-colors/dialogs/custom-theme/custom-theme-dialog.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/tabbed/tabbed.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/tabbed/tabbed.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/fullwidth/fullwidth.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/simple/fullwidth/fullwidth.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/fullwidth/fullwidth.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/carded/fullwidth/fullwidth.controller.js"></script>
+        <script src="/static/app/main/apps/todo/todo.module.js"></script>
+        <script src="/static/app/main/apps/todo/dialogs/task/task-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/views/calendar/calendar-view.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/views/boards/boards-view.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/sidenavs/settings/settings-sidenav.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/views/board/board-view.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/sidenavs/filters/filters-sidenav.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/directives/ms-sb-add-card/ms-sb-add-card.directive.js"></script>
+        <script src="/static/app/main/apps/scrumboard/dialogs/card/card-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/notes/notes.module.js"></script>
+        <script src="/static/app/main/apps/notes/directives/ms-note-item/ms-note-item.directive.js"></script>
+        <script src="/static/app/main/apps/notes/directives/ms-note-form/ms-note-form.directive.js"></script>
+        <script src="/static/app/main/apps/notes/directives/ms-new-note/ms-new-note.directive.js"></script>
+        <script src="/static/app/main/apps/mail/mail.module.js"></script>
+        <script src="/static/app/main/apps/mail/dialogs/compose/compose-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/gantt-chart/gantt-chart.module.js"></script>
+        <script src="/static/app/main/apps/gantt-chart/dialogs/add-edit/add-edit-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/e-commerce/e-commerce.module.js"></script>
+        <script src="/static/app/main/apps/e-commerce/views/product/product.controller.js"></script>
+        <script src="/static/app/main/apps/e-commerce/views/products/products.controller.js"></script>
+        <script src="/static/app/main/apps/e-commerce/views/orders/orders.controller.js"></script>
+        <script src="/static/app/main/apps/e-commerce/views/order/order.controller.js"></script>
+        <script src="/static/app/main/apps/e-commerce/views/dashboard/dashboard.controller.js"></script>
+        <script src="/static/app/main/apps/contacts/contacts.module.js"></script>
+        <script src="/static/app/main/apps/contacts/dialogs/contact/contact-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/calendar/calendar.module.js"></script>
+        <script src="/static/app/main/apps/calendar/dialogs/event-form/event-form-dialog.controller.js"></script>
+        <script src="/static/app/main/apps/calendar/dialogs/event-detail/event-detail-dialog.controller.js"></script>
+        <script src="/static/app/main/ui/page-layouts/blank/blank.module.js"></script>
+        <script src="/static/app/main/ui/page-layouts/blank/blank.controller.js"></script>
+        <script src="/static/app/main/components/tables/simple-table/simple-table.module.js"></script>
+        <script src="/static/app/main/components/tables/simple-table/simple-table.controller.js"></script>
+        <script src="/static/app/main/components/tables/datatable/datatable.module.js"></script>
+        <script src="/static/app/main/components/tables/datatable/datatable.controller.js"></script>
+        <script src="/static/app/main/components/material-docs/material-docs.module.js"></script>
+        <script src="/static/app/main/components/material-docs/layout/layout.controller.js"></script>
+        <script src="/static/app/main/components/material-docs/demo/scripts.js"></script>
+        <script src="/static/app/main/components/material-docs/demo/demoInclude.js"></script>
+        <script src="/static/app/main/components/material-docs/demo/demo.js"></script>
+        <script src="/static/app/main/components/material-docs/demo/demo-angular-scripts.js"></script>
+        <script src="/static/app/main/components/material-docs/data/theming-navigation.constant.js"></script>
+        <script src="/static/app/main/components/material-docs/data/layout-navigation.constant.js"></script>
+        <script src="/static/app/main/components/material-docs/data/elements-navigation.constant.js"></script>
+        <script src="/static/app/main/components/material-docs/data/demo-data.js"></script>
+        <script src="/static/app/main/components/material-docs/data/components-data.js"></script>
+        <script src="/static/app/main/components/charts/nvd3/nvd3.module.js"></script>
+        <script src="/static/app/main/components/charts/nvd3/nvd3.controller.js"></script>
+        <script src="/static/app/main/components/charts/chartist/chartist.module.js"></script>
+        <script src="/static/app/main/components/charts/chartist/chartist.controller.js"></script>
+        <script src="/static/app/main/components/charts/chart-js/chart-js.module.js"></script>
+        <script src="/static/app/main/components/charts/chart-js/chart-js.controller.js"></script>
+        <script src="/static/app/main/components/charts/c3/c3.module.js"></script>
+        <script src="/static/app/main/components/charts/c3/c3.controller.js"></script>
+        <script src="/static/app/main/pages/errors/500/error-500.module.js"></script>
+        <script src="/static/app/main/pages/errors/500/error-500.controller.js"></script>
+        <script src="/static/app/main/pages/errors/404/error-404.module.js"></script>
+        <script src="/static/app/main/pages/errors/404/error-404.controller.js"></script>
+        <script src="/static/app/main/pages/auth/reset-password/reset-password.module.js"></script>
+        <script src="/static/app/main/pages/auth/reset-password/reset-password.controller.js"></script>
+        <script src="/static/app/main/pages/auth/register-v2/register-v2.module.js"></script>
+        <script src="/static/app/main/pages/auth/register-v2/register-v2.controller.js"></script>
+        <script src="/static/app/main/pages/auth/register/register.module.js"></script>
+        <script src="/static/app/main/pages/auth/register/register.controller.js"></script>
+        <script src="/static/app/main/pages/auth/login-v2/login-v2.module.js"></script>
+        <script src="/static/app/main/pages/auth/login-v2/login-v2.controller.js"></script>
+        <script src="/static/app/main/pages/auth/login/login.module.js"></script>
+        <script src="/static/app/main/pages/auth/login/login.controller.js"></script>
+        <script src="/static/app/main/pages/auth/lock/lock.module.js"></script>
+        <script src="/static/app/main/pages/auth/lock/lock.controller.js"></script>
+        <script src="/static/app/main/pages/auth/forgot-password/forgot-password.module.js"></script>
+        <script src="/static/app/main/pages/auth/forgot-password/forgot-password.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/services/filters.service.js"></script>
+        <script src="/static/app/main/apps/scrumboard/services/dialog.service.js"></script>
+        <script src="/static/app/main/apps/scrumboard/services/board.service.js"></script>
+        <script src="/static/app/main/apps/notes/services/notes.service.js"></script>
+        <script src="/static/app/main/apps/notes/services/labels.service.js"></script>
+        <script src="/static/app/main/apps/e-commerce/services/e-commerce.service.js"></script>
+        <script src="/static/app/main/apps/dashboards/server/dashboard-server.module.js"></script>
+        <script src="/static/app/main/apps/dashboards/server/dashboard-server.controller.js"></script>
+        <script src="/static/app/main/apps/dashboards/project/dashboard-project.module.js"></script>
+        <script src="/static/app/main/apps/dashboards/project/dashboard-project.controller.js"></script>
+        <script src="/static/app/main/apps/dashboards/analytics/dashboard-analytics.module.js"></script>
+        <script src="/static/app/main/apps/dashboards/analytics/dashboard-analytics.controller.js"></script>
+        <script src="/static/app/main/apps/chat/chat.module.js"></script>
+        <script src="/static/app/main/apps/chat/services/chats.service.js"></script>
+        <script src="/static/app/quick-panel/quick-panel.module.js"></script>
+        <script src="/static/app/quick-panel/tabs/chat/chat-tab.controller.js"></script>
+        <script src="/static/app/main/ui/typography/typography.module.js"></script>
+        <script src="/static/app/main/ui/typography/typography.controller.js"></script>
+        <script src="/static/app/main/ui/theme-colors/theme-colors.controller.js"></script>
+        <script src="/static/app/main/ui/material-colors/material-colors.js"></script>
+        <script src="/static/app/main/ui/material-colors/material-colors.controller.js"></script>
+        <script src="/static/app/main/ui/icons/icons.module.js"></script>
+        <script src="/static/app/main/ui/icons/icons.controller.js"></script>
+        <script src="/static/app/main/ui/helper-classes/helper-classes.module.js"></script>
+        <script src="/static/app/main/ui/helper-classes/helper-classes.controller.js"></script>
+        <script src="/static/app/main/ui/forms/forms.module.js"></script>
+        <script src="/static/app/main/ui/forms/forms.controller.js"></script>
+        <script src="/static/app/main/components/widgets/widgets.module.js"></script>
+        <script src="/static/app/main/components/widgets/widgets.controller.js"></script>
+        <script src="/static/app/main/components/price-tables/price-tables.module.js"></script>
+        <script src="/static/app/main/components/price-tables/price-tables.controller.js"></script>
+        <script src="/static/app/main/components/material-docs/material-doc-template.controller.js"></script>
+        <script src="/static/app/main/components/material-docs/material-doc-basic-template.controller.js"></script>
+        <script src="/static/app/main/components/maps/maps.module.js"></script>
+        <script src="/static/app/main/components/maps/maps.controller.js"></script>
+        <script src="/static/app/main/components/custom-directives/custom-directives.module.js"></script>
+        <script src="/static/app/main/components/custom-directives/custom-directives.controller.js"></script>
+        <script src="/static/app/main/components/cards/cards.module.js"></script>
+        <script src="/static/app/main/components/cards/cards.controller.js"></script>
+        <script src="/static/app/main/pages/timeline/timeline.module.js"></script>
+        <script src="/static/app/main/pages/timeline/timeline.controller.js"></script>
+        <script src="/static/app/main/pages/search/search.module.js"></script>
+        <script src="/static/app/main/pages/search/search.controller.js"></script>
+        <script src="/static/app/main/pages/profile/profile.module.js"></script>
+        <script src="/static/app/main/pages/profile/profile.controller.js"></script>
+        <script src="/static/app/main/pages/maintenance/maintenance.module.js"></script>
+        <script src="/static/app/main/pages/maintenance/maintenance.controller.js"></script>
+        <script src="/static/app/main/pages/invoice/invoice.module.js"></script>
+        <script src="/static/app/main/pages/invoice/invoice.controller.js"></script>
+        <script src="/static/app/main/pages/coming-soon/coming-soon.module.js"></script>
+        <script src="/static/app/main/pages/coming-soon/coming-soon.controller.js"></script>
+        <script src="/static/app/main/apps/todo/todo.controller.js"></script>
+        <script src="/static/app/main/apps/scrumboard/scrumboard.controller.js"></script>
+        <script src="/static/app/main/apps/notes/notes.controller.js"></script>
+        <script src="/static/app/main/apps/mail/mail.controller.js"></script>
+        <script src="/static/app/main/apps/gantt-chart/gantt-chart.controller.js"></script>
+        <script src="/static/app/main/apps/file-manager/file-manager.module.js"></script>
+        <script src="/static/app/main/apps/file-manager/file-manager.controller.js"></script>
+        <script src="/static/app/main/apps/contacts/contacts.controller.js"></script>
+        <script src="/static/app/main/apps/chat/chat.controller.js"></script>
+        <script src="/static/app/main/apps/calendar/calendar.controller.js"></script>
+        <script src="/static/app/core/core.module.js"></script>
+        <script src="/static/app/core/directives/ms-widget/ms-widget.directive.js"></script>
+        <script src="/static/app/core/directives/ms-timeline/ms-timeline.js"></script>
+        <script src="/static/app/core/directives/ms-stepper/ms-stepper.directive.js"></script>
+        <script src="/static/app/core/directives/ms-splash-screen/ms-splash-screen.directive.js"></script>
+        <script src="/static/app/core/directives/ms-sidenav-helper/ms-sidenav-helper.directive.js"></script>
+        <script src="/static/app/core/directives/ms-shortcuts/ms-shortcuts.directive.js"></script>
+        <script src="/static/app/core/directives/ms-scroll/ms-scroll.directive.js"></script>
+        <script src="/static/app/core/directives/ms-search-bar/ms-search-bar.directive.js"></script>
+        <script src="/static/app/core/directives/ms-responsive-table/ms-responsive-table.directive.js"></script>
+        <script src="/static/app/core/directives/ms-random-class/ms-random-class.directive.js"></script>
+        <script src="/static/app/core/directives/ms-navigation/ms-navigation.directive.js"></script>
+        <script src="/static/app/core/directives/ms-nav/ms-nav.directive.js"></script>
+        <script src="/static/app/core/directives/ms-material-color-picker/ms-material-color-picker.directive.js"></script>
+        <script src="/static/app/core/directives/ms-masonry/ms-masonry.directive.js"></script>
+        <script src="/static/app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script>
+        <script src="/static/app/core/directives/ms-card/ms-card.directive.js"></script>
+        <script src="/static/app/core/directives/ms-datepicker-fix/ms-datepicker-fix.directive.js"></script>
+        <script src="/static/app/core/directives/ms-form-wizard/ms-form-wizard.directive.js"></script>
+        <script src="/static/app/core/theming/fuse-theming.service.js"></script>
+        <script src="/static/app/core/theming/fuse-theming.config.js"></script>
+        <script src="/static/app/core/theming/fuse-themes.constant.js"></script>
+        <script src="/static/app/core/theming/fuse-palettes.constant.js"></script>
+        <script src="/static/app/core/theming/fuse-generator.service.js"></script>
+        <script src="/static/app/core/theme-options/theme-options.directive.js"></script>
+        <script src="/static/app/core/services/ms-utils.service.js"></script>
+        <script src="/static/app/core/services/ms-api.provider.js"></script>
+        <script src="/static/app/core/services/api-resolver.service.js"></script>
+        <script src="/static/app/core/filters/tag.filter.js"></script>
+        <script src="/static/app/core/filters/filterByPropIds.filter.js"></script>
+        <script src="/static/app/core/filters/filterByIds.filter.js"></script>
+        <script src="/static/app/core/filters/basic.filter.js"></script>
+        <script src="/static/app/core/filters/altDate.filter.js"></script>
+        <script src="/static/app/core/directives/highlight.directive.js"></script>
+        <script src="/static/app/core/config/fuse-config.provider.js"></script>
+        <script src="/static/app/toolbar/toolbar.module.js"></script>
+        <script src="/static/app/toolbar/toolbar.controller.js"></script>
+        <script src="/static/app/navigation/navigation.module.js"></script>
+        <script src="/static/app/navigation/navigation.controller.js"></script>
+        <script src="/static/app/quick-panel/quick-panel.controller.js"></script>
+        <script src="/static/app/index.module.js"></script>
+        <script src="/static/app/main/main.controller.js"></script>
+        <script src="/static/app/core/core.run.js"></script>
+        <script src="/static/app/core/core.config.js"></script>
+        <script src="/static/app/index.run.js"></script>
+        <script src="/static/app/index.route.js"></script>
+        <script src="/static/app/index.controller.js"></script>
+        <script src="/static/app/index.constants.js"></script>
+        <script src="/static/app/index.config.js"></script>
+        <script src="/static/app/index.api.js"></script>
+        <script src="/static/app/main/apps/dashboards/dashboards.module.js"></script>
+        <script src="/static/app/main/ui/ui.module.js"></script>
+        <script src="/static/app/main/components/components.module.js"></script>
+        <script src="/static/app/main/pages/pages.module.js"></script>
+        <!-- endinject -->
 
-</body>
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+    </body>
 </html>

@@ -1,0 +1,111 @@
+<div class="container">
+    <h1 class="page-title">
+        wip-image-zoom
+    </h1>
+    <div class="demo-preview">
+        <img src="assets/images/1-medium.jpg" wip-image-zoom="vm.zoomOptions1" selected-model="vm.selected"
+             selected-index="vm.selectedIndex">
+    </div>
+    <section>
+        <div class="demo-settings">
+            <button ng-repeat="image in vm.zoomOptions1.images"
+                    ng-click="vm.selected = image">
+                Image {{$index +1 }}
+            </button>
+            <div class="setting">
+                <label>Style:</label>
+                <select ng-model="vm.zoomOptions1.style">
+                    <option value="box">Box</option>
+                    <option value="inner">Inner</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label>Box Style Position:</label>
+                <select ng-model="vm.zoomOptions1.boxPos">
+                    <option value="right-top">Right Top</option>
+                    <option value="right-middle">Right Middle</option>
+                    <option value="right-bottom">Right Bottom</option>
+                    <option value="left-top">Left Top</option>
+                    <option value="left-middle">Left Middle</option>
+                    <option value="left-bottom">Left Bottom</option>
+                    <option value="bottom-left">Bottom Left</option>
+                    <option value="bottom-center">Bottom Center</option>
+                    <option value="bottom-right">Bottom Right</option>
+                    <option value="top-left">Top Left</option>
+                    <option value="top-center">Top Center</option>
+                    <option value="top-right">Top Right</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label>Box Width:</label>
+                <input ng-model="vm.zoomOptions1.boxW" type="number" step="1" min="0"/>
+            </div>
+            <div class="setting">
+                <label>Box Height:</label>
+                <input ng-model="vm.zoomOptions1.boxH" type="number" step="1" min="0"/>
+            </div>
+            <div class="setting">
+                <label>Method:</label>
+                <select ng-model="vm.zoomOptions1.method">
+                    <option value="lens">Lens</option>
+                    <option value="pointer">Pointer</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label>Cursor:</label>
+                <select ng-model="vm.zoomOptions1.cursor">
+                    <option value="default">Default</option>
+                    <option value="pointer">Pointer</option>
+                    <option value="crosshair">Crosshair</option>
+                    <option value="move">Move</option>
+                    <option value="zoom-in">Zoom in</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label>Show Lens:</label>
+                <input ng-model="vm.zoomOptions1.lens" type="checkbox"/>
+            </div>
+            <div class="setting">
+                <label>Zoom Level:</label>
+                <input ng-model="vm.zoomOptions1.zoomLevel" type="number" step=".5" min="0"/>
+            </div>
+            <div class="setting">
+                <label>Immersive Mode:</label>
+                <input ng-model="vm.zoomOptions1.immersiveMode" type="number" step="1" min="0"/>
+                <div class="detail">false or 0 for disable, max width(px) for trigger</div>
+            </div>
+            <div class="setting">
+                <label>Thumbs Position:</label>
+                <select ng-model="vm.zoomOptions1.thumbsPos">
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label>Previous Thumb Button:</label>
+                <input ng-model="vm.zoomOptions1.prevThumbButton" type="text"/>
+            </div>
+            <div class="setting">
+                <label>Next Thumb Button:</label>
+                <input ng-model="vm.zoomOptions1.nextThumbButton" type="text"/>
+            </div>
+            <div class="setting">
+                <label>Thumb Column Count:</label>
+                <input ng-model="vm.zoomOptions1.thumbCol" type="number" step="1" min="1"/>
+            </div>
+            <div class="setting">
+                <label>Thumb Column Padding (px):</label>
+                <input ng-model="vm.zoomOptions1.thumbColPadding" type="number" step="1" min="0"/>
+            </div>
+        </div>
+        <div class="demo-json">
+            <h4>Options</h4>
+            <pre>{{vm.zoomOptions1 | json}}</pre>
+            <h4>Selected Model</h4>
+            <pre>{{vm.selected | json}}</pre>
+            <h4>SelectedIndex</h4>
+            <pre>{{vm.selectedIndex}}</pre>
+        </div>
+    </section>
+</div>

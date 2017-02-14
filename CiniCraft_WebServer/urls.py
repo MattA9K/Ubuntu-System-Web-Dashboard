@@ -10,7 +10,7 @@ from rest_framework import routers
 
 # Django REST URLs:
 router = routers.DefaultRouter()
-# router.register(r'users', views.UserViewSet)
+#router.register(r'snippets', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 
@@ -27,7 +27,7 @@ urlpatterns = [
     # Snippets:
     url(r'^snippets/', include('snippets.urls')),
 
-    url(r'^users/$', views.UserList.as_view()),
+    url(r'^users/$', views.UserList.as_view(), name='users'),
     url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 ]
 

@@ -1,0 +1,25 @@
+<div class="ms-sb-add-card-button" layout="row" layout-align="start center" ng-hide="formActive">
+    <div>
+        <i class="icon-plus s20"></i>
+    </div>
+    <span translate="SB.ADD_A_CARD">Add a card</span>
+</div>
+
+<div class="ms-sb-add-card-form-wrapper" ng-hide="!formActive">
+    <form ng-submit="vm.addNewCard()" class="ms-sb-add-card-form" layout="column">
+        <md-input-container flex md-no-float>
+            <input placeholder="Card title" type="text" autocomplete="off" ng-model="vm.newCardName"
+                   translate-attr-placeholder="SB.CARD_TITLE">
+        </md-input-container>
+
+        <div layout="row" layout-align="space-between center">
+            <md-button type="submit" class="add-button md-accent md-raised" aria-label="add"
+                       translate-attr-aria-label="SB.ADD">
+                <span translate="SB.ADD">Add</span></md-button>
+            <md-button ng-click="toggleForm()" class="cancel-button md-icon-button" aria-label="cancel"
+                       translate-attr-aria-label="SB.CANCEL">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </form>
+</div>

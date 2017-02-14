@@ -1,0 +1,139 @@
+<!-- NOTES APP -->
+<div id="notes" class="" layout="column">
+
+    <!-- MAIN SIDENAV -->
+    <md-sidenav class="sidenav main-sidenav md-white-bg" ms-scroll
+                md-component-id="main-sidenav"
+                ms-sidenav-helper ng-include="'app/main/apps/notes/sidenavs/main/main-sidenav.html'">
+    </md-sidenav>
+    <!-- / MAIN SIDENAV -->
+
+    <!-- TOOLBAR -->
+    <md-toolbar class="md-accent">
+
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+
+            <div layout="row">
+
+                <!-- MAIN SIDENAV BUTTON -->
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
+                           aria-label="Toggle sidenav" translate translate-attr-aria-label="NOTES.TOGGLE_SIDENAV">
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                </md-button>
+                <!-- / MAIN SIDENAV BUTTON -->
+
+                <!-- MAIN TITLE -->
+                <div class="main-title" layout="row" layout-align="start center">
+
+                    <md-icon class="logo-icon mr-8" md-font-icon="icon-lightbulb"></md-icon>
+
+                    <span class="title" ng-if="vm.noteListType === 'notes'"
+                          translate="NOTES.NOTES">Notes</span>
+                    <span class="title" ng-if="vm.noteListType === 'reminders'"
+                          translate="NOTES.REMINDERS">Reminders</span>
+                    <span class="title" ng-if="vm.noteListType === 'archive'"
+                          translate="NOTES.ARCHIVE">Archive</span>
+                    <span class="title" ng-if="vm.noteListType.name">{{vm.noteListType.name}}</span>
+
+                    <span ng-if="filteredNotes.length" class="pl-8 white-text secondary-text notes-count">
+                        ({{filteredNotes.length}})
+                    </span>
+
+                </div>
+                <!-- / MAIN TITLE-->
+
+            </div>
+
+            <div flex></div>
+
+            <!-- SEARCH BUTTON -->
+            <md-button class="md-icon-button sidenav-toggle" ng-click="vm.openSearchToolbar()"
+                       aria-label="open search toolbar" translate translate-attr-aria-label="NOTES.OPEN_SEARCH_TOOLBAR">
+                <md-icon md-font-icon="icon-magnify" class="icon"></md-icon>
+            </md-button>
+            <!-- / SEARCH BUTTON -->
+
+        </div>
+
+        <!-- SEARCH TOOLBAR -->
+        <div ng-show="vm.searchToolbar" class="md-toolbar-tools search-toolbar animate-slide-down md-accent-bg"
+             layout="row" layout-align="start center">
+
+            <!-- TOLLBAR CLOSE BUTTON -->
+            <md-button class="md-icon-button" ng-click="vm.closeSearchToolbar()" translate
+                       translate-attr-aria-label="NOTES.CLOSE" aria-label="close">
+                <md-icon md-font-icon="icon-close" class="mr-8"></md-icon>
+            </md-button>
+            <!-- / TOLLBAR CLOSE BUTTON -->
+
+            <!-- SEARCH -->
+            <input id="search-notes-input" placeholder="Search notes" type="text" ng-model="vm.search" translate
+                   translate-attr-placeholder="NOTES.SEARCH_NOTES" ng-model-options="{'debounce': 200}" flex>
+            <!-- / SEARCH -->
+
+        </div>
+        <!-- / SEARCH TOOLBAR -->
+
+    </md-toolbar>
+    <!-- / TOOLBAR -->
+
+    <md-content ms-scroll flex>
+
+        <!-- NEW NOTE -->
+        <ms-new-note ng-hide="vm.noteListType === 'archive'" class="md-whiteframe-2dp"></ms-new-note>
+        <!-- / NEW NOTE -->
+
+        <!-- NOTES -->
+        <ms-masonry class="notes" options='{"columnCount":5}'>
+
+            <!-- NOTE -->
+            <!-- Add "no-font-resize" attr for disable font resizing -->
+            <ms-masonry-item class="note"
+                             ng-repeat="note in vm.notes | filter:vm.search | filter:vm.filters | filterByPropIds:'labels':vm.labelFilterIds |  orderBy: 'time':true | filter:query as filteredNotes track by note.id "
+                             ms-note-item="note"
+                             ng-click="vm.editNote($event, note.id)">
+            </ms-masonry-item>
+            <!-- / NOTE -->
+
+        </ms-masonry>
+        <!-- NOTES -->
+
+        <!-- NO RESULTS -->
+        <div class="no-results text-center" ng-if="filteredNotes.length === 0 &&  vm.search === ''">
+
+            <div class="message" ng-if="vm.noteListType === 'notes'">
+                <md-icon class="message-icon s96" md-font-icon="icon-lightbulb"></md-icon>
+                <div class="message-text" translate="NOTES.NO_NOTES_YET">No notes yet...</div>
+            </div>
+
+            <div class="message" ng-if="vm.noteListType === 'reminders'">
+                <md-icon class="message-icon s96" md-font-icon="icon-bell"></md-icon>
+                <div class="message-text" translate="NOTES.NO_NOTES_WITH_REMINDERS">No notes with reminders</div>
+            </div>
+
+            <div class="message" ng-if="vm.noteListType === 'archive'">
+                <md-icon class="message-icon s96" md-font-icon="icon-archive"></md-icon>
+                <div class="message-text" translate="NOTES.NO_ARCHIVED_NOTES">No archived Notes</div>
+            </div>
+
+            <div class="message" ng-if="vm.noteListType.name">
+                <md-icon class="message-icon s96" md-font-icon="icon-label"></md-icon>
+                <div class="message-text" translate="NOTES.NO_NOTES_WITH_THIS_LABEL">No notes with this label</div>
+            </div>
+
+        </div>
+
+        <div class="no-results text-center" ng-if="filteredNotes.length === 0 &&  vm.search !== ''">
+
+            <div class="message">
+                <md-icon class="message-icon s96" md-font-icon="icon-lightbulb"></md-icon>
+                <div class="message-text" translate="NOTES.NO_RESULTS">No results...</div>
+            </div>
+
+        </div>
+        <!-- / NO RESULTS -->
+
+    </md-content>
+
+</div>
+<!-- / NOTES APP -->

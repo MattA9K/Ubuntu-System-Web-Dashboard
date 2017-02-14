@@ -1,0 +1,25 @@
+<md-dialog class="gantt-chart-add-edit-dialog" aria-label="Edit Dialog" ng-cloak>
+
+    <!-- DIALOG TOOLBAR -->
+    <md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
+        <div class="md-toolbar-tools">
+            <h2 class="title">Edit</h2>
+            <span flex></span>
+
+            <!-- CLOSE DIALOG BUTTON -->
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="close dialog">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+            <!-- / CLOSE DIALOG BUTTON -->
+        </div>
+    </md-toolbar>
+    <!-- / DIALOG TOOLBAR -->
+
+    <!-- DIALOG CONTENT -->
+    <md-dialog-content ms-scroll ng-if="vm.formView === 'row'"
+                       ng-include="'app/main/apps/gantt-chart/dialogs/add-edit/views/row-form-view.html'"></md-dialog-content>
+    <md-dialog-content ms-scroll ng-if="vm.formView === 'task'"
+                       ng-include="'app/main/apps/gantt-chart/dialogs/add-edit/views/task-form-view.html'"></md-dialog-content>
+    <!-- / DIALOG CONTENT -->
+
+</md-dialog>

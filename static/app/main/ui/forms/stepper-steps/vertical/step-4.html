@@ -1,0 +1,12 @@
+<div class="md-inline-form">
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100">
+            <label>Address</label>
+            <textarea ng-model="vm.verticalStepper.step4.address" md-maxlength="150" max-rows="5"></textarea>
+            <div ng-messages="verticalStep4.address.$error"
+                 ng-show="verticalStep4.address.$touched"
+                 role="alert">
+            </div>
+        </md-input-container>
+    </div>
+</div>

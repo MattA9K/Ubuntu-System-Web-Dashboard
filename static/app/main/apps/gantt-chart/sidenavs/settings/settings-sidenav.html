@@ -1,0 +1,152 @@
+<!-- SIDENAV TOOLBAR -->
+<md-toolbar class="toolbar md-accent">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-font-icon="icon-cog"></md-icon>
+        </md-button>
+        <h2>
+            <span>
+                Settings
+            </span>
+        </h2>
+    </div>
+</md-toolbar>
+<!-- / SIDENAV TOOLBAR -->
+
+<!-- SIDENAV CONTENT -->
+<md-content class="content" layout-padding>
+    <md-list>
+
+        <md-subheader class="md-no-sticky">
+            <span translate="GANTT.EDIT">
+                Edit
+            </span>
+        </md-subheader>
+        <md-list-item>
+            <md-icon md-font-icon="icon-pencil"></md-icon>
+            <p translate="GANTT.DRAW">Draw</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.draw"></md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <md-icon md-font-icon="icon-lock"></md-icon>
+            <p translate="GANTT.READ_ONLY">Read only</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.readOnly"></md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky">
+            <span translate="GANTT.SNAP">
+                Snap
+            </span>
+        </md-subheader>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-magnet"></md-icon>
+            <p translate="GANTT.SNAP_AREA">Snap area</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.columnMagnet" placeholder="Snap area">
+                <md-option value="column" translate="GANTT.COLUMN">Column</md-option>
+                <md-option value="1 second" translate="GANTT.1_SECOND">1 second</md-option>
+                <md-option value="1 minute" translate="GANTT.1_MINUTE">1 minute</md-option>
+                <md-option value="5 minutes" translate="GANTT.5_MINUTES">5 minutes</md-option>
+                <md-option value="15 minutes" translate="GANTT.15_MINUTES">15 minutes</md-option>
+                <md-option value="1 hour" translate="GANTT.1_HOUR">1 hour</md-option>
+                <md-option value="1 day" translate="GANTT.1_DAY">1 day</md-option>
+                <md-option value="5 days" translate="GANTT.5_DAYS">5 days</md-option>
+            </md-select>
+        </md-list-item>
+        <md-list-item>
+            <md-icon md-font-icon="icon-view-day"></md-icon>
+            <p translate="GANTT.DAILY">Daily</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.daily"></md-checkbox>
+        </md-list-item>
+        <md-list-item>
+            <md-icon md-font-icon="icon-lock"></md-icon>
+            <p translate="GANTT.TIME_FRAMES">Time frames</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.timeFramesMagnet"></md-checkbox>
+        </md-list-item>
+        <md-divider></md-divider>
+
+
+        <md-subheader class="md-no-sticky">
+            <span translate="GANTT.SIDEBAR">
+                Sidebar
+            </span>
+        </md-subheader>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-eye"></md-icon>
+            <p translate="GANTT.SHOW_SIDEBAR">Show Sidebar</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.labelsEnabled"></md-checkbox>
+        </md-list-item>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-code-tags"></md-icon>
+            <p translate="GANTT.RESIZABLE">Resizable</p>
+            <md-checkbox class="md-secondary" ng-model="vm.options.allowSideResizing"></md-checkbox>
+        </md-list-item>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-view-headline"></md-icon>
+            <p translate="GANTT.LIST_MODE">List Mode</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.sideMode" placeholder="List">
+                <md-option value="Tree" translate="GANTT.TREE">Tree</md-option>
+                <md-option value="Table" translate="GANTT.TABLE">Table</md-option>
+                <md-option value="TreeTable" translate="GANTT.TREE_TABLE">TreeTable</md-option>
+                <md-option value="Disabled" translate="GANTT.DISABLED">Disabled</md-option>
+            </md-select>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky">
+            <span translate="GANTT.TIMELINE">
+                Timeline
+            </span>
+        </md-subheader>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-view-headline"></md-icon>
+            <p translate="GANTT.GROUPS">Groups</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.groupDisplayMode" placeholder="Groups">
+                <md-option value="group" translate="GANTT.GROUP">Group</md-option>
+                <md-option value="overview" translate="GANTT.OVERVIEW">Overview</md-option>
+                <md-option value="promote" translate="GANTT.PROMOTE">Promote</md-option>
+                <md-option value="Disabled" translate="GANTT.DISABLED">Disabled</md-option>
+            </md-select>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-calendar-today"></md-icon>
+            <p translate="GANTT.TODAY">Today</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.currentDate" placeholder="Today">
+                <md-option value="none" translate="GANTT.NONE">None</md-option>
+                <md-option value="line" translate="GANTT.LINE">Line</md-option>
+                <md-option value="column" translate="GANTT.COLUMN">Column</md-option>
+            </md-select>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <md-list-item>
+            <md-icon md-font-icon="icon-arrow-expand"></md-icon>
+            <p translate="GANTT.EXPAND">Expand</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.autoExpand" placeholder="Today">
+                <md-option value="none" translate="GANTT.NONE">None</md-option>
+                <md-option value="both" translate="GANTT.BOTH">Both</md-option>
+                <md-option value="left" translate="GANTT.LEFT">Left</md-option>
+                <md-option value="right" translate="GANTT.RIGHT">Right</md-option>
+            </md-select>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+            <md-icon md-font-icon="icon-content-cut"></md-icon>
+            <p translate="GANTT.OUT_OF_RANGE">Out of range</p>
+            <md-select class="simplified md-secondary" ng-model="vm.options.taskOutOfRange" placeholder="Out of range">
+                <md-option value="expand" translate="GANTT.EXPAND">EXPAND</md-option>
+                <md-option value="truncate" translate="GANTT.TRUNCATE">Truncate</md-option>
+            </md-select>
+        </md-list-item>
+        <md-divider></md-divider>
+    </md-list>
+    </div>
+</md-content>
+<!-- / SIDENAV CONTENT -->

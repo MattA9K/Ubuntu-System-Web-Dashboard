@@ -1,0 +1,26 @@
+{
+    "NOTES": {
+        "NOTES": "Notes",
+        "SEARCH_NOTES": "Search notes",
+        "TOGGLE_SIDENAV": "Toggle sidenav",
+        "OPEN_SEARCH_TOOLBAR": "open search toolbar",
+        "CLOSE": "Close",
+        "NOTES": "Notes",
+        "ARCHIVE": "Archive",
+        "REMINDERS": "Reminders",
+        "LABELS": "Labels",
+        "NEW_LABEL": "New Label",
+        "TAKE_A_NOTE": "Take a note..",
+        "SEARCH_LABELS": "Search labels...",
+        "SAVE": "Save",
+        "ADD": "Add",
+        "ADD_IMAGE": "Add image",
+        "TOGGLE_LABEL": "Toggle Label",
+        "DELETE_IMAGE": "Delete Image",
+        "NO_NOTES_YET":"No notes yet...",
+        "NO_NOTES_WITH_REMINDERS":"No notes with reminders",
+        "NO_ARCHIVED_NOTES":"No archived notes",
+        "NO_NOTES_WITH_THIS_LABEL":"No notes with this label",
+        "NO_RESULTS":"No results..."
+    }
+}

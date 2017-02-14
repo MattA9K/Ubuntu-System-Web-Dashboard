@@ -1,0 +1,64 @@
+md-dialog {
+
+    &.gantt-chart-add-edit-dialog {
+        width: 480px;
+        max-width: 480px;
+        overflow: hidden;
+
+        md-dialog-content {
+            position: relative;
+            padding: 0;
+
+            .form-content {
+                padding: 16px 8px 8px 8px;
+                font-size: 13px;
+
+                .input-block {
+                    padding: 12px;
+                    md-input-container {
+                        margin: 0;
+                        width: 100%;
+                    }
+                    md-switch {
+                        margin: 0;
+                    }
+                }
+            }
+
+            md-dialog-actions {
+                border-top: 1px solid rgba(0, 0, 0, .12);
+                background-color: rgba(0, 0, 0, .03);
+            }
+
+            md-tabs {
+                md-tabs-wrapper {
+                    box-shadow: $whiteframe-shadow-2dp;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    md-dialog {
+
+        &.gantt-chart-add-edit-dialog {
+            width: 80%;
+            md-dialog-content .form-content .input-block {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    md-dialog {
+
+        &.gantt-chart-add-edit-dialog {
+            width: 90%;
+        }
+    }
+}

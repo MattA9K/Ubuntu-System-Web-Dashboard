@@ -1,0 +1,116 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+            </div>
+            <div class="title">ms-card</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <p>
+                <!-- htmlmin:ignore -->
+                <hljs language="html" class="source-code">
+                    <ms-card template="PATH_TO_TEMPLATE" ng-model="CARD_MODEL_DATA"></ms-card>
+                </hljs>
+                <!-- htmlmin:ignore -->
+            </p>
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-card</b> directive can be used for creating cards that follow Google's Material Design
+                specifications. Currently it has 10 different pre-defined templates but you can always create your own
+                templates and use them with the directive.
+            </p>
+
+            <div class="simple-table-container md-whiteframe-1dp mv-16">
+                <table class="simple">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>template</td>
+                            <td>
+                                This attribute must be present in order to ms-card directive to work. It works similar
+                                to ng-include directive. You can either provide the path of the html template file or
+                                the variable that holds the path of the html template file.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ng-model</td>
+                            <td>
+                                Directive uses ng-model to hold the card data. Data passed with using ng-model will be
+                                available in the template files within variable named card.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="h2 pt-16">Example:</span>
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <ms-card template="'app/card-templates/my-custom-template.html'" ng-model="vm.cardModel"></ms-card>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <p>
+                Above directive will use <span class="text-boxed">my-custom-template.html</span> file as a template. And
+                you will be able to access to the <span class="text-boxed">vm.cardModel</span> object through card
+                variable inside the template.
+            </p>
+
+            <p>
+                Consider the following object:
+                <!-- htmlmin:ignore -->
+                <hljs language="js" class="source-code">
+                    vm.cardModel = {
+                        title      : 'My Card',
+                        description: 'My card description'
+                    }
+                </hljs>
+                <!-- htmlmin:ignore -->
+            </p>
+
+            <p>
+                It will be available in the template file as:
+                <!-- htmlmin:ignore -->
+                <hljs language="js" class="source-code">
+                    card = {
+                        title      : 'My Card',
+                        description: 'My card description'
+                    }
+                </hljs>
+                <!-- htmlmin:ignore -->
+            </p>
+
+            <p>
+                So you will be able to access the title by doing
+                <!-- htmlmin:ignore -->
+                <hljs language="js" class="source-code">
+                    {{card.title}}
+                </hljs>
+                <!-- htmlmin:ignore -->
+                inside the template file.
+            </p>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "wip-image-zoom",
+  "version": "0.1.7-beta",
+  "dependencies": {
+    "angular": "~1.6.1",
+    "angular-sanitize": "~1.6.1",
+    "angular-touch": "~1.6.1"
+  },
+  "devDependencies": {},
+  "main": [
+    "dist/wip-image-zoom.js",
+    "dist/wip-image-zoom.css"
+  ],
+  "homepage": "https://github.com/withinpixels/wip-image-zoom",
+  "_release": "0.1.7-beta",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.7-beta",
+    "commit": "b0bc01b7780bdc314707d8c4366e4c6a218c21a2"
+  },
+  "_source": "https://github.com/withinpixels/wip-image-zoom.git",
+  "_target": "^0.1.6-beta",
+  "_originalSource": "wip-image-zoom"
+}

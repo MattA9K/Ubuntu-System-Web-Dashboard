@@ -1,0 +1,110 @@
+#e-commerce-order {
+
+    > .header {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+
+        .goto-orders-button {
+            margin-right: 16px;
+        }
+
+        .subtitle {
+            margin: 6px 0 0 0;
+        }
+    }
+
+    .order-detail-form-container {
+        padding: 24px;
+        margin-bottom: 24px;
+
+        &.customer {
+
+            table {
+                margin-bottom: 16px;
+            }
+
+            .addresses {
+
+                md-tab-content {
+                    padding: 16px;
+                }
+
+                .address {
+                    font-size: 16px;
+                    padding: 8px 0 16px 0;
+                }
+            }
+        }
+
+        &.status {
+
+            .status {
+                white-space: nowrap;
+                padding: 4px 8px;
+                border-radius: 2px;
+            }
+
+            .update-status {
+                margin-top: 16px;
+            }
+        }
+
+        &.shipping {
+
+            .tracking-code {
+
+                &.editable-click {
+                    cursor: pointer;
+                }
+            }
+
+            .editable-controls {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 8px 0 8px 24px;
+
+                input {
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                    padding: 4px;
+                }
+
+                .editable-buttons {
+
+                    button {
+                        margin: 0;
+                    }
+                }
+            }
+
+        }
+
+        &.products {
+            padding: 0;
+
+            .dataTables_wrapper {
+
+                .dataTables_scrollHead {
+                    box-shadow: none;
+                }
+
+                .dataTables_scrollBody {
+
+                    table {
+
+                        tr {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .product-image {
+                        width: 52px;
+                        height: 52px;
+                        border: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+                }
+            }
+        }
+    }
+}

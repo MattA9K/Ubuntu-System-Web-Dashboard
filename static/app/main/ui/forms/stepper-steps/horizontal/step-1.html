@@ -1,0 +1,30 @@
+<div class="md-inline-form">
+    <p>Fill the <span class="text-bold">Lastname</span> field to reveal the conditional step!</p>
+
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="firstname" ng-model="vm.horizontalStepper.step1.firstname"
+                   placeholder="Firstname"
+                   required>
+            <div ng-messages="horizontalStep1.firstname.$error"
+                 ng-show="horizontalStep1.firstname.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Firstname field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="lastname" ng-model="vm.horizontalStepper.step1.lastname"
+                   placeholder="Lastname">
+            <div ng-messages="horizontalStep1.lastname.$error"
+                 ng-show="horizontalStep1.lastname.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Lastname field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+</div>

@@ -1,0 +1,259 @@
+<div id="gantt-chart" class="page-layout carded fullwidth"
+     ng-class="{'date-filter-active':vm.dateFilterActive, 'search-active': vm.searchActive}" layout="row">
+
+    <!-- SETTINGS SIDENAV -->
+    <md-sidenav class="sidenav settings-sidenav md-sidenav-right" md-component-id="settings-sidenav"
+                ng-include="'app/main/apps/gantt-chart/sidenavs/settings/settings-sidenav.html'" ms-scroll
+                ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SETTINGS SIDENAV -->
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="column">
+            <div class="toolbar" layout="row" layout-align="space-between center">
+                <div class="logo" layout="row" layout-align="start center">
+                    <span class="logo-icon">
+                        <md-icon md-font-icon="icon-calendar-text" class="icon"></md-icon>
+                    </span>
+                    <span class="logo-text" translate="GANTT.GANTT_CHART">Gantt Chart</span>
+                </div>
+
+                <div layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" ng-click="vm.searchActive = !vm.searchActive" aria-label="Search"
+                               translate
+                               translate-attr-aria-label="GANTT.SEARCH">
+                        <md-icon md-font-icon="icon-magnify"></md-icon>
+                        <md-tooltip><span translate="GANTT.SEARCH">Search</span></md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ng-click="vm.dateFilterActive = !vm.dateFilterActive"
+                               aria-label="Filter Date" translate
+                               translate-attr-aria-label="GANTT.FILTER_DATE">
+                        <md-icon md-font-icon="icon-calendar"></md-icon>
+                        <md-tooltip><span translate="GANTT.FILTER_DATE">Filter Date</span></md-tooltip>
+                    </md-button>
+
+                    <md-button ng-click="vm.reload()" class="md-icon-button"
+                               aria-label="Reload"
+                               translate translate-attr-aria-label="GANTT.RELOAD">
+                        <md-icon md-font-icon="icon-reload"></md-icon>
+                        <md-tooltip><span translate="GANTT.RELOAD">RELOAD</span></md-tooltip>
+                    </md-button>
+
+                    <md-button ng-click="vm.toggleSidenav('settings-sidenav')" class="md-icon-button"
+                               aria-label="Settings"
+                               translate translate-attr-aria-label="GANTT.SETTINGS">
+                        <md-icon md-font-icon="icon-cog"></md-icon>
+                        <md-tooltip><span translate="GANTT.SETTINGS">Settings</span></md-tooltip>
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="bottom" layout="column" layout-gt-sm="row" layout-align-gt-sm="end center">
+                <div class="search-boxes" flex ng-show="vm.searchActive" layout="column" layout-gt-xs="row">
+                    <div class="search md-whiteframe-3dp mr-8" flex layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+                        <input flex ng-model="vm.searchRowKeyword"
+                               ng-change="vm.search('rows', vm.searchRowKeyword)" type="text"
+                               placeholder="Search in rows" translate
+                               translate-attr-placeholder="GANTT.SEARCH_IN_ROWS">
+                    </div>
+                    <div class="search md-whiteframe-3dp" flex layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+                        <input flex ng-model="vm.searchTaskKeyword" ng-change="vm.search('tasks', vm.searchTaskKeyword)"
+                               type="text"
+                               placeholder="Search in tasks" translate
+                               translate-attr-placeholder="GANTT.SEARCH_IN_TASKS">
+                    </div>
+                </div>
+
+                <div class="date-filter-box md-whiteframe-3dp" ng-show="vm.dateFilterActive" layout="column"
+                     layout-gt-xs="row" layout-align-gt-xs="center center">
+                    <div layout="row" layout-align="center center" class="filter from">
+                        <span class="label">From:</span>
+                        <md-datepicker ms-datepicker-fix ng-model="vm.options.fromDate"
+                                       md-max-date="vm.options.toDate"
+                                       md-placeholder="Enter date"></md-datepicker>
+                    </div>
+                    <div layout="row" layout-align="center center" class="filter to">
+                        <span class="label">To:</span>
+                        <md-datepicker ms-datepicker-fix ng-model="vm.options.toDate"
+                                       md-min-date="vm.options.fromDate"
+                                       md-placeholder="Enter date"></md-datepicker>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar" layout="row" layout-align="space-between center">
+
+                <div layout="row" layout-align="start center">
+
+                    <md-button ng-click="vm.addDialog($event)" class="md-icon-button add-row-button" aria-label="Add"
+                               translate
+                               translate-attr-aria-label="GANTT.ADD">
+                        <md-icon md-font-icon="icon-plus"></md-icon>
+                    </md-button>
+
+                </div>
+
+                <div layout="row" layout-align="start center">
+
+                    <div class="zoom" layout="row" layout-align="end center">
+                        <span class="label">Zoom:</span>
+
+                        <div class="input-wrapper" layout="row" layout-align="center center">
+                            <md-button class="md-icon-button" aria-label="minus"
+                                       ng-click="vm.options.zoom  = vm.options.zoom - 0.1">
+                                <md-icon md-font-icon="icon-minus"></md-icon>
+                            </md-button>
+                            <input type="number" ng-model="vm.options.zoom" step="0.1" min="0.1" max="5">
+                            <md-button class="md-icon-button" aria-label="plus"
+                                       ng-click="vm.options.zoom =vm.options.zoom + 0.1">
+                                <md-icon md-font-icon="icon-plus"></md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+
+                    <md-select class="simplified select-scale" ng-model="vm.options.scale" placeholder="Scale">
+                        <md-option value="hour" translate="GANTT.HOUR">hour</md-option>
+                        <md-option value="3 hours" translate="GANTT.3_HOURS">3 hours</md-option>
+                        <md-option value="day" translate="GANTT.DAY">day</md-option>
+                        <md-option value="week" translate="GANTT.WEEK">week</md-option>
+                        <md-option value="2 weeks" translate="GANTT.2_WEEKS">2 weeks</md-option>
+                        <md-option value="month" translate="GANTT.MONTH">month</md-option>
+                        <md-option value="quarter" translate="GANTT.QUARTER">quarter</md-option>
+                        <md-option value="6 months" translate="GANTT.6_MONTHS">6 months</md-option>
+                        <md-option value="year" translate="GANTT.YEAR">year</md-option>
+                    </md-select>
+
+                    <div class="divider-vertical"></div>
+                    <md-menu>
+                        <md-button class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)"
+                                   aria-label="Filters"
+                                   translate translate-attr-aria-label="MAIL.FILTERS">
+                            <md-icon md-font-icon="icon-sort"></md-icon>
+                        </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item>
+                                <md-button aria-label="disabled"
+                                           ng-click="vm.setSortMode(undefined)"
+                                           translate="GANTT.DISABLED" translate-attr-aria-label="GANTT.DISABLED">
+                                    disabled
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="disabled"
+                                           ng-click="vm.setSortMode('from')"
+                                           translate="GANTT.FROM" translate-attr-aria-label="GANTT.FROM">
+                                    from
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="disabled"
+                                           ng-click="vm.setSortMode('to')"
+                                           translate="GANTT.TO" translate-attr-aria-label="GANTT.TO">
+                                    to
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="disabled"
+                                           ng-click="vm.setSortMode('model.name')"
+                                           translate="GANTT.NAME" translate-attr-aria-label="GANTT.NAME">
+                                    name
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                </div>
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <md-content id="chart-container" class="content" flex layout="column">
+
+                <div flex layout-fill
+                     id="gantt"
+                     gantt
+                     data="vm.data"
+                     timespans="vm.timespans"
+                     show-side="vm.options.labelsEnabled"
+                     daily="vm.options.daily"
+                     filter-task="{'name': vm.options.filterTask}"
+                     filter-row="{'name': vm.options.filterRow}"
+                     sort-mode="vm.options.sortMode"
+                     view-scale="vm.options.scale"
+                     column-width="vm.getColumnWidth(vm.options.width, vm.options.scale, vm.options.zoom)"
+                     auto-expand="vm.options.autoExpand"
+                     task-out-of-range="vm.options.taskOutOfRange"
+                     from-date="vm.options.fromDate"
+                     to-date="vm.options.toDate"
+                     allow-side-resizing="vm.options.allowSideResizing"
+                     task-content="vm.options.taskContentEnabled ? vm.options.taskContent : undefined"
+                     row-content="vm.options.rowContentEnabled ? vm.options.rowContent : undefined"
+                     current-date="vm.options.currentDate"
+                     current-date-value="vm.options.currentDateValue"
+                     headers="vm.options.width && vm.options.shortHeaders || vm.options.longHeaders"
+                     max-height="vm.options.maxHeight"
+                     time-frames="vm.options.timeFrames"
+                     date-frames="vm.options.dateFrames"
+                     time-frames-non-working-mode="vm.options.timeFramesNonWorkingMode"
+                     time-frames-magnet="vm.options.timeFramesMagnet"
+                     api="vm.options.api"
+                     column-magnet="vm.options.columnMagnet">
+                    <gantt-tree enabled="vm.options.sideMode === 'Tree' || vm.options.sideMode === 'TreeTable'"
+                                header-content="vm.options.treeHeaderContent"
+                                keep-ancestor-on-filter-row="true">
+                    </gantt-tree>
+                    <gantt-table enabled="vm.options.sideMode === 'Table' || vm.options.sideMode === 'TreeTable'"
+                                 columns="vm.options.sideMode === 'TreeTable' ? vm.options.treeTableColumns : vm.options.columns"
+                                 headers="vm.options.columnsHeaders"
+                                 classes="vm.options.columnsClasses"
+                                 formatters="vm.options.columnsFormatters"
+                                 contents="vm.options.columnsContents"
+                                 header-contents="vm.options.columnsHeaderContents">
+                    </gantt-table>
+                    <gantt-groups
+                            enabled="vm.options.groupDisplayMode === 'group' || vm.options.groupDisplayMode === 'overview' || vm.options.groupDisplayMode === 'promote'"
+                            display="vm.options.groupDisplayMode"></gantt-groups>
+                    <!--<gantt-tooltips></gantt-tooltips>-->
+                    <gantt-bounds></gantt-bounds>
+                    <gantt-progress></gantt-progress>
+                    <gantt-sortable></gantt-sortable>
+                    <gantt-movable enabled="!vm.options.readOnly"></gantt-movable>
+                    <gantt-draw-task
+                            enabled="vm.options.canDraw"
+                            move-threshold="2"
+                            task-factory="vm.options.drawTaskFactory">
+                    </gantt-draw-task>
+                    <gantt-overlap></gantt-overlap>
+                    <gantt-resize-sensor></gantt-resize-sensor>
+                    <gantt-dependencies></gantt-dependencies>
+                </div>
+
+            </md-content>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

@@ -1,0 +1,140 @@
+<div ng-if="!vm.currentThread" class="no-thread-selected" layout="column" layout-align="center center" flex>
+    <md-icon md-font-icon="icon-email" class="s120 grey-400-fg"></md-icon>
+    <span class="hint-text" translate="MAIL.SELECT_MESSAGE_TO_READ">Select a message to read</span>
+</div>
+
+<div ng-if="vm.currentThread">
+    <div class="thread-header" layout="row" layout-align="space-between center">
+        <div>
+            <div class="subject" flex>{{vm.currentThread.subject}}</div>
+
+            <div class="labels">
+                <div class="label" ng-repeat="labelId in vm.currentThread.labels"
+                     ng-class="vm.getLabelColor(labelId)">{{vm.getLabelTitle(labelId)}}
+                </div>
+            </div>
+        </div>
+
+        <div class="actions" layout="row" layout-align="start center">
+            <md-button class="md-icon-button" ng-click="vm.toggleThreadStatus('starred')"
+                       aria-label="Toggle starred" translate translate-attr-toogle-starred="MAIL.TOGGLE_STARRED">
+                <md-icon ng-if="vm.currentThread.starred" md-font-icon="icon-star"
+                         class="amber-fg"></md-icon>
+                <md-icon ng-if="!vm.currentThread.starred" md-font-icon="icon-star-outline"></md-icon>
+            </md-button>
+
+            <md-button class="md-icon-button" ng-click="vm.toggleThreadStatus('important')"
+                       aria-label="Toggle important" translate translate-attr-toogle-starred="MAIL.TOGGLE_IMPORTANT">
+                <md-icon ng-if="vm.currentThread.important" md-font-icon="icon-label"
+                         class="amber-300-fg"></md-icon>
+                <md-icon ng-if="!vm.currentThread.important" md-font-icon="icon-label-outline"></md-icon>
+            </md-button>
+        </div>
+    </div>
+
+    <div class="thread-content">
+        <div class="info" layout="row" layout-align="space-between start">
+
+            <div layout="column" layout-align="start start">
+                <div layout="row" layout-align="start start">
+                    <div>
+                        <img ng-if="vm.currentThread.from.avatar" alt="{{vm.currentThread.from.name}}"
+                             ng-src="{{vm.currentThread.from.avatar}}" class="avatar"/>
+
+                        <div ng-if="!vm.currentThread.from.avatar" class="avatar" ms-random-class="vm.colors">
+                            {{vm.currentThread.from.name[0]}}
+                        </div>
+                    </div>
+
+                    <div layout="column" layout-align="start start">
+                        <div class="name">
+                            {{vm.currentThread.from.name}}
+                        </div>
+
+                        <div class="to" layout="row" layout-align="start center">
+                            <div class="to-text" translate="MAIL.INFO.TO">to</div>
+                            <div>{{vm.currentThread.to[0].name}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="toggle-details md-accent-color" ng-hide="vm.selectedMailShowDetails"
+                   ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails" translate="MAIL.SHOW_DETAILS">
+                    Show Details
+                </a>
+                <a class="toggle-details md-accent-color" ng-show="vm.selectedMailShowDetails"
+                   ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails" translate="MAIL.HIDE_DETAILS">
+                    Hide Details
+                </a>
+
+                <div ng-show="vm.selectedMailShowDetails" class="details" layout="row" layout-align="start start">
+                    <div layout="column">
+                        <span class="title" translate="MAIL.DETAILS.FROM">From:</span>
+                        <span class="title" translate="MAIL.DETAILS.TO">To:</span>
+                        <span class="title" translate="MAIL.DETAILS.DATE">Date:</span>
+                    </div>
+
+                    <div layout="column">
+                        <span class="detail">{{vm.currentThread.from.email}}</span>
+                        <span class="detail">{{vm.currentThread.to[0].email}}</span>
+                        <span class="detail">{{vm.currentThread.time}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <md-menu>
+                <md-button aria-label="More" class="md-icon-button"
+                           ng-click="$mdOpenMenu($event)"
+                           translate translate-aria-label="MAIL.MORE">
+                    <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                </md-button>
+
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button aria-label="Reply" translate-aria-label="MAIL.REPLY"
+                                   ng-click="vm.replyDialog($event)">
+                            <md-icon md-font-icon="icon-reply"></md-icon>
+                            <span translate="MAIL.REPLY">Reply</span>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button aria-label="Forward" translate-aria-label="MAIL.FORWARD">
+                            <md-icon md-font-icon="icon-forward"></md-icon>
+                            <span translate="MAIL.FORWARD">Forward</span>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button aria-label="Print" translate-aria-label="MAIL.PRINT">
+                            <md-icon md-font-icon="icon-printer"></md-icon>
+                            <span translate="MAIL.PRINT">Print</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+
+        <div ng-bind-html="vm.currentThread.message"></div>
+
+    </div>
+
+    <div ng-if="vm.currentThread.attachments" class="thread-attachments">
+        <div class="title">
+            <span translte="MAIL.ATTACHMENTS">Attachments</span> ({{vm.currentThread.attachments.length}})
+        </div>
+        <div class="attachment-list" layout-wrap layout="row">
+            <div class="attachment" layout="column"
+                 ng-repeat="attachment in vm.currentThread.attachments">
+                <img class="preview" ng-src="{{attachment.preview}}">
+
+                <div layout="column">
+                    <a href="#" class="md-accent-color link" translate="MAIL.VIEW">View</a>
+                    <a href="#" class="md-accent-color link" translate="MAIL.DOWNLOAD">Download</a>
+
+                    <div class="size">({{attachment.size}})</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

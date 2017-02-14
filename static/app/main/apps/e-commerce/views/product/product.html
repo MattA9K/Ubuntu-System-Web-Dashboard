@@ -1,0 +1,262 @@
+<div id="e-commerce-product" class="page-layout simple tabbed" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div class="white-fg" layout="row" layout-align="start center" flex>
+            <md-button class="goto-products-button md-icon-button" aria-label="Go to products"
+                       ng-click="vm.gotoProducts()"
+                       translate translate-attr-aria-label="EC.GO_TO_PRODUCTS">
+                <md-icon md-font-icon="icon-arrow-left"></md-icon>
+            </md-button>
+
+            <div layout="row" layout-align="start center">
+                <div class="product-image" hide-xs>
+                    <img ng-src="{{vm.product.images[0].url}}">
+                </div>
+
+                <div layout="column" layout-align="start start">
+                    <div class="h2">
+                        {{vm.product.name}}
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span translate="EC.PRODUCT_DETAIL">Product Detail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <md-button class="md-raised md-background" ng-click="vm.saveProduct()"
+                       ng-disabled="!vm.isFormValid('productForm')">
+                <span translate="EC.SAVE">SAVE</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs md-dynamic-height>
+
+            <md-tab>
+                <md-tab-label>
+                    <span translate="EC.BASIC_INFO">Basic Info</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+                            <md-input-container class="md-block">
+                                <label translate="EC.PRODUCT_NAME">Product Name</label>
+                                <input type="text" ng-model="vm.product.name" required>
+                            </md-input-container>
+
+                            <h3 class="secondary-text" translate="EC.PRODUCT_DESCRIPTION">Product Description</h3>
+                            <text-angular ta-toolbar="vm.taToolbar" ng-model="vm.product.description"
+                                          class="pb-32"></text-angular>
+
+                            <md-input-container class="md-block">
+                                <label translate="EC.CATEGORIES">Categories</label>
+                                <md-select ng-model="vm.product.categories"
+                                           md-on-open="vm.onCategoriesSelectorOpen()"
+                                           md-on-close="vm.onCategoriesSelectorClose()" multiple>
+                                    <md-select-header>
+                                        <input type="search" class="md-text"
+                                               ng-model="vm.categoriesSelectFilter" placeholder="Search for a category">
+                                    </md-select-header>
+                                    <md-optgroup>
+                                        <md-option ng-value="category"
+                                                   ng-repeat="category in vm.product.categories | filter:vm.categoriesSelectFilter">
+                                            {{category}}
+                                        </md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </md-input-container>
+
+                            <h3 class="tags secondary-text" translate="EC.TAGS">Tags</h3>
+                            <md-chips ng-model="vm.product.tags"
+                                      placeholder="Enter a tag"
+                                      delete-button-label="Remove Tag"
+                                      delete-hint="Press delete to remove tag"
+                                      secondary-placeholder="+Tag">
+                            </md-chips>
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span translate="EC.PRODUCT_IMAGES">Product Images</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+
+                        <div id="product-image-uploader"
+                             flow-init="vm.ngFlowOptions"
+                             flow-name="vm.ngFlow.flow"
+                             flow-files-submitted="vm.upload()"
+                             flow-file-added="vm.fileAdded($file)"
+                             flow-file-success="vm.fileSuccess($file, $message)"
+                             flow-complete="vm.uploadComplete()"
+                             flow-drop
+                             flow-drag-enter="vm.dropping=true"
+                             flow-drag-leave="vm.dropping=false"
+                             ng-class="{'dropping':vm.dropping}">
+
+                            <div class="drop-text hint-text" layout="row" layout-align="center center">
+                                <span translate="EC.DROP_TO_UPLOAD">Drop to upload</span>
+                            </div>
+
+                            <div class="upload-button" layout="column" layout-align="center center">
+                                <md-button class="md-accent md-raised" flow-btn>
+                                    Upload
+                                </md-button>
+                                <span class="secondary-text mt-8">You can also drop images here to upload. Only PNG, JPG - Max. 8MB</span>
+                            </div>
+
+                            <div class="mv-32" layout="row" layout-align="center center">
+                                <div class="image-zoom-area">
+                                    <img wip-image-zoom="vm.imageZoomOptions">
+                                </div>
+                            </div>
+
+                            <div layout="row" layout-align="start start" layout-wrap>
+                                <div ng-repeat="image in vm.product.images" ng-switch="image.type">
+                                    <div class="product-image uploading" ng-switch-when="uploading" layout="row"
+                                         layout-align="center center">
+                                        <div class="overlay" layout="column" layout-align="center center">
+                                            <md-progress-linear md-mode="determinate"
+                                                                value="{{image.file.progress() * 100}}">
+                                            </md-progress-linear>
+                                        </div>
+                                        <img class="media" flow-img="image.file">
+                                    </div>
+
+                                    <div class="product-image" ng-switch-when="image" layout="row"
+                                         layout-align="center center">
+                                        <img class="media" ng-src="{{image.url}}"
+                                             ng-click="vm.updateImageZoomOptions(image.url)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-8 font-size-12" layout="row" layout-align="center center">
+                                Click on images to activate the zoom!
+                            </div>
+                        </div>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span translate="EC.PRICING">Pricing</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form>
+                            <md-input-container class="md-block md-icon-float">
+                                <label translate="EC.TAX_EXCL_PRICE">Tax Excluded Price</label>
+                                <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
+                                <input type="number" step="0.01" ng-model="vm.product.priceTaxExcl">
+                            </md-input-container>
+
+                            <md-input-container class="md-block md-icon-float">
+                                <label translate="EC.TAX_INCL_PRICE">Tax Included Price</label>
+                                <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
+                                <input type="number" step="0.01" ng-model="vm.product.priceTaxIncl">
+                            </md-input-container>
+
+                            <md-input-container class="md-block md-icon-float">
+                                <label translate="EC.TAX_RATE">Tax Rate</label>
+                                <md-icon md-font-icon="icon icon-percent"></md-icon>
+                                <input type="number" step="0.01" ng-model="vm.product.taxRate">
+                            </md-input-container>
+
+                            <md-input-container class="md-block md-icon-float">
+                                <label translate="EC.COMPARED_PRICE">Compared Price</label>
+                                <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
+                                <input type="number" step="0.01" ng-model="vm.product.comparedPrice">
+                                <div class="input-hint">Add a compare price to show next to the real price</div>
+                            </md-input-container>
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span translate="EC.INVENTORY">Inventory</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form>
+                            <md-input-container class="md-block">
+                                <label translate="EC.SKU">SKU</label>
+                                <input type="text" ng-model="vm.product.sku">
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label translate="EC.BARCODE">Barcode</label>
+                                <input type="text" ng-model="vm.product.barcode">
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label translate="EC.QUANTITY">Quantity</label>
+                                <input type="number" step="1" ng-model="vm.product.quantity">
+                            </md-input-container>
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span translate="EC.SHIPPING">Shipping</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form>
+                            <div layout-gt-sm="row" layout-align="start center">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label translate="EC.WIDTH">Width</label>
+                                    <input type="text" ng-model="vm.product.width">
+                                </md-input-container>
+
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label translate="EC.HEIGHT">Height</label>
+                                    <input type="text" ng-model="vm.product.height">
+                                </md-input-container>
+
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label translate="EC.DEPTH">Depth</label>
+                                    <input type="text" ng-model="vm.product.depth">
+                                </md-input-container>
+                            </div>
+
+                            <md-input-container class="md-block">
+                                <label translate="EC.WEIGHT">Weight</label>
+                                <input type="text" ng-model="vm.product.weight">
+                            </md-input-container>
+
+                            <md-input-container class="md-block md-icon-float">
+                                <label translate="EC.EXTRA_SHIPPING_FEE">Extra Shipping Fee</label>
+                                <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
+                                <input type="text" ng-model="vm.product.extraShippingFee">
+                            </md-input-container>
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

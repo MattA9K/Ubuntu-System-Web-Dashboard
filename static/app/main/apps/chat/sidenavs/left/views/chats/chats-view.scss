@@ -1,0 +1,75 @@
+#chat-app {
+
+    .left-sidenav {
+
+        .chats-view {
+
+            md-toolbar {
+                background-color: #F3F4F5;
+                color: rgba(0, 0, 0, 0.87);
+
+                md-icon {
+                    color: rgba(0, 0, 0, 0.87);
+                }
+
+                .md-toolbar-tools-top {
+                    border-bottom: 1px solid rgba(0, 0, 0, .08);
+
+                    .avatar-wrapper {
+                        cursor: pointer;
+                    }
+                }
+
+                .md-toolbar-tools-bottom {
+                    background-color: #FAFAFA;
+                }
+            }
+
+            md-content {
+
+                .chat-list {
+
+                    .contact {
+
+                        .name {
+
+                        }
+
+                        .last-message {
+                            max-width: 180px;
+                        }
+
+                        .last-message-time {
+                            white-space: nowrap;
+                        }
+
+                        &.unread {
+
+                            .name, .last-message, .last-message-time {
+                                font-weight: 500;
+                            }
+                        }
+
+                        .unread-message-count {
+                            border-radius: 50%;
+                            text-align: center;
+                            width: 24px;
+                            height: 24px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+                md-list-item:last-child {
+                    margin-bottom: 72px;
+                }
+            }
+
+            .contacts-button {
+                position: absolute;
+                bottom: 4px;
+                right: 4px;
+            }
+        }
+    }
+}

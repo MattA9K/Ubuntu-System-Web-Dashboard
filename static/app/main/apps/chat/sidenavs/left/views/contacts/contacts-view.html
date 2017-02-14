@@ -1,0 +1,79 @@
+<!-- CONTACTS TOOLBAR -->
+<md-toolbar class="md-tall md-accent">
+
+    <!-- TOOLBAR TOP -->
+    <div class="md-toolbar-tools md-toolbar-tools-top">
+
+        <md-button class="md-icon-button"
+                   ng-click="vm.toggleLeftSidenavView(false)" aria-label="back button">
+            <md-icon md-font-icon="icon-arrow-left"></md-icon>
+        </md-button>
+
+        <h3>
+            <span translate="CHAT.CONTACTS">CONTACTS</span>
+        </h3>
+
+    </div>
+    <!-- / TOOLBAR TOP -->
+
+    <!-- TOOLBAR BOTTOM -->
+    <div class="md-toolbar-tools md-toolbar-tools-bottom">
+
+        <div class="search-wrapper md-whiteframe-1dp" layout="row" layout-align="start center" flex>
+
+            <div class="search" flex layout="row" layout-align="start center">
+
+                <md-icon md-font-icon="icon-magnify" class="icon s18">
+                </md-icon>
+
+                <input flex ng-model="vm.contactSearch" type="text" placeholder="Search contact" translate=""
+                       translate-attr-placeholder="CHAT.CONTACTS_SEARCH_PLACEHOLDER">
+
+            </div>
+
+        </div>
+    </div>
+    <!-- / TOOLBAR BOTTOM -->
+
+</md-toolbar>
+<!-- / CONTACTS TOOLBAR -->
+
+<!-- CONTACTS CONTENT -->
+<md-content flex ms-scroll>
+
+    <!-- CONTACTS LIST-->
+    <md-list class="contact-list">
+
+        <md-list-item class="contact md-3-line"
+                      ng-repeat="contact in vm.contacts  | filter: {name: vm.contactSearch} | orderBy: 'name' :false | filter:query as filteredContact"
+                      ng-style="{'transform': 'translate3d(0px, '+$index * 100+'%, 0px)', 'z-index': filteredContact.length - $index}"
+                      ng-click="vm.getChat(contact.id)">
+
+            <div class="fist-letter md-accent-fg"
+                 ng-if="vm.contacts[$index].name.charAt(0) !== vm.contacts[$index-1].name.charAt(0)">
+                {{contact.name.charAt(0)}}
+            </div>
+
+            <div class="avatar-wrapper">
+                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
+                <i class="icon icon- s16 status" ng-class="contact.status"></i>
+            </div>
+
+            <div class="md-list-item-text">
+                <h3>{{contact.name}}</h3>
+                <p class="mood">{{contact.mood}}</p>
+            </div>
+
+        </md-list-item>
+
+    </md-list>
+    <!-- / CONTACTS LIST-->
+
+    <!-- NO RESULTS MESSAGE -->
+    <div ng-if="filteredContact.length <= 0" class="no-results-message" translate="CHAT.NO_RESULTS">
+        No results..
+    </div>
+    <!-- NO RESULTS MESSAGE-->
+
+</md-content>
+<!-- / CONTACTS CONTENT -->

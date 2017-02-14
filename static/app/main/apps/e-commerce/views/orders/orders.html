@@ -1,0 +1,120 @@
+<div id="e-commerce-orders" class="page-layout carded fullwidth" layout="row">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row" layout-align="space-between center">
+            <div class="white-fg" layout="column" layout-align="start start">
+                <div class="h1" layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-cart-outline"></md-icon>
+                    <span translate="EC.ORDERS">Orders</span>
+                </div>
+                <div class="order-count secondary-text">
+                    <span translate="EC.TOTAL_ORDERS">Total orders:</span>
+                    <span>{{vm.orders.length}}</span>
+                </div>
+            </div>
+
+            <div class="search" layout="row" layout-align="start center" flex>
+                <md-icon md-font-icon="icon-magnify" class="white-text icon search-icon"></md-icon>
+                <input id="e-commerce-products-search" class="search-input" type="text" placeholder="Search"
+                       translate translate-attr-placeholder="EC.SEARCH" flex>
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content fullpage-datatable" layout="column" flex>
+
+                <table class="dataTable row-border hover" datatable="ng" dt-instance="vm.dtInstance"
+                       dt-options="vm.dtOptions">
+                    <thead>
+                        <tr>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">ID</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Reference</span>
+                                </div>
+                            </th>
+                          <!--  <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Delivery</span>
+                                </div>
+                            </th>-->
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Customer</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Total</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Payment</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Status</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Date</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Actions</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="order in ::vm.orders">
+                            <td>{{order.id}}</td>
+                            <td>{{order.reference}}</td>
+                            <td>{{order.customer['firstName']}} {{order.customer['lastName']}}</td>
+                            <td>{{order.total}}</td>
+                            <td>{{order.payment['method']}}</td>
+                            <td>{{order.status[0].id}}</td>
+                            <td class="date">{{order.date}}</td>
+                            <td>
+                                <md-button class="edit-button md-icon-button" ng-click="vm.gotoOrderDetail(order.id)" aria-label="Order details"
+                                           translate translate-attr-aria-label="EC.ORDER_DETAILS">
+                                    <md-icon md-font-icon="icon-dots-horizontal" class="s16"></md-icon>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

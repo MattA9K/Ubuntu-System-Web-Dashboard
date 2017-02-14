@@ -1,0 +1,40 @@
+ms-sb-add-card {
+
+    .ms-sb-add-card-button {
+        position: relative;
+        height: 48px;
+        min-height: 48px;
+        padding: 0 16px;
+        text-align: left;
+        text-transform: none;
+        font-weight: 500;
+        font-size: 14px;
+        background-color: #DCDFE2;
+        cursor: pointer;
+        border-radius: 2px;
+
+        i {
+            margin-right: 8px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    .ms-sb-add-card-form-wrapper {
+        background-color: #DCDFE2;
+
+        .ms-sb-add-card-form {
+            z-index: 999;
+            background: white;
+            display: block;
+            position: relative;
+            padding: 8px;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+            md-input-container {
+                width: 100%;
+                margin: 0;
+                padding: 12px 8px;
+            }
+        }
+    }
+}

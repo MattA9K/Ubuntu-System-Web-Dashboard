@@ -1,0 +1,181 @@
+<!-- CHAT APP -->
+<div id="chat-app" class="page-layout carded fullwidth">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="row" flex>
+
+            <!-- LEFT SIDENAV -->
+            <md-sidenav class="sidenav left-sidenav md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')"
+                        md-component-id="left-sidenav"
+                        ms-sidenav-helper ng-include="'app/main/apps/chat/sidenavs/left/left-sidenav.html'"
+                        layout="column">
+            </md-sidenav>
+
+            <!-- START -->
+            <div class="start-point" ng-if="!vm.chat" flex layout="column" flex layout-align="center center">
+
+                <div class="big-circle md-whiteframe-4dp">
+
+                    <md-icon class="s128 md-accent" md-font-icon="icon-hangouts"></md-icon>
+
+                </div>
+
+                <span class="app-title" translate="CHAT.APP_TITLE">Chat App</span>
+
+                <span class="hide show-gt-md secondary-text" translate="CHAT.START_MESSAGE">Select contact to start the
+                    chat!..</span>
+                <md-button class="md-raised hide-gt-md" ng-click="vm.toggleSidenav('left-sidenav')"
+                           translate="CHAT.START_MESSAGE">
+                    Select contact to start the chat!..
+                </md-button>
+
+            </div>
+            <!-- / START -->
+
+            <!-- CHAT -->
+            <div ng-if="vm.chat" class="chat" layout="column" flex>
+
+                <!-- CHAT TOOLBAR -->
+                <md-toolbar class="chat-toolbar">
+
+                    <div class="md-toolbar-tools">
+
+                        <!-- RESPONSIVE CHATS BUTTON-->
+                        <md-button class="hide-gt-md responsive-chats-button md-icon-button"
+                                   ng-click="vm.toggleLeftSidenavView(false);vm.toggleSidenav('left-sidenav')"
+                                   aria-label="chats button">
+                            <md-icon md-font-icon="icon-hangouts s36"></md-icon>
+                        </md-button>
+                        <!-- / RESPONSIVE CHATS BUTTON-->
+
+                        <!-- CHAT CONTACT-->
+                        <div class="chat-contact" layout="row" layout-align="start center"
+                             ng-click="vm.toggleSidenav('right-sidenav')">
+
+                            <div class="avatar-wrapper">
+
+                                <img ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}"
+                                     class="avatar" alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
+
+                                <i class="icon icon- s16 status"
+                                   ng-class="vm.contacts.getById(vm.chatContactId).status">
+                                </i>
+
+                            </div>
+
+                            <div class="chat-contact-name">
+                                {{vm.contacts.getById(vm.chatContactId).name}}
+                            </div>
+
+                        </div>
+                        <!-- / CHAT CONTACT-->
+
+                        <md-menu md-position-mode="target-right target">
+
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
+                                       aria-label="more">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+
+                            <md-menu-content width="3">
+                                <md-menu-item>
+                                    <md-button ng-click="vm.toggleSidenav('right-sidenav')" translate="CHAT.CONTACT_INFO">
+                                        Contact Info
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="vm.clearMessages()" translate="CHAT.CLEAR_MESSAGES">
+                                        Clear Messages
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+
+                        </md-menu>
+
+                    </div>
+                </md-toolbar>
+                <!-- / CHAT TOOLBAR -->
+
+                <!-- CHAT CONTENT -->
+                <md-content id="chat-content" flex ms-scroll>
+
+                    <!-- CHAT MESSAGES -->
+                    <div class="chat-messages" ng-if="vm.chat">
+
+                        <!-- MESSAGE -->
+                        <div layout="row" ng-repeat="dialog in vm.chat" class="md-padding message-row"
+                             ng-class="dialog.who">
+
+                            <img ng-if="dialog.who ==='contact'"
+                                 ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}"
+                                 class="avatar"
+                                 alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
+
+                            <img ng-if="dialog.who ==='user'" class="avatar" ng-src="{{vm.user.avatar}}">
+
+                            <div class="bubble">
+                                <div class="message">{{dialog.message}}</div>
+                                <div class="time secondary-text">{{dialog.time | altDate}}</div>
+                            </div>
+
+                        </div>
+                        <!-- / MESSAGE -->
+
+                    </div>
+                    <!-- CHAT MESSAGES -->
+
+                </md-content>
+                <!-- / CHAT CONTENT -->
+
+                <!-- CHAT FOOTER -->
+                <div class="chat-footer flex-noshrink" layout="row" layout-align="center center">
+
+                    <!-- REPLY FORM -->
+                    <form ng-submit="vm.reply()" flex class="reply-form" layout="row" layout-align="start center">
+
+                        <md-input-container flex md-no-float>
+                            <textarea ng-keyup="vm.reply($event)"
+                                      md-no-autogrow ng-model="vm.replyMessage"
+                                      ng-class="{'grow': vm.textareaGrow}"
+                                      placeholder="Type and hit enter to send message"
+                                      translate
+                                      translate-attr-placeholder="CHAT.REPLY_PLACEHOLDER">
+                            </textarea>
+                        </md-input-container>
+
+                        <md-button class="md-fab" type="submit" aria-label="Send message" translate
+                                   translate-attr-aria-label="CHAT.SEND_MESSAGE">
+                            <md-icon md-font-icon="icon-send"></md-icon>
+                        </md-button>
+
+                    </form>
+                    <!-- / REPLY FORM -->
+
+                </div>
+                <!-- / CHAT FOOTER-->
+
+            </div>
+            <!-- / CHAT -->
+
+            <!-- RIGHT SIDENAV -->
+            <md-sidenav class="sidenav right-sidenav md-sidenav-right" layout="column"
+                        md-component-id="right-sidenav"
+                        ms-sidenav-helper ng-include="'app/main/apps/chat/sidenavs/right/right-sidenav.html'">
+            </md-sidenav>
+            <!-- / RIGHT SIDENAV -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>
+<!-- / CHAT APP -->

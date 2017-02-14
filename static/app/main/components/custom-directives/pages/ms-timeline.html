@@ -1,0 +1,62 @@
+<div class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
+        <div class="breadcrumb">
+            <span class="parent">Custom Directives</span>
+        </div>
+
+        <div class="title">ms-timeline</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div class="card md-whiteframe-4dp" layout="column">
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <div id="timeline" ms-timeline ms-timeline-load-more="vm.loadNextPage()">
+
+                    <!-- TIMELINE ITEM -->
+                    <div ms-timeline-item ng-repeat="timelineItem in vm.timeline">
+
+                        <div class="timeline-card">
+                            <!-- MS-CARD -->
+                            <ms-card template="timelineItem.card.template" ng-model="timelineItem.card"></ms-card>
+                            <!-- / MS-CARD -->
+                        </div>
+
+                        <div class="timeline-point md-accent-bg md-whiteframe-2dp">
+                            <md-icon md-font-icon="{{timelineItem.icon}}"></md-icon>
+                        </div>
+
+                        <div class="timeline-detail">
+                            <div class="time">
+                                {{timelineItem.time}}
+                            </div>
+                            <div class="event">
+                                {{timelineItem.event}}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / TIMELINE ITEM -->
+
+                </div>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">Description:</span>
+            <p>
+                <b>ms-timeline</b> directive is required for timeline. It will help loading and animating the timeline
+                items properly. We highly recommend you to check <em>app/main/pages/timeline/timeline.html</em> and
+                <em>app/main/pages/timeline/timeline.controller.js</em> to fully understand how to use it.
+            </p>
+
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

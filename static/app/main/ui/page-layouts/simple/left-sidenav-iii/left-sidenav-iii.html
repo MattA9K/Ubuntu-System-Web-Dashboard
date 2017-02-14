@@ -1,0 +1,48 @@
+<div class="page-layout simple left-sidenav inner-sidenav">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg">
+
+        <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('sidenav')" hide-gt-md
+                   aria-label="Toggle sidenav">
+            <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+        </md-button>
+
+        <span class="h2">Inner Left Sidenav</span>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" md-background-bg layout="row"  ms-scroll>
+
+        <!-- SIDENAV -->
+        <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="sidenav" ms-scroll
+                    ms-sidenav-helper>
+
+            <!-- SIDENAV HEADER -->
+            <div class="header">
+                <p>Sidenav header</p>
+            </div>
+            <!-- / SIDENAV HEADER -->
+
+            <!-- SIDENAV CONTENT -->
+            <md-content class="content">
+
+                <!-- DEMO SIDENAV -->
+                <div ng-include="'app/main/ui/page-layouts/demo/demo-sidenav.html'"></div>
+                <!-- / DEMO SIDENAV -->
+
+            </md-content>
+            <!-- / SIDENAV CONTENT -->
+
+        </md-sidenav>
+        <!-- / SIDENAV -->
+
+        <!-- DEMO CONTENT -->
+        <div flex ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+        <!-- / DEMO CONTENT -->
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

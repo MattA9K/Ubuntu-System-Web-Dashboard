@@ -1,0 +1,99 @@
+#notes {
+
+    .main-sidenav {
+
+        md-list {
+
+            md-list-item {
+
+                span {
+                    font-size: 14px;
+                }
+
+                &.selected {
+
+                    .md-button {
+                        font-weight: 500;
+                        color: #000000;
+                    }
+
+                }
+
+                &.label {
+                    padding: 0 8px 0 16px;
+
+                    md-icon {
+                    }
+
+                    .label-name {
+                        cursor: pointer;
+                    }
+
+                    > .md-button {
+                        margin: 0;
+                        padding: 0;
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    .editable-text {
+                        width: 100%;
+
+                        .editable-controls {
+                            flex-direction: row;
+                            display: flex;
+
+                            .editable-input {
+                                flex: 1;
+                            }
+
+                            .editable-buttons {
+
+                                .md-button {
+                                    margin: 0;
+                                    width: 32px;
+                                    padding: 0;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                &.new-label-form {
+
+                    .editable-text {
+                        width: 100%;
+
+                        .editable-controls {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+
+                            .editable-input {
+                                border: 1px solid rgba(0, 0, 0, 0.2);
+                                padding: 4px 2px;
+                                margin-bottom: 8px;
+                                font-size: 13px;
+                                width: 100%;
+                            }
+
+                            .editable-buttons {
+
+                                .md-button {
+                                    margin: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    height: 32px;
+                                    min-height: 32px;
+                                    line-height: 32px;
+                                    width: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

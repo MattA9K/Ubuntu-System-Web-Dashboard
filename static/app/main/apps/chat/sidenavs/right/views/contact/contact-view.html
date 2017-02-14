@@ -1,0 +1,56 @@
+<!-- CONTACT TOOLBAR -->
+<md-toolbar class="md-tall md-accent">
+
+    <!-- TOOLBAR TOP -->
+    <div class="md-toolbar-tools md-toolbar-tools-top">
+
+        <div translate="CHAT.CONTACT_INFO">Contact Info</div>
+
+        <div flex></div>
+
+        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('right-sidenav')" aria-label="back">
+            <md-icon md-font-icon="icon-close"></md-icon>
+        </md-button>
+
+    </div>
+    <!-- / TOOLBAR TOP -->
+
+    <!-- TOOLBAR BOTTOM -->
+    <div class="md-toolbar-tools md-toolbar-tools-bottom" flex layout="column" layout-align="center center">
+
+        <div layout="column" layout-align="center center">
+
+            <img ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}" class="md-avatar avatar contact-avatar huge"
+                 alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
+
+            <div class="contact-name">{{vm.contacts.getById(vm.chatContactId).name}}</div>
+
+        </div>
+
+    </div>
+    <!-- / TOOLBAR BOTTOM -->
+
+</md-toolbar>
+<!-- / CONTACT TOOLBAR -->
+
+<!-- CONTACT CONTENT -->
+<md-content class="md-hue-2" flex ms-scroll ms-padding>
+
+    <!-- CONTACT MOOD -->
+    <md-card>
+
+        <md-card-title translate="CHAT.MOOD">Mood</md-card-title>
+
+        <md-card-content>
+
+            <span class="mood" ng-if="vm.contacts.getById(vm.chatContactId).mood">
+                {{vm.contacts.getById(vm.chatContactId).mood}}
+            </span>
+
+        </md-card-content>
+
+    </md-card>
+    <!-- / CONTACT MOOD -->
+
+</md-content>
+<!-- / CONTACT CONTENT -->

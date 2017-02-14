@@ -1,0 +1,77 @@
+<div class="row" layout="column">
+
+    <form name="rowForm" ng-submit="vm.dialogType === 'add'?vm.addNewRow():vm.saveRow();">
+
+        <div class="form-content">
+
+            <div layout="row">
+
+                <div flex class="input-block">
+                    <md-input-container flex class="row-name">
+                        <label>Row Name</label>
+                        <input name="name" ng-model="vm.row.name" required md-autofocus>
+                    </md-input-container>
+                </div>
+
+            </div>
+
+            <div layout="column" layout-gt-sm="row" layout-align="start start">
+
+                <div class="input-block" flex>
+                    <md-input-container flex>
+                        <label>Parent Row:</label>
+                        <md-select ng-model="vm.row.parent">
+                            <md-option ng-value="''">
+                                No Parent
+                            </md-option>
+                            <md-option ng-repeat="row in vm.chartData" ng-value="row.id">
+                                {{row.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div class="input-block" flex layout="row" layout-align="space-between center">
+                    <label>Sortable:</label>
+                    <md-switch ng-model="vm.row.sortable" aria-label="Sortable">
+                    </md-switch>
+                </div>
+
+            </div>
+
+            <div layout="column" layout-gt-sm="row" layout-align="start center">
+
+                <div class="input-block" flex layout="row" layout-align="space-between center">
+                    <label>Row Color:</label>
+                    <ms-material-color-picker ng-model="vm.row.classes[1]">
+                    </ms-material-color-picker>
+                </div>
+
+                <div flex class="input-block">
+                    <md-input-container flex layout="row" layout-align="space-between center">
+                        <label>Extra Class</label>
+                        <input name="name" ng-model="vm.row.classes[0]">
+                    </md-input-container>
+                </div>
+
+            </div>
+
+        </div>
+
+        <md-dialog-actions>
+
+            <md-button ng-if="vm.dialogType === 'edit'" class="md-icon-button" ng-click="vm.removeRow()"
+                       aria-label="Remove">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+            </md-button>
+
+            <md-button type="submit" class="md-accent md-raised"
+                       ng-disabled="rowForm.$invalid || rowForm.$pristine" aria-label="Save">
+                <span ng-if="vm.dialogType === 'add'">Add</span>
+                <span ng-if="vm.dialogType === 'edit'">Save</span>
+            </md-button>
+
+        </md-dialog-actions>
+
+    </form>
+</div>
