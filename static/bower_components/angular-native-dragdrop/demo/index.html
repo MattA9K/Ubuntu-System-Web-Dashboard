@@ -35,7 +35,7 @@
                     <li ui-draggable="false" drag="man" drag-channel="beasts"
                         on-drop-success="dropSuccessHandler($event,$index,men)"
                         ng-repeat="man in men track by $index">
-                        {{man}}
+                        {#man#}
                     </li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                         on-drop-success="dropSuccessHandler($event,$index,women)"
                         on-drop-failure="dropFailureHandler($event,$index,women)"
                         ng-repeat="woman in women track by $index">
-                        {{woman}}
+                        {#woman#}
                     </li>
                 </ul>
             </div>
@@ -68,7 +68,7 @@
                         drag-channel="priests"
                         on-drop-success="dropSuccessHandler($event,$index,men)"
                         ng-repeat="man in men track by $index">
-                        {{man}}
+                        {#man#}
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                         drag-channel="priests"
                         on-drop-success="dropSuccessHandler($event,$index,women)"
                         ng-repeat="woman in women track by $index">
-                        {{woman}}
+                        {#woman#}
                     </li>
                 </ul>
             </div>
@@ -106,7 +106,7 @@
                     on-drop-success="dropSuccessHandler($event,$index,men)"
                     ui-on-drop="onDrop($event,$data,men,$index)" drop-channel="terrorists1"
                     ng-repeat="man in men track by $index">
-                        {{man}}
+                        {#man#}
                     </li>
                 </ul>
             </div>
@@ -119,7 +119,7 @@
                     ui-on-drop="onDrop($event,$data,women,$index)" drop-channel="terrorists2"
                     on-drop-success="dropSuccessHandler($event,$index,women)"
                     ng-repeat="woman in women track by $index">
-                        {{woman}}
+                        {#woman#}
                     </li>
                 </ul>
             </div>
@@ -148,7 +148,7 @@
                         ui-on-drop="onDrop($event,$data,men,$index)"
                         drop-channel="customImage1"
                         ng-repeat="man in men track by $index">
-                        {{man}}
+                        {#man#}
                     </li>
                 </ul>
             </div>
@@ -163,7 +163,7 @@
                         drop-channel="customImage2"
                         on-drop-success="dropSuccessHandler($event,$index,women)"
                         ng-repeat="woman in women track by $index">
-                        {{woman}}
+                        {#woman#}
                     </li>
                 </ul>
             </div>

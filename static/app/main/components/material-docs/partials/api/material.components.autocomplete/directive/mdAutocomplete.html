@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
+  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
   
 </header>
 
@@ -60,7 +60,7 @@ directive for displaying the results inside of the dropdown.<br/></p>
       md-search-text="searchText"
       md-items="item in getMatches(searchText)"
       md-item-text="item.display">
-    <span md-highlight-text="searchText">{{item.display}}</span>
+    <span md-highlight-text="searchText">{#item.display#}</span>
   </md-autocomplete>
 </hljs>
 
@@ -72,7 +72,7 @@ directive for displaying the results inside of the dropdown.<br/></p>
     md-items="item in getMatches(searchText)"
     md-item-text="item.display">
   <md-item-template>
-    <span md-highlight-text="searchText">{{item.display}}</span>
+    <span md-highlight-text="searchText">{#item.display#}</span>
   </md-item-template>
   <md-not-found>
     No matches found.
@@ -93,7 +93,7 @@ directive for displaying the results inside of the dropdown.<br/></p>
       md-items="item in getMatches(searchText)"
       md-item-text="item.display">
     <md-item-template>
-      <span md-highlight-text="searchText">{{item.display}}</span>
+      <span md-highlight-text="searchText">{#item.display#}</span>
     </md-item-template>
     <div ng-messages="autocompleteForm.autocomplete.$error">
       <div ng-message="required">This field is required</div>

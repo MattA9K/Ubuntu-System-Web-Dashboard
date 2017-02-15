@@ -7,13 +7,13 @@
         <div flex layout='row' layout-padding layout-align="start center" >
 
           <div flex style="max-width:200px;">
-            {{person.title}}
+            {#person.title#}
           </div>
           <md-radio-button flex
               ng-value="person.id"
               class="md-primary" >
 
-            {{person.fullName}}
+            {#person.fullName#}
 
           </md-radio-button>
 
@@ -24,7 +24,7 @@
     <md-divider></md-divider>
     <div class="summary" flex layout="row" layout-align="space-between center">
       <div flex-initial>
-        <span class="title">Selected User</span>: <span class="md-checked">{{cc.selectedUser()}}</span>
+        <span class="title">Selected User</span>: <span class="md-checked">{#cc.selectedUser()#}</span>
       </div>
     </div>
 </div>

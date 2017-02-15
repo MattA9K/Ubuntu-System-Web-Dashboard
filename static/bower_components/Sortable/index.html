@@ -177,12 +177,12 @@
 
 			<div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
 				<div ng-controller="TodoController">
-					<span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
+					<span style="padding-left: 20px">{#remaining()#} of {#todos.length#} remaining</span>
 					[ <a href="" ng-click="archive()">archive</a> ]
 					<ul ng-sortable="{ group: 'todo', animation: 150 }" class="unstyled">
 						<li ng-repeat="todo in todos">
 							<input type="checkbox" ng-model="todo.done">
-							<span class="done-{{todo.done}}">{{todo.text}}</span>
+							<span class="done-{#todo.done#}">{#todo.text#}</span>
 						</li>
 					</ul>
 					<form ng-submit="addTodo()" style="padding-left: 20px">
@@ -195,11 +195,11 @@
 
 			<div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
 				<div ng-controller="TodoControllerNext">
-					<span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
+					<span style="padding-left: 20px">{#remaining()#} of {#todos.length#} remaining</span>
 					<ul ng-sortable="sortableConfig" class="unstyled">
 						<li ng-repeat="todo in todos">
 							<input type="checkbox" ng-model="todo.done">
-							<span class="done-{{todo.done}}">{{todo.text}}</span>
+							<span class="done-{#todo.done#}">{#todo.text#}</span>
 						</li>
 					</ul>
 				</div>

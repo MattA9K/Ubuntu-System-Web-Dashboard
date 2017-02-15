@@ -9,8 +9,8 @@
     /** @ngInject */
     function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
     {
-        $locationProvider.html5Mode(true);
-
+        // $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
         $urlRouterProvider.otherwise('/dashboard-project');
 
         /**

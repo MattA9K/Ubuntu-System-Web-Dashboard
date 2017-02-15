@@ -16,7 +16,7 @@
           </md-button>
           <md-menu-content width="6">
             <md-menu-item ng-repeat="item in [1, 2, 3]">
-              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {#item#} </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
@@ -29,7 +29,7 @@
           </md-button>
           <md-menu-content width="4">
             <md-menu-item ng-repeat="item in [1, 2, 3]">
-              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {#item#} </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
@@ -42,7 +42,7 @@
           </md-button>
           <md-menu-content width="2">
             <md-menu-item ng-repeat="item in [1, 2, 3]">
-              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {#item#} </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>

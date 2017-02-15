@@ -3,7 +3,7 @@
   <md-content style="margin: 16px; padding:16px">
 
     <h3>
-      RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      RGB <span ng-attr-style="border: 1px solid #333; background: rgb({#color.red#},{#color.green#},{#color.blue#})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </h3>
 
     <md-slider-container>
@@ -35,7 +35,7 @@
 
     <div style="margin-top: 50px;"></div>
 
-    <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
+    <h3>Rating: {#rating#}/5 - demo of theming classes</h3>
     <div layout>
       <div flex="10" layout layout-align="center center">
         <span class="md-body-1">default</span>

@@ -50,7 +50,7 @@ need to use the <code>md-theme-watch</code> directive.</p>
 <div>
   <md-button ng-click="dynamicTheme = 'default'">Default</md-button>
   <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
-  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
+  <div md-theme="{# dynamicTheme #}" md-theme-watch>
     <md-button class="md-primary">I&#39;m dynamic</md-button>
   </div>
 </div>
