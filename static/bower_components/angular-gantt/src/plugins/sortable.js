@@ -103,7 +103,7 @@
                                 }
                             };
 
-                            rowElement.attr('ui-draggable', '{{checkDraggable()}}');
+                            rowElement.attr('ui-draggable', '{#checkDraggable()#}');
                             rowElement.attr('drag-channel', '\'sortable\'');
                             rowElement.attr('ui-on-drop', 'onDrop($event, $data)');
                             rowElement.attr('on-drop-success', 'onDropSuccess()');

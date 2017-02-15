@@ -1388,7 +1388,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                                 }
                             };
 
-                            rowElement.attr('ui-draggable', '{{checkDraggable()}}');
+                            rowElement.attr('ui-draggable', '{#checkDraggable()#}');
                             rowElement.attr('drag-channel', '\'sortable\'');
                             rowElement.attr('ui-on-drop', 'onDrop($event, $data)');
                             rowElement.attr('on-drop-success', 'onDropSuccess()');
@@ -1519,9 +1519,9 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                     scope.delay = 500;
                 }
                 if (scope.content === undefined) {
-                    scope.content = '{{task.model.name}}</br>'+
+                    scope.content = '{#task.model.name#}</br>'+
                                     '<small>'+
-                                    '{{task.isMilestone() === true && getFromLabel() || getFromLabel() + \' - \' + getToLabel()}}'+
+                                    '{#task.isMilestone() === true && getFromLabel() || getFromLabel() + \' - \' + getToLabel()#}'+
                                     '</small>';
                 }
 

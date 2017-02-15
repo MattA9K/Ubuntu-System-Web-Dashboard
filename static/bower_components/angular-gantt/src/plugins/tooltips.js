@@ -30,9 +30,9 @@
                     scope.delay = 500;
                 }
                 if (scope.content === undefined) {
-                    scope.content = '{{task.model.name}}</br>'+
+                    scope.content = '{#task.model.name#}</br>'+
                                     '<small>'+
-                                    '{{task.isMilestone() === true && getFromLabel() || getFromLabel() + \' - \' + getToLabel()}}'+
+                                    '{#task.isMilestone() === true && getFromLabel() || getFromLabel() + \' - \' + getToLabel()#}'+
                                     '</small>';
                 }
 

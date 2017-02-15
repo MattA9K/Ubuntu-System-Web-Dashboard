@@ -63,13 +63,13 @@ BasicDemoCtrl.prototype.showMenu = function(ev) {
         '     role="listbox">' +
         '  <div class="demo-menu-item" ' +
         '       ng-class="{selected : dessert == ctrl.favoriteDessert}" ' +
-        '       aria-selected="{{dessert == ctrl.favoriteDessert}}" ' +
+        '       aria-selected="{#dessert == ctrl.favoriteDessert#}" ' +
         '       tabindex="-1" ' +
         '       role="option" ' +
         '       ng-repeat="dessert in ctrl.desserts" ' +
         '       ng-click="ctrl.selectDessert(dessert)"' +
         '       ng-keydown="ctrl.onKeydown($event, dessert)">' +
-        '    {{ dessert }} ' +
+        '    {# dessert #} ' +
         '  </div>' +
         '</div>',
     panelClass: 'demo-menu-example',
