@@ -4,7 +4,7 @@
             "id": "15459251a6d6b397565",
             "from": {
                 "name": "Alice Freeman",
-                "avatar": "assets/images/avatars/alice.jpg",
+                "avatar": "/static/assets/images/avatars/alice.jpg",
                 "email": "alicefreeman@creapond.com"
             },
             "to": [

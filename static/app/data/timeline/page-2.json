@@ -2,13 +2,13 @@
     "data": [
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-3/template-3.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-3/template-3.html",
                 "title": "Poison",
                 "subtitle": "Alice Cooper",
                 "cta": "LISTEN NOW",
                 "media": {
                     "image": {
-                        "src": "assets/images/etc/alice-cooper-poison.jpg",
+                        "src": "/static/assets/images/etc/alice-cooper-poison.jpg",
                         "alt": "Alice Cooper - Poison"
                     }
                 }
@@ -19,12 +19,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-4/template-4.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-4/template-4.html",
                 "title": "Nature",
                 "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
                 "media": {
                     "image": {
-                        "src": "assets/images/etc/avenue.jpg",
+                        "src": "/static/assets/images/etc/avenue.jpg",
                         "alt": "Avenue"
                     }
                 }
@@ -35,12 +35,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-5/template-5.html",
                 "title": "Friends",
                 "event": "Andrew Ryan is now following you",
                 "media": {
                     "image": {
-                        "src": "assets/images/avatars/vincent.jpg",
+                        "src": "/static/assets/images/avatars/vincent.jpg",
                         "alt": "Andrew Ryan"
                     }
                 }
@@ -51,12 +51,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-5/template-5.html",
                 "title": "Friends",
                 "event": "Alice Freeman is now following you",
                 "media": {
                     "image": {
-                        "src": "assets/images/avatars/alice.jpg",
+                        "src": "/static/assets/images/avatars/alice.jpg",
                         "alt": "Alice Freeman"
                     }
                 }
@@ -67,12 +67,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-4/template-4.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-4/template-4.html",
                 "title": "Nature",
                 "text": "Look deep into nature, then you will understand everything better",
                 "media": {
                     "image": {
-                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "src": "/static/assets/images/etc/early-sunrise.jpg",
                         "alt": "Avenue"
                     }
                 }

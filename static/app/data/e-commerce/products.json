@@ -16,73 +16,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -115,73 +115,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -214,73 +214,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -313,73 +313,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -412,73 +412,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -511,73 +511,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -610,73 +610,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -709,73 +709,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -808,73 +808,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -907,73 +907,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1006,73 +1006,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1105,73 +1105,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1204,73 +1204,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1303,73 +1303,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1402,73 +1402,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1501,73 +1501,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1600,73 +1600,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1699,73 +1699,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1798,73 +1798,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],
@@ -1897,73 +1897,73 @@
                 {
                     "default": true,
                     "id": 1,
-                    "url": "assets/images/backgrounds/january.jpg",
+                    "url": "/static/assets/images/backgrounds/january.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 2,
-                    "url": "assets/images/backgrounds/february.jpg",
+                    "url": "/static/assets/images/backgrounds/february.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 3,
-                    "url": "assets/images/backgrounds/march.jpg",
+                    "url": "/static/assets/images/backgrounds/march.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 4,
-                    "url": "assets/images/backgrounds/april.jpg",
+                    "url": "/static/assets/images/backgrounds/april.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 5,
-                    "url": "assets/images/backgrounds/may.jpg",
+                    "url": "/static/assets/images/backgrounds/may.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 6,
-                    "url": "assets/images/backgrounds/june.jpg",
+                    "url": "/static/assets/images/backgrounds/june.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 7,
-                    "url": "assets/images/backgrounds/july.jpg",
+                    "url": "/static/assets/images/backgrounds/july.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 8,
-                    "url": "assets/images/backgrounds/august.jpg",
+                    "url": "/static/assets/images/backgrounds/august.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 9,
-                    "url": "assets/images/backgrounds/september.jpg",
+                    "url": "/static/assets/images/backgrounds/september.jpg",
                     "type": "image"
                 },
                 {
                     "default": true,
                     "id": 10,
-                    "url": "assets/images/backgrounds/october.jpg",
+                    "url": "/static/assets/images/backgrounds/october.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 11,
-                    "url": "assets/images/backgrounds/november.jpg",
+                    "url": "/static/assets/images/backgrounds/november.jpg",
                     "type": "image"
                 },
                 {
                     "default": false,
                     "id": 12,
-                    "url": "assets/images/backgrounds/december.jpg",
+                    "url": "/static/assets/images/backgrounds/december.jpg",
                     "type": "image"
                 }
             ],

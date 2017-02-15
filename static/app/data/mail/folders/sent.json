@@ -4,7 +4,7 @@
             "id": "1541dd1e05dfc439216",
             "from": {
                 "name": "Lawrence Collins",
-                "avatar": "assets/images/avatars/vincent.jpg",
+                "avatar": "/static/assets/images/avatars/vincent.jpg",
                 "email": "lawrencecollins@creapond.com"
             },
             "to": [
@@ -26,7 +26,7 @@
             "id": "154204e45a59b168453",
             "from": {
                 "name": "Alice Freeman",
-                "avatar": "assets/images/avatars/alice.jpg",
+                "avatar": "/static/assets/images/avatars/alice.jpg",
                 "email": "alicefreeman@creapond.com"
             },
             "to": [

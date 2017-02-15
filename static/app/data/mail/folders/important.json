@@ -4,7 +4,7 @@
             "id": "15459251a6d6b397565",
             "from": {
                 "name": "Alice Freeman",
-                "avatar": "assets/images/avatars/alice.jpg",
+                "avatar": "/static/assets/images/avatars/alice.jpg",
                 "email": "alicefreeman@creapond.com"
             },
             "to": [
@@ -24,22 +24,22 @@
                 {
                     "type": "image",
                     "fileName": "flowers",
-                    "preview": "assets/images/etc/flowers-thumb.jpg",
+                    "preview": "/static/assets/images/etc/flowers-thumb.jpg",
                     "url": "",
                     "size": "1.1Mb"
                 },
                 {
                     "type": "image",
                     "fileName": "snow",
-                    "preview": "assets/images/etc/snow-thumb.jpg",
+                    "preview": "/static/assets/images/etc/snow-thumb.jpg",
                     "url": "",
                     "size": "380kb"
                 },
                 {
                     "type": "image",
                     "fileName": "sunrise",
-                    "preview": "assets/images/etc/sunrise-thumb.jpg",
-                    "url": "assets/images/etc/early-sunrise.jpg",
+                    "preview": "/static/assets/images/etc/sunrise-thumb.jpg",
+                    "url": "/static/assets/images/etc/early-sunrise.jpg",
                     "size": "17Mb"
                 }
             ],

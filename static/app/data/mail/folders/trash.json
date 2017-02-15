@@ -4,7 +4,7 @@
             "id": "1541dd1e05dfc439216",
             "from": {
                 "name": "Maria Gilbert",
-                "avatar": "assets/images/avatars/danielle.jpg",
+                "avatar": "/static/assets/images/avatars/danielle.jpg",
                 "email": "mariagilbert@creapond.com"
             },
             "to": [

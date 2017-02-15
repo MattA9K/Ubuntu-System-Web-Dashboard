@@ -2,7 +2,7 @@
     "data": {
         "id": "5725a6802d10e277a0f35724",
         "name": "John Doe",
-        "avatar": "assets/images/avatars/profile.jpg",
+        "avatar": "/static/assets/images/avatars/profile.jpg",
         "starred": [
             "5725a680ae1ae9a3c960d487",
             "5725a6801146cce777df2a08",

@@ -28,10 +28,10 @@
             background: {
                 name: 'grey',
                 hues: {
-                    'default': 'A100',
-                    'hue-1'  : 'A100',
-                    'hue-2'  : '100',
-                    'hue-3'  : '300'
+                    'default': '500',
+                    'hue-1'  : '900',
+                    'hue-2'  : '300',
+                    'hue-3'  : '100'
                 }
             }
         },

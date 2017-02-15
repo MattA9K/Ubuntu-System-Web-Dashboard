@@ -54,7 +54,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Shopping list",
@@ -67,7 +67,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Invoices",
@@ -80,7 +80,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Crash logs",
@@ -93,7 +93,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "System logs",
@@ -106,7 +106,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Prices",
@@ -119,7 +119,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Anabelle Manual",
@@ -132,7 +132,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             },
             {
                 "name": "Steam summer sale budget",
@@ -145,7 +145,7 @@
                 "extention": "",
                 "location": "My Files > Documents",
                 "offline": true,
-                "preview": "assets/images/etc/sample-file-preview.jpg"
+                "preview": "/static/assets/images/etc/sample-file-preview.jpg"
             }
         ]
     }

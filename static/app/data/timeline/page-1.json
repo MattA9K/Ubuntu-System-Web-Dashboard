@@ -2,10 +2,10 @@
     "data": [
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-1/template-1.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-1/template-1.html",
                         "media": {
                             "image": {
-                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "src": "/static/assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 },
@@ -19,12 +19,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-5/template-5.html",
                 "title": "Friends",
                 "event": "Gordon Freeman is now following you",
                 "media": {
                     "image": {
-                        "src": "assets/images/avatars/garry.jpg",
+                        "src": "/static/assets/images/avatars/garry.jpg",
                         "alt": "Andrew Ryan"
                     }
                 }
@@ -35,16 +35,16 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-2/template-2.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-2/template-2.html",
                 "avatar": {
-                    "src": "assets/images/avatars/alice.jpg",
+                    "src": "/static/assets/images/avatars/alice.jpg",
                     "alt": "Alice Freeman"
                 },
                 "title": "Alice Freeman posted on Nature",
                 "subtitle": "32 minutes ago",
                 "media": {
                     "image": {
-                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "src": "/static/assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 },
@@ -56,7 +56,7 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-8/template-8.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-8/template-8.html",
                 "title": "Nature",
                 "subtitle": "Mountain view from lake side",
                 "button1": "DETAILS",
@@ -64,7 +64,7 @@
                 "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better. Duis leo enim, interdum vitae commodo quis, ullamcorper eget lectus. Phasellus auctor tellus id sem dictum gravida. Quisque vitae enim quis libero ultricies dictum sit amet vitae metus. Mauris efficitur nisi eu metus eleifend, sit amet molestie eros viverra.",
                 "media": {
                     "image": {
-                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "src": "/static/assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 }
@@ -75,12 +75,12 @@
         },
         {
             "card": {
-                "template": "app/core/directives/ms-card/templates/template-10/template-10.html",
+                "template": "/static/app/core/directives/ms-card/templates/template-10/template-10.html",
                 "title": "Health",
                 "subtitle": "Stimpaks are good for you",
                 "media": {
                     "image": {
-                        "src": "assets/images/logos/fallout.png",
+                        "src": "/static/assets/images/logos/fallout.png",
                         "alt": "Andrew Ryan"
                     }
                 },

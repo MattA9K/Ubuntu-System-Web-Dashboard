@@ -7,27 +7,27 @@
                 {
                     "type": "photo",
                     "title": "Mountain Sunset",
-                    "preview": "assets/images/etc/mountain-sunset.jpg"
+                    "preview": "/static/assets/images/etc/mountain-sunset.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Lake",
-                    "preview": "assets/images/etc/mountain-lake.jpg"
+                    "preview": "/static/assets/images/etc/mountain-lake.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Hot air balloons",
-                    "preview": "assets/images/etc/air-balloons.jpg"
+                    "preview": "/static/assets/images/etc/air-balloons.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Cactus",
-                    "preview": "assets/images/etc/cactus.jpg"
+                    "preview": "/static/assets/images/etc/cactus.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Road Trip",
-                    "preview": "assets/images/etc/road-trip.jpg"
+                    "preview": "/static/assets/images/etc/road-trip.jpg"
                 }
             ]
         },
@@ -38,52 +38,52 @@
                 {
                     "type": "photo",
                     "title": "Mountain Sunset",
-                    "preview": "assets/images/etc/mountain-sunset.jpg"
+                    "preview": "/static/assets/images/etc/mountain-sunset.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Lake",
-                    "preview": "assets/images/etc/mountain-lake.jpg"
+                    "preview": "/static/assets/images/etc/mountain-lake.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Hot air balloons",
-                    "preview": "assets/images/etc/air-balloons.jpg"
+                    "preview": "/static/assets/images/etc/air-balloons.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Cactus",
-                    "preview": "assets/images/etc/cactus.jpg"
+                    "preview": "/static/assets/images/etc/cactus.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Road Trip",
-                    "preview": "assets/images/etc/road-trip.jpg"
+                    "preview": "/static/assets/images/etc/road-trip.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Sunset",
-                    "preview": "assets/images/etc/mountain-sunset.jpg"
+                    "preview": "/static/assets/images/etc/mountain-sunset.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Lake",
-                    "preview": "assets/images/etc/mountain-lake.jpg"
+                    "preview": "/static/assets/images/etc/mountain-lake.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Hot air balloons",
-                    "preview": "assets/images/etc/air-balloons.jpg"
+                    "preview": "/static/assets/images/etc/air-balloons.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Cactus",
-                    "preview": "assets/images/etc/cactus.jpg"
+                    "preview": "/static/assets/images/etc/cactus.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Road Trip",
-                    "preview": "assets/images/etc/road-trip.jpg"
+                    "preview": "/static/assets/images/etc/road-trip.jpg"
                 }
             ]
         },
@@ -94,37 +94,37 @@
                 {
                     "type": "photo",
                     "title": "Mountain Sunset",
-                    "preview": "assets/images/etc/mountain-sunset.jpg"
+                    "preview": "/static/assets/images/etc/mountain-sunset.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Lake",
-                    "preview": "assets/images/etc/mountain-lake.jpg"
+                    "preview": "/static/assets/images/etc/mountain-lake.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Hot air balloons",
-                    "preview": "assets/images/etc/air-balloons.jpg"
+                    "preview": "/static/assets/images/etc/air-balloons.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Cactus",
-                    "preview": "assets/images/etc/cactus.jpg"
+                    "preview": "/static/assets/images/etc/cactus.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Road Trip",
-                    "preview": "assets/images/etc/road-trip.jpg"
+                    "preview": "/static/assets/images/etc/road-trip.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Sunset",
-                    "preview": "assets/images/etc/mountain-sunset.jpg"
+                    "preview": "/static/assets/images/etc/mountain-sunset.jpg"
                 },
                 {
                     "type": "photo",
                     "title": "Mountain Lake",
-                    "preview": "assets/images/etc/mountain-lake.jpg"
+                    "preview": "/static/assets/images/etc/mountain-lake.jpg"
                 }
             ]
         }

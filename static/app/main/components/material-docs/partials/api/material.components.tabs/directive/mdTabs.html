@@ -92,7 +92,7 @@ independently managed and data-binding notifications announce tab selection chan
   
     <hljs lang="html">
 <md-tabs md-selected="selectedIndex" >
-  <img ng-src="assets/angular-material-assets/img/angular.png" class="centered">
+  <img ng-src="/static/assets/angular-material-assets/img/angular.png" class="centered">
   <md-tab
       ng-repeat="tab in tabs | orderBy:predicate:reversed"
       md-on-select="onTabSelected(tab)"
@@ -100,7 +100,7 @@ independently managed and data-binding notifications announce tab selection chan
       ng-disabled="tab.disabled">
     <md-tab-label>
       {#tab.title#}
-      <img src="assets/angular-material-assets/img/removeTab.png" ng-click="removeTab(tab)" class="delete">
+      <img src="/static/assets/angular-material-assets/img/removeTab.png" ng-click="removeTab(tab)" class="delete">
     </md-tab-label>
     <md-tab-body>
       {#tab.content#}

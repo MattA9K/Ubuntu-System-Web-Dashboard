@@ -107,7 +107,7 @@
                 "excerpt": "The Fallout 4 Pip-Boy edition is back in stock at Gamestop, for all 3 platforms. Additionally, Walmart also has it in stock for the PS4 and Xbox One as of this writing, as does Best Buy.",
                 "media": {
                     "type": "image",
-                    "preview": "assets/images/etc/fallout.jpg"
+                    "preview": "/static/assets/images/etc/fallout.jpg"
                 }
             },
             "comments": [

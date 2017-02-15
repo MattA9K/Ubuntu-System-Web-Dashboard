@@ -17,19 +17,21 @@
         <p>Before you can show your graphs, you need to do the boilerplate stuff. You have to create an html page that loads the
             appropriate javascript libraries and stylesheets. The next code block shows this very basic html page.</p>
 
+
+
 <pre class="brush: xml; highlight: [5, 15]; html-script: false">
 &lt;html lang="en" ng-app="graphApp">
 &lt;head>
-&lt;link href="assets/css/c3.min.css" rel="stylesheet" type="text/css"/>
+&lt;link href="/static/assets/css/c3.min.css" rel="stylesheet" type="text/css"/>
 &lt;/head>
 &lt;body ng-controller="GraphCtrl">
 
-    &lt;script src="assets/js/d3.min.js" charset="utf-8">&lt;/script>
-    &lt;script src="assets/js/c3.min.js">&lt;/script>
-    &lt;script src="assets/js/angular.min.js">&lt;/script>
-    &lt;script src="assets/js/c3-angular.min.js">&lt;/script>
+    &lt;script src="/static/assets/js/d3.min.js" charset="utf-8">&lt;/script>
+    &lt;script src="/static/assets/js/c3.min.js">&lt;/script>
+    &lt;script src="/static/assets/js/angular.min.js">&lt;/script>
+    &lt;script src="/static/assets/js/c3-angular.min.js">&lt;/script>
 
-    &lt;script src="assets/js/app.js">&lt;/script>
+    &lt;script src="/static/assets/js/app.js">&lt;/script>
 &lt;/body>
 &lt;/html>
 
