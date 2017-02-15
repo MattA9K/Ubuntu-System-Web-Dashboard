@@ -51,17 +51,17 @@
 
             <div class="fist-letter md-accent-fg"
                  ng-if="vm.contacts[$index].name.charAt(0) !== vm.contacts[$index-1].name.charAt(0)">
-                {{contact.name.charAt(0)}}
+                {#contact.name.charAt(0)#}
             </div>
 
             <div class="avatar-wrapper">
-                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
+                <img ng-src="{#contact.avatar#}" class="md-avatar avatar" alt="{#contact.name#}"/>
                 <i class="icon icon- s16 status" ng-class="contact.status"></i>
             </div>
 
             <div class="md-list-item-text">
-                <h3>{{contact.name}}</h3>
-                <p class="mood">{{contact.mood}}</p>
+                <h3>{#contact.name#}</h3>
+                <p class="mood">{#contact.mood#}</p>
             </div>
 
         </md-list-item>

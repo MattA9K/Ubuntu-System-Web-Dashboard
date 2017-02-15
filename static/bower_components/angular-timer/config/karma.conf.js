@@ -5,16 +5,16 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      'bower_components/humanize-duration/humanize-duration.js',
-      'bower_components/moment/min/moment-with-locales.js',
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'app/js/*.js',
+      '/static/bower_components/humanize-duration/humanize-duration.js',
+      '/static/bower_components/moment/min/moment-with-locales.js',
+      '/static/bower_components/angular/angular.js',
+      '/static/bower_components/angular-mocks/angular-mocks.js',
+      '/static/app/js/*.js',
       'test/unit/**/*.js'
     ],
 
     exclude : [
-      'bower_components/angular-scenario/angular-scenario.js'
+      '/static/bower_components/angular-scenario/angular-scenario.js'
     ],
 
     autoWatch : false,

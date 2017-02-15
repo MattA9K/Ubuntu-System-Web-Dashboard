@@ -10,7 +10,7 @@
 
             <md-toolbar class="demo-toolbar md-primary">
                 <div class="md-toolbar-tools">
-                    <h3>{{demoCtrl.demoTitle}}</h3>
+                    <h3>{#demoCtrl.demoTitle#}</h3>
                     <span flex></span>
                     <md-button
                             class="md-icon-button"
@@ -25,9 +25,9 @@
 
             <!-- Source views -->
             <md-tabs class="demo-source-tabs md-primary"  md-dynamic-height ng-show="demoCtrl.$showSource">
-                <md-tab ng-repeat="file in demoCtrl.orderedFiles" label="{{file.name}}">
+                <md-tab ng-repeat="file in demoCtrl.orderedFiles" label="{#file.name#}">
                     <md-content md-scroll-y class="demo-source-container">
-                        <hljs class="no-header" code="file.contentsPromise" lang="{{file.fileType}}"
+                        <hljs class="no-header" code="file.contentsPromise" lang="{#file.fileType#}"
                               should-interpolate="demoCtrl.interpolateCode">
                         </hljs>
                     </md-content>
@@ -35,7 +35,7 @@
             </md-tabs>
 
             <!-- Live Demos -->
-            <demo-include files="demoCtrl.files" module="demoCtrl.demoModule" class="{{demoCtrl.demoId}}">
+            <demo-include files="demoCtrl.files" module="demoCtrl.demoModule" class="{#demoCtrl.demoId#}">
             </demo-include>
         </section>
 

@@ -21,7 +21,7 @@
             <div class="header-board-name" layout="row" layout-align="center center" flex-order="2" flex-order-xs="1"
                  flex-xs="100">
                 <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye"></i>
-                <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{{vm.board.name}}</span>
+                <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{#vm.board.name#}</span>
             </div>
             <!-- / BOARD NAME -->
 
@@ -98,7 +98,7 @@
                 <i class="icon-trello s64"></i>
             </div>
 
-            <div flex class="board-name">{{board.name}}</div>
+            <div flex class="board-name">{#board.name#}</div>
 
             <div class="board-options">
                 <i class="icon-dots-horizontal"></i>

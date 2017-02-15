@@ -64,7 +64,7 @@
             <span class="h2 pt-16">Example:</span>
             <!-- htmlmin:ignore -->
             <hljs language="html" class="source-code">
-                <ms-card template="'app/card-templates/my-custom-template.html'" ng-model="vm.cardModel"></ms-card>
+                <ms-card template="'/static/app/card-templates/my-custom-template.html'" ng-model="vm.cardModel"></ms-card>
             </hljs>
             <!-- htmlmin:ignore -->
 
@@ -102,7 +102,7 @@
                 So you will be able to access the title by doing
                 <!-- htmlmin:ignore -->
                 <hljs language="js" class="source-code">
-                    {{card.title}}
+                    {#card.title#}
                 </hljs>
                 <!-- htmlmin:ignore -->
                 inside the template file.

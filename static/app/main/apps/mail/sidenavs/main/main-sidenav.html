@@ -12,7 +12,7 @@
         <div class="title">John Doe</div>
         <md-select class="account-selection simplified" placeholder="Mail Selection"
                    ng-model="vm.selectedAccount">
-            <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}
+            <md-option ng-repeat="(provider, address) in vm.accounts" value="{#provider#}">{#address#}
             </md-option>
         </md-select>
     </div>
@@ -35,8 +35,8 @@
                    ng-click="vm.loadFolder(folder.name)"
                    ng-class="{'selected':vm.isFolderActive(folder.name)}">
             <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="{{folder.icon}}" class="s16"></md-icon>
-                <span class="title">{{folder.title}}</span>
+                <md-icon md-font-icon="{#folder.icon#}" class="s16"></md-icon>
+                <span class="title">{#folder.title#}</span>
             </div>
         </md-button>
 
@@ -47,7 +47,7 @@
                    ng-class="{'selected':vm.isLabelActive(label.name)}">
             <div layout="row" layout-align="start center">
                 <div class="h-10 w-10 mr-16" ng-class="label.color"></div>
-                <span class="title">{{label.title}}</span>
+                <span class="title">{#label.title#}</span>
             </div>
         </md-button>
 

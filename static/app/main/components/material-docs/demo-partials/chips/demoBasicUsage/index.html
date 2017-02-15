@@ -7,7 +7,7 @@
       <md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly"
                 md-removable="ctrl.removable" md-max-chips="5">
         <md-chip-template>
-          <strong>{{$chip}}</strong>
+          <strong>{#$chip#}</strong>
           <em>(fruit)</em>
         </md-chip-template>
       </md-chips>
@@ -50,8 +50,8 @@
         md-transform-chip="ctrl.newVeg($chip)" md-removable="ctrl.removable">
       <md-chip-template>
         <span>
-          <strong>[{{$index}}] {{$chip.name}}</strong>
-          <em>({{$chip.type}})</em>
+          <strong>[{#$index#}] {#$chip.name#}</strong>
+          <em>({#$chip.type#})</em>
         </span>
       </md-chip-template>
       <button md-chip-remove class="md-primary vegetablechip">
@@ -62,7 +62,7 @@
     <br/>
     <md-checkbox ng-model="ctrl.readonly">Readonly</md-checkbox>
     <md-checkbox ng-model="ctrl.removable">
-      Removable (<code>{{ctrl.removable === undefined ? 'undefined' : ctrl.removable}}</code>)
+      Removable (<code>{#ctrl.removable === undefined ? 'undefined' : ctrl.removable#}</code>)
     </md-checkbox>
     <p class="md-caption">
       <b>Note</b>: When md-removable is undefined, readonly automatically sets md-removable to false.

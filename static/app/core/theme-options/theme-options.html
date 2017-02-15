@@ -11,8 +11,8 @@
                             ng-model="vm.layoutStyle" ng-change="vm.updateLayoutStyle()">
                 <md-radio-button ng-repeat="layoutStyle in vm.layoutStyles" ng-value="layoutStyle.value">
                     <div layout="column" layout-align="center center">
-                        <img ng-src="{{layoutStyle.figure}}">
-                        <span class="text-center font-size-12 mt-8">{{layoutStyle.label}}</span>
+                        <img ng-src="{#layoutStyle.figure#}">
+                        <span class="text-center font-size-12 mt-8">{#layoutStyle.label#}</span>
                     </div>
                 </md-radio-button>
             </md-radio-group>
@@ -25,7 +25,7 @@
             <md-radio-group layout="row" layout-align="start center" ng-model="vm.layoutMode"
                             ng-change="vm.updateLayoutMode()">
                 <md-radio-button ng-repeat="layoutMode in vm.layoutModes" ng-value="layoutMode.value">
-                    {{layoutMode.label}}
+                    {#layoutMode.label#}
                 </md-radio-button>
             </md-radio-group>
         </div>
@@ -37,7 +37,7 @@
             <div layout="row" layout-align="start start" layout-wrap>
                 <md-button ng-repeat="(themeName, theme) in vm.themes.list" class="md-raised theme-button"
                            layout="row" layout-align="center center"
-                           aria-label="{{themeName}}" ng-click="vm.setActiveTheme(themeName)"
+                           aria-label="{#themeName#}" ng-click="vm.setActiveTheme(themeName)"
                            ng-style="{'background-color': theme.primary.color,'border-color': theme.accent.color,'color': theme.primary.contrast1}"
                            ng-class="{active: vm.getActiveTheme().name === themeName}">
                     <md-icon ng-style="{'color': theme.primary.contrast1}" md-font-icon="icon-palette" class="icon s32"></md-icon>

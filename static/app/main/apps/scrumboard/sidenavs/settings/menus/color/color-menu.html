@@ -8,7 +8,7 @@
             <div ng-if="!vm.board.settings.color" class="preview md-background-bg md-hue-1"></div>
             <div ng-if="vm.board.settings.color" class="preview"
                  ng-class="'md-'+vm.board.settings.color+'-bg'">
-                {{vm.board.settings.color}}
+                {#vm.board.settings.color#}
             </div>
             <md-button class="md-icon-button" ng-click="vm.board.settings.color = ''" aria-label="Default Color">
                 <md-icon md-font-icon="icon-close-circle"></md-icon>
@@ -46,7 +46,7 @@
         <md-list-item class="color" ng-repeat="(paletteName, palette) in vm.palettes"
                       ng-click="vm.board.settings.color = paletteName"
                       ng-class="'md-'+paletteName+'-bg'" aria-label="color select">
-            <p flex>{{paletteName}}</p>
+            <p flex>{#paletteName#}</p>
             <i class="icon-check s16" ng-if="paletteName === vm.board.settings.color"></i>
         </md-list-item>
         <!-- / COLORS -->

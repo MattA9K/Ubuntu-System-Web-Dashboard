@@ -20,10 +20,10 @@
 
         <div layout="column" layout-align="center center">
 
-            <img ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}" class="md-avatar avatar contact-avatar huge"
-                 alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
+            <img ng-src="{#vm.contacts.getById(vm.chatContactId).avatar#}" class="md-avatar avatar contact-avatar huge"
+                 alt="{#vm.contacts.getById(vm.chatContactId).name#}"/>
 
-            <div class="contact-name">{{vm.contacts.getById(vm.chatContactId).name}}</div>
+            <div class="contact-name">{#vm.contacts.getById(vm.chatContactId).name#}</div>
 
         </div>
 
@@ -44,7 +44,7 @@
         <md-card-content>
 
             <span class="mood" ng-if="vm.contacts.getById(vm.chatContactId).mood">
-                {{vm.contacts.getById(vm.chatContactId).mood}}
+                {#vm.contacts.getById(vm.chatContactId).mood#}
             </span>
 
         </md-card-content>

@@ -40,10 +40,10 @@
             </ms-material-color-picker>
             <span class="label-name text-transclude" flex ng-hide="editLabelForm.$visible"
                   ng-click="vm.filterChange(label)">
-                {{label.name}}
+                {#label.name#}
             </span>
             <span flex editable-text="label.name" e-form="editLabelForm" ng-show="editLabelForm.$visible">
-                {{label.name}}
+                {#label.name#}
             </span>
             <md-button class="md-icon-button" ng-hide="editLabelForm.$visible" ng-click="editLabelForm.$show()"
                        aria-label="edit label">

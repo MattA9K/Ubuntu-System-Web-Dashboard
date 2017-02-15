@@ -3,7 +3,7 @@
     <!-- DIALOG TOOLBAR -->
     <md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
         <div class="md-toolbar-tools">
-            <h2 class="title">{{vm.dueDate | date:'mediumDate':'UTC'}}</h2>
+            <h2 class="title">{#vm.dueDate | date:'mediumDate':'UTC'#}</h2>
             <span flex></span>
 
             <!-- CLOSE DIALOG BUTTON -->
@@ -42,7 +42,7 @@
                                 <p>Select a list:</p>
                                 <md-radio-group ng-model="vm.newCard.listId" required>
                                     <md-radio-button ng-repeat="list in vm.board.lists" ng-value="list.id">
-                                        {{list.name}}
+                                        {#list.name#}
                                     </md-radio-button>
                                 </md-radio-group>
                             </div>
@@ -73,8 +73,8 @@
                                               ng-click="vm.toggleInArray(card.id, vm.selectedCards)"
                                               aria-label="card">
                                     <p layout="column" layout-align="start start">
-                                        <span class="card-name">{{card.name}}</span>
-                                        <span ng-if="card.due" class="card-date">{{card.due | date}}</span>
+                                        <span class="card-name">{#card.name#}</span>
+                                        <span ng-if="card.due" class="card-date">{#card.due | date#}</span>
                                     </p>
                                     <md-checkbox ng-checked="vm.exists(card.id, vm.selectedCards)"
                                                  ng-click="vm.toggleInArray(card.id, vm.selectedCards)"

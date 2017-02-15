@@ -11,7 +11,7 @@
     <div class="account">
         <div class="title">John Doe</div>
         <md-select class="account-selection simplified" ng-model="vm.selectedAccount" placeholder="Select Account">
-            <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}</md-option>
+            <md-option ng-repeat="(provider, address) in vm.accounts" value="{#provider#}">{#address#}</md-option>
         </md-select>
     </div>
 

@@ -6,7 +6,7 @@
                        ng-click="$mdOpenMenu($event)" ng-class="vm.selectedColor.class">
 
                 <span ng-show="vm.selectedColor.palette">
-                    {{vm.selectedColor.palette}} {{vm.selectedColor.hue}}
+                    {#vm.selectedColor.palette#} {#vm.selectedColor.hue#}
                 </span>
                 <span ng-show="!vm.selectedColor.palette">
                     Select Color
@@ -25,7 +25,7 @@
             </md-button>
 
             <span ng-if="vm.selectedColor.palette">
-                {{vm.selectedColor.palette}} {{vm.selectedColor.hue}}
+                {#vm.selectedColor.palette#} {#vm.selectedColor.hue#}
             </span>
 
             <span ng-if="!vm.selectedColor.palette">
@@ -43,7 +43,7 @@
                      ng-repeat="(palette, hues) in vm.palettes" ng-click="vm.activateHueSelection(palette,hues)"
                      layout="row" layout-align="start end" md-prevent-menu-close md-ink-ripple>
                     <span class="label">
-                        {{palette}}
+                        {#palette#}
                     </span>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                      ng-repeat="(hue, values) in vm.selectedHues" ng-click="vm.selectColor(vm.selectedPalette,hue)"
                      layout="row" layout-align="start end" md-ink-ripple>
                     <span class="label">
-                        {{hue}}
+                        {#hue#}
                     </span>
                     <i ng-if="vm.selectedPalette == vm.selectedColor.palette && hue == vm.selectedColor.hue"
                        class="s16 icon-check">

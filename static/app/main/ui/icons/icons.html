@@ -33,10 +33,10 @@
 
         <div id="icons-list" class="card md-whiteframe-1dp" layout="row" layout-wrap>
             <div class="item"
-                 ng-repeat="icon in vm.icons | filter:{properties: {name:vm.searchText}} track by icon.properties.id"
+                 ng-repeat="icon in vm.icons | filter:{properties: {name:vm.searchText#} track by icon.properties.id"
                  layout-align="start center">
-                <i class="icon icon-{{::icon.properties.name}} s40"></i>
-                <div class="name secondary-text text-center">icon-{{::icon.properties.name}}</div>
+                <i class="icon icon-{#::icon.properties.name#} s40"></i>
+                <div class="name secondary-text text-center">icon-{#::icon.properties.name#}</div>
             </div>
         </div>
 

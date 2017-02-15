@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     dist_dir: 'dist',
 
     app_files: {
-      js: [ 'app/**/*.js', '!app/**/*.spec.js' ]
+      js: [ '/static/app/**/*.js', '!app/**/*.spec.js' ]
     }
   };
 
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
           banner: '<%= meta.banner %>'
         },
         src: [
-           'app/**/*.js'
+           '/static/app/**/*.js'
         ],
         dest: '<%= dist_dir %>/<%= pkg.name %>.js'
       },
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
 
     watch: {
       scripts: {
-        files: ['Gruntfile.js', '*.json', 'app/**/*.js','*.html'],
+        files: ['Gruntfile.js', '*.json', '/static/app/**/*.js','*.html'],
         tasks: ['build'],
         options: {
           livereload: true

@@ -15,8 +15,8 @@
 
     <!-- MEMBERS -->
     <md-list-item class="member" ng-repeat="member in vm.board.members">
-        <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="md-avatar"/>
-        <p class="member-name">{{ member.name }}</p>
+        <img alt="{# member.name #}" ng-src="{# member.avatar #}" class="md-avatar"/>
+        <p class="member-name">{# member.name #}</p>
         <md-button ng-click="vm.removeMember($event, member.id);"
                    class="remove-button md-icon-button" aria-label="remove">
             <md-icon md-font-icon="icon-delete"></md-icon>

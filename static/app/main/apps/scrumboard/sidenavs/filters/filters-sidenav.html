@@ -34,7 +34,7 @@
         <md-list-item class="label" ng-repeat="label in vm.labels"
                       ng-click="vm.toggleInArray(label.id, vm.cardFilters.labels)">
             <md-icon md-font-icon="icon-label" ng-class="label.color+'-fg'" class="label-icon"></md-icon>
-            <p>{{label.name}}</p>
+            <p>{#label.name#}</p>
             <i class="icon-check s16" ng-if="vm.exists(label.id, vm.cardFilters.labels)"></i>
         </md-list-item>
         <!-- / FILTER BY LABELS -->
@@ -47,8 +47,8 @@
         <md-list-item class="member" ng-repeat="member in vm.members"
                       ng-click="vm.toggleInArray(member.id, vm.cardFilters.members)"
                       aria-label="Toggle Member">
-            <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="md-avatar"/>
-            <p class="member-name">{{ member.name }}</p>
+            <img alt="{# member.name #}" ng-src="{# member.avatar #}" class="md-avatar"/>
+            <p class="member-name">{# member.name #}</p>
             <i class="icon-check s16" ng-if="vm.exists(member.id, vm.cardFilters.members)"></i>
         </md-list-item>
         <!-- / FILTER BY MEMBERS -->

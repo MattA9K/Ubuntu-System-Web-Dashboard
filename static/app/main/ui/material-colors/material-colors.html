@@ -30,7 +30,7 @@
             <md-tab ng-repeat="(paletteName, palette) in vm.palettes"
                     md-on-select="vm.selected = paletteName; vm.selectedPalette = palette">
                 <md-tab-label>
-                    <span class="text-capitalize">{{paletteName}}</span>
+                    <span class="text-capitalize">{#paletteName#}</span>
                 </md-tab-label>
             </md-tab>
         </md-tabs>
@@ -44,12 +44,12 @@
 
             <div class="color-header colored-bg" ng-class="'md-'+vm.selected+'-bg'" layout="row" layout-align="start start" layout-wrap layout-padding>
                 <div flex="100">
-                    <h3 class="text-capitalize">{{vm.selected}}</h3>
+                    <h3 class="text-capitalize">{#vm.selected#}</h3>
                 </div>
                 <div layout="row" layout-align="space-between center" flex="100">
                     <div>500</div>
                     <div>
-                        rgb({{vm.selectedPalette['500'].value[0]}},{{vm.selectedPalette['500'].value[1]}},{{vm.selectedPalette['500'].value[2]}})
+                        rgb({#vm.selectedPalette['500'].value[0]#},{#vm.selectedPalette['500'].value[1]#},{#vm.selectedPalette['500'].value[2]#})
                     </div>
                 </div>
             </div>
@@ -58,11 +58,11 @@
                 <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row"
                      layout-sm="column" layout-padding
                      ng-class="vm.selected+'-'+hue+'-bg'">
-                    <div flex>{{hue}}</div>
-                    <div class="colored-bg" ng-class="'md-'+vm.selected+'-'+hue+'-bg'" flex>.{{'md-'+vm.selected+'-'+hue+'-bg'}}</div>
-                    <div flex>.{{vm.selected+'-'+hue+'-bg'}}</div>
+                    <div flex>{#hue#}</div>
+                    <div class="colored-bg" ng-class="'md-'+vm.selected+'-'+hue+'-bg'" flex>.{#'md-'+vm.selected+'-'+hue+'-bg'#}</div>
+                    <div flex>.{#vm.selected+'-'+hue+'-bg'#}</div>
                     <div class="fg-box white-bg md-whiteframe-2dp" ng-class="vm.selected+'-'+hue+'-fg'">
-                        .{{vm.selected+'-'+hue+'-fg'}}
+                        .{#vm.selected+'-'+hue+'-fg'#}
                     </div>
                 </div>
             </div>

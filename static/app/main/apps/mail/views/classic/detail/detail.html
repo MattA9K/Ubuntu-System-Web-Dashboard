@@ -1,10 +1,10 @@
 <div class="thread-header" layout="row" layout-align="space-between center">
     <div>
-        <div class="subject" flex>{{vm.currentThread.subject}}</div>
+        <div class="subject" flex>{#vm.currentThread.subject#}</div>
 
         <div class="labels">
             <div class="label" ng-repeat="labelId in vm.currentThread.labels"
-                 ng-class="vm.getLabelColor(labelId)">{{vm.getLabelTitle(labelId)}}
+                 ng-class="vm.getLabelColor(labelId)">{#vm.getLabelTitle(labelId)#}
             </div>
         </div>
     </div>
@@ -33,22 +33,22 @@
         <div layout="column" layout-align="start start">
             <div layout="row" layout-align="start start">
                 <div>
-                    <img ng-if="vm.currentThread.from.avatar" alt="{{vm.currentThread.from.name}}"
-                         ng-src="{{vm.currentThread.from.avatar}}" class="avatar"/>
+                    <img ng-if="vm.currentThread.from.avatar" alt="{#vm.currentThread.from.name#}"
+                         ng-src="{#vm.currentThread.from.avatar#}" class="avatar"/>
 
                     <div ng-if="!vm.currentThread.from.avatar" class="avatar" ms-random-class="vm.colors">
-                        {{vm.currentThread.from.name[0]}}
+                        {#vm.currentThread.from.name[0]#}
                     </div>
                 </div>
 
                 <div layout="column" layout-align="start start">
                     <div class="name">
-                        {{vm.currentThread.from.name}}
+                        {#vm.currentThread.from.name#}
                     </div>
 
                     <div class="to" layout="row" layout-align="start center">
                         <div class="to-text" translate="MAIL.INFO.TO">to</div>
-                        <div>{{vm.currentThread.to[0].name}}</div>
+                        <div>{#vm.currentThread.to[0].name#}</div>
                     </div>
                 </div>
             </div>
@@ -70,9 +70,9 @@
                 </div>
 
                 <div layout="column">
-                    <span class="detail">{{vm.currentThread.from.email}}</span>
-                    <span class="detail">{{vm.currentThread.to[0].email}}</span>
-                    <span class="detail">{{vm.currentThread.time}}</span>
+                    <span class="detail">{#vm.currentThread.from.email#}</span>
+                    <span class="detail">{#vm.currentThread.to[0].email#}</span>
+                    <span class="detail">{#vm.currentThread.time#}</span>
                 </div>
             </div>
         </div>
@@ -116,18 +116,18 @@
 
 <div ng-if="vm.currentThread.attachments" class="thread-attachments">
     <div class="title">
-        <span translte="MAIL.ATTACHMENTS">Attachments</span> ({{vm.currentThread.attachments.length}})
+        <span translte="MAIL.ATTACHMENTS">Attachments</span> ({#vm.currentThread.attachments.length#})
     </div>
     <div class="attachment-list" layout-wrap layout="row">
         <div class="attachment" layout="column"
              ng-repeat="attachment in vm.currentThread.attachments">
-            <img class="preview" ng-src="{{attachment.preview}}">
+            <img class="preview" ng-src="{#attachment.preview#}">
 
             <div layout="column">
                 <a href="#" class="md-accent-color link" translate="MAIL.VIEW">View</a>
                 <a href="#" class="md-accent-color link" translate="MAIL.DOWNLOAD">Download</a>
 
-                <div class="size">({{attachment.size}})</div>
+                <div class="size">({#attachment.size#})</div>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
     <div layout="row" layout-align="start center">
 
         <!-- THREAD LIST SPECIFIC ACTIONS -->
-        <md-checkbox class="no-label" aria-label="{{vm.selectedThreads.length > 0 ? 'Deselect All' : 'Select All'}}"
+        <md-checkbox class="no-label" aria-label="{#vm.selectedThreads.length > 0 ? 'Deselect All' : 'Select All'#}"
                      ng-checked="vm.selectedThreads.length > 0" ng-click="vm.toggleSelectThreads()"></md-checkbox>
         <md-menu class="select-menu" ng-if="!vm.currentThread">
             <md-button class="md-icon-button"
@@ -113,7 +113,7 @@
                         <md-list-item ng-repeat="label in vm.labels" ng-click="vm.toggleLabel(label)">
                             <div layout="row" layout-align="start center">
                                 <div class="w-10 h-10 mr-16" ng-class="label.color"></div>
-                                <div>{{label.title}}</div>
+                                <div>{#label.title#}</div>
                             </div>
                             <md-icon md-font-icon="icon-checkbox-blank-outline" class="md-secondary"
                                      ng-if="vm.currentThread && !vm.isLabelExist(label)"></md-icon>

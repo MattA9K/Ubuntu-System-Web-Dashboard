@@ -6,15 +6,15 @@
 
         <md-list-item class="contact md-3-line" ng-repeat="contact in vm.contacts.recent"
                       ng-click="vm.toggleChat(contact)">
-            <img ng-src="{{contact.avatar}}" class="md-avatar" alt="{{contact.name}}"/>
+            <img ng-src="{#contact.avatar#}" class="md-avatar" alt="{#contact.name#}"/>
 
-            <div class="status  {{contact.status}}"></div>
+            <div class="status  {#contact.status#}"></div>
 
-            <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
+            <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{#contact.unread#}</div>
 
             <div class="md-list-item-text">
-                <h3>{{contact.name}}</h3>
-                <p class="last-message">{{contact.lastMessage}}</p>
+                <h3>{#contact.name#}</h3>
+                <p class="last-message">{#contact.lastMessage#}</p>
             </div>
         </md-list-item>
     </md-list>
@@ -27,12 +27,12 @@
         </md-subheader>
 
         <md-list-item class="contact" ng-repeat="contact in vm.contacts.all" ng-click="vm.toggleChat(contact)">
-            <img ng-src="{{contact.avatar}}" class="md-avatar" alt="{{contact.name}}"/>
+            <img ng-src="{#contact.avatar#}" class="md-avatar" alt="{#contact.name#}"/>
 
-            <div class="status {{contact.status}}"></div>
+            <div class="status {#contact.status#}"></div>
 
             <div class="md-list-item-text">
-                <h3>{{contact.name}}</h3>
+                <h3>{#contact.name#}</h3>
             </div>
         </md-list-item>
     </md-list>
@@ -50,7 +50,7 @@
                     <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
                 </md-button>
                 <h4>
-                    <span>{{vm.chat.contact.name}}</span>
+                    <span>{#vm.chat.contact.name#}</span>
                 </h4>
             </div>
 
@@ -71,13 +71,13 @@
     <md-content flex layout-paddings ms-scroll id="chat-dialog">
         <div layout="row" ng-repeat="dialog in vm.chat.contact.dialog" class="md-padding message-row"
              ng-class="dialog.who">
-            <img ng-if="dialog.who ==='contact'" ng-src="{{vm.chat.contact.avatar}}" class="avatar"
-                 alt="{{vm.chat.contact.name}}"/>
+            <img ng-if="dialog.who ==='contact'" ng-src="{#vm.chat.contact.avatar#}" class="avatar"
+                 alt="{#vm.chat.contact.name#}"/>
             <img ng-if="dialog.who ==='user'" class="avatar" src="assets/images/avatars/profile.jpg">
 
             <div class="bubble" flex>
-                <div class="message">{{dialog.message}}</div>
-                <div class="time secondary-text">{{dialog.time}}</div>
+                <div class="message">{#dialog.message#}</div>
+                <div class="time secondary-text">{#dialog.time#}</div>
             </div>
         </div>
     </md-content>

@@ -8,7 +8,7 @@
 
             <!-- TOOLBAR TOP -->
             <div class="md-toolbar-tools md-toolbar-tools-top" layout="row" layout-align="space-between center">
-                <span class="title">{{vm.title}}</span>
+                <span class="title">{#vm.title#}</span>
                 <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" translate
                            translate-attr-aria-label="CONTACTS.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
@@ -19,9 +19,9 @@
             <!-- TOOLBAR MIDDLE -->
             <div class="md-toolbar-tools md-toolbar-tools-middle" flex layout="column" layout-align="center center">
                 <div layout="column" layout-align="center center">
-                    <img ng-src="{{vm.contact.avatar}}" class="md-avatar avatar contact-avatar huge"
-                         alt="{{vm.contact.name}}"/>
-                    <div class="contact-name">{{vm.contact.name}}</div>
+                    <img ng-src="{#vm.contact.avatar#}" class="md-avatar avatar contact-avatar huge"
+                         alt="{#vm.contact.name#}"/>
+                    <div class="contact-name">{#vm.contact.name#}</div>
                 </div>
             </div>
             <!-- / TOOLBAR MIDDLE -->
@@ -52,7 +52,7 @@
                                           ng-click="vm.toggleInArray(vm.contact.id,group.contactIds)">
                                 <p class="pl-8"
                                    ng-style="vm.exists(vm.contact.id,group.contactIds) && {'font-weight':'500'}">
-                                    {{group.name}}
+                                    {#group.name#}
                                 </p>
                             </md-list-item>
 

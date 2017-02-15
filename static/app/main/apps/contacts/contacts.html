@@ -49,7 +49,7 @@
 
             <div>
                 <span class="selected-contacts-count">
-                    <span>{{vm.selectedContacts.length}}</span>
+                    <span>{#vm.selectedContacts.length#}</span>
                     <span translate="CONTACTS.SELECTED">selected</span>
                 </span>
 
@@ -115,10 +115,10 @@
                                 contacted</span>
                             <span ng-if="vm.listType === 'starred'" translate="CONTACTS.STARRED_CONTACTS">Starred
                                 contacts</span>
-                            <span ng-if="vm.listType.name">{{vm.listType.name}}</span>
+                            <span ng-if="vm.listType.name">{#vm.listType.name#}</span>
 
                             <span ng-if="filteredContacts.length" class="secondary-text contacts-count">
-                                ({{filteredContacts.length}})
+                                ({#filteredContacts.length#})
                             </span>
                         </div>
 
@@ -205,29 +205,29 @@
 
                     <md-checkbox ng-checked="vm.exists(contact, vm.selectedContacts)"
                                  ng-click="vm.toggleSelectContact(contact, $event)"
-                                 aria-label="{{vm.exists(contact, vm.selectedContacts) ? 'Deselect' : 'Select'}}">
+                                 aria-label="{#vm.exists(contact, vm.selectedContacts) ? 'Deselect' : 'Select'#}">
                     </md-checkbox>
 
-                    <img class="md-avatar" ng-if="contact.avatar" alt="{{contact.name}}"
-                         ng-src="{{contact.avatar}}"/>
+                    <img class="md-avatar" ng-if="contact.avatar" alt="{#contact.name#}"
+                         ng-src="{#contact.avatar#}"/>
 
-                    <p class="text-truncate font-weight-600">{{contact.name}} {{contact.lastName}}</p>
+                    <p class="text-truncate font-weight-600">{#contact.name#} {#contact.lastName#}</p>
 
 
                     <p class="email text-truncate hide show-gt-sm">
-                        {{contact.email}}
+                        {#contact.email#}
                     </p>
 
                     <p class="phone text-truncate hide show-gt-md">
-                        {{contact.phone}}
+                        {#contact.phone#}
                     </p>
 
                     <p class="job-title text-truncate hide show-gt-lg">
-                        {{contact.jobTitle}}
+                        {#contact.jobTitle#}
                     </p>
 
                     <p class="company text-truncate hide show-gt-lg">
-                        {{contact.company}}
+                        {#contact.company#}
                     </p>
 
                     <div class="actions" layout="row" layout-align="start center">
@@ -263,7 +263,7 @@
                                               ng-click="vm.toggleInArray(contact.id,group.contactIds)">
                                     <p class="pl-8"
                                        ng-style="vm.exists(contact.id,group.contactIds) && {'font-weight':'500'}">
-                                        {{group.name}}
+                                        {#group.name#}
                                     </p>
                                 </md-list-item>
 

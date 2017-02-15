@@ -197,8 +197,8 @@
                                     <md-input-container flex>
                                         <label>State</label>
                                         <md-select ng-model="vm.formWizard.state">
-                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                                {{state.abbrev}}
+                                            <md-option ng-repeat="state in vm.states" value="{#state.abbrev#}">
+                                                {#state.abbrev#}
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
@@ -378,8 +378,8 @@
                         <md-input-container flex>
                             <label>State</label>
                             <md-select ng-model="vm.basicForm.state">
-                                <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                    {{state.abbrev}}
+                                <md-option ng-repeat="state in vm.states" value="{#state.abbrev#}">
+                                    {#state.abbrev#}
                                 </md-option>
                             </md-select>
                         </md-input-container>
@@ -416,7 +416,7 @@
             <div class="form-wrapper form-data-wrapper md-whiteframe-1dp" flex="40">
                 <div class="form-title">Form ng-model data</div>
                 <div class="json-data-wrapper">
-                    <pre>{{vm.basicForm | json}}</pre>
+                    <pre>{#vm.basicForm | json#}</pre>
                 </div>
             </div>
             <!-- / BASIC FORM DATA -->

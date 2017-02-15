@@ -48,7 +48,7 @@
         $translatePartialLoaderProvider.addPart('/static/app/main/pages/invoice');
 
         // Api
-        msApiProvider.register('invoice', ['app/data/invoice/invoice.json']);
+        msApiProvider.register('invoice', ['/static/app/data/invoice/invoice.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.invoice', {

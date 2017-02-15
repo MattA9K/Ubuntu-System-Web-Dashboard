@@ -2,7 +2,7 @@
     <form name="eventForm" class="md-inline-form" novalidate>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-                <span class="title">{{vm.dialogTitle}}</span>
+                <span class="title">{#vm.dialogTitle#}</span>
                 <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" translate
                            translate-attr-aria-label="CALENDAR.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
@@ -62,7 +62,7 @@
 
                 <md-select ng-model="notification" placeholder="Notification"
                            ng-repeat="notification in vm.calendarEvent.notifications">
-                    <md-option ng-repeat="opt in vm.notifications" value="{{opt}}">{{opt}}</md-option>
+                    <md-option ng-repeat="opt in vm.notifications" value="{#opt#}">{#opt#}</md-option>
                 </md-select>
 
                 <md-button aria-label="+ Add Another Notification" translate="CALENDAR.ADD_NOTIFICATION"
