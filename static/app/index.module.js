@@ -39,8 +39,9 @@
             'app.notes',
             
             // Non-Fuse Apps (custom)
-            //'app.forum',
-
+            'app.forum',
+            'app.sample',
+            
             // Pages
             'app.pages',
 

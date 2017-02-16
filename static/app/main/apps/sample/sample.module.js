@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('app.forum', [])
+        .module('app.sample', [])
         .config(config);
 
     /** @ngInject */
@@ -14,27 +14,27 @@
     {
         // State
         $stateProvider
-            .state('app.forum', {
-                url    : '/forum',
+            .state('app.sample', {
+                url    : '/sample',
                 views  : {
                     'content@app': {
-                        templateUrl: '/static/app/main/apps/forum/forum.html',
+                        templateUrl: '/static/app/main/apps/sample/sample.html',
                         controller : 'SampleController as vm'
                     }
                 },
                 resolve: {
                     SampleData: function (msApi)
                     {
-                        return msApi.resolve('forum@get');
+                        return msApi.resolve('sample@get');
                     }
                 }
             });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('/static/app/main/apps/forum');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/sample');
 
         // Api
-        msApiProvider.register('forum', ['/static/app/data/forum/forum.json']);
+        msApiProvider.register('sample', ['/static/app/data/sample/sample.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('fuse', {
@@ -43,10 +43,10 @@
             weight: 1
         });
 
-        msNavigationServiceProvider.saveItem('fuse.forum', {
-            title    : 'Forum',
-            icon     : 'icon-bulletin-board',
-            state    : 'app.forum',
+        msNavigationServiceProvider.saveItem('fuse.sample', {
+            title    : 'Sample',
+            icon     : 'icon-tile-four',
+            state    : 'app.sample',
             /*stateParams: {
                 'param1': 'page'
              },*/
