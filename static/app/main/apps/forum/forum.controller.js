@@ -14,7 +14,7 @@
         .controller('ForumController', ForumController);
 
     /** @ngInject */
-    function ForumController(ForumData)
+    function ForumController(ForumData, $msSidenav)
     {
         var vm = this;
 
@@ -22,7 +22,18 @@
         vm.helloText = ForumData.data.helloText;
 
         // Methods
+        vm.toggleSidenav = toggleSidenav;
 
         //////////
+
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
+        {
+            $mdSidenav(sidenavId).toggle();
+        }
     }
 })();
