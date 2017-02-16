@@ -37,6 +37,9 @@
             'app.todo',
             'app.contacts',
             'app.notes',
+            
+            // Non-Fuse Apps (custom)
+            'app.forum',
 
             // Pages
             'app.pages',

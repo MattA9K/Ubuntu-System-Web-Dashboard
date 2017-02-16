@@ -1,3 +1,4 @@
+# SNIPPETS:
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer, UserSerializer
 from django.http import Http404

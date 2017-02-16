@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_docs',
     'debug_toolbar',
 
     'cinicraft_home',
@@ -87,10 +88,21 @@ WSGI_APPLICATION = 'CiniCraft_WebServer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CoreDB',
+        'USER': 'root',
+        'PASSWORD': '123123',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
+
+# DEV TEST DB:
+# root@localhost: Mh&1e4JG&82T
+
+
+
+
 
 
 # Password validation

@@ -1,11 +1,10 @@
+# MAIN
 from django.conf.urls import url, include
 from django.contrib import admin
 from cinicraft_home import views
 from cinicraft_home import models
 from cinicraft_home.views import *
-
 from rest_framework import routers
-
 
 
 # Django REST URLs:
@@ -16,6 +15,10 @@ router.register(r'groups', views.GroupViewSet)
 
 # Django URLs:
 urlpatterns = [
+
+    # REST DOCUMENTATION:
+    url(r'^docs/', include('rest_framework_docs.urls')),
+
     # Django
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
@@ -26,6 +29,7 @@ urlpatterns = [
 
     # Snippets:
     url(r'^snippets/', include('snippets.urls')),
+    url(r'^forum/', include('forum.urls')),
 
     url(r'^users/$', views.UserList.as_view(), name='users'),
     url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
