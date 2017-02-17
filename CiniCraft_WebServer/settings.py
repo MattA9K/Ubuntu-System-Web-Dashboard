@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'cinicraft_home',
     'forum',
     'author',
+    'todo',
+    'cininotes',
 
     # NON-CINICRAFT RELATED:
     'snippets.apps.SnippetsConfig',

@@ -38,7 +38,7 @@
         });
 
         // Translation
-        $translatePartialLoaderProvider.addPart('/static/app/main/apps/todo');
+        $translatePartialLoaderProvider.addPart('/static/app/main/apps/todo/');
 
         // Api
         msApiProvider.register('todo.tasks', ['/static/app/data/todo/tasks.json']);
