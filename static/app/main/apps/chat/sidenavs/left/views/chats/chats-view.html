@@ -8,8 +8,8 @@
         <div class="avatar-wrapper">
 
             <!-- USER AVATAR -->
-            <img ng-click="vm.toggleLeftSidenavView('user')" ng-src="{#vm.user.avatar#}" class="md-avatar avatar"
-                 alt="{#vm.user.name#}"/>
+            <img ng-click="vm.toggleLeftSidenavView('user')" ng-src="{{vm.user.avatar}}" class="md-avatar avatar"
+                 alt="{{vm.user.name}}"/>
             <!-- / USER AVATAR -->
 
             <!-- USER STATUS -->
@@ -130,18 +130,18 @@
                       ng-click="vm.getChat(contact.id)" ng-class="{'unread':contact.unread}">
 
             <div class="avatar-wrapper">
-                <img ng-src="{#contact.avatar#}" class="md-avatar avatar" alt="{#contact.name#}"/>
+                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
                 <i class="icon icon- s16 status" ng-class="contact.status"></i>
             </div>
 
             <div class="md-list-item-text">
-                <h3 class="name">{#contact.name#}</h3>
-                <p class="last-message text-truncate">{#contact.lastMessage.message#}</p>
+                <h3 class="name">{{contact.name}}</h3>
+                <p class="last-message text-truncate">{{contact.lastMessage.message}}</p>
             </div>
 
             <div layout="column" layout-align="center end">
-                <div class="last-message-time">{#contact.lastMessage.time | altDate#}</div>
-                <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{#contact.unread#}</div>
+                <div class="last-message-time">{{contact.lastMessage.time | altDate}}</div>
+                <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
             </div>
 
             <md-divider></md-divider>
@@ -166,13 +166,13 @@
                       ng-click="vm.getChat(contact.id)">
 
             <div class="avatar-wrapper">
-                <img ng-src="{#contact.avatar#}" class="md-avatar avatar" alt="{#contact.name#}"/>
+                <img ng-src="{{contact.avatar}}" class="md-avatar avatar" alt="{{contact.name}}"/>
                 <i class="icon icon- s16 status" ng-class="contact.status"></i>
             </div>
 
             <div class="md-list-item-text">
-                <h3>{#contact.name#}</h3>
-                <p class="mood">{#contact.mood#}</p>
+                <h3>{{contact.name}}</h3>
+                <p class="mood">{{contact.mood}}</p>
             </div>
 
             <md-divider></md-divider>

@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -38,11 +38,11 @@ Track by, as alias, and (key, value) syntax are not supported.</p>
   
     <hljs lang="html">
 <md-virtual-repeat-container>
-  <div md-virtual-repeat="i in items">Hello {#i#}!</div>
+  <div md-virtual-repeat="i in items">Hello {{i}}!</div>
 </md-virtual-repeat-container>
 
 <md-virtual-repeat-container md-orient-horizontal>
-  <div md-virtual-repeat="i in items" md-item-size="20">Hello {#i#}!</div>
+  <div md-virtual-repeat="i in items" md-item-size="20">Hello {{i}}!</div>
 </md-virtual-repeat-container>
 </hljs>
   

@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -99,7 +99,7 @@ panel with details regarding a SVG download or information on the font-icon usag
 
  <!-- Icon urls; may be preloaded in templateCache -->
  <md-icon md-svg-src="/android.svg"       aria-label="android " ></md-icon>
- <md-icon md-svg-src="{# getAndroid() #}" aria-label="android " ></md-icon>
+ <md-icon md-svg-src="{{ getAndroid() }}" aria-label="android " ></md-icon>
 
 </hljs>
 

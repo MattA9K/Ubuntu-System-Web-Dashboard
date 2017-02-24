@@ -39,7 +39,7 @@
                         <label>Row:</label>
                         <md-select name="rowId" ng-model="vm.taskRowId" required>
                             <md-option ng-repeat="row in vm.chartData" ng-value="row.id">
-                                {#row.name#}
+                                {{row.name}}
                             </md-option>
                         </md-select>
                     </md-input-container>
@@ -48,7 +48,7 @@
 
             <div layout="row" layout-align="start center" class="input-block">
                 <label flex="25">Progress:
-                    <small>{#vm.task.progress#}</small>
+                    <small>{{vm.task.progress}}</small>
                 </label>
                 <md-slider flex ng-model="vm.task.progress" step="1" min="0"
                            max="100" aria-label="Progress">

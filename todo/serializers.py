@@ -13,6 +13,9 @@ class ToDoTagSerializer(serializers.Serializer):
     color = serializers.CharField(required=False, allow_blank=True, max_length=30)
     parent = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         model = ToDoItem
         fields = ('name','label','color','parent')
@@ -28,6 +31,9 @@ class ToDoItemSerializer(serializers.Serializer):
     important = serializers.BooleanField()
     deleted = serializers.BooleanField()
     tags = ToDoTagSerializer(many=True, read_only=True) #serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         model = ToDoItem

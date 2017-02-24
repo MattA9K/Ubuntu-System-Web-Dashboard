@@ -79,7 +79,7 @@ function DonutCtrl() {
             <div layout="column" flex="20">
                 <p>Selected items:</p>
                 <ul>
-                    <li ng-repeat="item in vm.theChart.selected()">{#item.id#}</li>
+                    <li ng-repeat="item in vm.theChart.selected()">{{item.id}}</li>
                 </ul>
             </div>
         </div>

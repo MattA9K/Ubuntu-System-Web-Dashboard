@@ -12,12 +12,12 @@
             <div layout="column" layout-align="start start">
                 <div class="h2">
                     <span translate="EC.ORDER">Order</span>
-                    <span>{#vm.order.reference#}</span>
+                    <span>{{vm.order.reference}}</span>
                 </div>
 
                 <div class="subtitle secondary-text">
                     <span translate="EC.FROM">from</span>
-                    <span>{#vm.order.customer.firstName#} {#vm.order.customer.lastName#}</span>
+                    <span>{{vm.order.customer.firstName}} {{vm.order.customer.lastName}}</span>
                 </div>
             </div>
         </div>
@@ -55,18 +55,18 @@
                                     <tr>
                                         <td>
                                             <div layout="row" layout-align="start center">
-                                                <img class="avatar" ng-src="{#vm.order.customer.avatar#}">
-                                                <span class="name text-nowrap">{#vm.order.customer.firstName#} {#vm.order.customer.lastName#}</span>
+                                                <img class="avatar" ng-src="{{vm.order.customer.avatar}}">
+                                                <span class="name text-nowrap">{{vm.order.customer.firstName}} {{vm.order.customer.lastName}}</span>
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="email">{#vm.order.customer.email#}</span>
+                                            <span class="email">{{vm.order.customer.email}}</span>
                                         </td>
                                         <td>
-                                            <span class="phone">{#vm.order.customer.phone#}</span>
+                                            <span class="phone">{{vm.order.customer.phone}}</span>
                                         </td>
                                         <td>
-                                            <span class="phone">{#vm.order.customer.company#}</span>
+                                            <span class="phone">{{vm.order.customer.company}}</span>
                                         </td>
                                         <td></td>
                                     </tr>
@@ -79,7 +79,7 @@
                                         <span translate="EC.SHIPPING_ADDRESS">Shipping Address</span>
                                     </md-tab-label>
                                     <md-tab-body>
-                                        <div class="address">{#vm.order.customer.shippingAddress#}</div>
+                                        <div class="address">{{vm.order.customer.shippingAddress}}</div>
                                         <ui-gmap-google-map center="vm.shippingAddressMap.center"
                                                             zoom="vm.shippingAddressMap.zoom">
                                             <ui-gmap-marker coords="vm.shippingAddressMap.center"
@@ -92,7 +92,7 @@
                                         <span translate="EC.INVOICE_ADDRESS">Invoice Address</span>
                                     </md-tab-label>
                                     <md-tab-body>
-                                        <div class="address">{#vm.order.customer.invoiceAddress#}</div>
+                                        <div class="address">{{vm.order.customer.invoiceAddress}}</div>
                                         <ui-gmap-google-map center="vm.invoiceAddressMap.center"
                                                             zoom="vm.invoiceAddressMap.zoom">
                                             <ui-gmap-marker coords="vm.invoiceAddressMap.center"
@@ -120,10 +120,10 @@
                             <tbody>
                                 <tr ng-repeat="status in vm.order.status">
                                     <td>
-                                        <span class="status {#status.color#}">{#status.name#}</span>
+                                        <span class="status {{status.color}}">{{status.name}}</span>
                                     </td>
                                     <td>
-                                        {#status.date#}
+                                        {{status.date}}
                                     </td>
                                 </tr>
                             </tbody>
@@ -133,8 +133,8 @@
                             <md-input-container flex>
                                 <label>Select a status</label>
                                 <md-select ng-model="vm.newStatus">
-                                    <md-option ng-repeat="status in vm.orderStatuses" value="{#status.id#}">
-                                        {#status.name#}
+                                    <md-option ng-repeat="status in vm.orderStatuses" value="{{status.id}}">
+                                        {{status.name}}
                                     </md-option>
                                 </md-select>
                             </md-input-container>
@@ -163,16 +163,16 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        {#vm.order.payment.transactionId#}
+                                        {{vm.order.payment.transactionId}}
                                     </td>
                                     <td>
-                                        {#vm.order.payment.method#}
+                                        {{vm.order.payment.method}}
                                     </td>
                                     <td>
-                                        {#vm.order.payment.amount#}
+                                        {{vm.order.payment.amount}}
                                     </td>
                                     <td>
-                                        {#vm.order.payment.date#}
+                                        {{vm.order.payment.date}}
                                     </td>
                                 </tr>
                             </tbody>
@@ -197,19 +197,19 @@
                             <tbody>
                                 <tr ng-repeat="shipping in vm.order.shippingDetails">
                                     <td class="tracking-code" editable-text="shipping.tracking">
-                                        {#shipping.tracking || 'Click to add a tracking code'#}
+                                        {{shipping.tracking || 'Click to add a tracking code'}}
                                     </td>
                                     <td>
-                                        {#shipping.carrier#}
+                                        {{shipping.carrier}}
                                     </td>
                                     <td>
-                                        {#shipping.weight#}
+                                        {{shipping.weight}}
                                     </td>
                                     <td>
-                                        {#shipping.fee#}
+                                        {{shipping.fee}}
                                     </td>
                                     <td>
-                                        {#shipping.date#}
+                                        {{shipping.date}}
                                     </td>
                                 </tr>
                             </tbody>
@@ -263,11 +263,11 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="product in ::vm.order.products">
-                                    <td>{#product.id#}</td>
-                                    <td><img class="product-image" ng-src="{#product.image#}"></td>
-                                    <td>{#product.name#}</td>
-                                    <td>{#product.price#}</td>
-                                    <td>{#product.quantity#}</td>
+                                    <td>{{product.id}}</td>
+                                    <td><img class="product-image" ng-src="{{product.image}}"></td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.price}}</td>
+                                    <td>{{product.quantity}}</td>
                                     <td>
                                         <md-button class="edit-button md-icon-button"
                                                    ng-click="vm.gotoProductDetail(product.id)"
@@ -297,27 +297,27 @@
                             <div class="card md-whiteframe-8dp">
 
                                 <div class="header">
-                                    <div class="invoice-date">{#vm.order.date#}</div>
+                                    <div class="invoice-date">{{vm.order.date}}</div>
 
                                     <div layout="row" layout-align="space-between stretch">
                                         <div class="client">
                                             <div class="invoice-number mb-8" layout="row" layout-align="start center">
                                                 <span class="title" translate="INVOICE.INVOICE">INVOICE</span>
-                                                <span class="number">{#vm.order.reference#}</span>
+                                                <span class="number">{{vm.order.reference}}</span>
                                             </div>
 
                                             <div class="info">
-                                                <div class="title">{#vm.order.customer.firstName#}
-                                                    {#vm.order.customer.lastName#}
+                                                <div class="title">{{vm.order.customer.firstName}}
+                                                    {{vm.order.customer.lastName}}
                                                 </div>
                                                 <div class="address">
-                                                    {#vm.order.customer.invoiceAddress#}
+                                                    {{vm.order.customer.invoiceAddress}}
                                                 </div>
                                                 <div class="phone">
-                                                    {#vm.order.customer.phone#}
+                                                    {{vm.order.customer.phone}}
                                                 </div>
                                                 <div class="email">
-                                                    {#vm.order.customer.email#}
+                                                    {{vm.order.customer.email}}
                                                 </div>
                                             </div>
                                         </div>
@@ -350,17 +350,17 @@
                                             <tr ng-repeat="product in vm.order.products">
                                                 <td>
                                                     <div class="title">
-                                                        {#product.name#}
+                                                        {{product.name}}
                                                     </div>
                                                 </td>
                                                 <td class="text-right">
-                                                    {#product.price#}
+                                                    {{product.price}}
                                                 </td>
                                                 <td>
-                                                    {#product.quantity#}
+                                                    {{product.quantity}}
                                                 </td>
                                                 <td class="text-right">
-                                                    {#product.total#}
+                                                    {{product.total}}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -370,19 +370,19 @@
                                         <tbody>
                                             <tr class="subtotal">
                                                 <td translate="EC.INVOICE_SUBTOTAL">SUBTOTAL</td>
-                                                <td>{#vm.order.subtotal#}</td>
+                                                <td>{{vm.order.subtotal}}</td>
                                             </tr>
                                             <tr class="tax">
                                                 <td translate="EC.INVOICE_TAX">TAX</td>
-                                                <td>{#vm.order.tax#}</td>
+                                                <td>{{vm.order.tax}}</td>
                                             </tr>
                                             <tr class="discount">
                                                 <td translate="EC.INVOICE_DISCOUNT">DISCOUNT</td>
-                                                <td>{#vm.order.discount#}</td>
+                                                <td>{{vm.order.discount}}</td>
                                             </tr>
                                             <tr class="total">
                                                 <td translate="EC.INVOICE_TOTAL">TOTAL</td>
-                                                <td>{#vm.order.total#}</td>
+                                                <td>{{vm.order.total}}</td>
                                             </tr>
                                         </tbody>
                                     </table>

@@ -3,7 +3,7 @@
 
     <!-- NOTE IMAGE -->
     <div ng-if="MsNoteForm.note.image" class="image-wrapper">
-        <img class="md-card-image" ng-src="{#MsNoteForm.note.image#}">
+        <img class="md-card-image" ng-src="{{MsNoteForm.note.image}}">
         <md-button class="md-fab md-mini delete-image-button" ng-click="MsNoteForm.deleteImage()"
                    aria-label="delete image" translate translate-attr-aria-label="NOTES.DELETE_IMAGE">
             <md-icon md-font-icon="icon-delete"></md-icon>
@@ -30,7 +30,7 @@
         <md-divider></md-divider>
         <md-list-item ng-repeat="item in MsNoteForm.note.checklist">
             <md-checkbox ng-model="item.checked" aria-label="toggle check"></md-checkbox>
-            <p ng-class="{'text-strike md-secondary-text':item.checked}">{#item.text#}</p>
+            <p ng-class="{'text-strike md-secondary-text':item.checked}">{{item.text}}</p>
             <md-icon ng-click="$event.preventDefault();$event.stopPropagation();MsNoteForm.deleteCheckItem(item)"
                      class="md-secondary"
                      md-font-icon="icon-close-circle" aria-label="remove">
@@ -58,13 +58,13 @@
     <div class="labels" ng-if="MsNoteForm.note.labels.length > 0" layout="row" layout-wrap layout-align="end start">
         <div class="label" ng-repeat="labelId in MsNoteForm.note.labels"
              ng-class="MsNoteForm.labels.getById(labelId).color">
-            {#MsNoteForm.labels.getById(labelId).name#}
+            {{MsNoteForm.labels.getById(labelId).name}}
         </div>
     </div>
     <!-- NOTE LABELS -->
 
     <!-- NOTE EDIT DATE -->
-    <div ng-if="MsNoteForm.type ==='edit'" class="date text-right p-16">{#MsNoteForm.note.time | altDate#}</div>
+    <div ng-if="MsNoteForm.type ==='edit'" class="date text-right p-16">{{MsNoteForm.note.time | altDate}}</div>
     <!-- / NOTE EDIT DATE -->
 
     <div class="footer" layout-gt-xs="row" layout-align-gt-xs="space-between center" layout="column" layout-align="center center">
@@ -122,7 +122,7 @@
                                    translate-attr-aria-label="NOTES.TOGGLE_LABEL">
 
                             <div layout="row" layout-align="space-between center" flex>
-                                <span> {#label.name#}</span>
+                                <span> {{label.name}}</span>
                                 <i ng-if="MsNoteForm.exists(label.id, MsNoteForm.note.labels)"
                                    class="icon-check s16"></i>
                             </div>

@@ -33,10 +33,10 @@
                           translate="NOTES.REMINDERS">Reminders</span>
                     <span class="title" ng-if="vm.noteListType === 'archive'"
                           translate="NOTES.ARCHIVE">Archive</span>
-                    <span class="title" ng-if="vm.noteListType.name">{#vm.noteListType.name#}</span>
+                    <span class="title" ng-if="vm.noteListType.name">{{vm.noteListType.name}}</span>
 
                     <span ng-if="filteredNotes.length" class="pl-8 white-text secondary-text notes-count">
-                        ({#filteredNotes.length#})
+                        ({{filteredNotes.length}})
                     </span>
 
                 </div>

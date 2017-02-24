@@ -2,7 +2,7 @@
     <form name="taskForm" class="md-inline-form" novalidate>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-                <span class="title">{#vm.title#}</span>
+                <span class="title">{{vm.title}}</span>
                 <md-button class="md-icon-button" ng-click="vm.closeDialog()">
                     <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
                 </md-button>
@@ -25,7 +25,7 @@
                 <md-chips ng-model="vm.task.tags" md-transform-chip="vm.newTag($chip)">
                     <md-chip-template>
                         <span ng-if="$chip.color" class="color" ng-style="{'background-color':$chip.color}"></span>
-                        <span>{#$chip.label#}</span>
+                        <span>{{$chip.label}}</span>
                     </md-chip-template>
                 </md-chips>
             </div>

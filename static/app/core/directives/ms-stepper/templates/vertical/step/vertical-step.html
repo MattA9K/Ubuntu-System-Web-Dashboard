@@ -16,8 +16,8 @@
     </div>
 
     <div layout="column" layout-align="start start">
-        <div class="title" ng-if="stepInfo.stepTitleTranslate">{#stepInfo.stepTitleTranslate | translate #}</div>
-        <div class="title" ng-if="!stepInfo.stepTitleTranslate">{#stepInfo.stepTitle#}</div>
+        <div class="title" ng-if="stepInfo.stepTitleTranslate">{{stepInfo.stepTitleTranslate | translate }}</div>
+        <div class="title" ng-if="!stepInfo.stepTitleTranslate">{{stepInfo.stepTitle}}</div>
         <div class="subtitle" ng-if="MsStepper.isStepOptional(stepInfo.stepNumber)">Optional</div>
     </div>
 </md-button>

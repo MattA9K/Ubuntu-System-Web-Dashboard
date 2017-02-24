@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -40,11 +40,11 @@
 
 <h3 id="interpolated-values">Interpolated values</h3>
 <hljs lang="html">
-  <ANY md-ink-ripple="{# randomColor() #}">
+  <ANY md-ink-ripple="{{ randomColor() }}">
     Ripples with the return value of &#39;randomColor&#39; function
   </ANY>
 
-  <ANY md-ink-ripple="{# canRipple() #}">
+  <ANY md-ink-ripple="{{ canRipple() }}">
     Ripples if &#39;canRipple&#39; function return value is not &#39;false&#39; or &#39;0&#39;
   </ANY>
 </hljs>

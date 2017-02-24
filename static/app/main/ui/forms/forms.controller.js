@@ -104,7 +104,7 @@
                     };
                 },
                 template           : '<md-dialog>' +
-                '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{#formWizardData | json#}</pre></div></md-dialog-content>' +
+                '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
                 '  <md-dialog-actions>' +
                 '    <md-button ng-click="closeDialog()" class="md-primary">' +
                 '      Close' +
@@ -138,7 +138,7 @@
                     };
                 },
                 template           : '<md-dialog>' +
-                '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{#formWizardData | json#}</pre></div></md-dialog-content>' +
+                '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
                 '  <md-dialog-actions>' +
                 '    <md-button ng-click="closeDialog()" class="md-primary">' +
                 '      Close' +

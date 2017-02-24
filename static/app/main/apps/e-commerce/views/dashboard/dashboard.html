@@ -18,8 +18,8 @@
                             <md-select class="simplified font-size-16" ng-model="vm.widget1.currentRange"
                                        aria-label="Change range">
                                 <md-option ng-repeat="(key, range) in vm.widget1.ranges"
-                                           value="{#key#}">
-                                    {#range#}
+                                           value="{{key}}">
+                                    {{range}}
                                 </md-option>
                             </md-select>
 
@@ -46,14 +46,14 @@
 
                         <div class="pt-8 pb-32" layout="column" layout-align="center center">
                             <div class="light-blue-fg font-size-72 line-height-72">
-                                {#vm.widget1.data.count[vm.widget1.currentRange]#}%
+                                {{vm.widget1.data.count[vm.widget1.currentRange]}}%
                             </div>
-                            <div class="h3 secondary-text font-weight-500">{#vm.widget1.data.label#}</div>
+                            <div class="h3 secondary-text font-weight-500">{{vm.widget1.data.label}}</div>
                         </div>
 
                         <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                            <span class="h4 secondary-text text-truncate">{#vm.widget1.data.extra.label#}:</span>
-                            <span class="h4 ml-8">{#vm.widget1.data.extra.count[vm.widget1.currentRange]#}</span>
+                            <span class="h4 secondary-text text-truncate">{{vm.widget1.data.extra.label}}:</span>
+                            <span class="h4 ml-8">{{vm.widget1.data.extra.count[vm.widget1.currentRange]}}</span>
                         </div>
                     </ms-widget-front>
                     <!-- / Front -->
@@ -68,7 +68,7 @@
                         </div>
 
                         <div>
-                            {#vm.widget1.detail#}
+                            {{vm.widget1.detail}}
                         </div>
                     </ms-widget-back>
                     <!-- / Back -->
@@ -82,7 +82,7 @@
                     <!-- Front -->
                     <ms-widget-front class="white-bg">
                         <div class="pl-16 pr-8 pv-16 h-55" layout="row" layout-align="space-between center">
-                            <div class="h3">{#vm.widget2.title#}</div>
+                            <div class="h3">{{vm.widget2.title}}</div>
 
                             <md-menu>
                                 <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -107,14 +107,14 @@
 
                         <div class="pt-8 pb-32" layout="column" layout-align="center center">
                             <div class="red-fg font-size-72 line-height-72">
-                                ${#vm.widget2.data.count#}
+                                ${{vm.widget2.data.count}}
                             </div>
-                            <div class="h3 secondary-text font-weight-500">{#vm.widget2.data.label#}</div>
+                            <div class="h3 secondary-text font-weight-500">{{vm.widget2.data.label}}</div>
                         </div>
 
                         <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                            <span class="h4 secondary-text text-truncate">{#vm.widget2.data.extra.label#}:</span>
-                            <span class="h4 ml-8">${#vm.widget2.data.extra.count#}</span>
+                            <span class="h4 secondary-text text-truncate">{{vm.widget2.data.extra.label}}:</span>
+                            <span class="h4 ml-8">${{vm.widget2.data.extra.count}}</span>
                         </div>
                     </ms-widget-front>
                     <!-- / Front -->
@@ -129,7 +129,7 @@
                         </div>
 
                         <div>
-                            {#vm.widget2.detail#}
+                            {{vm.widget2.detail}}
                         </div>
                     </ms-widget-back>
                     <!-- / Back -->
@@ -143,7 +143,7 @@
                     <!-- Front -->
                     <ms-widget-front class="white-bg">
                         <div class="pl-16 pr-8 pv-16 h-55" layout="row" layout-align="space-between center">
-                            <div class="h3">{#vm.widget3.title#}</div>
+                            <div class="h3">{{vm.widget3.title}}</div>
 
                             <md-menu>
                                 <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -168,14 +168,14 @@
 
                         <div class="pt-8 pb-32" layout="column" layout-align="center center">
                             <div class="orange-fg font-size-72 line-height-72">
-                                {#vm.widget3.data.count#}
+                                {{vm.widget3.data.count}}
                             </div>
-                            <div class="h3 secondary-text font-weight-500">{#vm.widget3.data.label#}</div>
+                            <div class="h3 secondary-text font-weight-500">{{vm.widget3.data.label}}</div>
                         </div>
 
                         <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                            <span class="h4 secondary-text text-truncate">{#vm.widget3.data.extra.label#}:</span>
-                            <span class="h4 ml-8">{#vm.widget3.data.extra.count#}</span>
+                            <span class="h4 secondary-text text-truncate">{{vm.widget3.data.extra.label}}:</span>
+                            <span class="h4 ml-8">{{vm.widget3.data.extra.count}}</span>
                         </div>
                     </ms-widget-front>
                     <!-- / Front -->
@@ -190,7 +190,7 @@
                         </div>
 
                         <div>
-                            {#vm.widget3.detail#}
+                            {{vm.widget3.detail}}
                         </div>
                     </ms-widget-back>
                     <!-- / Back -->
@@ -204,7 +204,7 @@
                     <!-- Front -->
                     <ms-widget-front class="white-bg">
                         <div class="pl-16 pr-8 pv-16 h-55" layout="row" layout-align="space-between center">
-                            <div class="h3">{#vm.widget4.title#}</div>
+                            <div class="h3">{{vm.widget4.title}}</div>
 
                             <md-menu>
                                 <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -229,14 +229,14 @@
 
                         <div class="pt-8 pb-32" layout="column" layout-align="center center">
                             <div class="blue-grey-fg font-size-72 line-height-72">
-                                ${#vm.widget4.data.count#}
+                                ${{vm.widget4.data.count}}
                             </div>
-                            <div class="h3 secondary-text font-weight-500">{#vm.widget4.data.label#}</div>
+                            <div class="h3 secondary-text font-weight-500">{{vm.widget4.data.label}}</div>
                         </div>
 
                         <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                            <span class="h4 secondary-text text-truncate">{#vm.widget4.data.extra.label#}:</span>
-                            <span class="h4 ml-8">${#vm.widget4.data.extra.count#}</span>
+                            <span class="h4 secondary-text text-truncate">{{vm.widget4.data.extra.label}}:</span>
+                            <span class="h4 ml-8">${{vm.widget4.data.extra.count}}</span>
                         </div>
                     </ms-widget-front>
                     <!-- / Front -->
@@ -251,7 +251,7 @@
                         </div>
 
                         <div>
-                            {#vm.widget4.detail#}
+                            {{vm.widget4.detail}}
                         </div>
                     </ms-widget-back>
                     <!-- / Back -->
@@ -272,7 +272,7 @@
                     <ms-widget-front class="white-bg">
                         <div class="ph-16 pv-8 border-bottom" layout="row" layout-align="space-between center"
                              layout-wrap>
-                            <div class="pv-8 h3">{#vm.widget5.title#}</div>
+                            <div class="pv-8 h3">{{vm.widget5.title}}</div>
 
                             <div class="pv-8" layout="row" layout-align="start center" layout-align-sm="end"
                                  flex-sm="100">
@@ -280,7 +280,7 @@
                                            ng-repeat="(key, range) in vm.widget5.ranges"
                                            ng-click="vm.widget5.changeRange(key)"
                                            ng-disabled="vm.widget5.currentRange == key">
-                                    {#range#}
+                                    {{range}}
                                 </md-button>
                             </div>
                         </div>
@@ -311,14 +311,14 @@
                     <ms-widget-front class="white-bg">
 
                         <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
-                            <div class="h3">{#vm.widget6.title#}</div>
+                            <div class="h3">{{vm.widget6.title}}</div>
                             <div class="pv-16">
                                 <md-select class="simplified" ng-model="vm.widget6.currentRange"
                                            ng-change="vm.widget6.changeRange(vm.widget6.currentRange)"
                                            aria-label="Change range">
                                     <md-option ng-repeat="(key, range) in vm.widget6.ranges"
-                                               value="{#key#}">
-                                        {#range#}
+                                               value="{{key}}">
+                                        {{range}}
                                     </md-option>
                                 </md-select>
                             </div>
@@ -334,14 +334,14 @@
                         <div class="pv-8 mh-16 border-top" layout="row" layout-align="start center" layout-wrap>
                             <div class="pv-8 border-right" layout="column" layout-align="center center"
                                  flex="100" flex-gt-xs="50">
-                                <span class="font-size-32">{#vm.widget6.footerLeft.count[vm.widget6.currentRange]#}</span>
-                                <span class="h4">{#vm.widget6.footerLeft.title#}</span>
+                                <span class="font-size-32">{{vm.widget6.footerLeft.count[vm.widget6.currentRange]}}</span>
+                                <span class="h4">{{vm.widget6.footerLeft.title}}</span>
                             </div>
 
                             <div class="pv-8" layout="column" layout-align="center center" flex="100"
                                  flex-gt-xs="50">
-                                <span class="font-size-32">{#vm.widget6.footerRight.count[vm.widget6.currentRange]#}</span>
-                                <span class="h4">{#vm.widget6.footerRight.title#}</span>
+                                <span class="font-size-32">{{vm.widget6.footerRight.count[vm.widget6.currentRange]}}</span>
+                                <span class="h4">{{vm.widget6.footerRight.title}}</span>
                             </div>
                         </div>
 
@@ -358,14 +358,14 @@
                     <ms-widget-front class="white-bg">
 
                         <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
-                            <div class="h3">{#vm.widget7.title#}</div>
+                            <div class="h3">{{vm.widget7.title}}</div>
 
                             <div class="pv-16">
                                 <md-select class="simplified" ng-model="vm.widget7.currentRange"
                                            aria-label="Change range">
                                     <md-option ng-repeat="(key, range) in vm.widget7.ranges"
-                                               value="{#key#}">
-                                        {#range#}
+                                               value="{{key}}">
+                                        {{range}}
                                     </md-option>
                                 </md-select>
                             </div>
@@ -374,8 +374,8 @@
                         <div class="p-16" layout="row" layout-align="space-between center"
                              ng-repeat="customer in vm.widget7.customers[vm.widget7.currentRange]">
                             <div>
-                                <div class="h3">{#customer.name#}</div>
-                                <span ng-if="customer.location">{#customer.location#}</span>
+                                <div class="h3">{{customer.name}}</div>
+                                <span ng-if="customer.location">{{customer.location}}</span>
                             </div>
 
                             <md-button class="md-icon-button" aria-label="More information">

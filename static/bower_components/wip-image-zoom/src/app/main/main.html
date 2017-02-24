@@ -10,7 +10,7 @@
         <div class="demo-settings">
             <button ng-repeat="image in vm.zoomOptions1.images"
                     ng-click="vm.selected = image">
-                Image {#$index +1 #}
+                Image {{$index +1 }}
             </button>
             <div class="setting">
                 <label>Style:</label>
@@ -101,11 +101,11 @@
         </div>
         <div class="demo-json">
             <h4>Options</h4>
-            <pre>{#vm.zoomOptions1 | json#}</pre>
+            <pre>{{vm.zoomOptions1 | json}}</pre>
             <h4>Selected Model</h4>
-            <pre>{#vm.selected | json#}</pre>
+            <pre>{{vm.selected | json}}</pre>
             <h4>SelectedIndex</h4>
-            <pre>{#vm.selectedIndex#}</pre>
+            <pre>{{vm.selectedIndex}}</pre>
         </div>
     </section>
 </div>

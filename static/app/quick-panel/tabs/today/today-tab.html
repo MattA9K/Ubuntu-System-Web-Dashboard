@@ -2,11 +2,11 @@
     <md-subheader class="md-no-sticky"><span translate="QUICKPANEL.TODAY">Today</span></md-subheader>
     <md-list-item class="md-display-1 md-2-line">
         <div class="secondary-text">
-            <div> {#vm.date | date:'EEEE'#}</div>
+            <div> {{vm.date | date:'EEEE'}}</div>
             <div layout="row" layout-align="start start">
-                <span> {#vm.date | date:'d'#}</span>
+                <span> {{vm.date | date:'d'}}</span>
                 <span class="md-subhead">th</span>
-                <span> {#vm.date | date:'MMMM'#}</span>
+                <span> {{vm.date | date:'MMMM'}}</span>
             </div>
         </div>
     </md-list-item>
@@ -19,9 +19,9 @@
 
     <md-list-item class="md-2-line" ng-repeat="event in vm.events" ng-click="dummyFunction()">
         <div class="md-list-item-text">
-            <h3>{#event.title#}</h3>
+            <h3>{{event.title}}</h3>
 
-            <p>{#event.detail#}</p>
+            <p>{{event.detail}}</p>
         </div>
     </md-list-item>
 </md-list>
@@ -32,9 +32,9 @@
     <md-subheader class="md-no-sticky"><span translate="QUICKPANEL.NOTES">Notes</span></md-subheader>
     <md-list-item class="md-2-line" ng-repeat="note in vm.notes" ng-click="dummyFunction()">
         <div class="md-list-item-text">
-            <h3>{#note.title#}</h3>
+            <h3>{{note.title}}</h3>
 
-            <p>{#note.detail#}</p>
+            <p>{{note.detail}}</p>
         </div>
     </md-list-item>
 </md-list>

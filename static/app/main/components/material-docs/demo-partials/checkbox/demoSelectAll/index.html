@@ -19,7 +19,7 @@
           </div>
             <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in items">
               <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
-               {# item #}
+               {{ item }}
               </md-checkbox>
             </div>
           </div>

@@ -6,7 +6,7 @@
         <label>Items</label>
         <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
           <md-optgroup label="items">
-            <md-option ng-value="item" ng-repeat="item in items">Item {#item#}</md-option>
+            <md-option ng-value="item" ng-repeat="item in items">Item {{item}}</md-option>
           </md-optgroup>
         </md-select>
       </md-input-container>

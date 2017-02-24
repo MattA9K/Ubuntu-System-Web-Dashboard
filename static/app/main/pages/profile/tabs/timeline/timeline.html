@@ -41,11 +41,11 @@
         <div class="timeline-item md-whiteframe-1dp" ng-repeat="post in vm.posts">
             <header layout="row" layout-align="space-between start">
                 <div class="user" layout="row" layout-align="start center">
-                    <img class="avatar" ng-src="{#post.user.avatar#}">
+                    <img class="avatar" ng-src="{{post.user.avatar}}">
 
                     <div layout="column">
                         <div class="title">
-                            <span class="username md-accent-color">{#post.user.name#}</span>
+                            <span class="username md-accent-color">{{post.user.name}}</span>
                             <span ng-if="post.type == 'post'" translate="PROFILE.TYPE_POST">posted on your
                                 timeline</span>
                             <span ng-if="post.type == 'something'" translate="PROFILE.TYPE_SOMETHING">shared something
@@ -55,7 +55,7 @@
                             <span ng-if="post.type == 'article'" translate="PROFILE.TYPE_ARTICLE">shared an article with
                                 you</span>
                         </div>
-                        <div class="time">{#post.time#}</div>
+                        <div class="time">{{post.time}}</div>
                     </div>
                 </div>
 
@@ -66,11 +66,11 @@
 
             <div class="content">
                 <div ng-if="post.message" class="message">
-                    {#post.message#}
+                    {{post.message}}
                 </div>
 
                 <div ng-if="post.media" class="media">
-                    <img ng-if="post.media.type === 'image'" ng-src="{#post.media.preview#}">
+                    <img ng-if="post.media.type === 'image'" ng-src="{{post.media.preview}}">
 
                     <div ng-if="post.media.type === 'video'" ng-bind-html="post.media.embed | toTrusted">
                     </div>
@@ -78,44 +78,44 @@
 
                 <div ng-if="post.article" layout="column" class="article">
                     <div class="media">
-                        <img ng-src="{#post.article.media.preview#}">
+                        <img ng-src="{{post.article.media.preview}}">
                     </div>
-                    <div class="title">{#post.article.title#}</div>
-                    <div class="subtitle">{#post.article.subtitle#}</div>
-                    <div class="excerpt">{#post.article.excerpt#}</div>
+                    <div class="title">{{post.article.title}}</div>
+                    <div class="subtitle">{{post.article.subtitle}}</div>
+                    <div class="excerpt">{{post.article.excerpt}}</div>
                 </div>
 
                 <div layout="row" layout-align="start center">
                     <md-button class="like-button">
                         <div layout="row" layout-align="start center">
                             <md-icon md-font-icon="icon-heart-outline" class="s16"></md-icon>
-                            <span translate="PROFILE.LIKE">Like</span>&nbsp;<span>({#post.like#})</span>
+                            <span translate="PROFILE.LIKE">Like</span>&nbsp;<span>({{post.like}})</span>
                         </div>
                     </md-button>
                     <md-button class="share-button">
                         <div layout="row" layout-align="start center">
                             <md-icon md-font-icon="icon-share" class="s16"></md-icon>
-                            <span translate="PROFILE.SHARE">Share</span>&nbsp;<span>({#post.share#})</span>
+                            <span translate="PROFILE.SHARE">Share</span>&nbsp;<span>({{post.share}})</span>
                         </div>
                     </md-button>
                 </div>
             </div>
 
             <footer class="" layout="column" layout-align="start start">
-                <div ng-if="post.comments" class="comment-count">{#post.comments.length#} comments
+                <div ng-if="post.comments" class="comment-count">{{post.comments.length}} comments
                     <md-icon md-font-icon="icon-keyboard_arrow_down"></md-icon>
                 </div>
 
                 <div class="comment" layout="row" layout-fill ng-repeat="comment in post.comments">
-                    <img ng-src="{#comment.user.avatar#}" class="avatar"/>
+                    <img ng-src="{{comment.user.avatar}}" class="avatar"/>
 
                     <div flex layout="column">
                         <div layout="row" layout-align="start center">
-                            <span class="username">{#comment.user.name#}</span>
-                            <span class="time">{#comment.time#}</span>
+                            <span class="username">{{comment.user.name}}</span>
+                            <span class="time">{{comment.time}}</span>
                         </div>
                         <div class="message">
-                            {#comment.message#}
+                            {{comment.message}}
                         </div>
                         <div class="actions" layout="row" layout-align="space-between center">
                             <a href="#" class="reply-button md-accent-color" translate="PROFILE.REPLY">Reply</a>
@@ -151,14 +151,14 @@
             <div class="content" layout="row" layout-wrap>
                 <div class="activities">
                     <div class="activity" layout="row" layout-align="start start" ng-repeat="activity in vm.activities">
-                        <img ng-src="{#activity.user.avatar#}" class="avatar" alt="{#activity.user.name#}"/>
+                        <img ng-src="{{activity.user.avatar}}" class="avatar" alt="{{activity.user.name}}"/>
 
                         <div layout="column">
                             <div>
-                                <span class="username md-accent-color">{#activity.user.name#}</span>
-                                <span class="message"> {#activity.message#}</span>
+                                <span class="username md-accent-color">{{activity.user.name}}</span>
+                                <span class="message"> {{activity.message}}</span>
                             </div>
-                            <span class="time secondary-text">{#activity.time#}</span>
+                            <span class="time secondary-text">{{activity.time}}</span>
                         </div>
                     </div>
                 </div>

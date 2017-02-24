@@ -23,10 +23,10 @@
             placeholder="What is your favorite US state?"
             md-autofocus="">
           <md-item-template>
-            <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{#item.display#}</span>
+            <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
           </md-item-template>
           <md-not-found>
-            No states matching "{#ctrl.searchText#}" were found.
+            No states matching "{{ctrl.searchText}}" were found.
           </md-not-found>
         </md-autocomplete>
       </form>

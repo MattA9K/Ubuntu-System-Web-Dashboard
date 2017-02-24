@@ -16,9 +16,9 @@
 
         <div layout="column" layout-align="center center">
 
-            <img ng-src="{#vm.user.avatar#}" class="md-avatar avatar user-avatar huge" alt="{#vm.user.name#}"/>
+            <img ng-src="{{vm.user.avatar}}" class="md-avatar avatar user-avatar huge" alt="{{vm.user.name}}"/>
 
-            <div class="user-name">{#vm.user.name#}</div>
+            <div class="user-name">{{vm.user.name}}</div>
 
         </div>
 
@@ -39,7 +39,7 @@
         <md-card-content>
 
             <span class="mood" editable-textarea="vm.user.mood" e-rows="7" e-cols="40">
-                {#vm.user.mood || 'CHAT.ENTER_MOOD_MESSAGE' | translate#}
+                {{vm.user.mood || 'CHAT.ENTER_MOOD_MESSAGE' | translate}}
             </span>
 
         </md-card-content>

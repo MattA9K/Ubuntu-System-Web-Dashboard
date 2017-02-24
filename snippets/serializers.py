@@ -13,7 +13,6 @@ class SnippetSerializer(serializers.Serializer):
     style = serializers.ChoiceField(choices=STYLE_CHOICES, default='friendly')
     owner = serializers.ReadOnlyField(source='owner.username')
 
-
     def create(self, validated_data):
         """
         Create and return a new `Snippet` instance, given the validated data.
@@ -48,7 +47,6 @@ class SnippetSerializerAlternative(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
-
     class Meta:
         model = User
         fields = ('id', 'username', 'snippets')

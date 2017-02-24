@@ -17,17 +17,17 @@
       <md-subheader class="md-no-sticky">Contacts</md-subheader>
       <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in ctrl.allContacts"
           ng-if="ctrl.contacts.indexOf(contact) < 0">
-        <img ng-src="{#contact.image#}" class="md-avatar" alt="{#contact.name#}" />
+        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
         <div class="md-list-item-text compact">
-          <h3>{#contact.name#}</h3>
-          <p>{#contact.email#}</p>
+          <h3>{{contact.name}}</h3>
+          <p>{{contact.email}}</p>
         </div>
       </md-list-item>
       <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in ctrl.contacts">
-        <img ng-src="{#contact.image#}" class="md-avatar" alt="{#contact.name#}" />
+        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
         <div class="md-list-item-text compact">
-          <h3>{#contact.name#}</h3>
-          <p>{#contact.email#}</p>
+          <h3>{{contact.name}}</h3>
+          <p>{{contact.email}}</p>
         </div>
       </md-list-item>
     </md-list>

@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^author/', include('author.urls')),
     url(r'^todo/', include('todo.urls')),
     url(r'^notes/', include('cininotes.urls')),
+    url(r'^scrum/', include('ciniscrum.urls')),
 
     #url(r'^users/$', views.UserList.as_view(), name='users'),
     #url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),

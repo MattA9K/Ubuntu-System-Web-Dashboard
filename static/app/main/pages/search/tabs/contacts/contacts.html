@@ -47,17 +47,17 @@
     <tbody>
         <tr class="result-item" ng-repeat="contact in vm.contacts">
             <td class="text-left avatar-cell" ng-if="contact.avatar">
-                <img class="avatar" alt="{#contact.name#}" ng-src="{#contact.avatar#}">
+                <img class="avatar" alt="{{contact.name}}" ng-src="{{contact.avatar}}">
             </td>
             <td class="text-left avatar-cell" ng-if="!contact.avatar">
                 <div class="avatar" ms-random-class="vm.colors">
-                    {#contact.name[0]#}
+                    {{contact.name[0]}}
                 </div>
             </td>
-            <td class="name">{#contact.name#}</td>
-            <td class="position">{#contact.position#}</td>
-            <td class="phone">{#contact.phone#}</td>
-            <td class="email">{#contact.email#}</td>
+            <td class="name">{{contact.name}}</td>
+            <td class="position">{{contact.position}}</td>
+            <td class="phone">{{contact.phone}}</td>
+            <td class="email">{{contact.email}}</td>
         </tr>
     </tbody>
 </table>

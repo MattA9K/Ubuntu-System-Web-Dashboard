@@ -11,12 +11,12 @@
 
             <div layout="row" layout-align="start center">
                 <div class="product-image" hide-xs>
-                    <img ng-src="{#vm.product.images[0].url#}">
+                    <img ng-src="{{vm.product.images[0].url}}">
                 </div>
 
                 <div layout="column" layout-align="start start">
                     <div class="h2">
-                        {#vm.product.name#}
+                        {{vm.product.name}}
                     </div>
                     <div class="subtitle secondary-text">
                         <span translate="EC.PRODUCT_DETAIL">Product Detail</span>
@@ -68,7 +68,7 @@
                                     <md-optgroup>
                                         <md-option ng-value="category"
                                                    ng-repeat="category in vm.product.categories | filter:vm.categoriesSelectFilter">
-                                            {#category#}
+                                            {{category}}
                                         </md-option>
                                     </md-optgroup>
                                 </md-select>
@@ -129,7 +129,7 @@
                                          layout-align="center center">
                                         <div class="overlay" layout="column" layout-align="center center">
                                             <md-progress-linear md-mode="determinate"
-                                                                value="{#image.file.progress() * 100#}">
+                                                                value="{{image.file.progress() * 100}}">
                                             </md-progress-linear>
                                         </div>
                                         <img class="media" flow-img="image.file">
@@ -137,7 +137,7 @@
 
                                     <div class="product-image" ng-switch-when="image" layout="row"
                                          layout-align="center center">
-                                        <img class="media" ng-src="{#image.url#}"
+                                        <img class="media" ng-src="{{image.url}}"
                                              ng-click="vm.updateImageZoomOptions(image.url)">
                                     </div>
                                 </div>

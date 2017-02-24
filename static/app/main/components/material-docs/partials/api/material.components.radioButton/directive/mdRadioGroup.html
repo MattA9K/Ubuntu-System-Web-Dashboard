@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -41,9 +41,9 @@ is focusable, and by default the <code>&lt;md-radio-button&gt;</code>s are not.<
 
   <md-radio-button
        ng-repeat="d in colorOptions"
-       ng-value="d.value" aria-label="{# d.label #}">
+       ng-value="d.value" aria-label="{{ d.label }}">
 
-         {# d.label #}
+         {{ d.label }}
 
   </md-radio-button>
 

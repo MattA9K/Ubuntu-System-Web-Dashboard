@@ -12,7 +12,7 @@
           <div layout="row" layout-wrap flex>
             <div flex="50" ng-repeat="item in items">
               <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
-                {# item #} <span ng-if="exists(item, selected)">selected</span>
+                {{ item }} <span ng-if="exists(item, selected)">selected</span>
               </md-checkbox>
             </div>
           </div>
@@ -29,7 +29,7 @@
               <label>
                 <input type="checkbox" ng-checked="exists(item, selected)"
                        ng-click="toggle(item, selected)"/>
-                {# item #}
+                {{ item }}
               </label>
             </div>
           </div>
@@ -39,7 +39,7 @@
 
     <div flex="100">
       <h2 class="md-title">Selected Items</h2>
-      <code style="display: block; padding: 8px;">{#selected | json#}</code>
+      <code style="display: block; padding: 8px;">{{selected | json}}</code>
     </div>
   </div>
 

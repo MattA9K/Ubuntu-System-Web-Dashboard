@@ -16,7 +16,7 @@
                 </div>
                 <div class="product-count secondary-text">
                     <span translate="EC.TOTAL_PRODUCTS">Total products:</span>
-                    <span>{#vm.products.length#}</span>
+                    <span>{{vm.products.length}}</span>
                 </div>
             </div>
 
@@ -92,13 +92,13 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="product in ::vm.products">
-                            <td>{#product.id#}</td>
-                            <td><img class="product-image" ng-src="{#product.images[0].url#}"></td>
-                            <td>{#product.name#}</td>
-                            <td>{#product.categories[0]#}</td>
-                            <td>{#product.priceTaxIncl#}</td>
-                            <td>{#product.quantity#}</td>
-                            <td>{#product.active#}</td>
+                            <td>{{product.id}}</td>
+                            <td><img class="product-image" ng-src="{{product.images[0].url}}"></td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.categories[0]}}</td>
+                            <td>{{product.priceTaxIncl}}</td>
+                            <td>{{product.quantity}}</td>
+                            <td>{{product.active}}</td>
                             <td>
                                 <md-button class="edit-button md-icon-button" ng-click="vm.gotoProductDetail(product.id)" aria-label="Product details"
                                            translate translate-attr-aria-label="EC.PRODUCT_DETAILS">

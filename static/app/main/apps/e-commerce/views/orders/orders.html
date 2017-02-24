@@ -16,7 +16,7 @@
                 </div>
                 <div class="order-count secondary-text">
                     <span translate="EC.TOTAL_ORDERS">Total orders:</span>
-                    <span>{#vm.orders.length#}</span>
+                    <span>{{vm.orders.length}}</span>
                 </div>
             </div>
 
@@ -91,13 +91,13 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="order in ::vm.orders">
-                            <td>{#order.id#}</td>
-                            <td>{#order.reference#}</td>
-                            <td>{#order.customer['firstName']#} {#order.customer['lastName']#}</td>
-                            <td>{#order.total#}</td>
-                            <td>{#order.payment['method']#}</td>
-                            <td>{#order.status[0].id#}</td>
-                            <td class="date">{#order.date#}</td>
+                            <td>{{order.id}}</td>
+                            <td>{{order.reference}}</td>
+                            <td>{{order.customer['firstName']}} {{order.customer['lastName']}}</td>
+                            <td>{{order.total}}</td>
+                            <td>{{order.payment['method']}}</td>
+                            <td>{{order.status[0].id}}</td>
+                            <td class="date">{{order.date}}</td>
                             <td>
                                 <md-button class="edit-button md-icon-button" ng-click="vm.gotoOrderDetail(order.id)" aria-label="Order details"
                                            translate translate-attr-aria-label="EC.ORDER_DETAILS">

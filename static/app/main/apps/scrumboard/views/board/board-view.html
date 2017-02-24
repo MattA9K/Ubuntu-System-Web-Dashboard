@@ -1,4 +1,4 @@
-<textarea>{#vm.board#}</textarea>
+<textarea>{{vm.board}}</textarea>
 
 <!-- BOARD -->
 <div id="board" ng-class="vm.board.settings.color+'-100-bg'" ui-sortable="vm.sortableListOptions"
@@ -13,7 +13,7 @@
             <div class="list-header" layout="row" layout-align="space-between center">
 
                 <div class="list-header-name">
-                    <span editable-text="list.name">{#list.name#}</span>
+                    <span editable-text="list.name">{{list.name}}</span>
                 </div>
 
                 <md-menu md-offset="0 48px" class="options list-header-option-button">
@@ -51,7 +51,7 @@
                         <!-- CARD COVER -->
                         <div ng-if="vm.board.settings.cardCoverImages && vm.board.cards.getById(cardId).idAttachmentCover"
                              class="list-card-cover">
-                            <img ng-src="{#vm.board.cards.getById(cardId).attachments.getById(vm.board.cards.getById(cardId).idAttachmentCover).src#}">
+                            <img ng-src="{{vm.board.cards.getById(cardId).attachments.getById(vm.board.cards.getById(cardId).idAttachmentCover).src}}">
                         </div>
                         <!-- / CARD COVER -->
 
@@ -71,14 +71,14 @@
                                       ng-class="'md-'+vm.board.labels.getById(labelId).color+'-bg'"
                                       ng-repeat="labelId in vm.board.cards.getById(cardId).idLabels">
                                     <md-tooltip>
-                                        {#vm.board.labels.getById(labelId).name#}
+                                        {{vm.board.labels.getById(labelId).name}}
                                     </md-tooltip>
                                 </span>
                             </div>
                             <!-- / CARD LABELS -->
 
                             <!-- CARD NAME -->
-                            <div class="list-card-name">{#vm.board.cards.getById(cardId).name#}</div>
+                            <div class="list-card-name">{{vm.board.cards.getById(cardId).name}}</div>
                             <!-- / CARD NAME -->
 
                             <div ng-if="vm.board.cards.getById(cardId).due || vm.board.cards.getById(cardId).checkItems"
@@ -90,7 +90,7 @@
                                       ng-if="vm.board.cards.getById(cardId).due" layout="row"
                                       layout-align="start center">
                                     <i class="icon-clock s16"></i>
-                                    <span>{#vm.board.cards.getById(cardId).due | date:'mediumDate'#}</span>
+                                    <span>{{vm.board.cards.getById(cardId).due | date:'mediumDate'}}</span>
                                 </span>
                                 <!-- / CARD DUE -->
 
@@ -100,9 +100,9 @@
                                       ng-class="{'completed': vm.board.cards.getById(cardId).checkItemsChecked === vm.board.cards.getById(cardId).checkItems}"
                                       layout="row" layout-align="start center">
                                     <i class="icon-checkbox-marked-circle s16"></i>
-                                    <span>{#vm.board.cards.getById(cardId).checkItemsChecked#}</span>
+                                    <span>{{vm.board.cards.getById(cardId).checkItemsChecked}}</span>
                                     <span>/</span>
-                                    <span>{#vm.board.cards.getById(cardId).checkItems#}</span>
+                                    <span>{{vm.board.cards.getById(cardId).checkItems}}</span>
                                 </span>
                                 <!-- / CARD CHECK ITEMS STATUS -->
 
@@ -116,10 +116,10 @@
                                      ng-repeat="memberId in vm.board.cards.getById(cardId).idMembers">
 
                                     <img class="list-card-member-avatar"
-                                         ng-src="{#vm.board.members.getById(memberId).avatar#}">
+                                         ng-src="{{vm.board.members.getById(memberId).avatar}}">
 
                                     <md-tooltip>
-                                        <div class="name">{# vm.board.members.getById(memberId).name#}</div>
+                                        <div class="name">{{ vm.board.members.getById(memberId).name}}</div>
                                     </md-tooltip>
                                 </div>
 
@@ -156,7 +156,7 @@
                                 <span class="list-card-footer-item" ng-if="vm.board.cards.getById(cardId).attachments"
                                       layout="row" layout-align="start center">
                                     <i class="icon-attachment s18"></i>
-                                    <span class="value">{#vm.board.cards.getById(cardId).attachments.length#}</span>
+                                    <span class="value">{{vm.board.cards.getById(cardId).attachments.length}}</span>
                                 </span>
                                 <!-- / CARD ATTACHMENT -->
 
@@ -164,7 +164,7 @@
                                 <span class="list-card-footer-item" ng-if="vm.board.cards.getById(cardId).comments"
                                       layout="row" layout-align="start center">
                                     <i class="icon-comment s18"></i>
-                                    <span class="value">{#vm.board.cards.getById(cardId).comments.length#}</span>
+                                    <span class="value">{{vm.board.cards.getById(cardId).comments.length}}</span>
                                 </span>
                                 <!-- / CARD COMMENTS -->
 

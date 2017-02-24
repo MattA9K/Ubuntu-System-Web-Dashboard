@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
   
 
@@ -113,7 +113,7 @@ Use the <code>parent</code> option to change where dialogs are appended.</li>
            &#39;  <md-dialog-content>&#39;+
            &#39;    <md-list>&#39;+
            &#39;      <md-list-item ng-repeat="item in items">&#39;+
-           &#39;       <p>Number {#item#}</p>&#39; +
+           &#39;       <p>Number {{item}}</p>&#39; +
            &#39;      </md-item>&#39;+
            &#39;    </md-list>&#39;+
            &#39;  </md-dialog-content>&#39; +
@@ -252,7 +252,7 @@ their options each time.</p>
           template:
             &#39;<md-dialog>&#39; +
 
-            &#39;  <md-dialog-content>Hello {# employee #}!</md-dialog-content>&#39; +
+            &#39;  <md-dialog-content>Hello {{ employee }}!</md-dialog-content>&#39; +
 
             &#39;  <md-dialog-actions>&#39; +
             &#39;    <md-button ng-click="closeDialog()" class="md-primary">&#39; +
@@ -290,7 +290,7 @@ their options each time.</p>
 
           template: &#39;<md-dialog>&#39; +
                     &#39;  <md-dialog-content>&#39; +
-                    &#39;     Hi There {#vm.employee#}&#39; +
+                    &#39;     Hi There {{vm.employee}}&#39; +
                     &#39;  </md-dialog-content>&#39; +
                     &#39;</md-dialog>&#39;,
 

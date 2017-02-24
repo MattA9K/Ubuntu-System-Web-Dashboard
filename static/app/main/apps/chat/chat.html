@@ -61,8 +61,8 @@
 
                             <div class="avatar-wrapper">
 
-                                <img ng-src="{#vm.contacts.getById(vm.chatContactId).avatar#}"
-                                     class="avatar" alt="{#vm.contacts.getById(vm.chatContactId).name#}"/>
+                                <img ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}"
+                                     class="avatar" alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
 
                                 <i class="icon icon- s16 status"
                                    ng-class="vm.contacts.getById(vm.chatContactId).status">
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="chat-contact-name">
-                                {#vm.contacts.getById(vm.chatContactId).name#}
+                                {{vm.contacts.getById(vm.chatContactId).name}}
                             </div>
 
                         </div>
@@ -114,15 +114,15 @@
                              ng-class="dialog.who">
 
                             <img ng-if="dialog.who ==='contact'"
-                                 ng-src="{#vm.contacts.getById(vm.chatContactId).avatar#}"
+                                 ng-src="{{vm.contacts.getById(vm.chatContactId).avatar}}"
                                  class="avatar"
-                                 alt="{#vm.contacts.getById(vm.chatContactId).name#}"/>
+                                 alt="{{vm.contacts.getById(vm.chatContactId).name}}"/>
 
-                            <img ng-if="dialog.who ==='user'" class="avatar" ng-src="{#vm.user.avatar#}">
+                            <img ng-if="dialog.who ==='user'" class="avatar" ng-src="{{vm.user.avatar}}">
 
                             <div class="bubble">
-                                <div class="message">{#dialog.message#}</div>
-                                <div class="time secondary-text">{#dialog.time | altDate#}</div>
+                                <div class="message">{{dialog.message}}</div>
+                                <div class="time secondary-text">{{dialog.time | altDate}}</div>
                             </div>
 
                         </div>

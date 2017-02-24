@@ -5,26 +5,26 @@
         <div class="card md-whiteframe-8dp">
 
             <div class="header">
-                <div class="invoice-date">{#vm.invoice.date#}</div>
+                <div class="invoice-date">{{vm.invoice.date}}</div>
 
                 <div layout="row" layout-align="space-between stretch">
                     <div class="client">
                         <div class="invoice-number" layout="row" layout-align="start center">
                             <span class="title" translate="INVOICE.INVOICE">INVOICE</span>
-                            <span class="number">{#vm.invoice.number#}</span>
+                            <span class="number">{{vm.invoice.number}}</span>
                         </div>
 
                         <div class="due-date" layout="row" layout-align="start center">
                             <span class="title" translate="INVOICE.DUE_DATE">DUE DATE</span>
-                            <span class="date">{#vm.invoice.dueDate#}</span>
+                            <span class="date">{{vm.invoice.dueDate}}</span>
                         </div>
 
                         <div class="info">
-                            <div class="title">{#vm.invoice.client.title#}</div>
-                            <div ng-if="vm.invoice.client.address" class="address">{#vm.invoice.client.address#}</div>
-                            <div ng-if="vm.invoice.client.phone" class="phone">{#vm.invoice.client.phone#}</div>
-                            <div ng-if="vm.invoice.client.email" class="email">{#vm.invoice.client.email#}</div>
-                            <div ng-if="vm.invoice.client.website" class="website">{#vm.invoice.client.website#}</div>
+                            <div class="title">{{vm.invoice.client.title}}</div>
+                            <div ng-if="vm.invoice.client.address" class="address">{{vm.invoice.client.address}}</div>
+                            <div ng-if="vm.invoice.client.phone" class="phone">{{vm.invoice.client.phone}}</div>
+                            <div ng-if="vm.invoice.client.email" class="email">{{vm.invoice.client.email}}</div>
+                            <div ng-if="vm.invoice.client.website" class="website">{{vm.invoice.client.website}}</div>
                         </div>
                     </div>
 
@@ -34,11 +34,11 @@
                         </div>
 
                         <div class="info">
-                            <div class="title">{#vm.invoice.from.title#}</div>
-                            <div ng-if="vm.invoice.from.address" class="address">{#vm.invoice.from.address#}</div>
-                            <div ng-if="vm.invoice.from.phone" class="phone">{#vm.invoice.from.phone#}</div>
-                            <div ng-if="vm.invoice.from.email" class="email">{#vm.invoice.from.email#}</div>
-                            <div ng-if="vm.invoice.from.website" class="website">{#vm.invoice.from.website#}</div>
+                            <div class="title">{{vm.invoice.from.title}}</div>
+                            <div ng-if="vm.invoice.from.address" class="address">{{vm.invoice.from.address}}</div>
+                            <div ng-if="vm.invoice.from.phone" class="phone">{{vm.invoice.from.phone}}</div>
+                            <div ng-if="vm.invoice.from.email" class="email">{{vm.invoice.from.email}}</div>
+                            <div ng-if="vm.invoice.from.website" class="website">{{vm.invoice.from.website}}</div>
                         </div>
                     </div>
                 </div>
@@ -57,40 +57,40 @@
                         <tr ng-repeat="service in vm.invoice.services">
                             <td>
                                 <div class="title">
-                                    {#service.title#}
+                                    {{service.title}}
                                 </div>
                             </td>
                             <td>
-                                {#service.unit#}
+                                {{service.unit}}
                             </td>
                             <td class="text-right">
-                                {#service.unitPrice | currency#}
+                                {{service.unitPrice | currency}}
                             </td>
                             <td class="text-right">
-                                {#service.quantity#}
+                                {{service.quantity}}
                             </td>
                             <td class="text-right">
-                                {#service.total | currency#}
+                                {{service.total | currency}}
                             </td>
                         </tr>
                         <!-- Double the invoice data for demo purposes -->
                         <tr ng-repeat="service in vm.invoice.services">
                             <td>
                                 <div class="title">
-                                    {#service.title#}
+                                    {{service.title}}
                                 </div>
                             </td>
                             <td>
-                                {#service.unit#}
+                                {{service.unit}}
                             </td>
                             <td class="text-right">
-                                {#service.unitPrice | currency#}
+                                {{service.unitPrice | currency}}
                             </td>
                             <td class="text-right">
-                                {#service.quantity#}
+                                {{service.quantity}}
                             </td>
                             <td class="text-right">
-                                {#service.total | currency#}
+                                {{service.total | currency}}
                             </td>
                         </tr>
                     </tbody>
@@ -100,19 +100,19 @@
                     <tbody>
                         <tr class="subtotal">
                             <td translate="INVOICE.SUBTOTAL">SUBTOTAL</td>
-                            <td>{#vm.invoice.subtotal | currency#}</td>
+                            <td>{{vm.invoice.subtotal | currency}}</td>
                         </tr>
                         <tr class="tax">
                             <td translate="INVOICE.TAX">TAX</td>
-                            <td>{#vm.invoice.tax | currency#}</td>
+                            <td>{{vm.invoice.tax | currency}}</td>
                         </tr>
                         <tr class="discount">
                             <td translate="INVOICE.DISCOUNT">DISCOUNT</td>
-                            <td>-{#vm.invoice.discount | currency#}</td>
+                            <td>-{{vm.invoice.discount | currency}}</td>
                         </tr>
                         <tr class="total">
                             <td translate="INVOICE.TOTAL">TOTAL</td>
-                            <td>{#vm.invoice.total | currency#}</td>
+                            <td>{{vm.invoice.total | currency}}</td>
                         </tr>
                     </tbody>
                 </table>

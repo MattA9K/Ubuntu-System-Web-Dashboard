@@ -32,7 +32,7 @@
         <h2>AngularJS - Multiple Timers Example</h2>
         <h3>Timer 1: <timer/></h3>
         <h3>Timer 2: <timer interval="2000"/></h3>
-        <h3>Timer 3: <timer>{#minutes#} minutes, {#seconds#} seconds.</timer></h3>
+        <h3>Timer 3: <timer>{{minutes}} minutes, {{seconds}} seconds.</timer></h3>
         <button ng-click="startTimer()" ng-disabled="timerRunning">Start Timers</button>
         <button ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timers</button>
     </div>

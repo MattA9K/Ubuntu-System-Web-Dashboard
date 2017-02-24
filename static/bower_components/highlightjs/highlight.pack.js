@@ -5386,7 +5386,7 @@ hljs.registerLanguage('django', function(hljs) {
     subLanguage: 'xml',
     contains: [
       hljs.COMMENT(/\{%\s*comment\s*%}/, /\{%\s*endcomment\s*%}/),
-      hljs.COMMENT(/\{#/, /#}/),
+      hljs.COMMENT(/\{{/, /}}/),
       {
         className: 'template_tag',
         begin: /\{%/, end: /%}/,
@@ -12710,7 +12710,7 @@ hljs.registerLanguage('twig', function(hljs) {
     case_insensitive: true,
     subLanguage: 'xml',
     contains: [
-      hljs.COMMENT(/\{#/, /#}/),
+      hljs.COMMENT(/\{{/, /}}/),
       {
         className: 'template_tag',
         begin: /\{%/, end: /%}/,

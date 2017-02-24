@@ -12,10 +12,6 @@
         // Put your common app configurations here
 
 
-        // PREVENT ANGULAR/DJANGO CONFLICT:
-        $interpolateProvider.startSymbol('{#');
-        $interpolateProvider.endSymbol('#}');
-
         // uiGmapgoogle-maps configuration
         uiGmapGoogleMapApiProvider.configure({
             //    key: 'your api key',

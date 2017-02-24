@@ -13,8 +13,8 @@
                 <ms-widget-front class="white-bg">
 
                     <div class="p-24 border-bottom" layout="row" layout-align="space-between center">
-                        <div class="h3">{#vm.widget1.title#}</div>
-                        <div class="text-boxed green-600-bg white-fg">{#vm.widget1.onlineUsers#} online users</div>
+                        <div class="h3">{{vm.widget1.title}}</div>
+                        <div class="text-boxed green-600-bg white-fg">{{vm.widget1.onlineUsers}} online users</div>
                     </div>
 
                     <div class="pb-32 border-bottom">
@@ -29,11 +29,11 @@
                              flex-gt-md="25">
                             <div layout="column" flex>
                                 <div class="h3 secondary-text pb-8">
-                                    {#vm.widget1.sessions.title#}
+                                    {{vm.widget1.sessions.title}}
                                 </div>
 
                                 <div class="font-size-32 line-height-32 pb-16">
-                                    {#vm.widget1.sessions.value#}
+                                    {{vm.widget1.sessions.value}}
                                 </div>
 
                                 <div>
@@ -50,11 +50,11 @@
                              flex-gt-md="25">
                             <div layout="column" flex>
                                 <div class="h3 secondary-text pb-8">
-                                    {#vm.widget1.pageviews.title#}
+                                    {{vm.widget1.pageviews.title}}
                                 </div>
 
                                 <div class="font-size-32 line-height-32 pb-16">
-                                    {#vm.widget1.pageviews.value#}
+                                    {{vm.widget1.pageviews.value}}
                                 </div>
 
                                 <div>
@@ -71,11 +71,11 @@
                              flex-gt-md="25">
                             <div layout="column" flex>
                                 <div class="h3 secondary-text pb-8">
-                                    {#vm.widget1.pagesSessions.title#}
+                                    {{vm.widget1.pagesSessions.title}}
                                 </div>
 
                                 <div class="font-size-32 line-height-32 pb-16">
-                                    {#vm.widget1.pagesSessions.value#}
+                                    {{vm.widget1.pagesSessions.value}}
                                 </div>
 
                                 <div>
@@ -92,11 +92,11 @@
                              flex-gt-md="25">
                             <div layout="column" flex>
                                 <div class="h3 secondary-text pb-8">
-                                    {#vm.widget1.avgSessionDuration.title#}
+                                    {{vm.widget1.avgSessionDuration.title}}
                                 </div>
 
                                 <div class="font-size-32 line-height-32 pb-16">
-                                    {#vm.widget1.avgSessionDuration.value#}
+                                    {{vm.widget1.avgSessionDuration.value}}
                                 </div>
 
                                 <div>
@@ -127,7 +127,7 @@
                 <!-- Front -->
                 <ms-widget-front class="white-bg">
                     <div class="p-16" layout="row" layout-align="space-between center">
-                        <div class="h3">{#vm.widget2.title#}</div>
+                        <div class="h3">{{vm.widget2.title}}</div>
 
                         <md-menu>
                             <md-button aria-label="more" class="md-icon-button"
@@ -149,7 +149,7 @@
                                             options="vm.widget2.map.options">
                             <ui-gmap-markers models="vm.widget2.map.markers" coords="'coords'">
                                 <ui-gmap-windows show="show">
-                                    <div ng-non-bindable>{#sessions#}</div>
+                                    <div ng-non-bindable>{{sessions}}</div>
                                 </ui-gmap-windows>
                             </ui-gmap-markers>
                         </ui-gmap-google-map>
@@ -167,14 +167,14 @@
                 <!-- Front -->
                 <ms-widget-front class="white-bg">
                     <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
-                        <div class="h3">{#vm.widget3.title#}</div>
+                        <div class="h3">{{vm.widget3.title}}</div>
 
                         <div class="pv-16">
                             <md-select class="simplified" ng-model="vm.widget3.currentRange"
                                        aria-label="Change range">
                                 <md-option ng-repeat="(key, range) in vm.widget3.ranges"
-                                           value="{#key#}">
-                                    {#range#}
+                                           value="{{key}}">
+                                    {{range}}
                                 </md-option>
                             </md-select>
                         </div>
@@ -184,12 +184,12 @@
                          ng-repeat="page in vm.widget3.pages[vm.widget3.currentRange]"
                          layout="row" layout-align="space-between center">
                         <div layout="column" flex>
-                            <span class="h4 pb-10">{#page.path#}</span>
+                            <span class="h4 pb-10">{{page.path}}</span>
                             <md-progress-linear class="md-accent" md-mode="determinate"
-                                                value="{#page.value#}"></md-progress-linear>
+                                                value="{{page.value}}"></md-progress-linear>
                         </div>
                         <div class="pl-32 h3 font-weight-500 secondary-text">
-                            {#page.value#}%
+                            {{page.value}}%
                         </div>
                     </div>
 
@@ -212,25 +212,25 @@
                 <!-- Front -->
                 <ms-widget-front class="white-bg">
                     <div class="ph-16 pt-16 pb-8 md-accent-bg">
-                        <div class="h3">{#vm.widget4.title#}</div>
+                        <div class="h3">{{vm.widget4.title}}</div>
                     </div>
 
                     <md-tabs class="md-accent no-radius" md-dynamic-height>
-                        <md-tab label="{#tab.label#}" ng-repeat="tab in vm.widget4.tabs">
+                        <md-tab label="{{tab.label}}" ng-repeat="tab in vm.widget4.tabs">
 
                             <div layout="row" layout-align="start center" layout-wrap>
 
                                 <div flex="100" flex-gt-xs="50" flex-gt-md="25"
                                      ng-repeat="group in tab.groups">
-                                    <div class="h2 m-16 pb-16 border-bottom">{#group.title#}</div>
+                                    <div class="h2 m-16 pb-16 border-bottom">{{group.title}}</div>
 
                                     <div class="p-16 pb-32" ng-repeat="data in group.data">
                                         <div class="pb-8" layout="row" layout-align="space-between start">
-                                            <span class="h3">{#data.title#}</span>
-                                            <span class="h3 secondary-text font-weight-500">{#data.value#}%</span>
+                                            <span class="h3">{{data.title}}</span>
+                                            <span class="h3 secondary-text font-weight-500">{{data.value}}%</span>
                                         </div>
-                                        <md-progress-linear class="{#data.progressColor#}" md-mode="determinate"
-                                                            value="{#data.value#}"></md-progress-linear>
+                                        <md-progress-linear class="{{data.progressColor}}" md-mode="determinate"
+                                                            value="{{data.value}}"></md-progress-linear>
                                     </div>
                                 </div>
 

@@ -19,8 +19,8 @@
     </div>
 
     <div>
-        <div class="title">{#vm.selected.name#}</div>
-        <div class="subtitle secondary-text"><span translate="FM.EDITED">Edited</span>: {#vm.selected.modified#}</div>
+        <div class="title">{{vm.selected.name}}</div>
+        <div class="subtitle secondary-text"><span translate="FM.EDITED">Edited</span>: {{vm.selected.modified}}</div>
     </div>
 </div>
 <!-- / SIDENAV HEADER -->
@@ -30,7 +30,7 @@
 
     <div class="file-details">
         <div class="preview file-icon" layout="row" layout-align="center center">
-            <i class="icon-{#vm.selected.type#} s48"></i>
+            <i class="icon-{{vm.selected.type}} s48"></i>
         </div>
 
         <md-list class="offline-switch">
@@ -46,37 +46,37 @@
         <table>
             <tr class="type">
                 <th translate="FM.TYPE">Type</th>
-                <td>{#vm.selected.type#}</td>
+                <td>{{vm.selected.type}}</td>
             </tr>
 
             <tr class="size">
                 <th translate="FM.SIZE">Size</th>
-                <td>{#vm.selected.size === '' ? '-': vm.selected.size#}</td>
+                <td>{{vm.selected.size === '' ? '-': vm.selected.size}}</td>
             </tr>
 
             <tr class="location">
                 <th translate="FM.LOCATION">Location</th>
-                <td>{#vm.selected.location#}</td>
+                <td>{{vm.selected.location}}</td>
             </tr>
 
             <tr class="owner">
                 <th translate="FM.OWNER">Owner</th>
-                <td>{#vm.selected.owner#}</td>
+                <td>{{vm.selected.owner}}</td>
             </tr>
 
             <tr class="modified">
                 <th translate="FM.MODIFIED">Modified</th>
-                <td>{#vm.selected.modified#}</td>
+                <td>{{vm.selected.modified}}</td>
             </tr>
 
             <tr class="opened">
                 <th translate="FM.OPENED">Opened</th>
-                <td>{#vm.selected.opened#}</td>
+                <td>{{vm.selected.opened}}</td>
             </tr>
 
             <tr class="created">
                 <th translate="FM.CREATED">Created</th>
-                <td>{#vm.selected.created#}</td>
+                <td>{{vm.selected.created}}</td>
             </tr>
         </table>
     </div>

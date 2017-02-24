@@ -1,7 +1,7 @@
 <md-card ng-class="MsNoteItem.note.color">
 
     <!-- NOTE IMAGE -->
-    <img ng-if="MsNoteItem.note.image" class="md-card-image" ng-src="{#MsNoteItem.note.image#}">
+    <img ng-if="MsNoteItem.note.image" class="md-card-image" ng-src="{{MsNoteItem.note.image}}">
     <!-- / NOTE IMAGE -->
 
     <md-card-content>
@@ -9,14 +9,14 @@
         <!-- NOTE TITLE -->
         <md-card-title ng-if="MsNoteItem.note.title">
             <md-card-title-text>
-                {#MsNoteItem.note.title#}
+                {{MsNoteItem.note.title}}
             </md-card-title-text>
         </md-card-title>
         <!-- / NOTE TITLE -->
 
         <!-- NOTE DESCRIPTION -->
         <md-description ng-if="MsNoteItem.note.description">
-            <span>{#MsNoteItem.note.description#}</span>
+            <span>{{MsNoteItem.note.description}}</span>
         </md-description>
         <!-- / NOTE DESCRIPTION -->
 
@@ -27,8 +27,8 @@
                  layout-align="start center">
                 <md-checkbox ng-model="checkItem.checked"
                              ng-click="$event.preventDefault();$event.stopPropagation()"
-                             aria-label="{#checkItem.text#}"></md-checkbox>
-                <span class="text-truncate" ng-class="{'text-strike md-secondary-text':checkItem.checked}" flex>{#checkItem.text#}</span>
+                             aria-label="{{checkItem.text}}"></md-checkbox>
+                <span class="text-truncate" ng-class="{'text-strike md-secondary-text':checkItem.checked}" flex>{{checkItem.text}}</span>
             </div>
 
         </div>
@@ -39,7 +39,7 @@
             <div class="label" ng-repeat="labelId in MsNoteItem.note.labels"
                  ng-click="$event.preventDefault();$event.stopPropagation();vm.filterChange(vm.labels.getById(labelId))"
                  ng-class="vm.labels.getById(labelId).color">
-                {#vm.labels.getById(labelId).name#}
+                {{vm.labels.getById(labelId).name}}
             </div>
         </div>
         <!-- / NOTE LABELS -->
@@ -48,7 +48,7 @@
         <div ng-if="vm.noteListType ==='reminders' && MsNoteItem.note.reminder" class="reminder secondary-text text-right">
             <md-icon md-font-icon="icon-bell" class="s16 mr-8"></md-icon>
             <span>
-                {#MsNoteItem.note.reminder | altDate#}
+                {{MsNoteItem.note.reminder | altDate}}
             </span>
         </div>
         <!-- / NOTE REMINDER -->

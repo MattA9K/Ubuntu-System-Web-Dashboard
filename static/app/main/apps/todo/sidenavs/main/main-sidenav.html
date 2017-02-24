@@ -9,8 +9,8 @@
     </div>
 
     <md-select class="project-selection simplified" ng-model="vm.selectedProject" placeholder="Select Project">
-        <md-option ng-repeat="(project, title) in vm.projects" value="{#project#}">
-            {#title#}
+        <md-option ng-repeat="(project, title) in vm.projects" value="{{project}}">
+            {{title}}
         </md-option>
     </md-select>
 
@@ -86,11 +86,11 @@
             Tags
         </div>
 
-        <md-button class="tag item" aria-label="tag {#tag.label#}" ng-repeat="tag in vm.tags"
+        <md-button class="tag item" aria-label="tag {{tag.label}}" ng-repeat="tag in vm.tags"
                    ng-click="vm.toggleTagFilter(tag)"
                    ng-class="{'selected':vm.isTagFilterExists(tag)}">
             <md-icon md-font-icon="icon-label" class="s16" ng-style="{'color' : tag.color}"></md-icon>
-            <span class="title">{#tag.label#}</span>
+            <span class="title">{{tag.label}}</span>
         </md-button>
     </div>
 

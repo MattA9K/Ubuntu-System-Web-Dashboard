@@ -14,6 +14,7 @@ class ChecklistItemSerializer(serializers.Serializer):
 
 
 class NoteSerializer(serializers.Serializer):
+    id = serializers.PrimaryKeyRelatedField(read_only=True)
     title = serializers.CharField(max_length=100)
     description = serializers.CharField(max_length=250)
     archive = serializers.BooleanField(required=False)
@@ -25,5 +26,5 @@ class NoteSerializer(serializers.Serializer):
 
     class Meta:
         model = Note
-        fields = ('title','description','archive','image','color','time','reminder')
+        fields = ('id','title','description','archive','image','color','time','reminder')
 

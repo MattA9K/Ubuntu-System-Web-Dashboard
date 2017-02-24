@@ -26,12 +26,12 @@
                 name: 'red'
             },
             background: {
-                name: 'deep-purple',
+                name: 'grey',
                 hues: {
-                    'default': '500',
-                    'hue-1'  : '800',
-                    'hue-2'  : '300',
-                    'hue-3'  : '100'
+                    'default': 'A100',
+                    'hue-1'  : 'A100',
+                    'hue-2'  : '100',
+                    'hue-3'  : '300'
                 }
             }
         },

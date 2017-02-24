@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -51,8 +51,8 @@ value to enable conditional activation of the autofocus.</p>
    <md-list-item ng-repeat="item in items">
 
      <md-button md-autofocus="$index == 2">
-       <md-icon md-svg-src="{#item.icon#}"></md-icon>
-       <span class="md-inline-list-icon-label">{# item.name #}</span>
+       <md-icon md-svg-src="{{item.icon}}"></md-icon>
+       <span class="md-inline-list-icon-label">{{ item.name }}</span>
      </md-button>
 
    </md-list-item>
@@ -68,7 +68,7 @@ value to enable conditional activation of the autofocus.</p>
       md-search-text="searchText"
       md-items="item in getMatches(searchText)"
       md-item-text="item.display">
-    <span md-highlight-text="searchText">{#item.display#}</span>
+    <span md-highlight-text="searchText">{{item.display}}</span>
   </md-autocomplete>
 </hljs>
 

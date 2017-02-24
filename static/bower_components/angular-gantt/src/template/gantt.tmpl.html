@@ -4,7 +4,7 @@
         </gantt-side-background>
         <gantt-side-content>
         </gantt-side-content>
-        <div gantt-resizer="gantt.side.$element" gantt-resizer-event-topic="side" gantt-resizer-enabled="{#$parent.gantt.options.value('allowSideResizing')#}" resizer-width="sideWidth" class="gantt-resizer">
+        <div gantt-resizer="gantt.side.$element" gantt-resizer-event-topic="side" gantt-resizer-enabled="{{$parent.gantt.options.value('allowSideResizing')}}" resizer-width="sideWidth" class="gantt-resizer">
             <div ng-show="$parent.gantt.options.value('allowSideResizing')" class="gantt-resizer-display"></div>
         </div>
     </gantt-side>
@@ -81,7 +81,7 @@
     </script>
 
     <script type="text/ng-template" id="template/ganttColumnHeader.tmpl.html">
-        <div class="gantt-column-header" ng-class="{'gantt-column-header-last': $last, 'gantt-column-header-first': $first}">{#::column.label#}</div>
+        <div class="gantt-column-header" ng-class="{'gantt-column-header-last': $last, 'gantt-column-header-first': $first}">{{::column.label}}</div>
     </script>
 
     <!-- Body background template -->

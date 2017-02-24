@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -37,7 +37,7 @@ defined.</p>
 <li><code>&lt;md-option ng-value=&quot;&#39;&#39;&quot;&gt;</code></li>
 <li><code>&lt;md-option ng-value=&quot;undefined&quot;&gt;</code></li>
 <li><code>&lt;md-option value=&quot;undefined&quot;&gt;</code> (this evaluates to the string <code>&quot;undefined&quot;</code>)</li>
-<li><code ng-non-bindable>&lt;md-option ng-value=&quot;{#someValueThatMightBeUndefined#}&quot;&gt;</code></li>
+<li><code ng-non-bindable>&lt;md-option ng-value=&quot;{{someValueThatMightBeUndefined}}&quot;&gt;</code></li>
 </ul>
 <p><strong>Note:</strong> A value of <code>undefined</code> <strong><em>is considered a valid value</em></strong> (and does not auto-apply this
 attribute) since you may wish this to be your &quot;Not Available&quot; or &quot;None&quot; option.</p>
@@ -62,7 +62,7 @@ attribute) since you may wish this to be your &quot;Not Available&quot; or &quot
     <md-select
       ng-model="someModel"
       placeholder="Select a state">
-      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{# opt #}</md-option>
+      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{{ opt }}</md-option>
     </md-select>
   </md-input-container>
 </hljs>
@@ -73,7 +73,7 @@ attribute) since you may wish this to be your &quot;Not Available&quot; or &quot
     <label>State</label>
     <md-select
       ng-model="someModel">
-      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{# opt #}</md-option>
+      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{{ opt }}</md-option>
     </md-select>
   </md-input-container>
 </hljs>
@@ -91,7 +91,7 @@ OptGroupDirective are ignored.</p>
       <md-select-header>
         <span> Neighborhoods - </span>
       </md-select-header>
-      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{# opt #}</md-option>
+      <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{{ opt }}</md-option>
     </md-select>
   </md-input-container>
 </hljs>
@@ -112,7 +112,7 @@ angular.controller(&#39;MyCtrl&#39;, function($scope) {
 <hljs lang="html">
 <div ng-controller="MyCtrl">
   <md-select ng-model="selectedUser">
-    <md-option ng-value="user" ng-repeat="user in users">{# user.name #}</md-option>
+    <md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
   </md-select>
 </div>
 </hljs>
@@ -134,7 +134,7 @@ which results in Bob being selected as desired.</p>
 <hljs lang="html">
 <div ng-controller="MyCtrl">
   <md-select ng-model="selectedUser" ng-model-options="{trackBy: '$value.id'}">
-    <md-option ng-value="user" ng-repeat="user in users">{# user.name #}</md-option>
+    <md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
   </md-select>
 </div>
 </hljs>

@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'todo',
     'cininotes',
 
+    'ciniscrum',
+    'cinidashboard',
+    'cinicommerce',
+    'cinitimeline',
+    'ciniprofile',
+
     # NON-CINICRAFT RELATED:
     'snippets.apps.SnippetsConfig',
 ]

@@ -47,13 +47,13 @@
     </thead>
     <tbody>
         <tr class="result-item user" ng-repeat="user in vm.users">
-            <td class="name">{#user.name#}</td>
-            <td class="position">{#user.position#}</td>
-            <td class="office">{#user.office#}</td>
-            <td class="age text-right">{#user.age#}</td>
-            <td class="start-date text-right">{#user.startDate#}</td>
-            <td class="salary text-right">{#user.salary | currency#}</td>
-            <td class="email text-left">{#user.email#}</td>
+            <td class="name">{{user.name}}</td>
+            <td class="position">{{user.position}}</td>
+            <td class="office">{{user.office}}</td>
+            <td class="age text-right">{{user.age}}</td>
+            <td class="start-date text-right">{{user.startDate}}</td>
+            <td class="salary text-right">{{user.salary | currency}}</td>
+            <td class="email text-left">{{user.email}}</td>
         </tr>
     </tbody>
 </table>

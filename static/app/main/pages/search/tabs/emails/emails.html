@@ -34,31 +34,31 @@
 </div>
 
 <div class="results">
-    <div class="result-item {#mail.status#}" ng-repeat="mail in vm.mails | filter: vm.search"
+    <div class="result-item {{mail.status}}" ng-repeat="mail in vm.mails | filter: vm.search"
          md-ink-ripple>
         <div layout="row" layout-align="start center">
-            <img class="avatar" ng-if="mail.from.avatar" alt="{#mail.from.name#}" ng-src="{#mail.from.avatar#}">
+            <img class="avatar" ng-if="mail.from.avatar" alt="{{mail.from.name}}" ng-src="{{mail.from.avatar}}">
 
             <div class="avatar" ng-if="!mail.from.avatar" ms-random-class="vm.colors">
-                {#mail.from.name[0]#}
+                {{mail.from.name[0]}}
             </div>
 
             <div class="info" flex layout="column">
                 <div class="name text-truncate">
-                    {#mail.from.name#}
+                    {{mail.from.name}}
                 </div>
 
                 <div class="subject secondary-text text-truncate">
-                    {#mail.subject#}
+                    {{mail.subject}}
                 </div>
 
                 <div class="message secondary-text text-truncate">
-                    {#mail.message | htmlToPlaintext#}
+                    {{mail.message | htmlToPlaintext}}
                 </div>
             </div>
 
             <div layout="column" layout-align="center end">
-                <div class="time secondary-text">{#mail.time#}</div>
+                <div class="time secondary-text">{{mail.time}}</div>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
                             <input class="ng-hide" type="radio"
                                    ng-model="vm.newLabelColor"
                                    ng-value="palette"
-                                   aria-label="{#palette#}"
+                                   aria-label="{{palette}}"
                                    ng-click="$mdMenu.hide()">
                             <i class="icon-check s18"
                                ng-if="label.color === palette"></i>
@@ -52,7 +52,7 @@
                             <input class="ng-hide" type="radio"
                                    ng-model="label.color"
                                    ng-value="palette"
-                                   aria-label="{#palette#}"
+                                   aria-label="{{palette}}"
                                    ng-click="$mdMenu.hide()">
                             <i class="icon-check s18"
                                ng-if="label.color === palette"></i>
@@ -60,7 +60,7 @@
                     </div>
                 </md-menu-content>
             </md-menu>
-            <p flex class="title" editable-text="label.name">{#label.name#} </p>
+            <p flex class="title" editable-text="label.name">{{label.name}} </p>
             <md-button ng-click="vm.removeLabel($event, label.id);"
                        class="remove-button md-icon-button" aria-label="remove">
                 <md-icon md-font-icon="icon-delete"></md-icon>

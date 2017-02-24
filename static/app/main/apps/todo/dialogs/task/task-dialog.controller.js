@@ -110,7 +110,7 @@
          * New tag
          *
          * @param chip
-         * @returns {#label: *, color: string#}
+         * @returns {{label: *, color: string}}
          */
         function newTag(chip)
         {

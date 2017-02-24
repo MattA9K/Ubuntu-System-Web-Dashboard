@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -33,7 +33,7 @@
 <input placeholder="Enter a search term..." ng-model="searchTerm" type="text" />
 <ul>
   <li ng-repeat="result in results" md-highlight-text="searchTerm">
-    {#result.text#}
+    {{result.text}}
   </li>
 </ul>
 </hljs>

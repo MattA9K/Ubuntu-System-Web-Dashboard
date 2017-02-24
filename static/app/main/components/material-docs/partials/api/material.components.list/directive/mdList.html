@@ -3,7 +3,7 @@
 
 
 <header class="api-profile-header" >
-  <h2 class="md-display-1" >{#currentDoc.name#} API Documentation</h2>
+  <h2 class="md-display-1" >{{currentDoc.name}} API Documentation</h2>
   
 </header>
 
@@ -32,8 +32,8 @@
   <md-list-item class="md-2-line" ng-repeat="item in todos">
     <md-checkbox ng-model="item.done"></md-checkbox>
     <div class="md-list-item-text">
-      <h3>{#item.title#}</h3>
-      <p>{#item.description#}</p>
+      <h3>{{item.title}}</h3>
+      <p>{{item.description}}</p>
     </div>
   </md-list-item>
 </md-list>

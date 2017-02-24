@@ -31,12 +31,12 @@
              md-ink-ripple>
             <div layout="row" layout-align="start center">
                 <div class="icon-container" layout="row" layout-align="center center">
-                    <i ng-if="result.icon" class="icon {#result.icon#}"></i>
+                    <i ng-if="result.icon" class="icon {{result.icon}}"></i>
                     <div ng-if="!result.icon" class="square md-accent-bg"></div>
                 </div>
                 <div>
-                    <div class="title">{#result.title#}</div>
-                    <div class="description" ng-if="result.description">{#result.description#}</div>
+                    <div class="title">{{result.title}}</div>
+                    <div class="description" ng-if="result.description">{{result.description}}</div>
                 </div>
             </div>
         </div>

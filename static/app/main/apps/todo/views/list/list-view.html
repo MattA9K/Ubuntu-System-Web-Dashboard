@@ -11,24 +11,24 @@
 
         <md-checkbox class="no-label" ng-checked="task.completed"
                      ng-click="vm.toggleCompleted(task, $event)"
-                     aria-label="{#task.completed ? 'Not completed' : 'Completed'#}">
+                     aria-label="{{task.completed ? 'Not completed' : 'Completed'}}">
         </md-checkbox>
 
         <div layout="row" layout-align="start center" flex>
 
             <div class="info" flex>
                 <div class="title">
-                    {#task.title#}
+                    {{task.title}}
                 </div>
 
                 <div class="notes">
-                    {#task.notes#}
+                    {{task.notes}}
                 </div>
 
                 <div class="tags" layout="row" layout-align="start center" layout-wrap>
                     <div class="tag" layout="row" layout-align="start center" data-ng-repeat="tag in task.tags">
                         <div class="tag-color" ng-style="{'background-color': tag.color}"></div>
-                        <div class="tag-label">{#tag.label#}</div>
+                        <div class="tag-label">{{tag.label}}</div>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
                 <div class="step md-accent-bg"
                      layout="row" layout-align="center center">
                 <span ng-if="!MsStepper.isStepValid(step.stepNumber) || MsStepper.isStepOptional(step.stepNumber)">
-                    {#$index + 1#}
+                    {{$index + 1}}
                 </span>
                 <span ng-if="MsStepper.isStepValid(step.stepNumber) && !MsStepper.isStepOptional(step.stepNumber)">
                     <i class="icon icon-check s18"></i>
@@ -18,7 +18,7 @@
                 </div>
 
                 <div layout="column" layout-align="start start">
-                    <div class="title" translate="{#step.stepTitleTranslate#}">{#step.stepTitle#}</div>
+                    <div class="title" translate="{{step.stepTitleTranslate}}">{{step.stepTitle}}</div>
                     <div class="subtitle" ng-if="MsStepper.isStepOptional(step.stepNumber)">Optional</div>
                 </div>
             </md-button>

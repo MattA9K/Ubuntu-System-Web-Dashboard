@@ -51,12 +51,12 @@
 
                 <tbody>
                     <tr ng-repeat="person in vm.employees">
-                        <td class="name">{#person.name#}</td>
-                        <td class="position">{#person.position#}</td>
-                        <td class="office">{#person.office#}</td>
-                        <td class="age text-right">{#person.age#}</td>
-                        <td class="start-date text-right">{#person.startDate#}</td>
-                        <td class="salary text-right">{#person.salary | currency#}</td>
+                        <td class="name">{{person.name}}</td>
+                        <td class="position">{{person.position}}</td>
+                        <td class="office">{{person.office}}</td>
+                        <td class="age text-right">{{person.age}}</td>
+                        <td class="start-date text-right">{{person.startDate}}</td>
+                        <td class="salary text-right">{{person.salary | currency}}</td>
                     </tr>
                 </tbody>
             </table>

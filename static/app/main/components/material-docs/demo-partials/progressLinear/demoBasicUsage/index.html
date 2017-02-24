@@ -7,7 +7,7 @@
     indicator.
     They give users a quick sense of how long an operation will take.
   </p>
-  <md-progress-linear md-mode="determinate" value="{#vm.determinateValue#}"></md-progress-linear>
+  <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
 
   <h4 class="md-title">Indeterminate</h4>
 
@@ -24,8 +24,8 @@
     For operations where the user wants to indicate some activity or loading from the server,
     use the <b>buffer</b> indicator:
   </p>
-  <md-progress-linear class="md-warn" md-mode="buffer" value="{#vm.determinateValue#}"
-                      md-buffer-value="{#vm.determinateValue2#}"
+  <md-progress-linear class="md-warn" md-mode="buffer" value="{{vm.determinateValue}}"
+                      md-buffer-value="{{vm.determinateValue2}}"
                       ng-disabled="!vm.showList[0]"></md-progress-linear>
 
   <h4 class="md-title">Query</h4>

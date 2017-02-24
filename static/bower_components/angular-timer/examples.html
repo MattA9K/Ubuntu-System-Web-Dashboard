@@ -117,7 +117,7 @@
         &lt;h2&gt;AngularJS - Multiple Timers Example&lt;/h2&gt;
         &lt;h3&gt;Timer 1: &lt;timer/&gt;&lt;/h3&gt;
         &lt;h3&gt;Timer 2: &lt;timer interval="2000"/&gt;&lt;/h3&gt;
-        &lt;h3&gt;Timer 3: &lt;timer&gt;{#minutes#} minutes, {#seconds#} seconds.&lt;/timer&gt;&lt;/h3&gt;
+        &lt;h3&gt;Timer 3: &lt;timer&gt;{{minutes}} minutes, {{seconds}} seconds.&lt;/timer&gt;&lt;/h3&gt;
         &lt;button ng-click="startTimer()" ng-disabled="timerRunning"&gt;Start Timers&lt;/button&gt;
         &lt;button ng-click="stopTimer()" ng-disabled="!timerRunning"&gt;Stop Timers&lt;/button&gt;
     &lt;/div&gt;
@@ -178,7 +178,7 @@
         &lt;div ng-init="timerType = 'Polling Server'" ng-controller="PollingController" style="border: 1px darkgray dashed; padding: 15px;margin:15px"&gt;
         &lt;h2&gt;Polling Server every 5 seconds&lt;/h2&gt;
         &lt;h3&gt;&lt;timer interval="5000"/&gt;&lt;/h3&gt;
-        &lt;textarea style="height: 100px;" row=20 cols="200"&gt;{#timerConsole#}&lt;/textarea&gt;
+        &lt;textarea style="height: 100px;" row=20 cols="200"&gt;{{timerConsole}}&lt;/textarea&gt;
         &lt;br/&gt;
         &lt;button ng-click="startTimer('poll-server')" ng-disabled="timerRunning"&gt;Start Timer&lt;/button&gt;
         &lt;button ng-click="stopTimer('poll-server')" ng-disabled="!timerRunning"&gt;Stop Timer&lt;/button&gt;
@@ -188,7 +188,7 @@
         &lt;div ng-init="timerType = 'Saving Documents'" ng-controller="PollingController" style="border: 1px darkgray dashed; padding: 15px"&gt;
         &lt;h2&gt;Saving Document every 3 seconds&lt;/h2&gt;
         &lt;h3&gt;&lt;timer interval="3000"/&gt;&lt;/h3&gt;
-        &lt;textarea style="height: 100px;" row=20 cols="200"&gt;{#timerConsole#}&lt;/textarea&gt;
+        &lt;textarea style="height: 100px;" row=20 cols="200"&gt;{{timerConsole}}&lt;/textarea&gt;
         &lt;br/&gt;
         &lt;button ng-click="startTimer('poll-server')" ng-disabled="timerRunning"&gt;Start Timer&lt;/button&gt;
         &lt;button ng-click="stopTimer('poll-server')" ng-disabled="!timerRunning"&gt;Stop Timer&lt;/button&gt;

@@ -6,7 +6,7 @@
     </p>
 
     <div class="lock-size" layout="row" layout-align="center center">
-      <md-fab-speed-dial md-open="demo.isOpen" md-direction="{#demo.selectedDirection#}"
+      <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
                          ng-class="demo.selectedMode">
         <md-fab-trigger>
           <md-button aria-label="menu" class="md-fab md-warn">
@@ -35,7 +35,7 @@
         <md-radio-group ng-model="demo.selectedDirection">
           <md-radio-button ng-repeat="direction in demo.availableDirections"
                            ng-value="direction" class="text-capitalize">
-            {#direction#}
+            {{direction}}
           </md-radio-button>
         </md-radio-group>
       </div>
@@ -53,7 +53,7 @@
 
         <md-radio-group ng-model="demo.selectedMode">
           <md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">
-            {#mode#}
+            {{mode}}
           </md-radio-button>
         </md-radio-group>
       </div>

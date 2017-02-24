@@ -2,9 +2,9 @@
 <div class="header md-padding" layout="row" layout-align="start center">
 
     <!-- USER -->
-    <img ng-src="{#vm.user.avatar#}" class="md-avatar avatar mr-16"
-         alt="{#vm.user.name#}"/>
-    <span class="font-weight-500 font-size-14">{#vm.user.name#}</span>
+    <img ng-src="{{vm.user.avatar}}" class="md-avatar avatar mr-16"
+         alt="{{vm.user.name}}"/>
+    <span class="font-weight-500 font-size-14">{{vm.user.name}}</span>
     <!-- / USER -->
 
 </div>
@@ -42,7 +42,7 @@
         <md-list-item ng-if="vm.user.groups" ng-repeat="group in vm.user.groups" ng-click="vm.filterChange(group)"
                       ng-class="{'selected':vm.listType.name === group.name}">
             <p class="pl-8">
-                {#group.name#}
+                {{group.name}}
             </p>
         </md-list-item>
 
