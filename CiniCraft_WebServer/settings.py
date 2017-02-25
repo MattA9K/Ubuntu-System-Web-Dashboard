@@ -43,19 +43,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'cinicraft_home',
-    'forum',
-    'author',
-    'todo',
-    'cininotes',
 
-    'ciniscrum',
-    'cinidashboard',
-    'cinicommerce',
-    'cinitimeline',
-    'ciniprofile',
-
-    # NON-CINICRAFT RELATED:
-    'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
@@ -96,12 +84,8 @@ WSGI_APPLICATION = 'CiniCraft_WebServer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CoreDB',
-        'USER': 'root',
-        'PASSWORD': '123123',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
