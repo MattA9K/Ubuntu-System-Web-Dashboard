@@ -25,9 +25,9 @@
                 url: '/main/ram?format=json'
             }).then(function successCallback(response) {
                 console.log(response.data.free);
-                vm.widget1.chart.data[0]["values"].push({"x": vm.RAM, "y": (response.data.free / 1024), "series": 0});
-                vm.widget1.chart.data[1]["values"].push({"x": vm.RAM, "y": (response.data.available / 1024), "series": 1});
-                vm.widget1.chart.data[2]["values"].push({"x": vm.RAM, "y": ((response.data.total / 1024) - (response.data.available / 1024)), "series": 2});
+                vm.widget1.chart.data[0]["values"].push({"x": vm.RAM, "y": Math.round(response.data.free / 1024), "series": 0});
+                vm.widget1.chart.data[1]["values"].push({"x": vm.RAM, "y": Math.round(response.data.available / 1024), "series": 1});
+                vm.widget1.chart.data[2]["values"].push({"x": vm.RAM, "y": Math.round((response.data.total / 1024) - (response.data.available / 1024)), "series": 2});
                 vm.RAM += 1;
             }, function errorCallback(response) {
 
