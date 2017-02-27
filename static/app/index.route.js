@@ -11,7 +11,7 @@
     {
         // $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
-        $urlRouterProvider.otherwise('/dashboard-project');
+        $urlRouterProvider.otherwise('/dashboard-server');
 
         /**
          * Layout Style Switcher
@@ -37,24 +37,24 @@
 
         var layouts = {
             verticalNavigation  : {
-                main      : '/static/app/core/layouts/vertical-navigation.html',
-                toolbar   : '/static/app/toolbar/layouts/vertical-navigation/toolbar.html',
-                navigation: '/static/app/navigation/layouts/vertical-navigation/navigation.html'
+                main      : '/static/app/core/layouts/content-only.html',
+                toolbar   : '',
+                navigation: ''
             },
             verticalNavigationFullwidthToolbar  : {
-                main      : '/static/app/core/layouts/vertical-navigation-fullwidth-toolbar.html',
-                toolbar   : '/static/app/toolbar/layouts/vertical-navigation-fullwidth-toolbar/toolbar.html',
-                navigation: '/static/app/navigation/layouts/vertical-navigation/navigation.html'
+                main      : '/static/app/core/layouts/content-only.html',
+                toolbar   : '',
+                navigation: ''
             },
             verticalNavigationFullwidthToolbar2  : {
-                main      : '/static/app/core/layouts/vertical-navigation-fullwidth-toolbar-2.html',
-                toolbar   : '/static/app/toolbar/layouts/vertical-navigation-fullwidth-toolbar-2/toolbar.html',
-                navigation: '/static/app/navigation/layouts/vertical-navigation-fullwidth-toolbar-2/navigation.html'
+                main      : '/static/app/core/layouts/content-only.html',
+                toolbar   : '',
+                navigation: ''
             },
             horizontalNavigation: {
-                main      : '/static/app/core/layouts/horizontal-navigation.html',
-                toolbar   : '/static/app/toolbar/layouts/horizontal-navigation/toolbar.html',
-                navigation: '/static/app/navigation/layouts/horizontal-navigation/navigation.html'
+                main      : '/static/app/core/layouts/content-only.html',
+                toolbar   : '',
+                navigation: ''
             },
             contentOnly         : {
                 main      : '/static/app/core/layouts/content-only.html',
@@ -62,8 +62,8 @@
                 navigation: ''
             },
             contentWithToolbar  : {
-                main      : '/static/app/core/layouts/content-with-toolbar.html',
-                toolbar   : '/static/app/toolbar/layouts/content-with-toolbar/toolbar.html',
+                main      : '/static/app/core/layouts/content-only.html',
+                toolbar   : '',
                 navigation: ''
             }
         };
