@@ -25,9 +25,21 @@
                 url: '/main/ram?format=json'
             }).then(function successCallback(response) {
                 console.log(response.data.free);
-                vm.widget1.chart.data[0]["values"].push({"x": vm.RAM, "y": Math.round(response.data.free / 1024), "series": 0});
-                vm.widget1.chart.data[1]["values"].push({"x": vm.RAM, "y": Math.round(response.data.available / 1024), "series": 1});
-                vm.widget1.chart.data[2]["values"].push({"x": vm.RAM, "y": Math.round((response.data.total / 1024) - (response.data.available / 1024)), "series": 2});
+                vm.widget1.chart.data[0]["values"].push({
+                    "x": vm.RAM,
+                    "y": Math.round(response.data.free / 1024),
+                    "series": 0
+                });
+                vm.widget1.chart.data[1]["values"].push({
+                    "x": vm.RAM,
+                    "y": Math.round(response.data.available / 1024),
+                    "series": 1
+                });
+                vm.widget1.chart.data[2]["values"].push({
+                    "x": vm.RAM,
+                    "y": Math.round((response.data.total / 1024) - (response.data.available / 1024)),
+                    "series": 2
+                });
                 vm.RAM += 1;
             }, function errorCallback(response) {
 
@@ -93,6 +105,21 @@
 
         // Widget 2
         vm.widget2 = vm.dashboardData.widget2;
+
+
+        $interval(function () {
+            $http({
+                method: 'GET',
+                url: '/main/storage?format=json'
+            }).then(function successCallback(response) {
+                vm.widget2["title"] = response.data[0].name;
+                vm.widget2["value"]["used"] = response.data[0].used;
+                vm.widget2["value"]["total"] = response.data[0].size;
+                vm.widget2["value"]["percentage"] = parseFloat((response.data[0].used / response.data[0].size).toFixed(2));
+            }, function errorCallback(response) {
+
+            });
+        }, 2000);
 
         // Widget 3
         vm.widget3 = vm.dashboardData.widget3;
@@ -184,6 +211,20 @@
 
         // Widget 5
         vm.widget5 = vm.dashboardData.widget5;
+
+        $interval(function () {
+            $http({
+                method: 'GET',
+                url: '/main/uptime?format=json'
+            }).then(function successCallback(response) {
+                vm.widget5["title"] = "System Uptime";
+                vm.widget5["value"] = response.data.secs;
+                vm.widget5["detail"] = "detail";
+                vm.widget5["footnote"] = response.data.ticks;
+            }, function errorCallback(response) {
+
+            });
+        }, 1000);
 
         // Widget 6
         vm.widget6 = {

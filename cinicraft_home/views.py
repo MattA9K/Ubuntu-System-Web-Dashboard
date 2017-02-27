@@ -74,7 +74,7 @@ class getStorage(APIView):  # cat swaps
                 {
                     "size": "2689020",
                     "name": "/dev/sda5",
-                    "used": "6720"}]
+                    "used": "1196720"}]
             return Response(context)
 
         p = Popen(['cat', '/proc/swaps'], stdin=PIPE, stdout=PIPE, stderr=PIPE)
