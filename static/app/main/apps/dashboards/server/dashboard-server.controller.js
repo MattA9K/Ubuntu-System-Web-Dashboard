@@ -1,5 +1,4 @@
-(function ()
-{
+(function () {
     'use strict';
 
     angular
@@ -7,17 +6,33 @@
         .controller('DashboardServerController', DashboardServerController);
 
     /** @ngInject */
-    function DashboardServerController($scope, $interval, DashboardData)
-    {
+    function DashboardServerController($scope, $interval, DashboardData, $http) {
         var vm = this;
 
         // Data
         vm.dashboardData = DashboardData;
 
-
+        vm.RAM = 4;
         vm.appendDataToPhysicalMemory = function () {
-            vm.widget1.chart.data[0]["values"].push({"x": 104, "y": 149, "series": 0});
+
         };
+
+
+        $interval(function () {
+
+            $http({
+                method: 'GET',
+                url: '/main/ram?format=json'
+            }).then(function successCallback(response) {
+                console.log(response.data.free);
+                vm.widget1.chart.data[0]["values"].push({"x": vm.RAM, "y": response.data.free, "series": 0});
+                vm.widget1.chart.data[1]["values"].push({"x": vm.RAM, "y": response.data.available, "series": 1});
+                vm.widget1.chart.data[2]["values"].push({"x": vm.RAM, "y": response.data.total, "series": 2});
+                vm.RAM += 1;
+            }, function errorCallback(response) {
+
+            });
+        }, 1000);
 
 
         // Widget 1
@@ -26,57 +41,53 @@
             chart: {
                 options: {
                     chart: {
-                        type                   : 'lineChart',
-                        color                  : ['#4caf50', '#3f51b5', '#ff5722'],
-                        height                 : 320,
-                        margin                 : {
-                            top   : 32,
-                            right : 32,
+                        type: 'lineChart',
+                        color: ['#4caf50', '#3f51b5', '#ff5722'],
+                        height: 320,
+                        margin: {
+                            top: 32,
+                            right: 32,
                             bottom: 32,
-                            left  : 48
+                            left: 48
                         },
                         useInteractiveGuideline: true,
-                        clipVoronoi            : false,
-                        interpolate            : 'cardinal',
-                        x                      : function (d)
-                        {
+                        clipVoronoi: false,
+                        interpolate: 'cardinal',
+                        x: function (d) {
                             return d.x;
                         },
-                        y                      : function (d)
-                        {
+                        y: function (d) {
                             return d.y;
                         },
-                        xAxis                  : {
-                            tickFormat: function (d)
-                            {
-                                return d + ' min.';
+                        xAxis: {
+                            tickFormat: function (d) {
+                                return d + ' sec.';
                             },
                             showMaxMin: false
                         },
-                        yAxis                  : {
-                            tickFormat: function (d)
-                            {
-                                return d + ' MB';
+                        yAxis: {
+                            tickFormat: function (d) {
+                                return d + ' KB';
                             }
                         },
-                        interactiveLayer       : {
+                        interactiveLayer: {
                             tooltip: {
                                 gravity: 's',
                                 classes: 'gravity-s'
                             }
                         },
-                        legend                 : {
-                            margin    : {
-                                top   : 8,
-                                right : 0,
+                        legend: {
+                            margin: {
+                                top: 8,
+                                right: 0,
                                 bottom: 32,
-                                left  : 0
+                                left: 0
                             },
                             rightAlign: false
                         }
                     }
                 },
-                data   : vm.dashboardData.widget1.chart
+                data: vm.dashboardData.widget1.chart
             }
         };
 
@@ -88,50 +99,47 @@
 
         // Widget 4
         vm.widget4 = {
-            title   : vm.dashboardData.widget4.title,
-            value   : vm.dashboardData.widget4.value,
+            title: vm.dashboardData.widget4.title,
+            value: vm.dashboardData.widget4.value,
             footnote: vm.dashboardData.widget4.footnote,
-            detail  : vm.dashboardData.widget4.detail,
-            chart   : {
-                config : {
+            detail: vm.dashboardData.widget4.detail,
+            chart: {
+                config: {
                     refreshDataOnly: true,
-                    deepWatchData  : true
+                    deepWatchData: true
                 },
                 options: {
                     chart: {
-                        type        : 'lineChart',
-                        color       : ['rgba(0, 0, 0, 0.27)'],
-                        height      : 50,
-                        margin      : {
-                            top   : 8,
-                            right : 0,
+                        type: 'lineChart',
+                        color: ['rgba(0, 0, 0, 0.27)'],
+                        height: 50,
+                        margin: {
+                            top: 8,
+                            right: 0,
                             bottom: 0,
-                            left  : 0
+                            left: 0
                         },
-                        duration    : 1,
-                        clipEdge    : true,
-                        interpolate : 'cardinal',
-                        interactive : false,
-                        isArea      : true,
-                        showLegend  : false,
+                        duration: 1,
+                        clipEdge: true,
+                        interpolate: 'cardinal',
+                        interactive: false,
+                        isArea: true,
+                        showLegend: false,
                         showControls: false,
-                        showXAxis   : false,
-                        showYAxis   : false,
-                        x           : function (d)
-                        {
+                        showXAxis: false,
+                        showYAxis: false,
+                        x: function (d) {
                             return d.x;
                         },
-                        y           : function (d)
-                        {
+                        y: function (d) {
                             return d.y;
                         },
-                        yDomain     : [0, 4]
+                        yDomain: [0, 4]
                     }
                 },
-                data   : vm.dashboardData.widget4.chart
+                data: vm.dashboardData.widget4.chart
             },
-            init    : function ()
-            {
+            init: function () {
                 // Run this function once to initialize the widget
 
                 // Grab the x value
@@ -144,8 +152,7 @@
                  * @param min
                  * @param max
                  */
-                function latencyTicker(min, max)
-                {
+                function latencyTicker(min, max) {
                     // Increase the x value
                     x++;
 
@@ -164,14 +171,12 @@
                 }
 
                 // Set interval
-                var latencyTickerInterval = $interval(function ()
-                {
+                var latencyTickerInterval = $interval(function () {
                     latencyTicker(1, 4);
                 }, 1000);
 
                 // Cleanup
-                $scope.$on('$destroy', function ()
-                {
+                $scope.$on('$destroy', function () {
                     $interval.cancel(latencyTickerInterval);
                 });
             }
@@ -184,52 +189,48 @@
         vm.widget6 = {
             title: vm.dashboardData.widget6.title,
             chart: {
-                config : {
+                config: {
                     refreshDataOnly: true,
-                    deepWatchData  : true
+                    deepWatchData: true
                 },
                 options: {
                     chart: {
-                        type                   : 'lineChart',
-                        color                  : ['#03A9F4'],
-                        height                 : 140,
-                        margin                 : {
-                            top   : 8,
-                            right : 32,
+                        type: 'lineChart',
+                        color: ['#03A9F4'],
+                        height: 140,
+                        margin: {
+                            top: 8,
+                            right: 32,
                             bottom: 16,
-                            left  : 48
+                            left: 48
                         },
-                        duration               : 1,
-                        clipEdge               : true,
-                        clipVoronoi            : false,
-                        interpolate            : 'cardinal',
-                        isArea                 : true,
+                        duration: 1,
+                        clipEdge: true,
+                        clipVoronoi: false,
+                        interpolate: 'cardinal',
+                        isArea: true,
                         useInteractiveGuideline: true,
-                        showLegend             : false,
-                        showControls           : false,
-                        x                      : function (d)
-                        {
+                        showLegend: false,
+                        showControls: false,
+                        x: function (d) {
                             return d.x;
                         },
-                        y                      : function (d)
-                        {
+                        y: function (d) {
                             return d.y;
                         },
-                        yDomain                : [0, 100],
-                        xAxis                  : {
-                            tickFormat: function (d)
-                            {
+                        yDomain: [0, 100],
+                        xAxis: {
+                            tickFormat: function (d) {
                                 return d + ' sec.';
                             },
                             showMaxMin: false
                         },
-                        yAxis                  : {
-                            tickFormat: function (d)
-                            {
+                        yAxis: {
+                            tickFormat: function (d) {
                                 return d + '%';
                             }
                         },
-                        interactiveLayer       : {
+                        interactiveLayer: {
                             tooltip: {
                                 gravity: 's',
                                 classes: 'gravity-s'
@@ -237,10 +238,9 @@
                         }
                     }
                 },
-                data   : vm.dashboardData.widget6.chart
+                data: vm.dashboardData.widget6.chart
             },
-            init : function ()
-            {
+            init: function () {
                 // Run this function once to initialize the widget
 
                 // Grab the x value
@@ -253,8 +253,7 @@
                  * @param min
                  * @param max
                  */
-                function cpuTicker(min, max)
-                {
+                function cpuTicker(min, max) {
                     // Increase the x value
                     x = x + 5;
 
@@ -268,14 +267,12 @@
                 }
 
                 // Set interval
-                var cpuTickerInterval = $interval(function ()
-                {
+                var cpuTickerInterval = $interval(function () {
                     cpuTicker(0, 100);
                 }, 5000);
 
                 // Cleanup
-                $scope.$on('$destroy', function ()
-                {
+                $scope.$on('$destroy', function () {
                     $interval.cancel(cpuTickerInterval);
                 });
             }
@@ -283,62 +280,53 @@
 
         // Widget 7
         vm.widget7 = {
-            title    : vm.dashboardData.widget7.title,
-            table    : vm.dashboardData.widget7.table,
+            title: vm.dashboardData.widget7.title,
+            table: vm.dashboardData.widget7.table,
             dtOptions: {
-                dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+                dom: '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
                 pagingType: 'simple',
                 pageLength: 10,
                 lengthMenu: [10, 20, 50, 100],
-                autoWidth : false,
+                autoWidth: false,
                 responsive: true,
                 columnDefs: [
                     {
-                        width  : '20%',
+                        width: '20%',
                         targets: [0, 1, 2, 3, 4]
                     }
                 ],
-                columns   : [
+                columns: [
                     {},
                     {},
                     {
-                        render: function (data, type)
-                        {
-                            if ( type === 'display' )
-                            {
+                        render: function (data, type) {
+                            if (type === 'display') {
                                 return data + ' KB/s';
                             }
-                            else
-                            {
+                            else {
                                 return data;
                             }
                         }
                     },
                     {
-                        render: function (data, type)
-                        {
-                            if ( type === 'display' )
-                            {
+                        render: function (data, type) {
+                            if (type === 'display') {
                                 return data + '%';
                             }
-                            else
-                            {
+                            else {
                                 return data;
                             }
                         }
                     },
                     {
-                        render: function (data, type)
-                        {
-                            if ( type === 'display' )
-                            {
+                        render: function (data, type) {
+                            if (type === 'display') {
                                 var el = angular.element(data);
                                 el.html(el.text() + ' MB');
 
                                 return el[0].outerHTML;
                             }
-                            else
-                            {
+                            else {
                                 return data;
                             }
                         }

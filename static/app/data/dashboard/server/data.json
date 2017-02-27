@@ -1,27 +1,22 @@
 {
     "widget1": {
-        "title": "Memory Usage",
+        "title": "Physical Memory Usage",
         "chart": [
             {
-                "key": "Physical Memory",
+                "key": "Free Memory",
                 "values": [
                     {"x": 1, "y": 1},
                     {"x": 2, "y": 2}
                 ]
             },
             {
-                "key": "Virtual Memory",
+                "key": "Available Memory",
                 "values": [
-                    {"x": 1, "y": 5},
-                    {"x": 2, "y": 7}
                 ]
             },
             {
-                "key": "Swap Area",
+                "key": "Total Memory",
                 "values": [
-                    {"x": 1, "y": 0},
-                    {"x": 2, "y": 1},
-                    {"x": 3, "y": 2}
                 ]
             }
         ]
