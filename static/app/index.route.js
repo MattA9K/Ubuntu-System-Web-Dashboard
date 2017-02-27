@@ -41,27 +41,7 @@
                 toolbar   : '',
                 navigation: ''
             },
-            verticalNavigationFullwidthToolbar  : {
-                main      : '/static/app/core/layouts/content-only.html',
-                toolbar   : '',
-                navigation: ''
-            },
-            verticalNavigationFullwidthToolbar2  : {
-                main      : '/static/app/core/layouts/content-only.html',
-                toolbar   : '',
-                navigation: ''
-            },
-            horizontalNavigation: {
-                main      : '/static/app/core/layouts/content-only.html',
-                toolbar   : '',
-                navigation: ''
-            },
             contentOnly         : {
-                main      : '/static/app/core/layouts/content-only.html',
-                toolbar   : '',
-                navigation: ''
-            },
-            contentWithToolbar  : {
                 main      : '/static/app/core/layouts/content-only.html',
                 toolbar   : '',
                 navigation: ''
@@ -77,18 +57,6 @@
                     'main@'         : {
                         templateUrl: layouts[layoutStyle].main,
                         controller : 'MainController as vm'
-                    },
-                    'toolbar@app'   : {
-                        templateUrl: layouts[layoutStyle].toolbar,
-                        controller : 'ToolbarController as vm'
-                    },
-                    'navigation@app': {
-                        templateUrl: layouts[layoutStyle].navigation,
-                        controller : 'NavigationController as vm'
-                    },
-                    'quickPanel@app': {
-                        templateUrl: '/static/app/quick-panel/quick-panel.html',
-                        controller : 'QuickPanelController as vm'
                     }
                 }
             });
