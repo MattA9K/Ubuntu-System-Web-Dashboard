@@ -1,6 +1,8 @@
-# Django REST CRUD
+# Ubuntu System Dashboard
 
+A Django Web App which displays relevent system information. 
+This project is still incomplete and under construction.
 
-A simple Djangon REST app scaffold to be used as a starting point for new Django REST projects.
+### requires Python 3 and Django 1.10
 
-### requires Python 3
+![alt tag](https://github.com/MattAndrzejczuk/Ubuntu-System-Web-Dashboard/blob/master/demo.png?raw=true)
