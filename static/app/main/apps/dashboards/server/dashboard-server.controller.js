@@ -14,6 +14,12 @@
         // Data
         vm.dashboardData = DashboardData;
 
+
+        vm.appendDataToPhysicalMemory = function () {
+            vm.widget1.chart.data[0]["values"].push({"x": 104, "y": 149, "series": 0});
+        };
+
+
         // Widget 1
         vm.widget1 = {
             title: vm.dashboardData.widget1.title,
