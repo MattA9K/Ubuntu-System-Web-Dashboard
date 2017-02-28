@@ -365,7 +365,7 @@
             ]
         };
 
-        vm.cpuX = 0;
+        vm.cpuX = 155;
 
         $interval(function () {
             $http({
