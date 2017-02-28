@@ -271,3 +271,160 @@ class getProcesses(APIView):  # ps aux
         return Response(finalWrapper)
         # print(item)
 
+
+
+class getProcessesDummy(APIView):  # ps aux
+
+    def get(self, request, format=None):
+        finalWrapper = {
+            "CPU_Usage": float(0),
+            "RAM_Usage": float(0),
+            "Processes": []}
+
+        sumOfCPU = 0.0
+        sumOfRAM = 0.0
+
+        def is_number(s):
+            try:
+                float(s)
+                return True
+            except ValueError:
+                return False
+
+        def getColName(i):
+            if i == 1:
+                return 'USER'
+            elif i == 2:
+                return 'PID'
+            elif i == 3:
+                return 'CPU'
+            elif i == 4:
+                return 'MEM'
+            elif i == 5:
+                return 'VSZ'
+            elif i == 6:
+                return 'RSS'
+            elif i == 7:
+                return 'TTY'
+            elif i == 8:
+                return 'STAT'
+            elif i == 9:
+                return 'START'
+            elif i == 10:
+                return 'TIME'
+            else:
+                return '||'
+
+        p = Popen(['ps', 'aux'], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        output, err = p.communicate(b"input data that is passed to subprocess' stdin")
+        rc = p.returncode
+
+        final = str(output).split("\\n")
+
+        for item in final:
+            process_name = item[66:]
+            row = item.split(" ")
+            i = 1
+            context = {"COMMAND": process_name,
+                       "PID": "",
+                       "CPU": "",
+                       "MEM": "",
+                       "VSZ": "",
+                       "RSS": "",
+                       "TTY": "",
+                       "STAT": "",
+                       "START": "",
+                       "TIME": "", }
+
+            rowUser = {"value": "cinicraft", "classes": "text-bold"}
+            rowCommand = {"value": process_name[0:32], "classes": "text-boxed m-0 grey-400-bg white-fg"}
+            rowAvgIO = {"value": 0, "classes": "amber-700-fg"}
+            rowAvgCPU = {"value": 0, "classes": "red-fg"}
+            rowAvgMem = {"value": 2, "classes": "amber-700-fg"}
+
+            for col in row:
+                if col != '':
+                    if i < 11:
+
+                        colName = getColName(i)
+                        context[getColName(i)] = col
+
+                        if colName == "COMMAND":
+                            rowCommand['value'] = col
+                        elif colName == "USER":
+                            rowUser['value'] = col
+                        elif colName == "CPU":
+                            rowAvgCPU['value'] = col
+                        elif colName == "MEM":
+                            rowAvgMem['value'] = col
+                        elif colName == "RSS":
+                            rowAvgIO['value'] = col
+
+                        if i == 3 and is_number(col) == True:
+                            sumOfCPU += float(col.strip())
+                        elif i == 4 and is_number(col) == True:
+                            sumOfRAM += float(col.strip())
+                        i += 1
+
+            rows = [rowUser, rowCommand, rowAvgIO, rowAvgCPU, rowAvgMem]
+            print(rows)
+            i = 1
+            finalWrapper['Processes'].append(rows)
+            finalWrapper['CPU_Usage'] = sumOfCPU
+            finalWrapper['RAM_Usage'] = sumOfRAM
+        return Response(finalWrapper)
+
+
+
+class getProcessesDummyScaffold(APIView):  # ps aux
+
+    def get(self, request, format=None):
+
+        col1 = {"title": "NAME"}
+        col2 = {"title": "USER"}
+        col3 = {"title": "Avg. IO"}
+        col4 = {"title": "Avg. CPU"}
+        col5 = {"title": "Avg. Mem"}
+        columns = [col1,col2,col3,col4,col5]
+
+        rowName = {"value": "cinicraft", "classes": "text-bold"}
+        rowUser = {"value": "dovecot", "classes": "text-boxed m-0 grey-400-bg white-fg"}
+        rowAvgIO = {"value": 0, "classes": "amber-700-fg"}
+        rowAvgCPU = {"value": 0, "classes": "red-fg"}
+        rowAvgMem = {"value": 2, "classes": "amber-700-fg"}
+        rows = [rowName, rowUser, rowAvgIO, rowAvgCPU, rowAvgMem]
+
+        table = {"columns": columns, "rows": [rows]}
+
+        finalWrapper = {"title": "Process Explorer",
+                        "table": table}
+
+        return Response(finalWrapper)
+
+
+
+
+
+class getProcessesNew(APIView):  # ps aux
+
+    def get(self, request, format=None):
+
+        col1 = {"title": "Name"}
+        col2 = {"title": "User"}
+        col3 = {"title": "Avg. IO"}
+        col4 = {"title": "Avg. CPU"}
+        col5 = {"title": "Avg. Mem"}
+        columns = [col1,col2,col3,col4,col5]
+
+        rowName = {"value": "", "classes": ""}
+        rowUser = {"value": "", "classes": ""}
+        rowAvgIO = {"value": "", "classes": ""}
+        rowAvgCPU = {"value": "", "classes": ""}
+        rowAvgMem = {"value": "", "classes": ""}
+        rows = [rowName, rowUser, rowAvgIO, rowAvgCPU, rowAvgMem]
+
+        finalWrapper = {"title": "Process Explorer",
+                        "table": columns,
+                        "rows": rows}
+
+        return Response(finalWrapper)

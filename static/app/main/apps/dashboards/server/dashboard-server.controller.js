@@ -328,6 +328,60 @@
             }
         };
 
+
+
+
+        vm.widget5 = vm.dashboardData.widget5;
+
+        // vm.testrows = [
+        //         [
+        //             {
+        //                 value: "anvil",
+        //                 classes: "text-bold"
+        //             },
+        //             {
+        //                 value: "dovecot",
+        //                 classes: "text-boxed m-0 green-bg white-fg"
+        //             },
+        //             {value: 0},
+        //             {value: 0},
+        //             {value: 2}
+        //         ]];
+        vm.testcols = { columns : [
+                {
+                    "title": "Name"
+                },
+                {
+                    "title": "User"
+                },
+                {
+                    "title": "Avg. IO"
+                },
+                {
+                    "title": "Avg. CPU"
+                },
+                {
+                    "title": "Avg. Mem"
+                }
+            ]};
+
+        $interval(function () {
+            $http({
+                method: 'GET',
+                url: '/main/processesDummy?format=json'
+            }).then(function successCallback(response) {
+
+                //console.log(response.data.table.rows);
+                vm.testrows = response.data.Processes;
+
+
+            }, function errorCallback(response) {
+
+            });
+        }, 1000);
+
+
+
         // Widget 7
         vm.widget7 = {
             title: vm.dashboardData.widget7.title,
