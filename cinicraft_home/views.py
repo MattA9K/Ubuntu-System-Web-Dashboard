@@ -102,13 +102,10 @@ class getStorage(APIView):  # cat swaps
                     elif i == 0:
                         name = goodStr
                     i += 1
-            print('________________')
             skippedFirst = True
             if size != '':
                 context = {"size": size, "used": used, "name": name}
                 returnArray.append(context)
-
-        print(returnArray)
 
         return Response(returnArray)
 
@@ -257,8 +254,6 @@ class getProcesses(APIView):  # ps aux
                 if col != '':
                     if i < 11:
                         context[getColName(i)] = col
-                        print(col)
-                        print(is_number(col))
                         if i == 3 and is_number(col) == True:
                             sumOfCPU += float(col.strip())
                         elif i == 4 and is_number(col) == True:
@@ -367,7 +362,6 @@ class getProcessesDummy(APIView):  # ps aux
                         i += 1
 
             rows = [rowUser, rowCommand, rowAvgIO, rowAvgCPU, rowAvgMem]
-            print(rows)
             i = 1
             finalWrapper['Processes'].append(rows)
             finalWrapper['CPU_Usage'] = sumOfCPU
