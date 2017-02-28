@@ -24,19 +24,33 @@
                 url: '/main/ram?format=json'
             }).then(function successCallback(response) {
                 console.log(response.data.free);
+
+                var freeMB = response.data.free / 1024;
+                var freeGB = freeMB / 1024;
+
                 vm.widget1.chart.data[0]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round((response.data.free / 1024) / 1024).toFixed(2),
+                    "y": Math.round(freeGB).toFixed(2),
                     "series": 0
                 });
+
+                var freeMB = response.data.free / 1024;
+                var freeGB = freeMB / 1024;
+
                 vm.widget1.chart.data[1]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round((response.data.available / 1024) / 1024).toFixed(2),
+                    "y": Math.round(freeGB).toFixed(2),
                     "series": 1
                 });
+
+                var totalMB = response.data.total / 1024;
+                var totalGB = totalMB / 1024;
+                var availableMB = response.data.available / 1024;
+                var availableGB = availableMB / 1024;
+
                 vm.widget1.chart.data[2]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(((response.data.total / 1024) / 1024) - ((response.data.available / 1024)) / 1024).toFixed(2),
+                    "y": Math.round(totalGB - availableGB).toFixed(2),
                     "series": 2
                 });
                 vm.RAM += 1;
