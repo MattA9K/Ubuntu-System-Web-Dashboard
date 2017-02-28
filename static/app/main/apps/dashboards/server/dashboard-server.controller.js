@@ -50,7 +50,7 @@
 
                 vm.widget1.chart.data[2]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(totalGB - availableGB).toFixed(2),
+                    "y": (totalGB - availableGB),
                     "series": 2
                 });
                 vm.RAM += 1;
