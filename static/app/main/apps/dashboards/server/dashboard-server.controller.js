@@ -329,8 +329,6 @@
         };
 
 
-
-
         vm.widget5 = vm.dashboardData.widget5;
 
         // vm.testrows = [
@@ -347,7 +345,8 @@
         //             {value: 0},
         //             {value: 2}
         //         ]];
-        vm.testcols = { columns : [
+        vm.testcols = {
+            columns: [
                 {
                     "title": "Name"
                 },
@@ -363,7 +362,10 @@
                 {
                     "title": "Avg. Mem"
                 }
-            ]};
+            ]
+        };
+
+        vm.cpuX = 0;
 
         $interval(function () {
             $http({
@@ -375,11 +377,19 @@
                 vm.testrows = response.data.Processes;
                 console.log(response.data.CPU_Usage);
 
+
+                var newValue = {
+                    x: vm.cpuX,
+                    y: Math.floor(response.data.CPU_Usage)
+                };
+
+                vm.widget6.chart.data[0].values.shift();
+                vm.widget6.chart.data[0].values.push(newValue);
+                vm.cpuX += 1;
             }, function errorCallback(response) {
 
             });
         }, 1000);
-
 
 
         // Widget 7
