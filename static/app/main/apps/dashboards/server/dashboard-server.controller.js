@@ -389,7 +389,7 @@
             }, function errorCallback(response) {
 
             });
-        }, 1000);
+        }, 5000);
 
 
         // Widget 7
