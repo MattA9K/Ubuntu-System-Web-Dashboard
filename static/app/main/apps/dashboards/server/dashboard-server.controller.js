@@ -51,6 +51,7 @@
                 vm.RAM += 1;
             }, function errorCallback(response) {
 
+
             });
         }, 1000);
 
