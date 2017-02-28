@@ -19,7 +19,6 @@
 
 
         $interval(function () {
-
             $http({
                 method: 'GET',
                 url: '/main/ram?format=json'
@@ -27,17 +26,17 @@
                 console.log(response.data.free);
                 vm.widget1.chart.data[0]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(response.data.free / 1024),
+                    "y": Math.round((response.data.free / 1024) / 1024).toFixed(2),
                     "series": 0
                 });
                 vm.widget1.chart.data[1]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(response.data.available / 1024),
+                    "y": Math.round((response.data.available / 1024) / 1024).toFixed(2),
                     "series": 1
                 });
                 vm.widget1.chart.data[2]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round((response.data.total / 1024) - (response.data.available / 1024)),
+                    "y": Math.round(((response.data.total / 1024) / 1024) - ((response.data.available / 1024)) / 1024).toFixed(2),
                     "series": 2
                 });
                 vm.RAM += 1;
