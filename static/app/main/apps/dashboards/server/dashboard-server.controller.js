@@ -30,7 +30,7 @@
 
                 vm.widget1.chart.data[0]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(freeGB).toFixed(2),
+                    "y": (freeGB),
                     "series": 0
                 });
 
@@ -39,7 +39,7 @@
 
                 vm.widget1.chart.data[1]["values"].push({
                     "x": vm.RAM,
-                    "y": Math.round(freeGB).toFixed(2),
+                    "y": (freeGB),
                     "series": 1
                 });
 
