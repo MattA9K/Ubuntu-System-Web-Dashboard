@@ -43,6 +43,8 @@
                     "series": 1
                 });
 
+                var totalMB = response.data.total / 1024;
+                var totalGB = totalMB / 1024;
 
                 vm.widget1.chart.data[2]["values"].push({
                     "x": vm.RAM,
