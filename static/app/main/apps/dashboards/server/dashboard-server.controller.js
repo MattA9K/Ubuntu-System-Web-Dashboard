@@ -294,8 +294,8 @@
                 // Run this function once to initialize the widget
 
                 // Grab the x value
-                var lastIndex = vm.dashboardData.widget6.chart[0].values.length - 1,
-                    x = vm.dashboardData.widget6.chart[0].values[lastIndex].x;
+                // var lastIndex = vm.dashboardData.widget6.chart[0].values.length - 1,
+                //     x = vm.dashboardData.widget6.chart[0].values[lastIndex].x;
 
                 /**
                  * Emulate constant data flow
@@ -303,28 +303,28 @@
                  * @param min
                  * @param max
                  */
-                function cpuTicker(min, max) {
-                    // Increase the x value
-                    x = x + 5;
-
-                    var newValue = {
-                        x: x,
-                        y: Math.floor(Math.random() * (max - min + 1)) + min
-                    };
-
-                    vm.widget6.chart.data[0].values.shift();
-                    vm.widget6.chart.data[0].values.push(newValue);
-                }
+                // function cpuTicker(min, max) {
+                //     // Increase the x value
+                //     x = x + 5;
+                //
+                //     var newValue = {
+                //         x: x,
+                //         y: Math.floor(Math.random() * (max - min + 1)) + min
+                //     };
+                //
+                //     vm.widget6.chart.data[0].values.shift();
+                //     vm.widget6.chart.data[0].values.push(newValue);
+                // }
 
                 // Set interval
-                var cpuTickerInterval = $interval(function () {
-                    cpuTicker(0, 100);
-                }, 5000);
+                // var cpuTickerInterval = $interval(function () {
+                //     cpuTicker(0, 100);
+                // }, 5000);
 
                 // Cleanup
-                $scope.$on('$destroy', function () {
-                    $interval.cancel(cpuTickerInterval);
-                });
+                // $scope.$on('$destroy', function () {
+                //     $interval.cancel(cpuTickerInterval);
+                // });
             }
         };
 
@@ -385,7 +385,7 @@
 
                 vm.widget6.chart.data[0].values.shift();
                 vm.widget6.chart.data[0].values.push(newValue);
-                vm.cpuX += 1;
+                vm.cpuX += 5;
             }, function errorCallback(response) {
 
             });
