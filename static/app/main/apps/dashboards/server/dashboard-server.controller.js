@@ -373,7 +373,7 @@
 
                 //console.log(response.data.table.rows);
                 vm.testrows = response.data.Processes;
-
+                console.log(response.data.CPU_Usage);
 
             }, function errorCallback(response) {
 
