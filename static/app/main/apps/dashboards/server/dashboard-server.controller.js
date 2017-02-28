@@ -380,7 +380,7 @@
 
                 var newValue = {
                     x: vm.cpuX,
-                    y: Math.floor(response.data.CPU_Usage)
+                    y: (Math.floor(response.data.CPU_Usage) / 2)
                 };
 
                 vm.widget6.chart.data[0].values.shift();
