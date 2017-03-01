@@ -360,21 +360,21 @@
                         </md-menu>
                     </div>
 
-                    <table class="dataTable row-border hover" datatable="ng"
+                    <table class="dataTable row-border hover" datatable="ng" ng-cloak
                            dt-options="vm.widget7.dtOptions">
                         <thead>
                         <tr>
                             <th class="secondary-text"
-                                ng-repeat="column in ::vm.widget7.table.columns">
+                                ng-repeat="column in ::vm.table.columns">
                                 <div class="table-header">
-                                    <span class="column-title">{{ column.title }}</span>
+                                    <span class="column-title">{{ column['title'] }}</span>
                                 </div>
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                       <!-- <tr ng-repeat="row in ::vm.widget7.table.rows"> -->
-                        <tr ng-repeat="row in ::vm.testrows">
+                        <tr ng-repeat="row in vm.widget7.table.rows">
+                        <!-- <tr ng-repeat="row in ::vm.table.rows"> -->
                             <td ng-repeat="cell in row">
                                     <span class="{{ cell.classes }}">
                                         {{ cell.value }}
@@ -398,10 +398,10 @@
             </p>
 
 
-            <!-- WIDGET 8 -->
+            <!-- WIDGET 8
             <ms-widget flippable="false" layout="row" flex="100" flex-gt-md="40">
 
-                <!-- Front -->
+
                 <ms-widget-front class="white-bg">
 
                     <div class="ph-16 pv-24 border-bottom" layout="row" layout-align="space-between center">
@@ -436,7 +436,7 @@
                     </div>
 
                 </ms-widget-front>
-                <!-- / Front -->
+
 
             </ms-widget>
             <!-- / WIDGET 8 -->

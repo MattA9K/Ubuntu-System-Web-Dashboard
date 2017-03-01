@@ -316,6 +316,7 @@ class getProcessesDummy(APIView):  # ps aux
 
         final = str(output).split("\\n")
 
+        skippedFirst = False
         for item in final:
             process_name = item[66:]
             row = item.split(" ")
@@ -361,11 +362,16 @@ class getProcessesDummy(APIView):  # ps aux
                             sumOfRAM += float(col.strip())
                         i += 1
 
+            if rowUser['value'] == 'root':
+                rowUser['classes'] = 'text-boxed m-0 red-400-bg white-fg'
             rows = [rowUser, rowCommand, rowAvgIO, rowAvgCPU, rowAvgMem]
+
+            if skippedFirst == True:
+                finalWrapper['Processes'].append(rows)
+            skippedFirst = True
             i = 1
-            finalWrapper['Processes'].append(rows)
-            finalWrapper['CPU_Usage'] = sumOfCPU
-            finalWrapper['RAM_Usage'] = sumOfRAM
+        finalWrapper['CPU_Usage'] = sumOfCPU
+        finalWrapper['RAM_Usage'] = sumOfRAM
         return Response(finalWrapper)
 
 

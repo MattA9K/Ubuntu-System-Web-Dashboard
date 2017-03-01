@@ -9,6 +9,126 @@
     function DashboardServerController($scope, $interval, DashboardData, $http) {
         var vm = this;
 
+
+
+
+        vm.cpuX = 155;
+        $interval(function () {
+            $http({
+                method: 'GET',
+                url: '/main/processesDummy?format=json'
+            }).then(function successCallback(response) {
+
+                console.log('API Call has been made.');
+                vm.widget7.table.rows = response.data.Processes;
+                console.log(response.data.CPU_Usage);
+
+
+                var newValue = {
+                    x: vm.cpuX,
+                    y: (Math.floor(response.data.CPU_Usage) / 2)
+                };
+
+                vm.widget6.chart.data[0].values.shift();
+                vm.widget6.chart.data[0].values.push(newValue);
+                vm.cpuX += 5;
+            }, function errorCallback(response) {
+
+            });
+        }, 5000);
+
+        // Widget 7
+        vm.widget7 = {
+            title: "Processes",
+            table: {
+            columns: [
+                {
+                    title: "Name"
+                },
+                {
+                    title: "User"
+                },
+                {
+                    title: "Avg. IO"
+                },
+                {
+                    title: "Avg. CPU"
+                },
+                {
+                    title: "Avg. Mem"
+                }
+            ],
+            rows: [
+                [
+                    {
+                        value: "anvil",
+                        classes: "text-bold"
+                    },
+                    {
+                        value: "dovecot",
+                        classes: "text-boxed m-0 green-bg white-fg"
+                    },
+                    {value: 0},
+                    {value: 0},
+                    {value: 2}
+                ]
+            ]
+        },
+            dtOptions: {
+                dom: '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+                pagingType: 'simple',
+                pageLength: 10,
+                lengthMenu: [10, 20, 50, 100],
+                autoWidth: false,
+                responsive: true,
+                columnDefs: [
+                    {
+                        width: '20%',
+                        targets: [0, 1, 2, 3, 4]
+                    }
+                ],
+                columns: [
+                    {},
+                    {},
+                    {
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                return data + ' KB/s';
+                            }
+                            else {
+                                return data;
+                            }
+                        }
+                    },
+                    {
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                return data + '%';
+                            }
+                            else {
+                                return data;
+                            }
+                        }
+                    },
+                    {
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                var el = angular.element(data);
+                                el.html(el.text() + ' MB');
+
+                                return el[0].outerHTML;
+                            }
+                            else {
+                                return data;
+                            }
+                        }
+                    }
+                ]
+            }
+        };
+
+
+
         // Data
         vm.dashboardData = DashboardData;
 
@@ -23,7 +143,7 @@
                 method: 'GET',
                 url: '/main/ram?format=json'
             }).then(function successCallback(response) {
-                console.log(response.data.free);
+                // console.log(response.data.free);
 
                 var freeMB = response.data.free / 1024;
 
@@ -354,7 +474,7 @@
                     "title": "User"
                 },
                 {
-                    "title": "Avg. IO"
+                    "title": "RSS"
                 },
                 {
                     "title": "Avg. CPU"
@@ -365,89 +485,10 @@
             ]
         };
 
-        vm.cpuX = 155;
-
-        $interval(function () {
-            $http({
-                method: 'GET',
-                url: '/main/processesDummy?format=json'
-            }).then(function successCallback(response) {
-
-                //console.log(response.data.table.rows);
-                vm.testrows = response.data.Processes;
-                console.log(response.data.CPU_Usage);
 
 
-                var newValue = {
-                    x: vm.cpuX,
-                    y: (Math.floor(response.data.CPU_Usage) / 2)
-                };
-
-                vm.widget6.chart.data[0].values.shift();
-                vm.widget6.chart.data[0].values.push(newValue);
-                vm.cpuX += 5;
-            }, function errorCallback(response) {
-
-            });
-        }, 5000);
 
 
-        // Widget 7
-        vm.widget7 = {
-            title: vm.dashboardData.widget7.title,
-            table: vm.dashboardData.widget7.table,
-            dtOptions: {
-                dom: '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
-                pagingType: 'simple',
-                pageLength: 10,
-                lengthMenu: [10, 20, 50, 100],
-                autoWidth: false,
-                responsive: true,
-                columnDefs: [
-                    {
-                        width: '20%',
-                        targets: [0, 1, 2, 3, 4]
-                    }
-                ],
-                columns: [
-                    {},
-                    {},
-                    {
-                        render: function (data, type) {
-                            if (type === 'display') {
-                                return data + ' KB/s';
-                            }
-                            else {
-                                return data;
-                            }
-                        }
-                    },
-                    {
-                        render: function (data, type) {
-                            if (type === 'display') {
-                                return data + '%';
-                            }
-                            else {
-                                return data;
-                            }
-                        }
-                    },
-                    {
-                        render: function (data, type) {
-                            if (type === 'display') {
-                                var el = angular.element(data);
-                                el.html(el.text() + ' MB');
-
-                                return el[0].outerHTML;
-                            }
-                            else {
-                                return data;
-                            }
-                        }
-                    }
-                ]
-            }
-        };
 
         // Widget 8
         vm.widget8 = vm.dashboardData.widget8;
