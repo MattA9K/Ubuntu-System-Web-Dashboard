@@ -1,4 +1,5 @@
 # Ubuntu System Dashboard
+##### Developed by Matt Andrzejczuk
 
 A Django Web App which displays relevent system information. 
 This project is still incomplete and under construction.
