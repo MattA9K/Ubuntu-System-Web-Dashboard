@@ -29,7 +29,7 @@
                     y: (Math.floor(response.data.CPU_Usage) / 2)
                 };
 
-                vm.ramUsage = response.data.RAM_Usage;
+                vm.ramUsage = response.data.RAM_Usage.toFixed(2);
                 vm.widget6.chart.data[0].values.shift();
                 vm.widget6.chart.data[0].values.push(newValue);
                 vm.cpuX += 15;
