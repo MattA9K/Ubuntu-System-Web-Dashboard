@@ -333,7 +333,7 @@ class getProcessesDummy(APIView):  # ps aux
                        "TIME": "", }
 
             rowUser = {"value": "cinicraft", "classes": "text-bold"}
-            rowCommand = {"value": process_name[0:32], "classes": "text-boxed m-0 grey-400-bg white-fg"}
+            rowCommand = {"value": process_name[0:42], "classes": "text-boxed m-0 grey-400-bg white-fg"}
             rowAvgIO = {"value": 0, "classes": "purple-700-fg"}
             rowAvgCPU = {"value": 0, "classes": "green-fg"}
             rowAvgMem = {"value": 2, "classes": "blue-700-fg"}
