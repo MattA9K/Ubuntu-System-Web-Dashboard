@@ -334,9 +334,9 @@ class getProcessesDummy(APIView):  # ps aux
 
             rowUser = {"value": "cinicraft", "classes": "text-bold"}
             rowCommand = {"value": process_name[0:32], "classes": "text-boxed m-0 grey-400-bg white-fg"}
-            rowAvgIO = {"value": 0, "classes": "amber-700-fg"}
-            rowAvgCPU = {"value": 0, "classes": "red-fg"}
-            rowAvgMem = {"value": 2, "classes": "amber-700-fg"}
+            rowAvgIO = {"value": 0, "classes": "purple-700-fg"}
+            rowAvgCPU = {"value": 0, "classes": "green-fg"}
+            rowAvgMem = {"value": 2, "classes": "blue-700-fg"}
 
             for col in row:
                 if col != '':

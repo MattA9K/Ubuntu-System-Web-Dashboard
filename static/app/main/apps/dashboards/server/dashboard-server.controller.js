@@ -10,19 +10,17 @@
         var vm = this;
 
 
-
-
-        vm.cpuX = 155;
-        $interval(function () {
+        function refreshProcesses() {
             $http({
                 method: 'GET',
                 url: '/main/processesDummy?format=json'
             }).then(function successCallback(response) {
 
+                vm.refreshing = true;
                 console.log('API Call has been made.');
                 vm.widget7.table.rows = response.data.Processes;
                 console.log(response.data.CPU_Usage);
-
+                vm.refreshing = false;
 
                 var newValue = {
                     x: vm.cpuX,
@@ -31,49 +29,57 @@
 
                 vm.widget6.chart.data[0].values.shift();
                 vm.widget6.chart.data[0].values.push(newValue);
-                vm.cpuX += 5;
+                vm.cpuX += 15;
             }, function errorCallback(response) {
 
             });
-        }, 5000);
+        }
+
+        vm.refreshing = true;
+        vm.cpuX = 155;
+        $interval(function () {
+            refreshProcesses();
+        }, 15000);
+
+        refreshProcesses();
 
         // Widget 7
         vm.widget7 = {
             title: "Processes",
             table: {
-            columns: [
-                {
-                    title: "Name"
-                },
-                {
-                    title: "User"
-                },
-                {
-                    title: "Avg. IO"
-                },
-                {
-                    title: "Avg. CPU"
-                },
-                {
-                    title: "Avg. Mem"
-                }
-            ],
-            rows: [
-                [
+                columns: [
                     {
-                        value: "anvil",
-                        classes: "text-bold"
+                        title: "User"
                     },
                     {
-                        value: "dovecot",
-                        classes: "text-boxed m-0 green-bg white-fg"
+                        title: "Command"
                     },
-                    {value: 0},
-                    {value: 0},
-                    {value: 2}
+                    {
+                        title: "Virtual Memory"
+                    },
+                    {
+                        title: "CPU"
+                    },
+                    {
+                        title: "RAM"
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            value: "anvil",
+                            classes: "text-bold"
+                        },
+                        {
+                            value: "dovecot",
+                            classes: "text-boxed m-0 green-bg white-fg"
+                        },
+                        {value: 0},
+                        {value: 0},
+                        {value: 2}
+                    ]
                 ]
-            ]
-        },
+            },
             dtOptions: {
                 dom: '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
                 pagingType: 'simple',
@@ -93,7 +99,7 @@
                     {
                         render: function (data, type) {
                             if (type === 'display') {
-                                return data + ' KB/s';
+                                return data + ' KB';
                             }
                             else {
                                 return data;
@@ -114,7 +120,7 @@
                         render: function (data, type) {
                             if (type === 'display') {
                                 var el = angular.element(data);
-                                el.html(el.text() + ' MB');
+                                el.html(el.text() + ' %');
 
                                 return el[0].outerHTML;
                             }
@@ -126,7 +132,6 @@
                 ]
             }
         };
-
 
 
         // Data
@@ -484,10 +489,6 @@
                 }
             ]
         };
-
-
-
-
 
 
         // Widget 8

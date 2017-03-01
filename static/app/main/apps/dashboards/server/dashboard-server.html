@@ -334,7 +334,7 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 7 -->
-            <ms-widget flippable="false" layout="row" flex="100" flex-gt-md="60">
+            <ms-widget flippable="false" layout="row" flex="100" flex-gt-md="100">
 
                 <!-- Front -->
                 <ms-widget-front class="white-bg">
@@ -365,14 +365,14 @@
                         <thead>
                         <tr>
                             <th class="secondary-text"
-                                ng-repeat="column in ::vm.table.columns">
+                                ng-repeat="column in vm.widget7.table.columns">
                                 <div class="table-header">
                                     <span class="column-title">{{ column['title'] }}</span>
                                 </div>
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody ng-if="vm.refreshing == false">
                         <tr ng-repeat="row in vm.widget7.table.rows">
                         <!-- <tr ng-repeat="row in ::vm.table.rows"> -->
                             <td ng-repeat="cell in row">
