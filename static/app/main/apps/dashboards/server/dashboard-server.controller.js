@@ -9,6 +9,8 @@
     function DashboardServerController($scope, $interval, DashboardData, $http) {
         var vm = this;
 
+        vm.ramUsage = 0.0;
+        vm.ramX = 2;
 
         function refreshProcesses() {
             $http({
@@ -21,15 +23,28 @@
                 vm.widget7.table.rows = response.data.Processes;
                 console.log(response.data.CPU_Usage);
                 vm.refreshing = false;
-
+                // CPU TICKER:
                 var newValue = {
                     x: vm.cpuX,
                     y: (Math.floor(response.data.CPU_Usage) / 2)
                 };
 
+                vm.ramUsage = response.data.RAM_Usage;
                 vm.widget6.chart.data[0].values.shift();
                 vm.widget6.chart.data[0].values.push(newValue);
                 vm.cpuX += 15;
+
+
+                var newValueRAM = {
+                    x: vm.ramX,
+                    y: response.data.RAM_Usage
+                };
+
+                vm.widget4.chart.data[0].values.shift();
+                vm.widget4.chart.data[0].values.push(newValue);
+
+                vm.ramX += 1;
+
             }, function errorCallback(response) {
 
             });
@@ -133,7 +148,7 @@
             }
         };
 
-
+        vm.diskspacePercentage = 0.0;
         // Data
         vm.dashboardData = DashboardData;
 
@@ -240,6 +255,24 @@
         // Widget 2
         vm.widget2 = vm.dashboardData.widget2;
 
+        vm.infoCPU = {
+            cache_size: "",
+            cores: "",
+            speed_MHz: "",
+            model_name: ""
+        };
+
+        $http({
+            method: 'GET',
+            url: '/main/cpuinfo?format=json'
+        }).then(function successCallback(response) {
+            vm.infoCPU.cache_size = response.data.cache_size;
+            vm.infoCPU.cores = response.data.cores;
+            vm.infoCPU.speed_MHz = response.data.speed_MHz;
+            vm.infoCPU.model_name = response.data.model_name;
+        }, function errorCallback(response) {
+
+        });
 
         $interval(function () {
             $http({
@@ -250,6 +283,7 @@
                 vm.widget2["value"]["used"] = response.data[0].used;
                 vm.widget2["value"]["total"] = response.data[0].size;
                 vm.widget2["value"]["percentage"] = parseFloat((response.data[0].used / response.data[0].size).toFixed(2));
+                vm.diskspacePercentage = parseFloat((response.data[0].used / response.data[0].size)) * 100;
             }, function errorCallback(response) {
 
             });
@@ -317,8 +351,6 @@
                     // Increase the x value
                     x++;
 
-                    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
                     var newValue = {
                         x: x,
                         y: randomNumber
@@ -327,19 +359,17 @@
                     vm.widget4.chart.data[0].values.shift();
                     vm.widget4.chart.data[0].values.push(newValue);
 
-                    // Randomize the value
-                    vm.widget4.value = 20 + randomNumber + 'ms';
                 }
 
                 // Set interval
-                var latencyTickerInterval = $interval(function () {
-                    latencyTicker(1, 4);
-                }, 1000);
+                // var latencyTickerInterval = $interval(function () {
+                //     latencyTicker(1, 4);
+                // }, 1000);
 
                 // Cleanup
-                $scope.$on('$destroy', function () {
-                    $interval.cancel(latencyTickerInterval);
-                });
+                // $scope.$on('$destroy', function () {
+                //     $interval.cancel(latencyTickerInterval);
+                // });
             }
         };
 

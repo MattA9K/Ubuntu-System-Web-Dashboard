@@ -28,7 +28,7 @@
             "total": "110Gb",
             "percentage": 67.45
         },
-        "detail": "This is the back side. You can show detailed information here."
+        "detail": "Storage JSON"
     },
     "widget3": {
         "title": "Bandwidth",
@@ -40,7 +40,7 @@
         "detail": "This is the back side. You can show detailed information here."
     },
     "widget4": {
-        "title": "Latency",
+        "title": "RAM Usage",
         "value": "21ms",
         "footnote": "Higher than average",
         "detail": "This is the back side. You can show detailed information here.",
@@ -48,31 +48,7 @@
             {
                 "key": "Latency",
                 "values": [
-                    {"x": 1, "y": 1},
-                    {"x": 2, "y": 4},
-                    {"x": 3, "y": 1},
-                    {"x": 4, "y": 2},
-                    {"x": 5, "y": 3},
-                    {"x": 6, "y": 4},
-                    {"x": 7, "y": 3},
-                    {"x": 8, "y": 2},
-                    {"x": 9, "y": 3},
-                    {"x": 10, "y": 1},
-                    {"x": 11, "y": 1},
-                    {"x": 12, "y": 4},
-                    {"x": 13, "y": 1},
-                    {"x": 14, "y": 2},
-                    {"x": 15, "y": 3},
-                    {"x": 16, "y": 4},
-                    {"x": 17, "y": 3},
-                    {"x": 18, "y": 2},
-                    {"x": 19, "y": 3},
-                    {"x": 20, "y": 1},
-                    {"x": 21, "y": 1},
-                    {"x": 22, "y": 4},
-                    {"x": 23, "y": 1},
-                    {"x": 24, "y": 2},
-                    {"x": 25, "y": 3}
+                    {"x": 1, "y": 1}
                 ]
             }
         ]

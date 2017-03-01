@@ -82,11 +82,11 @@
 
                     <div class="pb-24" layout="row" layout-align="start center">
                         <div class="h2">{{ vm.widget2.value.used }}</div>
-                        <div class="h2 secondary-text pl-8">/ {{ vm.widget2.value.total }}</div>
+                        <div class="h2 secondary-text pl-8">/ {{ vm.widget2.value.total }} </div>
                     </div>
 
                     <md-progress-linear md-mode="determinate"
-                                        value="{{ vm.widget2.value.percentage }}"></md-progress-linear>
+                                        ng-value="vm.diskspacePercentage"></md-progress-linear>
                 </ms-widget-front>
                 <!-- / Front -->
 
@@ -97,9 +97,8 @@
                             <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                         </md-button>
                     </div>
-
                     <div>
-                        {{ vm.widget2.detail }}
+                        <pre>{{ vm.widget2 | json }}</pre>
                     </div>
                 </ms-widget-back>
                 <!-- / Back -->
@@ -114,8 +113,8 @@
                 <ms-widget-front class="p-16 blue-bg white-fg">
                     <div class="pb-24" layout="row" layout-align="space-between center">
                         <div layout="row" layout-align="start center">
-                            <md-icon class="m-0 mr-8" md-font-icon="icon-server-network"></md-icon>
-                            <div class="h3">{{ vm.widget3.title }}</div>
+                            <md-icon class="m-0 mr-8" md-font-icon="icon-memory"></md-icon>
+                            <div class="h3">Processor Info</div>
                         </div>
 
                         <md-menu>
@@ -139,12 +138,17 @@
                     </div>
 
                     <div class="pb-24" layout="row" layout-align="start end">
-                        <div class="h2">{{ vm.widget3.value.used }}</div>
-                        <div class="h2 pl-8 secondary-text">/ {{ vm.widget3.value.total }}</div>
+                        <div class="h2">{{ vm.infoCPU.model_name }} MHz</div>
                     </div>
 
-                    <md-progress-linear md-mode="determinate"
-                                        value="{{ vm.widget3.value.percentage }}"></md-progress-linear>
+                    <div class="pb-24" layout="row" layout-align="start end">
+                        <div class="h2">{{ vm.infoCPU.cache_size }} cache </div>
+                    </div>
+
+                    <div class="pb-24" layout="row" layout-align="start end">
+                        <div class="h4">{{ vm.infoCPU.cores }} cores at {{ vm.infoCPU.speed_MHz }} MHz</div>
+                    </div>
+
                 </ms-widget-front>
                 <!-- / Front -->
 
@@ -157,7 +161,7 @@
                     </div>
 
                     <div>
-                        {{ vm.widget3.detail }}
+                        <pre>{{ vm.infoCPU | json }}</pre>
                     </div>
                 </ms-widget-back>
                 <!-- / Back -->
@@ -196,7 +200,7 @@
                         </md-menu>
                     </div>
 
-                    <div class="pb-8 h1">{{ vm.widget4.value }}</div>
+                    <div class="pb-8 h1">{{ vm.ramUsage }}</div>
 
                     <div class="chart-fill-16">
                         <nvd3 class="h-50 remove-opacity remove-line-stroke"
@@ -216,7 +220,7 @@
                     </div>
 
                     <div>
-                        {{ vm.widget4.detail }}
+                        <pre>{{ vm.widget4 }}</pre>
                     </div>
                 </ms-widget-back>
                 <!-- / Back -->
@@ -374,7 +378,7 @@
                         </thead>
                         <tbody ng-if="vm.refreshing == false">
                         <tr ng-repeat="row in vm.widget7.table.rows">
-                        <!-- <tr ng-repeat="row in ::vm.table.rows"> -->
+                            <!-- <tr ng-repeat="row in ::vm.table.rows"> -->
                             <td ng-repeat="cell in row">
                                     <span class="{{ cell.classes }}">
                                         {{ cell.value }}
@@ -391,7 +395,7 @@
             <!-- / WIDGET 7 -->
 
             <p>
-            <!--  <pre>{{ vm.widget7.table.rows | json }}</pre> -->
+                <!--  <pre>{{ vm.widget7.table.rows | json }}</pre> -->
             <ul ng-repeat="row in vm.widget00.table.rows">
                 <li>{{ row }}</li>
             </ul>

@@ -333,7 +333,7 @@ class getProcessesDummy(APIView):  # ps aux
                        "TIME": "", }
 
             rowUser = {"value": "cinicraft", "classes": "text-bold"}
-            rowCommand = {"value": process_name[0:42], "classes": "text-boxed m-0 grey-400-bg white-fg"}
+            rowCommand = {"value": process_name[:50], "classes": "text-boxed m-0 grey-400-bg white-fg"}
             rowAvgIO = {"value": 0, "classes": "purple-700-fg"}
             rowAvgCPU = {"value": 0, "classes": "green-fg"}
             rowAvgMem = {"value": 2, "classes": "blue-700-fg"}
@@ -362,11 +362,10 @@ class getProcessesDummy(APIView):  # ps aux
                             sumOfRAM += float(col.strip())
                         i += 1
 
-            if rowUser['value'] == 'root':
+            if rowUser['value'] == '':
                 rowUser['classes'] = 'text-boxed m-0 red-400-bg white-fg'
             rows = [rowUser, rowCommand, rowAvgIO, rowAvgCPU, rowAvgMem]
-
-            if skippedFirst == True:
+            if skippedFirst == True and rowUser['value'] != "'":
                 finalWrapper['Processes'].append(rows)
             skippedFirst = True
             i = 1
