@@ -4,7 +4,7 @@
 A Django Web App which displays relevent system information. 
 This project is still incomplete and under construction.
 
-### requires Ubuntu, Python 3 and Django 1.10
+##### requires Ubuntu, Python 3 and Django 1.10
 
 #### Quick Start
 
